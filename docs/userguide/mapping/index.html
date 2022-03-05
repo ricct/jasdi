@@ -20,7 +20,7 @@
     
     
       
-        <title>マッピング設定 - Simple Data Integrator</title>
+        <title>基本設定 - Simple Data Integrator</title>
       
     
     
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              マッピング設定
+              基本設定
             
           </span>
         </div>
@@ -493,22 +493,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../connectionexcel/" class="md-nav__link">
-        Excel ファイル
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../connectioncsv/" class="md-nav__link">
-        CSV ファイル
+      <a href="../connectioncsvexcel/" class="md-nav__link">
+        CSV、Excelファイル
       </a>
     </li>
   
@@ -543,6 +529,34 @@
     
   
   
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          マッピング設定
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="マッピング設定" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          マッピング設定
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
     <li class="md-nav__item md-nav__item--active">
       
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
@@ -551,10 +565,97 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          基本設定
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        マッピング設定
+        基本設定
       </a>
       
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    概要
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    設定
+  </a>
+  
+    <nav class="md-nav" aria-label="設定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    マップイング画面構成
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mappingsource/" class="md-nav__link">
+        ソースデータ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mappingtarget/" class="md-nav__link">
+        ターゲットデータ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -601,6 +702,41 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    概要
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    設定
+  </a>
+  
+    <nav class="md-nav" aria-label="設定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    マップイング画面構成
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -613,7 +749,54 @@
                 
                 
                 <h1 id="_1">マップイング設定</h1>
-<p><img src="../img/mapping1.png" alt="" title="" width="700">  </p>
+<h2 id="_2">概要</h2>
+<p>マッピングはデータをソースから抽出し、ターゲットにロードする操作です。<br />
+マップイング設定画面でソースとターゲットのデータタイプ、テーブルなどを選択、マッピングルール設定します。<br />
+詳細設定画面でワークフローに沿って前処理、後処理などさらに細かい設定できます。</p>
+<h2 id="_3">設定</h2>
+<h3 id="_4">マップイング画面構成</h3>
+<p><img src="../img/mapping_overview.png" alt="" title="">  </p>
+<table>
+<thead>
+<tr>
+<th align="left">No</th>
+<th align="left">項目</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">基本情報</td>
+<td align="left">マッピング名前、説明などの基本情報</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">ソースデータ</td>
+<td align="left">ソースデータのコネクション、データの詳細情報を設定</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">ターゲットデータ</td>
+<td align="left">ターゲットデータのコネクション、データの詳細情報を設定</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">ボタン部</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">カラム詳細設定</td>
+<td align="left">マップイングの際のカラム対応、変換ルールを設定</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">ボタン部</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
                 
               
               
@@ -649,13 +832,13 @@
       
       
         
-        <a href="../schedule/" class="md-footer__link md-footer__link--next" aria-label="Next: スケジュール設定" rel="next">
+        <a href="../mappingsource/" class="md-footer__link md-footer__link--next" aria-label="Next: ソースデータ" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              スケジュール設定
+              ソースデータ
             </div>
           </div>
           <div class="md-footer__button md-icon">

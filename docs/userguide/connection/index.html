@@ -448,6 +448,13 @@
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
+    コネクション画面構成
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     基本情報
   </a>
   
@@ -557,22 +564,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../connectionexcel/" class="md-nav__link">
-        Excel ファイル
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../connectioncsv/" class="md-nav__link">
-        CSV ファイル
+      <a href="../connectioncsvexcel/" class="md-nav__link">
+        CSV、Excelファイル
       </a>
     </li>
   
@@ -605,10 +598,71 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          マッピング設定
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="マッピング設定" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          マッピング設定
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
       <a href="../mapping/" class="md-nav__link">
-        マッピング設定
+        基本設定
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mappingsource/" class="md-nav__link">
+        ソースデータ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mappingtarget/" class="md-nav__link">
+        ターゲットデータ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -678,6 +732,13 @@
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
+    コネクション画面構成
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     基本情報
   </a>
   
@@ -705,7 +766,35 @@
 <h2 id="_2">概要</h2>
 <p>コネクションは各タイプのデータベース(Oracle、SQL Serverなど)、ファイル（Excel , CSV）への接続の設定です。</p>
 <h2 id="_3">設定</h2>
-<h3 id="_4">基本情報</h3>
+<h3 id="_4">コネクション画面構成</h3>
+<p><img src="../img/connection_overview.png" alt="" title="" >  </p>
+<table>
+<thead>
+<tr>
+<th align="left">No</th>
+<th align="left">項目</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">基本情報</td>
+<td align="left">コネクション名前、ロケーション、種類などの基本情報</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">接続詳細設定</td>
+<td align="left">各種ＤＢへ接続の詳細情報を入力</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">ボタン部</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_5">基本情報</h3>
 <p><img src="../img/connection_head.png" alt="" title="" >  </p>
 <table>
 <thead>
@@ -729,7 +818,7 @@
 <tr>
 <td align="left">3</td>
 <td align="left">ロケーション</td>
-<td align="left">データベースへの接続方法を設定します。データベースへ直接接続の場合、ダイレクト接続を選択。SDI Web service経由して接続の場合、リモートを選択します。</td>
+<td align="left">データベースへの接続方法を設定します。<br />データベースへ直接接続の場合、ダイレクト接続を選択。<br />SDI Web service経由して接続の場合、リモートを選択します。 <br />CSV , Excelの場合ファイルを選択します。</td>
 </tr>
 <tr>
 <td align="left">4</td>
