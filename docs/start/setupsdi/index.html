@@ -865,6 +865,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../preference/mailsetting/" class="md-nav__link">
+        メール設定
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1066,19 +1080,19 @@
 <h3 id="step1-sdi">Step1: SDI をダウンロード</h3>
 <p><a href="../bin/SimpleDataIntegratorSetup_1_1_2203_1.zip" onclick= "ga('send', 'pageview', '/bin/SimpleDataIntegratorSetup_1_1_2203_1.zip')" target="_blank"><i class="fa fa-download"></i> Simple Data Integrator (RC) 1.1.2203.1</a> </p>
 <div class="admonition note">
-<p class="admonition-title">Extraction password:</p>
+<p class="admonition-title">解凍パスワード:</p>
 <p><strong>WelcomeToSdi</strong></p>
 </div>
 <h3 id="step2-simpledataintegratorsetupmsi">Step2: SimpleDataIntegratorSetup.msiを対話式インストール</h3>
 <p>SimpleDataIntegratorSetup.msiをダブルクリックし、画面の指示にしてがってインストールを完了してください。</p>
 <h3 id="step3-simpledataintegratorworker">Step3: SimpleDataIntegratorWorker サービスをインストール</h3>
 <p>管理者権限でコマンドプロンプトを起動して、下記のコマンドを実行。</p>
-<div class="highlight"><pre><span></span><code>sc create &quot;SimpleDataIntegratorWorker&quot; binPath=&quot;C:\Program Files\RiCCT\SimpleDataIntegrator\DataIntegratorService.exe&quot; DisplayName=&quot;SimpleDataIntegratorWorker&quot; start=auto
+<div class="highlight"><pre><span></span><code>sc create &quot;SimpleDataIntegratorWorker&quot; binPath=&quot;C:\Program Files\RiCCT\SimpleDataIntegrator\DataIntegratorService.exe&quot; DisplayName=&quot;SimpleDataIntegratorWorker&quot; start=delayed-auto
 </code></pre></div>
 <h2 id="db2">DB2ご利用の場合、下記の手順に従って設定してください</h2>
 <div class="admonition note info">
 <p class="admonition-title">DB2利用の場合のみ必要</p>
-<p>下記の作業はDB2利用の場合のみ必要、<mark>DB2利用しない場合、作業不要です。</mark></p>
+<p>下記の作業はDB2利用の場合のみ必要、<mark>DB2利用しない場合、Step4の作業不要です。</mark></p>
 </div>
 <h3 id="step4-db2">Step4: DB2 ライブラリインストール</h3>
 <h4 id="step4-1-db2">Step4-1 : DB2 ライブラリダウンロード、解凍</h4>
@@ -1093,7 +1107,7 @@
 <h4 id="step4-2-sdi">Step4-2 : ライブラリをSDIインストールしたフォルダーにコピー</h4>
 <p>解凍されたbuildフォルダー下のclidriverフォルダーとその中のすべてのファイルをSDIインストールしたフォルダーにコピーします。</p>
 <p><img src="../img/db2_copy.png" alt="" title="">  </p>
-<p>SDIインストールデフォルトフォルダー：<code>C:\Program Files\RiCCT\SimpleDataIntegrator</code></p>
+<p>SDIデフォルトインストールフォルダー：<code>C:\Program Files\RiCCT\SimpleDataIntegrator</code></p>
 <h4 id="step4-3-path">Step4-3 : Path追加</h4>
 <p>管理者権限でコマンドプロンプトを起動して、下記のコマンドを実行。</p>
 <div class="highlight"><pre><span></span><code>setx /M path &quot;%path%;C:\Program Files\RiCCT\SimpleDataIntegrator\clidriver\bin&quot;
