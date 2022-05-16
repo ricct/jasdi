@@ -13,14 +13,14 @@
         <meta name="author" content="RiCCT">
       
       
-        <link rel="canonical" href="https://ja.sdi.ricct.com/start/usesdi/">
+        <link rel="canonical" href="https://ja.sdi.ricct.com/start/setupsdi/">
       
       <link rel="icon" href="../../img/favicon.ico">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
     
     
       
-        <title>SDI セットアップ方法 - Simple Data Integrator</title>
+        <title>SDIセットアップ手順 - Simple Data Integrator</title>
       
     
     
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              SDI セットアップ方法
+              SDIセットアップ手順
             
           </span>
         </div>
@@ -216,12 +216,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -242,11 +244,127 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../setupsdi/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          SDIセットアップ手順
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         SDIセットアップ手順
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sdi_1" class="md-nav__link">
+    SDIインストール
+  </a>
+  
+    <nav class="md-nav" aria-label="SDIインストール">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step1-sdi" class="md-nav__link">
+    Step1: SDI をダウンロード
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step2-simpledataintegratorsetupmsi" class="md-nav__link">
+    Step2: SimpleDataIntegratorSetup.msiを対話式インストール
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step3-simpledataintegratorworker" class="md-nav__link">
+    Step3: SimpleDataIntegratorWorker サービスをインストール
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#db2" class="md-nav__link">
+    DB2ご利用の場合、下記の手順に従って設定してください
+  </a>
+  
+    <nav class="md-nav" aria-label="DB2ご利用の場合、下記の手順に従って設定してください">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step4-db2" class="md-nav__link">
+    Step4: DB2 ライブラリインストール
+  </a>
+  
+    <nav class="md-nav" aria-label="Step4: DB2 ライブラリインストール">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step4-1-db2" class="md-nav__link">
+    Step4-1 : DB2 ライブラリダウンロード、解凍
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step4-2-sdi" class="md-nav__link">
+    Step4-2 : 必要なライブラリをSDIインストールしたフォルダーにコピー
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step4-3-path" class="md-nav__link">
+    Step4-3 : Path追加
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1124,16 +1242,83 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#step1-sdi" class="md-nav__link">
-    Step1: SDI ダウンロード
+  <a href="#sdi_1" class="md-nav__link">
+    SDIインストール
   </a>
+  
+    <nav class="md-nav" aria-label="SDIインストール">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step1-sdi" class="md-nav__link">
+    Step1: SDI をダウンロード
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step2-simpledataintegratorsetupmsi" class="md-nav__link">
+    Step2: SimpleDataIntegratorSetup.msiを対話式インストール
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step3-simpledataintegratorworker" class="md-nav__link">
+    Step3: SimpleDataIntegratorWorker サービスをインストール
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step2-simpledataintegratorsetupmsi" class="md-nav__link">
-    Step2: SimpleDataIntegratorSetup.msiを対話式インストール
+  <a href="#db2" class="md-nav__link">
+    DB2ご利用の場合、下記の手順に従って設定してください
   </a>
+  
+    <nav class="md-nav" aria-label="DB2ご利用の場合、下記の手順に従って設定してください">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step4-db2" class="md-nav__link">
+    Step4: DB2 ライブラリインストール
+  </a>
+  
+    <nav class="md-nav" aria-label="Step4: DB2 ライブラリインストール">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step4-1-db2" class="md-nav__link">
+    Step4-1 : DB2 ライブラリダウンロード、解凍
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step4-2-sdi" class="md-nav__link">
+    Step4-2 : 必要なライブラリをSDIインストールしたフォルダーにコピー
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step4-3-path" class="md-nav__link">
+    Step4-3 : Path追加
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1150,12 +1335,46 @@
               
                 
                 
-                <h1 id="sdi">SDI セットアップ方法</h1>
-<h2 id="step1-sdi">Step1: SDI ダウンロード</h2>
-<p><a href="/start/download/" target="_blank"><i class="fa fa-link"></i> SDI download page</a> </p>
-<p>SimpleDataIntegratorSetup.msiをダウンロード</p>
-<h2 id="step2-simpledataintegratorsetupmsi">Step2: SimpleDataIntegratorSetup.msiを対話式インストール</h2>
-<p>SimpleDataIntegratorSetup.msiをダブルクリックし、画面の指示にしてがってインストールを完了してください。</p>
+                <h1 id="sdi">SDI セットアップ手順</h1>
+<h2 id="sdi_1">SDIインストール</h2>
+<h3 id="step1-sdi">Step1: SDI をダウンロード</h3>
+<p><a href="../bin/SimpleDataIntegratorSetup_1_2_2205_8.zip" onclick= "ga('send', 'pageview', '/bin/SimpleDataIntegratorSetup_1_2_2205_8.zip')" target="_blank"><i class="fa fa-download"></i> Simple Data Integrator 1.2.2205.8</a> </p>
+<div class="admonition note">
+<p class="admonition-title">解凍パスワード:</p>
+<p><strong>WelcomeToSdi</strong></p>
+</div>
+<h3 id="step2-simpledataintegratorsetupmsi">Step2: SimpleDataIntegratorSetup.msiを対話式インストール</h3>
+<p>SimpleDataIntegratorSetup.msiを実行します。<br />
+画面の指示にしてがってインストールを完了してください。</p>
+<h3 id="step3-simpledataintegratorworker">Step3: SimpleDataIntegratorWorker サービスをインストール</h3>
+<p>管理者権限でコマンドプロンプトを起動します。<br />
+下記のコマンドを実行。</p>
+<div class="highlight"><pre><span></span><code>sc create &quot;SimpleDataIntegratorWorker&quot; binPath=&quot;C:\Program Files\RiCCT\SimpleDataIntegrator\DataIntegratorService.exe&quot; DisplayName=&quot;SimpleDataIntegratorWorker&quot; start=delayed-auto
+</code></pre></div>
+<h2 id="db2">DB2ご利用の場合、下記の手順に従って設定してください</h2>
+<div class="admonition note info">
+<p class="admonition-title"> DB2 ライブラリインストールについて</p>
+<p>下記の作業はDB2利用の場合のみ必要、<mark>DB2利用しない場合、Step4の作業不要です。</mark></p>
+</div>
+<h3 id="step4-db2">Step4: DB2 ライブラリインストール</h3>
+<h4 id="step4-1-db2">Step4-1 : DB2 ライブラリダウンロード、解凍</h4>
+<p>下記のURLから　<a href="https://www.nuget.org/api/v2/package/IBM.Data.DB.Provider/11.5.5010.4">ibm.data.db.provider.11.5.5010.4.nupkg</a>をダウンロードして解凍します。<br />
+<a href="https://www.nuget.org/packages/IBM.Data.DB.Provider/11.5.5010.4">https://www.nuget.org/packages/IBM.Data.DB.Provider/11.5.5010.4</a></p>
+<p><img src="../img/db2_download.png" alt="" title="">  </p>
+<div class="admonition note info">
+<p class="admonition-title">ibm.data.db.provider.11.5.5010.4.nupkgの解凍について</p>
+<p>方法1：ibm.data.db.provider.11.5.5010.4.nupkgのファイル名をibm.data.db.provider.11.5.5010.4.zip にリネームしてから解凍。<br />
+ 方法2：サードパーティの解凍ソフトを使って解凍する。（例：7-Zip）  </p>
+</div>
+<h4 id="step4-2-sdi">Step4-2 : 必要なライブラリをSDIインストールしたフォルダーにコピー</h4>
+<p>解凍されたbuildフォルダー下のclidriverフォルダーとその中のすべてのファイルをSDIインストールしたフォルダーにコピーします。</p>
+<p><img src="../img/db2_copy.png" alt="" title="">  </p>
+<p>SDIデフォルトインストールフォルダー：<code>C:\Program Files\RiCCT\SimpleDataIntegrator</code></p>
+<h4 id="step4-3-path">Step4-3 : Path追加</h4>
+<p>管理者権限でコマンドプロンプトを起動します。<br />
+下記のコマンドを実行。</p>
+<div class="highlight"><pre><span></span><code>setx /M path &quot;%path%;C:\Program Files\RiCCT\SimpleDataIntegrator\clidriver\bin&quot;
+</code></pre></div>
                 
               
               
@@ -1171,6 +1390,41 @@
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="フッター">
+      
+        
+        <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="前: ホーム" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                前
+              </span>
+              ホーム
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../setupsdiwebservice/" class="md-footer__link md-footer__link--next" aria-label="次: セットアップ手順" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                次
+              </span>
+              セットアップ手順
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
