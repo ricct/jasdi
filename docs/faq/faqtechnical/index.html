@@ -20,7 +20,7 @@
     
     
       
-        <title>テクニカル関連 FAQ - Simple Data Integrator</title>
+        <title>テクニカル関連 - Simple Data Integrator</title>
       
     
     
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              テクニカル関連 FAQ
+              テクニカル関連
             
           </span>
         </div>
@@ -234,13 +234,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../faqlicense/" class="md-tabs__link">
+      <a href="../faqlicense/" class="md-tabs__link md-tabs__link--active">
         FAQ
       </a>
     </li>
@@ -1142,12 +1144,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       
       
@@ -1173,6 +1177,62 @@
       <a href="../faqlicense/" class="md-nav__link">
         ライセンス関連
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          テクニカル関連
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        テクニカル関連
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#q-sdilinux" class="md-nav__link">
+    Q: SDIはLinux環境動作しますか？
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1213,47 +1273,16 @@
                 
                 
                 <h1 id="faq">テクニカル関連 FAQ</h1>
-<h3 id="q">Q: ソースデータベースに存在する、ターゲットデータベースに存在しない型の対応方法を教えてください。。</h3>
-<p>要件に合わせる必要がありまが、下記の方法あります。
+<h3 id="q-sdilinux">Q: SDIはLinux環境動作しますか？</h3>
+<p>SDIはLinux環境動作しません。<br />
+動作環境の詳細につきまして、下記のページをご参照ください。<br />
+<a href="/userguide/systemarchitecture/">システム構成・動作環境</a></p>
+<!-- 
+### Q: ソースデータベースに存在する、ターゲットデータベースに存在しない型の対応方法を教えてください。。 
+要件に合わせる必要がありまが、下記の方法あります。
 例：
-DB2 の</p>
-<details>
-<summary>Get 'connection request timed out' or 'ORA-00542: Failure during SSL handshake' while connect to Oracle Autonomous Database.</summary>
-Enable Loading User Profiles for Web Apps.<br />
-1. Open iis manager <br />
-
-2. Open 'Advanced settings' of the application pool.<br />
-<img src="../img/faqtechnical/tech010_1.png" alt="" title="" width="500"><br />
-
-3. Set 'Load User Profiles' to True.<br />
-<img src="../img/faqtechnical/tech010_2.png" alt="" title="" width="500"><br />
-
-4. Restart IIS.<br />
-
-</details>
-
-<details>
-<summary>Get '(413) Request Entity Too Large' error .</summary>
-You need to change maxReceivedMessageSize value in both Service and Client config files.<br />
-CDBC Service <br />
-Open web.config and change maxReceivedMessageSize in system.serviceModel session.<br />
-
-e.g.
-<div class="highlight"><pre><span></span><code>&lt;binding maxReceivedMessageSize=&quot;4194304&quot;&gt;
-</code></pre></div>
-
-
-CDBC Client<br />
-
-Open app.config and change maxReceivedMessageSize in system.serviceModel session.<br />
-
-e.g.
-<div class="highlight"><pre><span></span><code>  &lt;binding name=&quot;CdbcService&quot; maxReceivedMessageSize=&quot;4194304&quot;&gt;
-</code></pre></div>
-
-
-
-</details>
+DB2 の
+-->
                 
               
               
@@ -1274,6 +1303,41 @@ e.g.
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="フッター">
+      
+        
+        <a href="../faqlicense/" class="md-footer__link md-footer__link--prev" aria-label="前: ライセンス関連" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                前
+              </span>
+              ライセンス関連
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../languages/" class="md-footer__link md-footer__link--next" aria-label="次: Languages" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                次
+              </span>
+              Languages
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
