@@ -710,6 +710,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#aws-s3-amazon-simple-storage-service" class="md-nav__link">
+    AWS S3　（Amazon Simple Storage Service）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oci-object-storage" class="md-nav__link">
+    OCI Object Storage
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1356,6 +1370,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#aws-s3-amazon-simple-storage-service" class="md-nav__link">
+    AWS S3　（Amazon Simple Storage Service）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oci-object-storage" class="md-nav__link">
+    OCI Object Storage
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1378,7 +1406,7 @@
 <h2 id="_1">概要</h2>
 <p>CSV,Excelファイルから取り込み、CSV,Excelファイルへの出力機能があります。<br />
 CSV,Excelファイルを使用の際、ロケーションをファイルを選択、データタイプをCSV、Excelを選択してから詳細設定します。<br />
-ファイルシステム、FTP/FTPS、SFTPがサポートされています。</p>
+ファイルシステム、FTP/FTPS、SFTP、AWS S3 と OCI Object Storage がサポートされています。</p>
 <h2 id="_2">設定</h2>
 <h3 id="_3">ファイルシステム</h3>
 <p><img src="../img/connection_file_filesystem.png" alt="" title="" >  </p>
@@ -1496,6 +1524,87 @@ CSV,Excelファイルを使用の際、ロケーションをファイルを選�
 <td align="left">8</td>
 <td align="left">Folder</td>
 <td align="left">SFTP Folder</td>
+</tr>
+</tbody>
+</table>
+<h3 id="aws-s3-amazon-simple-storage-service">AWS S3　（Amazon Simple Storage Service）</h3>
+<p><img src="../img/connection_file_awss3.png" alt="" title="" >  </p>
+<table>
+<thead>
+<tr>
+<th align="left">No</th>
+<th align="left">項目</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">Storage Type</td>
+<td align="left">AWS S3 を選択</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">Credentials File</td>
+<td align="left">AWS Credentials Fileを指定</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">Profile</td>
+<td align="left">AWS Credentials Fileの中に使用するprofile名を入力。※大文字、小文字を区別する。</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">BucketName</td>
+<td align="left">S3 のBucketName名を入力</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">Folder</td>
+<td align="left">使用するフォルダーを入力。　※ルートディレクトリを使う場合空白にしてください。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="oci-object-storage">OCI Object Storage</h3>
+<p><img src="../img/connection_file_ocios.png" alt="" title="" >  </p>
+<table>
+<thead>
+<tr>
+<th align="left">No</th>
+<th align="left">項目</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">Storage Type</td>
+<td align="left">OCI Object Storage を選択</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">Configuration File</td>
+<td align="left">OCI Configuration Fileを指定</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">Profile</td>
+<td align="left">OCI Configuration Fileの中に使用するprofile名を入力。 ※大文字、小文字を区別する。</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">Namespace</td>
+<td align="left">OCI Object storagenoのNamespace名を入力</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">BucketName</td>
+<td align="left">OCI Object storage のBucketName名を入力</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">Folder</td>
+<td align="left">使用するフォルダーを入力。　※ルートディレクトリを使う場合空白にしてください。</td>
 </tr>
 </tbody>
 </table>
