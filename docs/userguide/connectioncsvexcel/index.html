@@ -1529,6 +1529,22 @@ CSV,Excelファイルを使用の際、ロケーションをファイルを選�
 </table>
 <h3 id="aws-s3-amazon-simple-storage-service">AWS S3　（Amazon Simple Storage Service）</h3>
 <p><img src="../img/connection_file_awss3.png" alt="" title="" >  </p>
+<div class="admonition note info">
+<p class="admonition-title"> AWS Credentials File作成の注意点 </p>
+<p>通常の場合、ODI Studioを実行するOSユーザーとワーカーエージェントを実行するOSユーザーが異なります。AWS Credentials Fileを両方のOSユーザーアクセスできるフォルダーに保存してください。<br />
+<mark>公式資料のデフォルトの構成ファイルの場所を使う場合、ワーカーエージェントがアクセスできない場合があります。</mark>  <br />
+  参考資料：<a href="https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/cli-configure-profiles.html" target="_blank">AWS CLI の名前付きプロファイル</a></p>
+</div>
+<p>AWS認証情報プロファイル例：</p>
+<div class="highlight"><pre><span></span><code>[default]
+aws_access_key_id=AKIAIOSFODNN7EXAMPLE
+aws_secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+region=ap-northeast-1
+[user1]
+aws_access_key_id=AKIAI44QH8DHBEXAMPLE
+aws_secret_access_key=je7MtGbClwBF/2Zp9Utk/h3yCo8nvbEXAMPLEKEY
+region=ap-northeast-1
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -1567,6 +1583,26 @@ CSV,Excelファイルを使用の際、ロケーションをファイルを選�
 </table>
 <h3 id="oci-object-storage">OCI Object Storage</h3>
 <p><img src="../img/connection_file_ocios.png" alt="" title="" >  </p>
+<div class="admonition note info">
+<p class="admonition-title"> OCI Configuration File作成の注意点 </p>
+<p>通常の場合、ODI Studioを実行するOSユーザーとワーカーエージェントを実行するOSユーザーが異なります。OCI Configuration Fileを両方のOSユーザーアクセスできるフォルダーに保存してください。<br />
+<mark>公式資料のデフォルトの構成ファイルの場所を使う場合、ワーカーエージェントがアクセスできない場合があります。</mark>  <br />
+  参考資料：<a href="https://docs.oracle.com/ja-jp/iaas/Content/API/Concepts/sdkconfig.htm" target="_blank">CLIの構成ファイル</a></p>
+</div>
+<p>OCI Configuration File例：</p>
+<div class="highlight"><pre><span></span><code>[default]
+user=ocid1.user.oc1..aaaaaaaamaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+fingerprint=a8:63:a7:a2:89:a9:a3:98:a0:aa:a4:20:a7:ab:0a:0a
+tenancy=ocid1.tenancy.oc1..aaaaaaaamaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+region=ap-tokyo-1
+key_file=C:\keys\oci\test_1.pem
+[user1]
+user=ocid1.user.oc1..bbbbbbbbmbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+fingerprint=b8:63:b7:b2:89:b9:b3:98:b0:bb:b4:20:b7:bb:0b:0b
+tenancy=ocid1.tenancy.oc1..aaaaaaaamaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+region=ap-tokyo-1
+key_file=C:\keys\oci\test_2.pem
+</code></pre></div>
 <table>
 <thead>
 <tr>
