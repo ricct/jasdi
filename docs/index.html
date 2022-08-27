@@ -10,7 +10,7 @@
       
       
       
-        <meta name="author" content="RiCCT">
+        <meta name="author" content="Research Institute of Cloud Computing Technology(RiCCT)">
       
       
         <link rel="canonical" href="https://ja.sdi.ricct.com/">
@@ -317,9 +317,55 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          ホーム
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="." class="md-nav__link md-nav__link--active">
         ホーム
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    主要機能
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    特徴
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    ユースケース
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1235,7 +1281,7 @@
               
                 
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1247,6 +1293,35 @@
   
     
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    主要機能
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    特徴
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    ユースケース
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1266,8 +1341,8 @@
 ファイルのインポート元、エクスポート先につきましてファイルシステム、FTP/FTPS、SFTP、AWS S3、OCI Object Storageなどはサポートされています。<br />
 指定された時間のデータ自動連携を設定できるスケジューラー機能が用意されています。<br />
 特徴としてProxy 機能を持つSDI Web Serviceが用意されています、離れた拠点間、インターネット回線を使って、セキュアにデータ連携の実現が可能です。（VPNや専用線の構築は必須ではないです。）</p>
-<h1 id="_2">主要機能</h1>
-<h3 id="_3">データ連携 (マッピング)</h3>
+<h2 id="_2">主要機能</h2>
+<h4 id="_3">データ連携 (マッピング)</h4>
 <ul>
 <li><img src="../img/fdb2db.png" alt="" title="" width="50" />　ソースDBのテーブル,ビュー,クエリからターゲットDBのテーブルへのデータ転送</li>
 <li><img src="../img/fexcel2db.png" alt="" title="" width="50" />　CSV,EXCELからターゲットDBのテーブルへのデータインポート</li>
@@ -1276,33 +1351,54 @@
 <li><img src="../img/fworkflow.png" alt="" title="" width="50" />　ワークフロー </li>
 <li><img src="../img/fnotification.png" alt="" title="" width="50" />　実行結果メール、イベント通知  </li>
 </ul>
-<h3 id="_4">マッピング機能活用</h3>
+<h4 id="_4">マッピング機能活用</h4>
 <ul>
 <li><img src="../img/fdbmonitor.png" alt="" title="" width="50" />　データベース可用性監視</li>
 <li><img src="../img/fdatacheck.png" alt="" title="" width="50" />　データの監視、検知 (イレギュラーデータやデータの欠落、不整合などの検知）</li>
 </ul>
-<h3 id="_5">スケジューラー</h3>
+<h4 id="_5">スケジューラー</h4>
 <ul>
 <li><img src="../img/fschedule.png" alt="" title="" width="50" />　毎時、毎日特定の時刻、週単位、月次、リピート実行のスケジューラー設定  </li>
 <li><img src="../img/sschedulerexecuteseq.png" alt="" title="" width="50" />　 複数タスクのパラレル、シリアル実行  </li>
 <li><img src="../img/fretry.png" alt="" title="" width="50" />　リトライ機能  </li>
 </ul>
-<h1 id="_6">特徴</h1>
-<h3 id="1">1．シンプルな設計、簡単な操作、強力な機能</h3>
+<h2 id="_6">特徴</h2>
+<h4 id="1">1．シンプルな設計、簡単な操作、強力な機能</h4>
 <p>数クリックでインストール完了。
 わずか３ステップでデータ連携、スケジューラ設定完了。<br />
 シンプルなテーブルマッピングから複雑なクエリ、ワークフローまで対応できる。  </p>
 <p><img src="../img/features1.png" alt="" title=""  width="700" /></p>
-<h3 id="2">2.ハイパフォーマンス</h3>
+<h4 id="2">2.ハイパフォーマンス</h4>
 <p>パラレル、インメモリ、圧縮転送などのアーキテクチャを採用、高速連携実現。  </p>
 <p><img src="../img/features2.png" alt="" title=""  width="700" /></p>
-<h3 id="3">3.あらゆる要件に容易に対応、構成できる</h3>
+<h4 id="3">3.あらゆる要件に容易に対応、構成できる</h4>
 <p>オンプレミス、クラウドおよびハイブリッドクラウドなどのあらゆる構成、要件に対応可能。<br />
 クラウドと連携する際，VPN構築しなくてもSDI Web Serviceを経由してセキュアな連携（SSL）可能。  </p>
 <p><img src="../img/features3.png" alt="" title=""  width="700" /></p>
-<h3 id="4">4.柔軟な可用性向上対策</h3>
+<h4 id="4">4.柔軟な可用性向上対策</h4>
 <p>コールドスタンバイや自動フェイルオーバー機能実装され、システム要件や重要性に応じた柔軟な対策が可能。</p>
 <p><img src="../img/features4.png" alt="" title=""  width="700" /></p>
+<h2 id="_7">ユースケース</h2>
+<h4 id="_8">社内システム間データ連携</h4>
+<p>企業内の様々なシステム間異なるフォーマットのデータを連携します。</p>
+<p><img src="../img/case1.png" alt="" title=""  width="480" /></p>
+<h4 id="_9">複数拠点のデータ一元管理</h4>
+<p>複数拠点展開する企業のデータ一元管理、データ活用。</p>
+<p><img src="../img/case2.png" alt="" title=""  width="480" /></p>
+<h4 id="_10">オンプレミスとクラウド、マルチクラウド間のデータ双方向連携</h4>
+<p>拠点と拠点、拠点とクラウド間柔軟な接続設計、双方向データ連携が可能です。  </p>
+<p>オンプレミスとクラウド<br />
+<img src="../img/case3_1.png" alt="" title=""  width="480" />  </p>
+<p>マルチクラウド間データ連携<br />
+<img src="../img/case3_2.png" alt="" title=""  width="480" />  </p>
+<h4 id="csvexcel">CSV/Excel ファイルを定期的に自動作成・自動取り込み</h4>
+<p>CSV/Excel ファイルを定期的に自動作成・自動取り込み<br />
+（ファイルシステム、FTP/FTPS/SFTP/AWS S3/OCI Object Storageを対応）<br />
+<img src="../img/case4.png" alt="" title=""  width="480" />  </p>
+<h4 id="_11">データベース可用性監視、 不整合データの検知</h4>
+<p>データベースの可用性監視、イレギュラーデータや欠落データ、不整合データなどを検知、通知することができます。<br />
+※SDI WEB Service経由してリモートデータベースの監視も可能です。  </p>
+<p><img src="../img/case5.png" alt="" title=""  width="480" />  </p>
                 
                   
                 
