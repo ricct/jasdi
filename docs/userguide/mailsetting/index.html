@@ -1068,7 +1068,7 @@
         
           <li class="md-nav__item">
   <a href="#_9" class="md-nav__link">
-    サンプルメールテンプレート：
+    サンプルメールテンプレート
   </a>
   
 </li>
@@ -1393,7 +1393,7 @@
         
           <li class="md-nav__item">
   <a href="#_9" class="md-nav__link">
-    サンプルメールテンプレート：
+    サンプルメールテンプレート
   </a>
   
 </li>
@@ -1599,13 +1599,13 @@
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">{SchedulerName}</td>
-<td align="left">スケジューラー名</td>
+<td align="left">{SchedulerId}</td>
+<td align="left">スケジューラーID</td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">{Summary}</td>
-<td align="left">システムから送信時、内容のサマリー</td>
+<td align="left">{SchedulerName}</td>
+<td align="left">スケジューラー名</td>
 <td align="left"></td>
 </tr>
 <tr>
@@ -1635,15 +1635,20 @@
 </tr>
 </tbody>
 </table>
-<h3 id="_9">サンプルメールテンプレート：</h3>
-<h4 id="_10">ワーニングサンプルメールテンプレート</h4>
+<h3 id="_9">サンプルメールテンプレート</h3>
+<h4 id="_10">エラーサンプルメールテンプレート</h4>
 <p>件名：</p>
-<div class="highlight"><pre><span></span><code>SDI Warning : {Summary}
+<div class="highlight"><pre><span></span><code>SDI Error {DateTime}
 </code></pre></div>
 <p>本文：</p>
-<div class="highlight"><pre><span></span><code>SDI ワーニング発生しました。
-メッセージ：
-{Message}
+<div class="highlight"><pre><span></span><code>SDI エラーが発生しました。
+
+エージェント名: {WorkerAgentName}
+スケジューラー名：{SchedulerName}
+マッピング名: {MappingName}
+
+エラーメッセージ：
+{ErrorMessage}
 
 {DateTime}
 </code></pre></div>
