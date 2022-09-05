@@ -343,21 +343,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     主要機能
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     特徴
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     ユースケース
   </a>
   
@@ -1301,21 +1301,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     主要機能
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     特徴
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     ユースケース
   </a>
   
@@ -1335,14 +1335,17 @@
                 
                 
                 <h1 id="_1">概要</h1>
-<p>Simple Data Integrator (SDI) はデータベース間のデータを連携するソフトウェアです。  </p>
+<p>Simple Data Integrator (SDI) はデータベース間のデータを連携するソフトウェア(ETL)です。  </p>
+<h4 id="_2">同一拠点内データ連携</h4>
 <p><img src="../img/sdi1.gif" alt="" title="" width="700" /></p>
+<h4 id="_3">複数拠点間データ連携</h4>
+<p><img src="../img/sdi2.gif" alt="" title="" width="700" /></p>
 <p>Oracle ,SQL Server ,MySql , PostgreSql ,DB2 , ODBC接続できるDBなどのRDB間のデータ連携、ファイル（CSV,Excel）からRDBへのインポート、RDBからファイルへのエクスポートなど実現できます。<br />
 ファイルのインポート元、エクスポート先につきましてファイルシステム、FTP/FTPS、SFTP、AWS S3、OCI Object Storageなどはサポートされています。<br />
 指定された時間のデータ自動連携を設定できるスケジューラー機能が用意されています。<br />
 特徴としてProxy 機能を持つSDI Web Serviceが用意されています、離れた拠点間、インターネット回線を使って、セキュアにデータ連携の実現が可能です。（VPNや専用線の構築は必須ではないです。）</p>
-<h2 id="_2">主要機能</h2>
-<h4 id="_3">データ連携 (マッピング)</h4>
+<h2 id="_4">主要機能</h2>
+<h4 id="_5">データ連携 (マッピング)</h4>
 <ul>
 <li><img src="../img/fdb2db.png" alt="" title="" width="50" />　ソースDBのテーブル,ビュー,クエリからターゲットDBのテーブルへのデータ転送</li>
 <li><img src="../img/fexcel2db.png" alt="" title="" width="50" />　CSV,EXCELからターゲットDBのテーブルへのデータインポート</li>
@@ -1351,18 +1354,18 @@
 <li><img src="../img/fworkflow.png" alt="" title="" width="50" />　ワークフロー </li>
 <li><img src="../img/fnotification.png" alt="" title="" width="50" />　実行結果メール、イベント通知  </li>
 </ul>
-<h4 id="_4">マッピング機能活用</h4>
+<h4 id="_6">マッピング機能活用</h4>
 <ul>
 <li><img src="../img/fdbmonitor.png" alt="" title="" width="50" />　データベース可用性監視</li>
 <li><img src="../img/fdatacheck.png" alt="" title="" width="50" />　データの監視、検知 (イレギュラーデータやデータの欠落、不整合などの検知）</li>
 </ul>
-<h4 id="_5">スケジューラー</h4>
+<h4 id="_7">スケジューラー</h4>
 <ul>
 <li><img src="../img/fschedule.png" alt="" title="" width="50" />　毎時、毎日特定の時刻、週単位、月次、リピート実行のスケジューラー設定  </li>
 <li><img src="../img/sschedulerexecuteseq.png" alt="" title="" width="50" />　 複数タスクのパラレル、シリアル実行  </li>
 <li><img src="../img/fretry.png" alt="" title="" width="50" />　リトライ機能  </li>
 </ul>
-<h2 id="_6">特徴</h2>
+<h2 id="_8">特徴</h2>
 <h4 id="1">1．シンプルな設計、簡単な操作、強力な機能</h4>
 <p>数クリックでインストール完了。
 わずか３ステップでデータ連携、スケジューラ設定完了。<br />
@@ -1378,14 +1381,14 @@
 <h4 id="4">4.柔軟な可用性向上対策</h4>
 <p>コールドスタンバイや自動フェイルオーバー機能実装され、システム要件や重要性に応じた柔軟な対策が可能。</p>
 <p><img src="../img/features4.png" alt="" title=""  width="700" /></p>
-<h2 id="_7">ユースケース</h2>
-<h4 id="_8">社内システム間データ連携</h4>
+<h2 id="_9">ユースケース</h2>
+<h4 id="_10">社内システム間データ連携</h4>
 <p>企業内の様々なシステム間異なるフォーマットのデータを連携します。</p>
 <p><img src="../img/case1.png" alt="" title=""  width="480" /></p>
-<h4 id="_9">複数拠点のデータ一元管理</h4>
+<h4 id="_11">複数拠点のデータ一元管理</h4>
 <p>複数拠点展開する企業のデータ一元管理、データ活用。</p>
 <p><img src="../img/case2.png" alt="" title=""  width="480" /></p>
-<h4 id="_10">オンプレミスとクラウド、マルチクラウド間のデータ双方向連携</h4>
+<h4 id="_12">オンプレミスとクラウド、マルチクラウド間のデータ双方向連携</h4>
 <p>拠点と拠点、拠点とクラウド間柔軟な接続設計、双方向データ連携が可能です。  </p>
 <p>オンプレミスとクラウド<br />
 <img src="../img/case3_1.png" alt="" title=""  width="480" />  </p>
@@ -1395,7 +1398,7 @@
 <p>CSV/Excel ファイルを定期的に自動作成・自動取り込み<br />
 （ファイルシステム、FTP/FTPS/SFTP/AWS S3/OCI Object Storageを対応）<br />
 <img src="../img/case4.png" alt="" title=""  width="480" />  </p>
-<h4 id="_11">データベース可用性監視、 不整合データの検知</h4>
+<h4 id="_13">データベース可用性監視、 不整合データの検知</h4>
 <p>データベースの可用性監視、イレギュラーデータや欠落データ、不整合データなどを検知、通知することができます。<br />
 ※SDI WEB Service経由してリモートデータベースの監視も可能です。  </p>
 <p><img src="../img/case5.png" alt="" title=""  width="480" />  </p>
