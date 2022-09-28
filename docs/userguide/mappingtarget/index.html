@@ -360,22 +360,36 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../start/sdiupgrade/" class="md-nav__link">
+        SDIバージョンアップ手順
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_2">
+        <label class="md-nav__link" for="__nav_2_3">
           SDI Web Service
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="SDI Web Service" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_2">
+        <label class="md-nav__title" for="__nav_2_3">
           <span class="md-nav__icon md-icon"></span>
           SDI Web Service
         </label>
@@ -639,7 +653,7 @@
   
     <li class="md-nav__item">
       <a href="../connectioncsvexcel/" class="md-nav__link">
-        CSV、Excelファイル
+        ファイル
       </a>
     </li>
   
@@ -780,21 +794,28 @@
         
           <li class="md-nav__item">
   <a href="#rdb" class="md-nav__link">
-    RDBの場合
+    RDB
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#csv" class="md-nav__link">
-    CSVの場合
+    CSVファイル
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#excel" class="md-nav__link">
-    Excelの場合
+    Excelファイル
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    JSONファイル
   </a>
   
 </li>
@@ -1337,21 +1358,28 @@
         
           <li class="md-nav__item">
   <a href="#rdb" class="md-nav__link">
-    RDBの場合
+    RDB
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#csv" class="md-nav__link">
-    CSVの場合
+    CSVファイル
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#excel" class="md-nav__link">
-    Excelの場合
+    Excelファイル
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    JSONファイル
   </a>
   
 </li>
@@ -1380,7 +1408,7 @@
 ※ターゲットデータへの接続設定は事前にコネクション設定画面で行います。</p>
 <h2 id="_3">設定</h2>
 <p><img src="../img/mapping_target.png" alt="" title="" width="500" ></p>
-<h3 id="rdb">RDBの場合</h3>
+<h3 id="rdb">RDB</h3>
 <p><img src="../img/mapping_target_rdb.png" alt="" title="" width="500" ></p>
 <table>
 <thead>
@@ -1413,7 +1441,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="csv">CSVの場合</h3>
+<h3 id="csv">CSVファイル</h3>
 <p><img src="../img/mapping_target_csv.png" alt="" title="" width="500" ></p>
 <table>
 <thead>
@@ -1451,7 +1479,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="excel">Excelの場合</h3>
+<h3 id="excel">Excelファイル</h3>
 <p><img src="../img/mapping_target_excel.png" alt="" title="" width="500" ></p>
 <table>
 <thead>
@@ -1466,6 +1494,24 @@
 <td align="left">10</td>
 <td align="left">Excelファイル名</td>
 <td align="left">出力のExcelファイル名指定できます。固定の名前とパターン設定の二種類の設定方法があります。<br />1. 固定の名前の場合、そのままExcelファイル名を入力してください。<br />2. パターン設定の場合、出力時刻をファイル名に入れることが可能です。 <br />例：<code>EMP{yyyyMMddHHmmss}.xlsx</code> に設定して、 2019年3月5日18:32:47出力の場合、ファイル名は <code>EMP20190305183247.xlsx</code> になります。<br />参考資料：<a href="https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/custom-date-and-time-format-strings" target="_blank">カスタム日時形式文字列</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="json">JSONファイル</h3>
+<p><img src="../img/mapping_target_json.png" alt="" title="" width="500" ></p>
+<table>
+<thead>
+<tr>
+<th align="left">No</th>
+<th align="left">項目</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">11</td>
+<td align="left">JSONファイル名</td>
+<td align="left">出力のJSONファイル名指定できます。固定の名前とパターン設定の二種類の設定方法があります。<br />1. 固定の名前の場合、そのままJSONファイル名を入力してください。<br />2. パターン設定の場合、出力時刻をファイル名に入れることが可能です。 <br />例：<code>EMP{yyyyMMddHHmmss}.json</code> に設定して、 2019年3月5日18:32:47出力の場合、ファイル名は <code>EMP20190305183247.json</code> になります。<br />参考資料：<a href="https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/custom-date-and-time-format-strings" target="_blank">カスタム日時形式文字列</a></td>
 </tr>
 </tbody>
 </table>
@@ -1576,6 +1622,8 @@
     
     
       <script src="../../assets/javascripts/bundle.b1047164.min.js"></script>
+      
+        <script src="../../javascripts/googlead.js"></script>
       
     
   </body>

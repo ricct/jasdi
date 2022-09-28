@@ -360,22 +360,36 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../start/sdiupgrade/" class="md-nav__link">
+        SDIバージョンアップ手順
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_2">
+        <label class="md-nav__link" for="__nav_2_3">
           SDI Web Service
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="SDI Web Service" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_2">
+        <label class="md-nav__title" for="__nav_2_3">
           <span class="md-nav__icon md-icon"></span>
           SDI Web Service
         </label>
@@ -639,7 +653,7 @@
   
     <li class="md-nav__item">
       <a href="../connectioncsvexcel/" class="md-nav__link">
-        CSV、Excelファイル
+        ファイル
       </a>
     </li>
   
@@ -766,21 +780,28 @@
         
           <li class="md-nav__item">
   <a href="#rdb" class="md-nav__link">
-    RDBの場合
+    RDB
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#csv" class="md-nav__link">
-    CSVの場合
+    CSVファイル
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#excel" class="md-nav__link">
-    Excelの場合
+    Excelファイル
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    JSONファイル
   </a>
   
 </li>
@@ -1337,21 +1358,28 @@
         
           <li class="md-nav__item">
   <a href="#rdb" class="md-nav__link">
-    RDBの場合
+    RDB
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#csv" class="md-nav__link">
-    CSVの場合
+    CSVファイル
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#excel" class="md-nav__link">
-    Excelの場合
+    Excelファイル
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    JSONファイル
   </a>
   
 </li>
@@ -1380,7 +1408,8 @@
 ※ソースデータへの接続設定は事前にコネクション設定画面で行います。</p>
 <h2 id="_3">設定</h2>
 <p><img src="../img/mapping_source.png" alt="" title="" width="500" ></p>
-<h3 id="rdb">RDBの場合</h3>
+<h3 id="rdb">RDB</h3>
+<h4 id="_4">テーブル</h4>
 <p><img src="../img/mapping_source_rdb.png" alt="" title="" width="500" ></p>
 <table>
 <thead>
@@ -1418,6 +1447,7 @@
 </tr>
 </tbody>
 </table>
+<h4 id="_5">クエリ</h4>
 <p><img src="../img/mapping_source_rdb2.png" alt="" title="" width="500" ></p>
 <table>
 <thead>
@@ -1440,7 +1470,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="csv">CSVの場合</h3>
+<h3 id="csv">CSVファイル</h3>
 <p><img src="../img/mapping_source_csv.png" alt="" title="" width="500" ></p>
 <table>
 <thead>
@@ -1454,7 +1484,7 @@
 <tr>
 <td align="left">8</td>
 <td align="left">CSVファイル名</td>
-<td align="left">コネクションをCSVフォルダー選択された場合、CSVファイル一覧表示されます、リストの中でが該当するファイルを選択してください。</td>
+<td align="left">コネクションがCSVフォルダー選択された場合、CSVファイル一覧表示されます、リストの中でが該当するファイルを選択してください。</td>
 </tr>
 <tr>
 <td align="left">9</td>
@@ -1473,7 +1503,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="excel">Excelの場合</h3>
+<h3 id="excel">Excelファイル</h3>
 <p><img src="../img/mapping_source_excel.png" alt="" title="" width="500" ></p>
 <table>
 <thead>
@@ -1487,7 +1517,7 @@
 <tr>
 <td align="left">11</td>
 <td align="left">Excelファイル名</td>
-<td align="left">コネクションをExcelフォルダー選択された場合、Excelファイル一覧表示されます、リストの中でが該当するファイルを選択してください。</td>
+<td align="left">コネクションがExcelフォルダー選択された場合、Excelファイル一覧表示されます、リストの中でが該当するファイルを選択してください。</td>
 </tr>
 <tr>
 <td align="left">12</td>
@@ -1503,6 +1533,24 @@
 <td align="left">14</td>
 <td align="left">ヘッダー行あり</td>
 <td align="left">ヘッダー行の有無を選択します。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="json">JSONファイル</h3>
+<p><img src="../img/mapping_source_json.png" alt="" title="" width="500" ></p>
+<table>
+<thead>
+<tr>
+<th align="left">No</th>
+<th align="left">項目</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">15</td>
+<td align="left">JSONファイル名</td>
+<td align="left">コネクションがJSONフォルダー選択された場合、JSONファイル一覧表示されます、リストの中でが該当するファイルを選択してください。</td>
 </tr>
 </tbody>
 </table>
@@ -1613,6 +1661,8 @@
     
     
       <script src="../../assets/javascripts/bundle.b1047164.min.js"></script>
+      
+        <script src="../../javascripts/googlead.js"></script>
       
     
   </body>

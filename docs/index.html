@@ -418,22 +418,36 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="start/sdiupgrade/" class="md-nav__link">
+        SDIバージョンアップ手順
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_2">
+        <label class="md-nav__link" for="__nav_2_3">
           SDI Web Service
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="SDI Web Service" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_2">
+        <label class="md-nav__title" for="__nav_2_3">
           <span class="md-nav__icon md-icon"></span>
           SDI Web Service
         </label>
@@ -695,7 +709,7 @@
   
     <li class="md-nav__item">
       <a href="userguide/connectioncsvexcel/" class="md-nav__link">
-        CSV、Excelファイル
+        ファイル
       </a>
     </li>
   
@@ -1340,16 +1354,16 @@
 <p><img src="../img/sdi1.gif" alt="" title="" width="700" /></p>
 <h4 id="_3">複数拠点間データ連携</h4>
 <p><img src="../img/sdi2.gif" alt="" title="" width="700" /></p>
-<p>Oracle ,SQL Server ,MySql , PostgreSql ,DB2 , ODBC接続できるDBなどのRDB間のデータ連携、ファイル（CSV,Excel）からRDBへのインポート、RDBからファイルへのエクスポートなどは実現できます。<br />
+<p>Oracle ,SQL Server ,MySql , PostgreSql ,DB2 , ODBC接続できるDBなどのRDB間のデータ連携、ファイル（CSV,Excel,JSON）からRDBへのインポート、RDBからファイルへのエクスポートなどは実現できます。<br />
 ファイルのインポート元、エクスポート先につきましてファイルシステム、FTP/FTPS、SFTP、AWS S3、OCI Object Storageなどはサポートされています。<br />
 指定された時間のデータ自動連携を設定できるスケジューラー機能が用意されています。<br />
-特徴としてProxy 機能を持つSDI Web Serviceが用意されています、離れた拠点間、インターネット回線を使って、セキュアにデータ連携の実現が可能です。（VPNや専用線の構築は必須ではないです。）</p>
+特徴としてProxy 機能を持つSDI Web Serviceが用意され、離れた拠点間、インターネット回線を使って、セキュアにデータ連携の実現が可能です。（VPNや専用線の構築は必須ではないです。）</p>
 <h2 id="_4">主要機能</h2>
 <h4 id="_5">データ連携 (マッピング)</h4>
 <ul>
 <li><img src="../img/fdb2db.png" alt="" title="" width="50" />　ソースDBのテーブル,ビュー,クエリからターゲットDBのテーブルへのデータ転送</li>
-<li><img src="../img/fexcel2db.png" alt="" title="" width="50" />　CSV,EXCELからターゲットDBのテーブルへのデータインポート</li>
-<li><img src="../img/fdb2excel.png" alt="" title="" width="50" />　ソースDBのテーブル,ビュー,クエリからCSV,EXCELファイルへのデータエクスポート  </li>
+<li><img src="../img/ffile2db.png" alt="" title="" width="50" />　CSV,EXCEL,JSONからターゲットDBのテーブルへのデータインポート</li>
+<li><img src="../img/fdb2file.png" alt="" title="" width="50" />　ソースDBのテーブル,ビュー,クエリからCSV,EXCEL,JSONファイルへのデータエクスポート  </li>
 <li><img src="../img/fexesql.png" alt="" title="" width="50" />　SQL、Procedureの実行  </li>
 <li><img src="../img/fworkflow.png" alt="" title="" width="50" />　ワークフロー </li>
 <li><img src="../img/fnotification.png" alt="" title="" width="50" />　実行結果メール、イベント通知  </li>
@@ -1394,8 +1408,8 @@
 <img src="../img/case3_1.png" alt="" title=""  width="480" />  </p>
 <p>マルチクラウド間データ連携<br />
 <img src="../img/case3_2.png" alt="" title=""  width="480" />  </p>
-<h4 id="csvexcel">CSV/Excel ファイルを定期的に自動作成・自動取り込み</h4>
-<p>CSV/Excel ファイルを定期的に自動作成・自動取り込み<br />
+<h4 id="csvexceljson">CSV,Excel,JSON ファイルを定期的に自動作成・自動取り込み</h4>
+<p>CSV,Excel,JSON ファイルを定期的に自動作成・自動取り込み<br />
 （ファイルシステム、FTP/FTPS/SFTP/AWS S3/OCI Object Storageを対応）<br />
 <img src="../img/case4.png" alt="" title=""  width="480" />  </p>
 <h4 id="_13">データベース可用性監視、 不整合データの検知</h4>
@@ -1404,7 +1418,8 @@
 <p><img src="../img/case5.png" alt="" title=""  width="480" />  </p>
 <div class="admonition note info">
 <p class="admonition-title">本サイトコンテンツの引用・転載について</p>
-<p>本サイトに掲載・公開している文章、画像、動画等の著作物のコピー利用、配布、変更の追加、変更を加えたもの再配布、商用利用、有料販売など、どなたも自由にお使いいただくことができます。     </p>
+<p>本サイトに掲載・公開している文章、画像、動画等の著作物のコピー利用、配布、変更の追加、変更を加えたもの再配布、商用利用、有料販売など、どなたも
+<mark>自由にお使いいただくことができます</mark>。     </p>
 </div>
                 
                   
@@ -1500,6 +1515,8 @@
     
     
       <script src="assets/javascripts/bundle.b1047164.min.js"></script>
+      
+        <script src="javascripts/googlead.js"></script>
       
     
   </body>
