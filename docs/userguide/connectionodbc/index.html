@@ -1404,7 +1404,7 @@
                 
                 <h1 id="odbc">ODBC コネクション設定</h1>
 <h2 id="_1">概要</h2>
-<p>ODBC経由データベースに接続の際、ロケーションをダイレクト接続を選択、データタイプをODBCを選択してから詳細設定します。</p>
+<p>ODBC経由でデータベースに接続する際には、ロケーションをダイレクト接続に設定し、データタイプをODBCに指定した後、詳細設定を行います。</p>
 <h2 id="_2">設定</h2>
 <h3 id="basic">Basic</h3>
 <p><img src="../img/connection_odbc_basic.png" alt="" title="" >  </p>
@@ -1440,17 +1440,17 @@
 <tr>
 <td align="left">5</td>
 <td align="left">Default Schema</td>
-<td align="left">Default Schema指定された場合、マッピング設定の際、指定されたスキーマのテーブル、ビューがリストされます。<br/> 空白の場合、アクセスできるすべてのテーブル、ビューがリストされます。</td>
+<td align="left">Default Schemaが指定された場合、マッピング設定時に指定されたスキーマ内のテーブルとビューがリストされます。<br />Default Schemaが空白の場合、アクセス可能なすべてのテーブルとビューがリストされます。</td>
 </tr>
 <tr>
 <td align="left">6</td>
 <td align="left">Transaction Supported</td>
-<td align="left">データベースによって、ODBC接続する際トランザクションステートメントをサポートされない場合があります。その際、Transaction Supportedをoffに設定する必要があります。 <br/>例：Bigquery</td>
+<td align="left">トランザクションステートメントのサポート設定<br />※一部のデータベースはODBC接続時にトランザクションステートメントをサポートしていないことがあります。この場合、Transaction Supportedをオフに設定する必要があります。 <br/>例：Bigquery</td>
 </tr>
 </tbody>
 </table>
 <h3 id="odbc-connection-string">ODBC Connection String</h3>
-<p>SDIはSystem.Data.Odbc使ってODBC経由してデータベースに接続します。ODBC Connection Stringを直接入力して接続する方法です。</p>
+<p>SDIは<a href="https://learn.microsoft.com/ja-jp/dotnet/api/system.data.odbc" target="_blank">System.Data.Odbc</a>アーキテクチャを採用し、ODBCを介してデータベースに接続します。接続時にはODBC Connection Stringを直接入力して使用できます。</p>
 <p><img src="../img/connection_odbc_connectionstring.png" alt="" title="" width ="500" >  </p>
 <table>
 <thead>
@@ -1469,7 +1469,7 @@
 <tr>
 <td align="left">2</td>
 <td align="left">ODBC Connection String</td>
-<td align="left">ODBC Connection Stringの詳細を入力してください。 <br / > ※ユーザー、パスワードの情報をConnection Stringに入力しないでください。 <br />  参考資料：<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.data.odbc.odbcconnection.connectionstring?view=dotnet-plat-ext-6.0" target="_blank">OdbcConnection.ConnectionString プロパティ </a></td>
+<td align="left">ODBC Connection Stringの詳細情報を入力してください。<br / >なお、ユーザー名やパスワードなどの情報はConnection Stringに含めないようにしてください。 <br />  参考資料：<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.data.odbc.odbcconnection.connectionstring" target="_blank">OdbcConnection.ConnectionString プロパティ </a></td>
 </tr>
 </tbody>
 </table>
