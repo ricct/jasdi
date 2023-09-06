@@ -887,7 +887,21 @@
   
     <li class="md-nav__item">
       <a href="userguide/schedulefrequency/" class="md-nav__link">
-        実行頻度、開始時間
+        スケジュールに従う起動
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="userguide/schedulefiletrigger/" class="md-nav__link">
+        ファイルトリガーによる起動
       </a>
     </li>
   
@@ -1363,79 +1377,79 @@
                 
                 
                 <h1 id="_1">概要</h1>
-<p>Simple Data Integrator (SDI) はデータベース間のデータを連携するソフトウェア(ETL)です。  </p>
+<p>Simple Data Integrator (SDI) は、異なるデータベース間でデータを連携し、変換、抽出、ロード（ETL）を実行するためのソフトウェアです。SDIはデータの移動と変換プロセスを自動化し、異なるデータソース間でデータの一貫性を確保します。  </p>
 <h4 id="_2">同一拠点内データ連携</h4>
 <p><img src="../img/sdi1.gif" alt="" title="" width="700" /></p>
 <h4 id="_3">複数拠点間データ連携</h4>
 <p><img src="../img/sdi2.gif" alt="" title="" width="700" /></p>
-<p>Oracle ,SQL Server ,MySql , PostgreSql ,DB2 , ODBC接続できるDBなどのRDB間のデータ連携、ファイル（CSV,Excel,JSON）からRDBへのインポート、RDBからファイルへのエクスポートなどの機能があります。<br />
-ファイルのインポート元、エクスポート先につきましてファイルシステム、FTP/FTPS、SFTP、AWS S3、OCI Object Storageなどはサポートされています。<br />
-指定された時間のデータ自動連携を設定できるスケジューラー機能が用意されています。<br />
-特徴としてProxy 機能を持つSDI Web Serviceが用意され、離れた拠点間、インターネット回線を使って、セキュアにデータ連携の実現が可能です。（VPNや専用線の構築は必須ではないです。）</p>
+<p>Oracle、SQL Server、MySQL、PostgreSQL、DB2、ODBC接続が可能なデータベースなど、RDB (関係データベース) 間でのデータ連携や、ファイル（CSV、Excel、JSON）からRDBへのデータインポート、RDBからファイルへのデータエクスポートなどの機能が提供されています。<br />
+また、ファイルのインポート元やエクスポート先には、ファイルシステム、FTP/FTPS、SFTP、AWS S3、OCI Object Storage などがサポートされています。<br />
+さらに、特定の時間にデータの自動連携を設定したり、ファイルの変更をトリガーにして起動することができるスケジューラー機能も提供されています。<br />
+また、Proxy機能を備えたSDI Web Serviceも特徴として提供されており、離れた場所間やインターネット回線を利用してセキュアにデータ連携を実現することが可能です。なお、VPNや専用線の構築は必須ではありません。</p>
 <h2 id="_4">主要機能</h2>
 <h4 id="_5">データ連携 (マッピング)</h4>
 <ul>
-<li><img src="../img/fdb2db.png" alt="" title="" width="50" />　ソースDBのテーブル,ビュー,クエリからターゲットDBのテーブルへのデータ転送</li>
-<li><img src="../img/ffile2db.png" alt="" title="" width="50" />　CSV,EXCEL,JSONからターゲットDBのテーブルへのデータインポート</li>
-<li><img src="../img/fdb2file.png" alt="" title="" width="50" />　ソースDBのテーブル,ビュー,クエリからCSV,EXCEL,JSONファイルへのデータエクスポート  </li>
-<li><img src="../img/fexesql.png" alt="" title="" width="50" />　SQL、Procedureの実行  </li>
-<li><img src="../img/fworkflow.png" alt="" title="" width="50" />　ワークフロー </li>
-<li><img src="../img/fnotification.png" alt="" title="" width="50" />　実行結果メール、イベント通知  </li>
+<li><img src="../img/fdb2db.png" alt="" title="" width="50" />　ソースDBのテーブル、ビュー、またはクエリからターゲットDBのテーブルへデータを転送する作業</li>
+<li><img src="../img/ffile2db.png" alt="" title="" width="50" />　CSV、Excel、JSONなどのフォーマットから、ターゲットDBのテーブルにデータをインポートする</li>
+<li><img src="../img/fdb2file.png" alt="" title="" width="50" />　ソースDBのテーブル、ビュー、またはクエリからCSV、Excel、JSONなどのフォーマットでデータをエクスポートする  </li>
+<li><img src="../img/fexesql.png" alt="" title="" width="50" />　SQLクエリやプロシージャの実行  </li>
+<li><img src="../img/fworkflow.png" alt="" title="" width="50" />　ワークフロー機能</li>
+<li><img src="../img/fnotification.png" alt="" title="" width="50" />　実行結果のメール通知やイベント通知  </li>
 </ul>
 <h4 id="_6">マッピング機能活用</h4>
 <ul>
-<li><img src="../img/fdbmonitor.png" alt="" title="" width="50" />　データベース可用性監視</li>
-<li><img src="../img/fdatacheck.png" alt="" title="" width="50" />　データの監視、検知 (イレギュラーデータやデータの欠落、不整合などの検知）</li>
+<li><img src="../img/fdbmonitor.png" alt="" title="" width="50" />　データベースの可用性監視</li>
+<li><img src="../img/fdatacheck.png" alt="" title="" width="50" />　データの監視と検出（イレギュラーデータ、データの欠落、データの不整合などの検出）</li>
 </ul>
 <h4 id="_7">スケジューラー</h4>
 <ul>
-<li><img src="../img/fschedule.png" alt="" title="" width="50" />　毎時、毎日特定の時刻、週単位、月次、リピート実行のスケジューラー設定  </li>
-<li><img src="../img/sschedulerexecuteseq.png" alt="" title="" width="50" />　 複数タスクのパラレル、シリアル実行  </li>
+<li><img src="../img/fschedule.png" alt="" title="" width="50" />　毎時、特定の時刻毎日、週単位、月次、繰り返し実行のスケジューラー設定</li>
+<li><img src="../img/ffiletrigger.png" alt="" title="" width="50" />　 指定されたファイルが新規作成、更新、または削除されたときに実行</li>
+<li><img src="../img/sschedulerexecuteseq.png" alt="" title="" width="50" />　 複数タスクのパラレル実行またはシリアル実行  </li>
 <li><img src="../img/fretry.png" alt="" title="" width="50" />　リトライ機能  </li>
 </ul>
 <h2 id="_8">特徴</h2>
-<h4 id="1">1．シンプルな設計、簡単な操作、強力な機能</h4>
+<h4 id="1">1．シンプルな設計、直感的な操作、そして強力な機能</h4>
 <p>数クリックでインストール完了。
 わずか３ステップでデータ連携、スケジューラ設定完了。<br />
 シンプルなテーブルマッピングから複雑なクエリ、ワークフローまで対応できる。  </p>
 <p><img src="../img/features1.png" alt="" title=""  width="700" /></p>
 <h4 id="2">2.ハイパフォーマンス</h4>
-<p>パラレル、インメモリ、圧縮転送などのアーキテクチャを採用、高速連携実現。  </p>
+<p>イパフォーマンスを実現するために、パラレル処理、インメモリデータ処理、データ圧縮転送などの先進的なアーキテクチャを採用しています。これにより、高速なデータ連携が実現されます。 </p>
 <p><img src="../img/features2.png" alt="" title=""  width="700" /></p>
-<h4 id="3">3.あらゆる要件に容易に対応、構成できる</h4>
-<p>オンプレミス、クラウドおよびハイブリッドクラウドなどのあらゆる構成、要件に対応可能。<br />
-クラウドと連携する際，VPN構築しなくてもSDI Web Serviceを経由してセキュアな連携（SSL）可能。  </p>
+<h4 id="3">3.様々な要件に簡単に対応し、柔軟にカスタマイズできる</h4>
+<p>オンプレミス、クラウド、およびハイブリッドクラウドなど、さまざまな構成と要件に対応可能です。クラウドと連携する際には、VPNを構築する必要はなく、SDI Web Serviceを介してセキュアな連携（SSL）が可能です。」</p>
 <p><img src="../img/features3.png" alt="" title=""  width="700" /></p>
-<h4 id="4">4.柔軟な可用性向上対策</h4>
-<p>コールドスタンバイや自動フェイルオーバー機能実装され、システム要件や重要性に応じた柔軟な対策が可能。</p>
+<h4 id="4">4.柔軟な可用性向上策</h4>
+<p>コールドスタンバイや自動フェイルオーバー機能が実装され、システムの要件や重要性に応じて柔軟な対策が可能です。</p>
 <p><img src="../img/features4.png" alt="" title=""  width="700" /></p>
 <h2 id="_9">ユースケース</h2>
-<h4 id="_10">社内システム間データ連携</h4>
-<p>企業内の様々なシステム間異なるフォーマットのデータを連携。</p>
+<h4 id="_10">社内システム間のデータ連携</h4>
+<p>企業内のさまざまなシステム間で、異なるデータフォーマットのデータを連携・統合。</p>
 <p><img src="../img/case1.png" alt="" title=""  width="480" /></p>
-<h4 id="_11">複数拠点のデータ一元管理</h4>
-<p>複数拠点展開する企業のデータ一元管理、データ活用。</p>
+<h4 id="_11">複数の拠点でのデータを一元的に管理</h4>
+<p>複数拠点展開する企業のためのデータ一元管理とデータ活用。</p>
 <p><img src="../img/case2.png" alt="" title=""  width="480" /></p>
-<h4 id="_12">オンプレミスとクラウド、マルチクラウド間のデータ双方向連携</h4>
-<p>拠点と拠点、拠点とクラウド間柔軟な接続設計、双方向データ連携。  </p>
+<h4 id="_12">オンプレミス環境とクラウド、またはマルチクラウド環境間でのデータの双方向連携</h4>
+<p>拠点間および拠点とクラウド間の柔軟な接続設計により、双方向のデータ連携が可能となります。</p>
 <p>オンプレミスとクラウド<br />
 <img src="../img/case3_1.png" alt="" title=""  width="480" />  </p>
 <p>マルチクラウド間データ連携<br />
 <img src="../img/case3_2.png" alt="" title=""  width="480" />  </p>
-<h4 id="csvexceljson">CSV,Excel,JSON ファイルを定期的に自動作成・自動取り込み</h4>
-<p>CSV,Excel,JSON ファイルを定期的に自動作成・自動取り込み<br />
-（ファイルシステム、FTP/FTPS/SFTP/AWS S3/OCI Object Storageを対応）</p>
+<h4 id="csvexceljson">CSV、Excel、JSONファイルを定期的に自動的に作成し、自動的に取り込み</h4>
+<p>CSV、Excel、JSONファイルを定期的に自動的に作成し、自動的に取り込む機能 
+（ファイルシステム、FTP/FTPS/SFTP、AWS S3、OCI Object Storageなどに対応）</p>
 <p><img src="../img/case4_1.png" alt="" title=""  width="500" />  </p>
 <p><img src="../img/case4_2.png" alt="" title=""  width="500" />  </p>
 <p><img src="../img/case4_3.png" alt="" title=""  width="500" />  </p>
-<h4 id="_13">データベース可用性監視、 不整合データの検知</h4>
-<p>データベースの可用性監視、イレギュラーデータや欠落データ、不整合データなどを検知、通知。<br />
-※SDI WEB Service経由してリモートデータベースの監視も可能。  </p>
+<h4 id="_13">データベースの可用性監視および不整合データの検知</h4>
+<p>データベースの可用性監視に加えて、イレギュラーデータ、データの欠落、不整合データなどを検知し、適切な通知を行います。<br />
+※SDI Web Serviceを介して、リモートデータベースの監視も行えます。  </p>
 <p><img src="../img/case5.png" alt="" title=""  width="480" />  </p>
 <div class="admonition note info">
 <p class="admonition-title">本サイトコンテンツの引用・転載について</p>
-<p>本サイトに掲載・公開している文章、画像、動画等の著作物のコピー利用、配布、変更の追加、変更を加えたもの再配布、商用利用、有料販売など、どなたも
-<mark>自由にお使いいただくことができます</mark>。     </p>
+<p>本サイトに掲載・公開されている文章、画像、動画などの著作物について、コピー、利用、配布、変更、商用利用、有料販売など、どなたでも
+<mark>自由にご利用いただけます</mark>。</p>
 </div>
                 
                   
