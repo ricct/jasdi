@@ -820,6 +820,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#xml" class="md-nav__link">
+    XMLファイル
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1412,6 +1419,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#xml" class="md-nav__link">
+    XMLファイル
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1430,10 +1444,12 @@
               
                 
                 
-                <h1 id="_1">マッピングターゲットデータ設定</h1>
+                <!-- v1.5 -->
+
+<h1 id="_1">マッピングターゲットデータ設定</h1>
 <h2 id="_2">概要</h2>
-<p>ターゲットデータはRDB、CSV、Excelから選択できます。<br />
-※ターゲットデータへの接続設定は事前にコネクション設定画面で行います。</p>
+<p>ターゲットデータは、RDB、CSV、Excel、JSON、XMLから選択できます。
+※ターゲットデータへの接続設定は、事前にコネクション設定画面で行ってください。</p>
 <h2 id="_3">設定</h2>
 <p><img src="../img/mapping_target.png" alt="" title="" width="500" ></p>
 <h3 id="rdb">RDB</h3>
@@ -1450,22 +1466,22 @@
 <tr>
 <td align="left">1</td>
 <td align="left">コネクション</td>
-<td align="left">コネクション設定画面で設定したコネクションを選択、</td>
+<td align="left">コネクション設定画面で設定したコネクションを選択してください。</td>
 </tr>
 <tr>
 <td align="left">2</td>
 <td align="left">テーブル</td>
-<td align="left">RDBのテーブル一覧から該当テーブルを選択してください</td>
+<td align="left">RDBのテーブル一覧から、対象のテーブルを選択してください。</td>
 </tr>
 <tr>
 <td align="left">3</td>
 <td align="left">更新方法</td>
-<td align="left">ターゲットテーブルを更新する方法を選択します。<br /> Merge - ターゲットテーブル同じプライマリキーのデータが存在すればデータ更新、存在しなければデータ挿入する。※ターゲットテーブルにプライマリキーが設定されていない場合、この方法選択できません。<br />Append - ターゲットテーブルにデータを挿入する。 <br />Custome - データ更新用のSQL文を記述する。（詳細設定画面で設定します）</td>
+<td align="left">ターゲットテーブルを更新する方法を選択します。<br /> Merge - ターゲットテーブルに同じプライマリキーのデータが存在すれば更新、存在しなければデータを挿入します。※ターゲットテーブルにプライマリキーが設定されていない場合、この方法は選択できません。<br />Append - ターゲットテーブルにデータを挿入します。 <br />Custom - データ更新用のSQL文を記述します。（詳細設定画面で設定します）</td>
 </tr>
 <tr>
 <td align="left">4</td>
 <td align="left">データ参照</td>
-<td align="left">既存のデータを参照する画面を開きます。</td>
+<td align="left">既存データを参照する画面を開きます。</td>
 </tr>
 </tbody>
 </table>
@@ -1483,7 +1499,7 @@
 <tr>
 <td align="left">5</td>
 <td align="left">CSVファイル名</td>
-<td align="left">出力のCSVファイル名指定できます。固定の名前とパターン設定の二種類の設定方法があります。<br />1. 固定の名前の場合、そのままCSVファイル名を入力してください。<br />2. パターン設定の場合、出力時刻をファイル名に入れることが可能です。 <br />例：<code>EMP{yyyyMMddHHmmss}.csv</code> に設定して、 2019年3月5日18:32:47出力の場合、ファイル名は <code>EMP20190305183247.csv</code> になります。<br />参考資料：<a href="https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/custom-date-and-time-format-strings" target="_blank">カスタム日時形式文字列</a></td>
+<td align="left">出力するCSVファイル名を指定できます。ファイル名の設定方法には、固定の名前とパターン設定の2種類があります。<br />1. 固定の名前を使用する場合、そのままCSVファイル名を入力してください。<br />2. パターン設定を使用する場合、出力時刻などをファイル名に組み込むことが可能です。<br />例：EMP{yyyyMMddHHmmss}.csv と設定し、2019年3月5日18:32:47に出力した場合、ファイル名は EMP20190305183247.csv になります。<br />参考資料：<a href="https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/custom-date-and-time-format-strings" target="_blank">カスタム日時形式文字列</a></td>
 </tr>
 <tr>
 <td align="left">6</td>
@@ -1493,17 +1509,17 @@
 <tr>
 <td align="left">7</td>
 <td align="left">ヘッダー行あり</td>
-<td align="left">ヘッダー行の有無を選択します。</td>
+<td align="left">ヘッダー行の有無を選択してください。</td>
 </tr>
 <tr>
 <td align="left">8</td>
 <td align="left">デリミタ</td>
-<td align="left">デリミタはカンマ(,)とTABから選択します。</td>
+<td align="left">デリミタをカンマ（,）またはTABから選択してください。</td>
 </tr>
 <tr>
 <td align="left">9</td>
 <td align="left">囲み文字</td>
-<td align="left">囲み文字なし、シングルクォーテーション、ダブルクォーテーションから選択できます。</td>
+<td align="left">囲み文字は、なし、シングルクォーテーション、ダブルクォーテーションから選択できます。</td>
 </tr>
 </tbody>
 </table>
@@ -1521,7 +1537,12 @@
 <tr>
 <td align="left">10</td>
 <td align="left">Excelファイル名</td>
-<td align="left">出力のExcelファイル名指定できます。固定の名前とパターン設定の二種類の設定方法があります。<br />1. 固定の名前の場合、そのままExcelファイル名を入力してください。<br />2. パターン設定の場合、出力時刻をファイル名に入れることが可能です。 <br />例：<code>EMP{yyyyMMddHHmmss}.xlsx</code> に設定して、 2019年3月5日18:32:47出力の場合、ファイル名は <code>EMP20190305183247.xlsx</code> になります。<br />参考資料：<a href="https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/custom-date-and-time-format-strings" target="_blank">カスタム日時形式文字列</a></td>
+<td align="left">出力するExcelファイル名を指定できます。ファイル名の設定方法には、固定の名前とパターン設定の2種類があります。<br />1. 固定の名前を使用する場合、そのままExcelファイル名を入力してください。<br />2. パターン設定を使用する場合、出力時刻などをファイル名に組み込むことが可能です。<br />例：EMP{yyyyMMddHHmmss}.xlsx と設定し、2019年3月5日18:32:47に出力した場合、ファイル名は EMP20190305183247.xlsx になります。<br />参考資料：<a href="https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/custom-date-and-time-format-strings" target="_blank">カスタム日時形式文字列</a></td>
+</tr>
+<tr>
+<td align="left">11</td>
+<td align="left">シート名</td>
+<td align="left">出力するExcelファイルのシート名を指定してください。</td>
 </tr>
 </tbody>
 </table>
@@ -1537,9 +1558,42 @@
 </thead>
 <tbody>
 <tr>
-<td align="left">11</td>
+<td align="left">12</td>
 <td align="left">JSONファイル名</td>
-<td align="left">出力のJSONファイル名指定できます。固定の名前とパターン設定の二種類の設定方法があります。<br />1. 固定の名前の場合、そのままJSONファイル名を入力してください。<br />2. パターン設定の場合、出力時刻をファイル名に入れることが可能です。 <br />例：<code>EMP{yyyyMMddHHmmss}.json</code> に設定して、 2019年3月5日18:32:47出力の場合、ファイル名は <code>EMP20190305183247.json</code> になります。<br />参考資料：<a href="https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/custom-date-and-time-format-strings" target="_blank">カスタム日時形式文字列</a></td>
+<td align="left">出力するJSONファイル名を指定できます。ファイル名の設定方法には、固定の名前とパターン設定の2種類があります。<br />1. 固定の名前を使用する場合、そのままJSONファイル名を入力してください。<br />2. パターン設定を使用する場合、出力時刻などをファイル名に組み込むことが可能です。<br />例：EMP{yyyyMMddHHmmss}.json と設定し、2019年3月5日18:32:47に出力した場合、ファイル名は EMP20190305183247.json になります。<br />参考資料：<a href="https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/custom-date-and-time-format-strings" target="_blank">カスタム日時形式文字列</a></td>
+</tr>
+<tr>
+<td align="left">13</td>
+<td align="left">ルートオブジェクト名</td>
+<td align="left">出力するJSONファイルのルートオブジェクト名を指定してください。空白も許可されます。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="xml">XMLファイル</h3>
+<p><img src="../img/mapping_target_xml.png" alt="" title="" width="500" ></p>
+<table>
+<thead>
+<tr>
+<th align="left">No</th>
+<th align="left">項目</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">14</td>
+<td align="left">XMLファイル名</td>
+<td align="left">出力するXMLファイル名を指定できます。ファイル名の設定方法には、固定の名前とパターン設定の2種類があります。<br />1. 固定の名前を使用する場合、そのままXMLファイル名を入力してください。<br />2. パターン設定を使用する場合、出力時刻などをファイル名に組み込むことが可能です。<br />例：EMP{yyyyMMddHHmmss}.xml と設定し、2019年3月5日18:32:47に出力した場合、ファイル名は EMP20190305183247.xml になります。<br />参考資料：<a href="https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/custom-date-and-time-format-strings" target="_blank">カスタム日時形式文字列</a></td>
+</tr>
+<tr>
+<td align="left">15</td>
+<td align="left">ルート要素名</td>
+<td align="left">出力するXMLファイルのルート要素名を指定してください。空白は許可されません。</td>
+</tr>
+<tr>
+<td align="left">16</td>
+<td align="left">テーブル要素名</td>
+<td align="left">出力するXMLファイルのテーブル要素名を指定してください。空白は許可されません。</td>
 </tr>
 </tbody>
 </table>

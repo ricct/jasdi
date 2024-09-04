@@ -806,6 +806,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#xml" class="md-nav__link">
+    XMLファイル
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-service-web-api" class="md-nav__link">
+    Web Service/ Web API
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1412,6 +1426,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#xml" class="md-nav__link">
+    XMLファイル
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-service-web-api" class="md-nav__link">
+    Web Service/ Web API
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1430,10 +1458,12 @@
               
                 
                 
-                <h1 id="_1">マッピングソースデータ設定</h1>
+                <!-- v1.5 -->
+
+<h1 id="_1">マッピングソースデータ設定</h1>
 <h2 id="_2">概要</h2>
-<p>ソースデータはRDB、CSV、Excelから選択できます。<br />
-※ソースデータへの接続設定は事前にコネクション設定画面で行います。</p>
+<p>ソースデータは、RDB、CSV、Excel、JSON、XMLから選択できます。
+※ソースデータへの接続設定は、事前にコネクション設定画面で行ってください。</p>
 <h2 id="_3">設定</h2>
 <p><img src="../img/mapping_source.png" alt="" title="" width="500" ></p>
 <h3 id="rdb">RDB</h3>
@@ -1451,22 +1481,22 @@
 <tr>
 <td align="left">1</td>
 <td align="left">コネクション</td>
-<td align="left">コネクション設定画面で設定したコネクションを選択、</td>
+<td align="left">コネクション設定画面で設定したコネクションを選択してください。</td>
 </tr>
 <tr>
 <td align="left">2</td>
 <td align="left">タイプ</td>
-<td align="left">RDBコネクションを選択した場合、ソースタイプがテーブルとクエリから選択できます。</td>
+<td align="left">RDBコネクションを選択した場合、ソースタイプとしてテーブルまたはクエリを選択できます。</td>
 </tr>
 <tr>
 <td align="left">3</td>
 <td align="left">テーブル</td>
-<td align="left">タイプをテーブルを選択した場合、RDBのテーブルとビューの一覧が表示されます、リストの中で該当オブジェクトを選択してください</td>
+<td align="left">タイプに「テーブル」を選択した場合、RDBのテーブルとビューの一覧が表示されます。リストから該当するオブジェクトを選択してください。</td>
 </tr>
 <tr>
 <td align="left">4</td>
-<td align="left">フィルダー</td>
-<td align="left">データ抽出の条件がある場合、WHERE条件を記述してください。<br / > 例：WHERE UPDATE_TIME &gt;=SYSDATE-1</td>
+<td align="left">フィルター</td>
+<td align="left">データ抽出の条件がある場合、WHERE句を指定してください。<br /> 例：<code>WHERE UPDATE_TIME &gt;= SYSDATE - 1|</code></td>
 </tr>
 <tr>
 <td align="left">5</td>
@@ -1489,12 +1519,12 @@
 <tr>
 <td align="left">6</td>
 <td align="left">クエリ</td>
-<td align="left">ソースデータの取得をSQLで記述したい場合、クエリを選択してください</td>
+<td align="left">ソースデータの取得方法としてSQLを使用したい場合、クエリを選択してください。</td>
 </tr>
 <tr>
 <td align="left">7</td>
 <td align="left">クエリ内容</td>
-<td align="left">データ抽出のSQLを記述してください。<br / > 例： <br / >SELECT EMPID<br / >          ,  EMPNAME<br / >          ,   DEPT_CODE <br / >   FROM HR.EMP<br / > WHERE DEPT_CODE = '0003'</td>
+<td align="left">データ抽出のためのSQLを記述してください。<br / > 例： <br / >SELECT EMPID<br / >          ,  EMPNAME<br / >          ,   DEPT_CODE <br / >   FROM HR.EMP<br / > WHERE DEPT_CODE = '0003'</td>
 </tr>
 </tbody>
 </table>
@@ -1512,22 +1542,22 @@
 <tr>
 <td align="left">8</td>
 <td align="left">CSVファイル名</td>
-<td align="left">コネクションがCSVフォルダー選択された場合、CSVファイル一覧表示されます、リストの中でが該当するファイルを選択してください。</td>
+<td align="left">コネクションでCSVフォルダーが選択された場合、フォルダー内のCSVファイル一覧が表示されます。リストから該当するファイルを選択してください。</td>
 </tr>
 <tr>
 <td align="left">9</td>
 <td align="left">エンコーディング</td>
-<td align="left">CSVファイルのエンコーディングを入力します。<br />例：UTF-8、Shift_JIS</td>
+<td align="left">CSVファイルのエンコーディングを指定してください。<br />例：UTF-8、Shift_JIS</td>
 </tr>
 <tr>
 <td align="left">10</td>
 <td align="left">ヘッダー行あり</td>
-<td align="left">ヘッダー行の有無を選択します。</td>
+<td align="left">ヘッダー行の有無を選択してください。</td>
 </tr>
 <tr>
 <td align="left">※</td>
 <td align="left"></td>
-<td align="left">デリミタ、囲み文字などは自動判別なので、指定する必要がありません。</td>
+<td align="left">デリミタや囲み文字は自動判別されるため、指定する必要はありません。</td>
 </tr>
 </tbody>
 </table>
@@ -1545,22 +1575,22 @@
 <tr>
 <td align="left">11</td>
 <td align="left">Excelファイル名</td>
-<td align="left">コネクションがExcelフォルダー選択された場合、Excelファイル一覧表示されます、リストの中でが該当するファイルを選択してください。</td>
+<td align="left">コネクションでExcelフォルダーが選択された場合、フォルダー内のExcelファイル一覧が表示されます。リストから該当するファイルを選択してください。</td>
 </tr>
 <tr>
 <td align="left">12</td>
 <td align="left">シート</td>
-<td align="left">取り込み対象のシート番号を選択します。<br />※先頭のタブが1となります。</td>
+<td align="left">取り込み対象のシート番号を選択してください。<br />※番号は1から始まります。</td>
 </tr>
 <tr>
 <td align="left">13</td>
 <td align="left">エンコーディング</td>
-<td align="left">Excelファイルのエンコーディングを入力します。<br />例：UTF-8、Shift_JIS</td>
+<td align="left">Excelファイルのエンコーディングを指定してください。<br />例：UTF-8、Shift_JIS</td>
 </tr>
 <tr>
 <td align="left">14</td>
 <td align="left">ヘッダー行あり</td>
-<td align="left">ヘッダー行の有無を選択します。</td>
+<td align="left">ヘッダー行の有無を選択してください。</td>
 </tr>
 </tbody>
 </table>
@@ -1578,7 +1608,124 @@
 <tr>
 <td align="left">15</td>
 <td align="left">JSONファイル名</td>
-<td align="left">コネクションがJSONフォルダー選択された場合、JSONファイル一覧表示されます、リストの中でが該当するファイルを選択してください。</td>
+<td align="left">コネクションでJSONフォルダーが選択されると、フォルダー内のJSONファイル一覧が表示されます。そのリストから、対象のファイルを選択してください。</td>
+</tr>
+<tr>
+<td align="left">16</td>
+<td align="left">対象オブジェクト</td>
+<td align="left">データが配列で構成されている場合、配列内の各要素（明細行）を1レコードとして取り込むことができます。取り込み対象となる配列のオブジェクトを選択してください。</td>
+</tr>
+<tr>
+<td align="left">17</td>
+<td align="left">親オブジェクトを表示</td>
+<td align="left">デフォルトでは、選択されたオブジェクトの下位レイヤのオブジェクトが表示されますが、親レイヤのオブジェクトも必要な場合は、このオプションをチェックしてください。</td>
+</tr>
+</tbody>
+</table>
+<p>サンプルで表示されているオブジェクト一覧は、以下のJSON例です。</p>
+<div class="highlight"><pre><span></span><code>{ 
+ &quot;orderno&quot;: 1, 
+ &quot;customercode&quot;: &quot;A001&quot;, 
+ &quot;customeraddress&quot;:
+   {
+   &quot;streetaddress&quot;:&quot;長島一丁目1-1&quot;,
+   &quot;city&quot;:&quot;青森市&quot;,
+   &quot;state&quot;: &quot;青森県&quot;,
+   &quot;postalcode&quot;:&quot;030-8570&quot;
+   }, 
+ &quot;detail&quot;: [
+     {
+      &quot;prodcode&quot;: 1,
+      &quot;ordernumber&quot;: 3,
+      &quot;price&quot;: 2000,
+      &quot;amount&quot;: &quot;6000&quot;
+     },
+     {
+      &quot;prodcode&quot;: 2,
+      &quot;ordernumber&quot;: 2,
+      &quot;price&quot;: 1700,
+      &quot;amount&quot;: 3400
+     }
+      ]
+} 
+</code></pre></div>
+<h3 id="xml">XMLファイル</h3>
+<p><img src="../img/mapping_source_xml.png" alt="" title="" width="500" ></p>
+<table>
+<thead>
+<tr>
+<th align="left">No</th>
+<th align="left">項目</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">18</td>
+<td align="left">XMLファイル名</td>
+<td align="left">コネクションでXMLフォルダーが選択されると、フォルダー内のXMLファイル一覧が表示されます。そのリストから、対象のファイルを選択してください。</td>
+</tr>
+<tr>
+<td align="left">19</td>
+<td align="left">対象要素</td>
+<td align="left">データが配列で構成されている場合、配列内の各要素（明細行）を1レコードとして取り込むことができます。取り込み対象となる配列の要素を選択してください。</td>
+</tr>
+<tr>
+<td align="left">20</td>
+<td align="left">親要素を表示</td>
+<td align="left">デフォルトでは、選択された要素の下位階層の要素が表示されますが、親階層の要素も必要な場合は、このオプションをチェックしてください。</td>
+</tr>
+<tr>
+<td align="left">21</td>
+<td align="left">属性を表示</td>
+<td align="left">デフォルトでは、XMLの属性が表示されません。属性データも必要な場合は、このオプションをチェックしてください。</td>
+</tr>
+</tbody>
+</table>
+<p>サンプルで表示されている要素一覧は、以下のXML例です。</p>
+<div class="highlight"><pre><span></span><code>&lt;data&gt;
+     &lt;orderno&gt;1&lt;/orderno&gt;
+     &lt;customercode&gt;A001&lt;/customercode&gt;
+     &lt;customeraddress&gt;
+         &lt;streetaddress&gt;長島一丁目1-1&lt;/streetaddress&gt;
+         &lt;city&gt;青森市&lt;/city&gt;
+         &lt;state&gt;青森県&lt;/state&gt;
+         &lt;postalcode&gt;030-8570&lt;/postalcode&gt;
+     &lt;/customeraddress&gt;
+     &lt;detail&gt;
+         &lt;prodcode&gt;1&lt;/prodcode&gt;
+         &lt;ordernumber&gt;3&lt;/ordernumber&gt;
+         &lt;price&gt;2000&lt;/price&gt;
+         &lt;amount&gt;6000&lt;/amount&gt;
+     &lt;/detail&gt;
+     &lt;detail&gt;
+         &lt;prodcode&gt;2&lt;/prodcode&gt;
+         &lt;ordernumber&gt;2&lt;/ordernumber&gt;
+         &lt;price&gt;1700&lt;/price&gt;
+         &lt;amount&gt;3400&lt;/amount&gt;
+     &lt;/detail&gt;
+ &lt;/data&gt;
+</code></pre></div>
+<h3 id="web-service-web-api">Web Service/ Web API</h3>
+<p><img src="../img/mapping_source_webserviceapi.png" alt="" title="" width="500" ></p>
+<table>
+<thead>
+<tr>
+<th align="left">No</th>
+<th align="left">項目</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">22</td>
+<td align="left">エンドポイント</td>
+<td align="left">相対URLを入力してください。<br />時間に関する動的パラメータの設定が可能です。<br />現在日付を使用する場合の設定例：/api/v1/orders/{yyyyMMdd} <br />昨日の日付を使用する場合の複雑な設定例：/api/v1/orders/{DateTime.Now.AddDays(-1).ToString("yyyyMMdd")}</td>
+</tr>
+<tr>
+<td align="left">23</td>
+<td align="left">更新</td>
+<td align="left">エンドポイントから最新情報を取得します。</td>
 </tr>
 </tbody>
 </table>

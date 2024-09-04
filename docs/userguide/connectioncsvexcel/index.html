@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#csvexceljson" class="md-skip">
+        <a href="#csvexceljsonxml" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -734,6 +734,13 @@
           <li class="md-nav__item">
   <a href="#oci-object-storage" class="md-nav__link">
     OCI Object Storage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-service-api" class="md-nav__link">
+    Web Service / API
   </a>
   
 </li>
@@ -1426,6 +1433,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#web-service-api" class="md-nav__link">
+    Web Service / API
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1444,11 +1458,11 @@
               
                 
                 
-                <h1 id="csvexceljson">CSV、Excel、JSONファイル設定</h1>
+                <h1 id="csvexceljsonxml">CSV、Excel、JSON、XMLファイル設定</h1>
 <h2 id="_1">概要</h2>
-<p>CSV、Excel、JSONファイルから取り込み、CSV、Excel、JSONファイルへの出力機能があります。<br />
-CSV、Excel、JSONファイルを使用の際、ロケーションをファイルを選択、データタイプをCSV、Excel、JSONを選択してから詳細設定します。<br />
-ファイルシステム、FTP/FTPS、SFTP、AWS S3（Amazon Simple Storage Service） と OCI Object Storage がサポートされています。</p>
+<p>CSV、Excel、JSON、XMLファイルの取り込み機能およびCSV、Excel、JSON、XMLファイルへの出力機能があります。<br />
+CSV、Excel、JSON、XMLファイルを使用する際は、まずファイルの保存場所を選択し、その後、データタイプとしてファイルフォーマットを選択して詳細設定を行います。<br />
+ファイルシステム、FTP/FTPS、SFTP、AWS S3（Amazon Simple Storage Service）、OCI Object Storage、WEBサービス/APIがサポートされています。  </p>
 <h2 id="_2">設定</h2>
 <h3 id="_3">ファイルシステム</h3>
 <p><img src="../img/connection_file_filesystem.png" alt="" title="" >  </p>
@@ -1683,6 +1697,44 @@ key_file=C:\keys\oci\test_2.pem
 <td align="left">6</td>
 <td align="left">Folder</td>
 <td align="left">使用するフォルダーを入力。　※ルートディレクトリを使う場合空白にしてください。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="web-service-api">Web Service / API</h3>
+<p><img src="../img/connection_file_webserviceapi.png" alt="" title="" >  </p>
+<table>
+<thead>
+<tr>
+<th align="left">No</th>
+<th align="left">項目</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">Storage Type</td>
+<td align="left">WebService / API  を選択</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">Base URL</td>
+<td align="left">すべての相対 URL の基点となる URL を指定します。</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">Authentication</td>
+<td align="left">認証方法を選択</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">Username (Basic Authentication）</td>
+<td align="left">Basic認証を選択した場合、ユーザー名を入力してください。</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">Password (Basic Authentication)</td>
+<td align="left">Basic認証を選択した場合、パスワードを入力してください。</td>
 </tr>
 </tbody>
 </table>
