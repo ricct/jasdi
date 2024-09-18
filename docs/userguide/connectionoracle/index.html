@@ -730,7 +730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../connectioncsvexcel/" class="md-nav__link">
+      <a href="../connectionfile/" class="md-nav__link">
         ファイル
       </a>
     </li>
@@ -1416,12 +1416,14 @@
               
                 
                 
-                <h1 id="oracle">Oracle コネクション設定</h1>
+                <!-- v1.6 -->
+
+<h1 id="oracle">Oracle コネクション設定</h1>
 <h2 id="_1">概要</h2>
-<p>ダイレクトOracle に接続の際、ロケーションをダイレクト接続を選択、データタイプをOracleを選択してから詳細設定します。</p>
+<p>Oracleにダイレクト接続する際は、ロケーションでダイレクト接続を選択し、データタイプとしてOracleを選択した後、詳細設定を行います。</p>
 <h2 id="_2">設定</h2>
 <h3 id="basic">Basic</h3>
-<p>Oracle接続の基本情報を入力して接続する方法です。</p>
+<p>Oracle接続の基本情報を入力して接続する方法です。  </p>
 <p><img src="../img/connection_oracle_basic.png" alt="" title="" >  </p>
 <table>
 <thead>
@@ -1445,37 +1447,42 @@
 <tr>
 <td align="left">3</td>
 <td align="left">Connetion Type</td>
-<td align="left">Basic を選択</td>
+<td align="left"><code>Basic</code> を選択</td>
 </tr>
 <tr>
 <td align="left">4</td>
 <td align="left">Oracle Host</td>
-<td align="left"></td>
+<td align="left">Oracleのホスト名を入力</td>
 </tr>
 <tr>
 <td align="left">5</td>
 <td align="left">Oracle Port</td>
-<td align="left"></td>
+<td align="left">Oracleのポート番号を入力</td>
 </tr>
 <tr>
 <td align="left">6</td>
 <td align="left">SID</td>
-<td align="left">SIDを使って接続の場合、SIDを選択してからテキストボックスにSIDの値を入力してください。</td>
+<td align="left">SIDを使用して接続する場合、<code>SID</code>を選択してから、テキストボックスにSIDの値を入力してください。</td>
 </tr>
 <tr>
 <td align="left">7</td>
 <td align="left">Service Name</td>
-<td align="left">Service Nameを使って接続の場合、Service Nameを選択してからテキストボックスにService Nameの値を入力してください。</td>
+<td align="left">Service Nameを使用して接続する場合、<code>Service Name</code>を選択してから、テキストボックスにService Nameの値を入力してください。</td>
 </tr>
 <tr>
 <td align="left">8</td>
 <td align="left">Default Schema</td>
-<td align="left">Default Schema指定された場合、マッピングの際、指定されたスキーマのテーブル、ビューがリストされます。<br/> 空白の場合、アクセスできるすべてのテーブル、ビューがリストされます。</td>
+<td align="left">Default Schemaが指定された場合、マッピング時に指定されたスキーマのテーブルやビューがリストされます。<br/> 空白の場合、アクセス可能なすべてのテーブルやビューがリストされます。</td>
+</tr>
+<tr>
+<td align="left">9</td>
+<td align="left">Login script</td>
+<td align="left">接続が確立されるたびに 実行するSQL スクリプトを設定する。<br />複数行の場合<code>；</code>区切りで入力<br/>例：<br /><code>ALTER SESSION SET NLS_DATE_FORMAT='YYYY/MM/DD HH24:MI:SS';</code><br /><code>ALTER SESSION DISABLE PARALLEL DML;</code><br /></td>
 </tr>
 </tbody>
 </table>
 <h3 id="odp-connection-string">ODP Connection String</h3>
-<p>SDIはODP.NET使ってOracleに接続します。 ODP Connection Stringを直接入力してOracleに接続する方法です。</p>
+<p>SDIはODP.NETを使用してOracleに接続します。これは、ODP Connection Stringを直接入力してOracleに接続する方法です。</p>
 <p><img src="../img/connection_oracle_url.png" alt="" title="" >  </p>
 <table>
 <thead>
@@ -1489,17 +1496,17 @@
 <tr>
 <td align="left">1</td>
 <td align="left">Connetion Type</td>
-<td align="left">ODP Connection String を選択</td>
+<td align="left"><code>ODP Connection String</code> を選択</td>
 </tr>
 <tr>
 <td align="left">2</td>
 <td align="left">ODP Connection String</td>
-<td align="left">ODP Connection Stringの詳細を入力してください。 <br / > ※ユーザー、パスワードの情報をConnection Stringに入力しないでください。</td>
+<td align="left">ODP Connection Stringの詳細を入力してください。<br />※ユーザー名とパスワードをConnection Stringに入力しないでください。</td>
 </tr>
 </tbody>
 </table>
 <h3 id="cloud-wallet">Cloud Wallet</h3>
-<p>Cloud Walletを使ってOracleに接続する方法です。</p>
+<p>Cloud Walletを使用してOracleに接続する方法です。</p>
 <p><img src="../img/connection_oracle_wallet.png" alt="" title="" width ="500" >  </p>
 <table>
 <thead>
@@ -1513,17 +1520,17 @@
 <tr>
 <td align="left">1</td>
 <td align="left">Connetion Type</td>
-<td align="left">Cloud Wallet を選択</td>
+<td align="left"><code>Cloud Wallet</code> を選択</td>
 </tr>
 <tr>
 <td align="left">2</td>
 <td align="left">Wallet File Directory</td>
-<td align="left">Wallet Fileの保存場所を指定します。Wallet FileはZipファイルの場合、解凍して、解凍先を指定してください。</td>
+<td align="left">Walletファイルの保存場所を指定します。Zipファイルの場合は解凍し、解凍先を指定してください。</td>
 </tr>
 <tr>
 <td align="left">3</td>
 <td align="left">Service</td>
-<td align="left">tnsnames.oraファイルの中のTNS Nameを指定あるいはTNS Nameの明細を記述します。</td>
+<td align="left"><code>tnsnames.ora</code>ファイル内のTNS名を指定、またはTNS名の詳細を記述します。</td>
 </tr>
 </tbody>
 </table>

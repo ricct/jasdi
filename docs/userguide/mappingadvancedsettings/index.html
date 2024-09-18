@@ -652,7 +652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../connectioncsvexcel/" class="md-nav__link">
+      <a href="../connectionfile/" class="md-nav__link">
         ファイル
       </a>
     </li>
@@ -836,7 +836,7 @@
         
           <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
-    処理終了時アクション設定　（正常終了、異常終了、抽出対象データない）
+    処理終了時のアクションを設定してください（正常終了、異常終了、抽出対象データなしの場合）
   </a>
   
 </li>
@@ -1393,7 +1393,7 @@
         
           <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
-    処理終了時アクション設定　（正常終了、異常終了、抽出対象データない）
+    処理終了時のアクションを設定してください（正常終了、異常終了、抽出対象データなしの場合）
   </a>
   
 </li>
@@ -1416,11 +1416,13 @@
               
                 
                 
-                <h1 id="_1">詳細設定</h1>
+                <!-- v1.6 -->
+
+<h1 id="_1">詳細設定</h1>
 <h2 id="_2">概要</h2>
-<p>マッピング処理する際、下記の詳細設定追加できます。<br />
-1. データ抽出、更新前後にデータの前処理、後処理。 <br />
-2. マッピング処理成功、失敗、データない場合の通知などの設定。  </p>
+<p>マッピング処理を行う際、以下の詳細設定を追加できます。<br />
+1. データ抽出および更新の前後に、データの前処理や後処理を設定可能。<br />
+2. マッピング処理が成功、失敗、またはデータがない場合の通知設定。  </p>
 <h2 id="_3">設定</h2>
 <p><img src="../img/mapping_advancedsetting_button.png" alt="" title="" width="500" ></p>
 <h3 id="_4">詳細設定</h3>
@@ -1437,57 +1439,62 @@
 <tr>
 <td align="left">1</td>
 <td align="left">データ抽出前処理</td>
-<td align="left">データ抽出する前に、SQLを事前に実行すること可能です。設定する場合、Yesを選択してから、Detailボタンを押して詳細を設定します。</td>
+<td align="left">データ抽出前に、SQLを事前に実行することが可能です。設定する場合は、「Yes」を選択してから、[Detail] ボタンを押して詳細を設定します。</td>
 </tr>
 <tr>
 <td align="left">2</td>
 <td align="left">データ抽出後処理</td>
-<td align="left">データ抽出後、SQLを実行すること可能です。設定する場合、Yesを選択してから、Detailボタンを押して詳細を設定します。</td>
+<td align="left">データ抽出後に、SQLを実行することが可能です。設定する場合は、「Yes」を選択してから、[Detail] ボタンを押して詳細を設定します。</td>
 </tr>
 <tr>
 <td align="left">3</td>
 <td align="left">Stagingテーブル</td>
-<td align="left">データ更新する前に、SDIは一旦対象データをStagingテーブルにロードします。Stagingテーブル名はシステム自動生成します、設定することも可能です。設定する際、直接テーブルを入力してください。<br />ターゲットテーブルと異なるスキーマのテーブルを使いたい場合、スキーマ名.テーブル名　のフォーマットで入力してください。例：SCOTT.EMPTEMP</td>
+<td align="left">データ更新前に、SDIは一旦対象データをStagingテーブルにロードします。Stagingテーブル名はシステムが自動生成しますが、設定することも可能です。設定する際は、直接テーブル名を入力してください。<br />ターゲットテーブルと異なるスキーマのテーブルを使用する場合は、「スキーマ名.テーブル名」の形式で入力してください。例：SCOTT.EMPTEMP</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">Create as temporary table</td>
+<td align="left">Stagingテーブルを一時表（TEMPORARY TABLE）として作成するかどうかを選択します。</td>
 </tr>
 <tr>
 <td align="left">4</td>
 <td align="left">データ更新前処理</td>
-<td align="left">データ更新する前に、SQLを事前に実行すること可能です。設定する場合、Yesを選択してから、Detailボタンを押して詳細を設定します。</td>
+<td align="left">データ更新前に、SQLを事前に実行することが可能です。設定する場合は、「Yes」を選択してから、[Detail] ボタンを押して詳細を設定します。</td>
 </tr>
 <tr>
 <td align="left">5</td>
 <td align="left">データ更新方法</td>
-<td align="left">ターゲットテーブルを更新する方法を選択します。<br /> Merge - ターゲットテーブル同じプライマリキーのデータが存在すればデータ更新、存在しなければデータ挿入する。※ターゲットテーブルにプライマリキーが設定されていない場合、この方法選択できません。<br />Append - ターゲットテーブルにデータを挿入する。 <br />Custome - データ更新用のSQL文を記述する。Detailボタンを押して詳細を設定します。</td>
+<td align="left">ターゲットテーブルの更新方法を選択します。<br /> Merge - ターゲットテーブルに同じプライマリキーのデータが存在する場合は更新、存在しない場合は挿入します。※ターゲットテーブルにプライマリキーが設定されていない場合、この方法は選択できません。<br /> Append - ターゲットテーブルにデータを挿入します。<br /> Custom - データ更新用のSQL文を記述します。[Detail] ボタンを押して詳細を設定します。</td>
 </tr>
 <tr>
 <td align="left">6</td>
 <td align="left">Delete Target Table Before Execute</td>
-<td align="left">データ更新する前に、ターゲットテーブルのデータを削除するかどうか。</td>
+<td align="left">データ更新前に、ターゲットテーブルのデータを削除するかどうかを選択します。</td>
 </tr>
 <tr>
 <td align="left">7</td>
 <td align="left">データ更新後処理</td>
-<td align="left">データ更新後、SQLを実行すること可能です。設定する場合、Yesを選択してから、Detailボタンを押して詳細を設定します。</td>
+<td align="left">データ更新後に、SQLを実行することが可能です。設定する場合は、「Yes」を選択してから、[Detail] ボタンを押して詳細を設定します。</td>
 </tr>
 <tr>
 <td align="left">8</td>
 <td align="left">Drop Staging table</td>
-<td align="left">処理完了後、Stagingテーブルを削除するかどうか</td>
+<td align="left">処理完了後に、Stagingテーブルを削除するかどうかを選択します。</td>
 </tr>
 <tr>
 <td align="left">9</td>
 <td align="left">正常終了時の処理</td>
-<td align="left">処理成功時の処理を設定、SQL実行、メール送信、ソースはファイルの場合、ソースファイルを移動、削除、バックアップなど設定できます。</td>
+<td align="left">処理成功時のアクションを設定します。SQL実行、メール送信、ソースファイルの移動・削除・バックアップなどが可能です。</td>
 </tr>
 <tr>
 <td align="left">10</td>
 <td align="left">異常終了時の処理</td>
-<td align="left">処理失敗時の処理を設定、SQL実行、メール送信、ソースはファイルの場合、ソースファイルを移動、削除、バックアップなど設定できます。</td>
+<td align="left">処理失敗時のアクションを設定します。SQL実行、メール送信、ソースファイルの移動・削除・バックアップなどが可能です。</td>
 </tr>
 <tr>
 <td align="left">11</td>
 <td align="left">対象データがない場合の処理</td>
-<td align="left">抽出データがない場合時の処理を設定、SQL実行、メール送信、ソースはファイルの場合、ソースファイルを移動、削除、バックアップなど設定できます。</td>
+<td align="left">抽出データがない場合のアクションを設定します。SQL実行、メール送信、ソースファイルの移動・削除・バックアップなどが可能です。</td>
 </tr>
 </tbody>
 </table>
@@ -1519,11 +1526,11 @@
 <tr>
 <td align="left">12</td>
 <td align="left">SQL</td>
-<td align="left">実行するSQLを入力</td>
+<td align="left">実行するSQLを入力してください。</td>
 </tr>
 </tbody>
 </table>
-<h3 id="_8">処理終了時アクション設定　（正常終了、異常終了、抽出対象データない）</h3>
+<h3 id="_8">処理終了時のアクションを設定してください（正常終了、異常終了、抽出対象データなしの場合）</h3>
 <h4 id="_9">該当する処理</h4>
 <table>
 <thead>
@@ -1551,29 +1558,29 @@
 <tr>
 <td align="left">13</td>
 <td align="left">Execute SQLチェック</td>
-<td align="left">SQL実行する場合、Execute SQL をチェックしてください。Execute SQL がチェックされている場合、Execute SQL タブが表示されます。</td>
+<td align="left">SQLを実行する場合は、"Execute SQL"にチェックを入れてください。チェックが入っている場合、"Execute SQL"タブが表示されます。</td>
 </tr>
 <tr>
 <td align="left">14</td>
 <td align="left">Execute SQLタブ</td>
-<td align="left">実行するSQLの詳細タブ</td>
+<td align="left">実行するSQLの詳細を設定するタブです。</td>
 </tr>
 <tr>
 <td align="left">15</td>
 <td align="left">コネクション</td>
-<td align="left">対象データベースを選択</td>
+<td align="left">対象となるデータベースを選択します。</td>
 </tr>
 <tr>
 <td align="left">16</td>
 <td align="left">SQL</td>
-<td align="left">実行するSQLを入力</td>
+<td align="left">実行するSQLを入力します。</td>
 </tr>
 </tbody>
 </table>
 <h4 id="_10">ソースファイルの後処理設定画面</h4>
-<p>ソースはCSV,Execlなどのファイルの場合、取り込み完了時、ソースファイルに対して、削除、リネームなどの処理を行うこと可能です。
-設定したい場合、下記の画面で設定します。<br />
-※ソースはRDBの場合、このチェックボックスが表示されません。</p>
+<p>ソースがCSVやExcelなどのファイルの場合、取り込み完了時にソースファイルに対して削除やリネームなどの処理を行うことが可能です。<br />
+これらの処理を設定したい場合は、以下の画面で設定します。<br />
+※ソースがRDBの場合、このチェックボックスは表示されません。  </p>
 <p><img src="../img/mapping_advancedsetting_type2_file.png" alt="" title="" ></p>
 <table>
 <thead>
@@ -1587,47 +1594,47 @@
 <tr>
 <td align="left">17</td>
 <td align="left">Source File Operationチェック</td>
-<td align="left">取り込み完了時、ソースファイルを削除、リネームなどの処理実行する場合、Source File Operationをチェックしてください。Source File Operation がチェックされている場合、File Operationタブが表示されます。</td>
+<td align="left">取り込み完了時にソースファイルを削除またはリネームする場合、"Source File Operation" にチェックを入れてください。チェックを入れると、"File Operation" タブが表示されます。</td>
 </tr>
 <tr>
 <td align="left">18</td>
 <td align="left">File Operationタブ</td>
-<td align="left">File Operationの詳細タブ</td>
+<td align="left">ファイル操作の詳細を設定するタブです。</td>
 </tr>
 <tr>
 <td align="left">19</td>
 <td align="left">Source File</td>
-<td align="left">ソースファイル情報が表示される。</td>
+<td align="left">ソースファイルの情報が表示されます。</td>
 </tr>
 <tr>
 <td align="left">20</td>
 <td align="left">File Operation</td>
-<td align="left"><code>Do nothing</code> - ソースファイルに対して操作しません。<br /> <code>Move (Rename)</code> - 取り込み完了時、ソースファイルを移行あるいはリネームします。<br /> <code>Delete</code> - 取り込み完了時、ソースファイルを削除します。</td>
+<td align="left"><code>Do nothing</code> - ソースファイルに対して操作を行いません。<br /> <code>Move (Rename)</code> - 取り込み完了時にソースファイルを移動またはリネームします。<br /> <code>Delete</code> - 取り込み完了時にソースファイルを削除します。</td>
 </tr>
 <tr>
 <td align="left">21</td>
 <td align="left">Destination Folder</td>
-<td align="left"><code>Same Folder</code> - ソースファイルと同じフォルダーにリネーム  <br /> <code>Other Folder</code> - 別のフォルダーに移動、リネームします。</td>
+<td align="left"><code>Same Folder</code> - ソースファイルと同じフォルダーにリネームします。<br /> <code>Other Folder</code> - 別のフォルダーに移動またはリネームします。</td>
 </tr>
 <tr>
 <td align="left">22</td>
 <td align="left">FileName</td>
-<td align="left"><code>Same Filename</code> - 同じファイル名。 <br /> <code>{yyyyMMddHHmmss}+ファイル名</code> - ファイル名の前に現在時間を入れる。  <br /> <code>ファイル名+{yyyyMMddHHmmss}+ファイル名拡張子</code> - ファイル名と拡張子の間に現在時間を入れる 。<br /><code>ファイル名+{yyyyMMddHHmmss}</code> - ファイル名の後ろに現在時間を入れる</td>
+<td align="left"><code>Same Filename</code> - 同じファイル名を使用します。<br /> <code>{yyyyMMddHHmmss}+ファイル名</code> - ファイル名の前に現在の時間を付加します。<br /> <code>ファイル名+{yyyyMMddHHmmss}+ファイル拡張子</code> - ファイル名と拡張子の間に現在の時間を付加します。<br /><code>ファイル名+{yyyyMMddHHmmss}</code> - ファイル名の後ろに現在の時間を付加します。</td>
 </tr>
 <tr>
 <td align="left">23</td>
 <td align="left">Local Backup</td>
-<td align="left">取り込み時点のソースファイルのバックアップを取得するかどうかのチェックボックスです。</td>
+<td align="left">取り込み時点のソースファイルのバックアップを取得するかどうかを設定するチェックボックスです。</td>
 </tr>
 <tr>
 <td align="left">24</td>
 <td align="left">Destination Folder</td>
-<td align="left"><code>System Backup Folder</code> - システムで設定された履歴、LOGなどを保存するフォルダー。  <br /> <code>Other Folder</code> - 任意のフォルダーを設定します。</td>
+<td align="left"><code>System Backup Folder</code> - システムで設定された履歴やログを保存するフォルダーです。<br /> <code>Other Folder</code> - 任意のフォルダーを設定します。</td>
 </tr>
 <tr>
 <td align="left">25</td>
 <td align="left">FileName</td>
-<td align="left"><code>Same Filename</code> - 同じファイル名。 <br /> <code>{yyyyMMddHHmmss}+ファイル名</code> - ファイル名の前に現在時間を入れる。  <br /> <code>ファイル名+{yyyyMMddHHmmss}+ファイル名拡張子</code> - ファイル名と拡張子の間に現在時間を入れる 。<br /><code>ファイル名+{yyyyMMddHHmmss}</code> - ファイル名の後ろに現在時間を入れる</td>
+<td align="left"><code>Same Filename</code> - 同じファイル名を使用します。<br /> <code>{yyyyMMddHHmmss}+ファイル名</code> - ファイル名の前に現在の時間を付加します。<br /> <code>ファイル名+{yyyyMMddHHmmss}+ファイル拡張子</code> - ファイル名と拡張子の間に現在の時間を付加します。<br /><code>ファイル名+{yyyyMMddHHmmss}</code> - ファイル名の後ろに現在の時間を付加します。</td>
 </tr>
 </tbody>
 </table>
@@ -1645,42 +1652,42 @@
 <tr>
 <td align="left">26</td>
 <td align="left">Send Mailチェック</td>
-<td align="left">メール送信実行する場合、Send Maiをチェックしてください。Send Mailがチェックされている場合、Send Mailタブが表示されます。</td>
+<td align="left">メール送信を実行する場合は、「Send Mail」をチェックしてください。チェックすると、「Send Mail」タブが表示されます。</td>
 </tr>
 <tr>
 <td align="left">27</td>
 <td align="left">Send Mailタブ</td>
-<td align="left">メール送信の詳細設定タブ</td>
+<td align="left">メール送信の詳細設定タブです。</td>
 </tr>
 <tr>
 <td align="left">28</td>
 <td align="left">Use Templeteチェック</td>
-<td align="left">チェックされた場合、事前に設定したメールテンプレートを使って送信します。チェックされていない場合、この画面でメール送信の内容を設定します。</td>
+<td align="left">チェックされた場合、事前に設定されたメールテンプレートを使用して送信します。チェックされていない場合、この画面でメール送信内容を設定します。</td>
 </tr>
 <tr>
 <td align="left">29</td>
 <td align="left">Templete選択</td>
-<td align="left">Use Templeteチェックさせている場合、使用するメールテンプレートを選択します。</td>
+<td align="left">「Use Template」にチェックが入っている場合、使用するメールテンプレートを選択します。</td>
 </tr>
 <tr>
 <td align="left">30</td>
 <td align="left">Mail Templete configuration</td>
-<td align="left">Use Templeteチェックさせている場合、メールテンプレート設定画面を開きます。</td>
+<td align="left">「Use Template」にチェックが入っている場合、メールテンプレート設定画面を開きます。</td>
 </tr>
 <tr>
 <td align="left">31</td>
 <td align="left">メール情報</td>
-<td align="left">送信先、CC、メールタイトル、メール本文などを設定します。<br /> ※メールテンプレート使用の場合、Readonlyになります。</td>
+<td align="left">送信先、CC、メールタイトル、メール本文などを設定します。<br /> ※メールテンプレートを使用する場合、このフィールドは読み取り専用（Readonly）になります。</td>
 </tr>
 <tr>
 <td align="left">32</td>
 <td align="left">メール添付ファイル</td>
-<td align="left">メール送信の際、下記のファイルを添付するこの可能です。必要なファイルをチェックしてください。<br /> Log File - マッピング実行の詳細LOGファイル。 <br /> Export File - ターゲットはCSV、Excelファイルの場合、出力されたファイルをメールに添付することが可能です。</td>
+<td align="left">メール送信時に、以下のファイルを添付することが可能です。必要なファイルをチェックしてください。<br /> <code>Log File</code> - マッピング実行の詳細ログファイル。<br /> <code>Export File</code> - ターゲットがCSVまたはExcelファイルの場合、出力されたファイルをメールに添付できます。</td>
 </tr>
 <tr>
 <td align="left">33</td>
 <td align="left">追加情報</td>
-<td align="left">メールタイトル、本文に最大三つの追加情報を設定できます。メールテンプレートのメールタイトル、本文に <code>{AddInformation1}</code> 、<code>{AddInformation2}</code>、<code>{AddInformation3}</code> に設定された部分はここで入力された値に置き換えられます。</td>
+<td align="left">メールタイトルおよび本文に最大3つの追加情報を設定できます。メールテンプレートのタイトルや本文に <code>{AddInformation1}</code>、<code>{AddInformation2}</code>、<code>{AddInformation3}</code> と設定された部分は、ここで入力された値に置き換えられます。</td>
 </tr>
 </tbody>
 </table>
