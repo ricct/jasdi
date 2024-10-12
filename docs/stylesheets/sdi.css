@@ -31,3 +31,11 @@ h5 {
   background: -webkit-linear-gradient(to right, rgb(174,199,210), transparent);
   background: linear-gradient(to right, rgb(174,199,210), transparent);
 }
+
+        body {
+            background-image: url('/img/slogan.png');
+            background-position: calc(100% - 20px) calc(100% - 20px);
+            background-repeat: no-repeat;
+            background-size: 288px auto;;
+            background-attachment: fixed;
+        }
