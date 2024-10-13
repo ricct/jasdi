@@ -32,10 +32,26 @@ h5 {
   background: linear-gradient(to right, rgb(174,199,210), transparent);
 }
 
-        body {
-            background-image: url('/img/slogan.png');
-            background-position: calc(100% - 20px) calc(100% - 20px);
+body {
+ position: relative;
+ margin: 0;
+ padding: 0;
+}
+
+.slogan-div {
+            position: fixed;
+            right: 50px; /* Add margin on the right */
+            top: 70px; /* Add margin on the bottom */
+            width: 318px; /* Set width */
+            height: auto; /* Adjust height automatically */
+            background-size: cover; /* Or use 'auto' depending on your preference */
             background-repeat: no-repeat;
-            background-size: 288px auto;;
-            background-attachment: fixed;
+            z-index: 999; /* Ensure it's in front */
+            
+}
+
+        @media (max-width: 1280px) {
+            .slogan-div {
+                display: none !important; 
+            }
         }
