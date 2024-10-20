@@ -39,19 +39,19 @@ body {
 }
 
 .slogan-div {
-            position: fixed;
-            right: 50px; /* Add margin on the right */
-            top: 70px; /* Add margin on the bottom */
-            width: 318px; /* Set width */
-            height: auto; /* Adjust height automatically */
-            background-size: cover; /* Or use 'auto' depending on your preference */
-            background-repeat: no-repeat;
-            z-index: 999; /* Ensure it's in front */
+  position: fixed;
+  right: 218px; /* Add margin on the right */
+  top: 62px; /* Add margin on the bottom */
+  width: 318px; /* Limit the width to 318px */
+  height: auto; /* Adjust height automatically */
+  background-size: cover; /* Or use 'auto' depending on your preference */
+  background-repeat: no-repeat;
+  z-index: 999; /* Ensure it's in front */
             
 }
 
-        @media (max-width: 1280px) {
-            .slogan-div {
-                display: none !important; 
-            }
-        }
+ @media (max-width: 1280px) {
+     .slogan-div {
+         display: none !important; 
+     }
+ }

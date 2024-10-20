@@ -844,6 +844,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    ステージング テーブル　詳細設定
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1401,6 +1408,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    ステージング テーブル　詳細設定
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1442,32 +1456,27 @@
 <tr>
 <td align="left">1</td>
 <td align="left">データ抽出前処理</td>
-<td align="left">データ抽出前に、SQLを事前に実行することが可能です。設定する場合は、「Yes」を選択してから、[Detail] ボタンを押して詳細を設定します。</td>
+<td align="left">データ抽出前に、SQLを事前に実行することが可能です。設定する場合は、「Yes」を選択してから、[詳細設定] ボタンを押して詳細を設定します。</td>
 </tr>
 <tr>
 <td align="left">2</td>
 <td align="left">データ抽出後処理</td>
-<td align="left">データ抽出後に、SQLを実行することが可能です。設定する場合は、「Yes」を選択してから、[Detail] ボタンを押して詳細を設定します。</td>
+<td align="left">データ抽出後に、SQLを実行することが可能です。設定する場合は、「Yes」を選択してから、[詳細設定] ボタンを押して詳細を設定します。</td>
 </tr>
 <tr>
 <td align="left">3</td>
 <td align="left">Stagingテーブル</td>
-<td align="left">データ更新前に、SDIは一旦対象データをStagingテーブルにロードします。Stagingテーブル名はシステムが自動生成しますが、設定することも可能です。設定する際は、直接テーブル名を入力してください。<br />ターゲットテーブルと異なるスキーマのテーブルを使用する場合は、「スキーマ名.テーブル名」の形式で入力してください。例：SCOTT.EMPTEMP</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">Create as temporary table</td>
-<td align="left">Stagingテーブルを一時表（TEMPORARY TABLE）として作成するかどうかを選択します。</td>
+<td align="left">データ更新前に、SDIは一旦対象データをStagingテーブルにロードします。Stagingテーブル名はシステムが自動生成しますが、設定することも可能です。設定する際は、直接テーブル名を入力してください。<br />ターゲットテーブルと異なるスキーマのテーブルを使用する場合は、「スキーマ名.テーブル名」の形式で入力してください。例：SCOTT.EMPTEMP <br /> [詳細設定] ボタンを押して詳細を設定できます。</td>
 </tr>
 <tr>
 <td align="left">4</td>
 <td align="left">データ更新前処理</td>
-<td align="left">データ更新前に、SQLを事前に実行することが可能です。設定する場合は、「Yes」を選択してから、[Detail] ボタンを押して詳細を設定します。</td>
+<td align="left">データ更新前に、SQLを事前に実行することが可能です。設定する場合は、「Yes」を選択してから、[詳細設定] ボタンを押して詳細を設定します。</td>
 </tr>
 <tr>
 <td align="left">5</td>
 <td align="left">データ更新方法</td>
-<td align="left">ターゲットテーブルの更新方法を選択します。<br /> Merge - ターゲットテーブルに同じプライマリキーのデータが存在する場合は更新、存在しない場合は挿入します。※ターゲットテーブルにプライマリキーが設定されていない場合、この方法は選択できません。<br /> Append - ターゲットテーブルにデータを挿入します。<br /> Custom - データ更新用のSQL文を記述します。[Detail] ボタンを押して詳細を設定します。</td>
+<td align="left">ターゲットテーブルの更新方法を選択します。<br /> Merge - ターゲットテーブルに同じプライマリキーのデータが存在する場合は更新、存在しない場合は挿入します。※ターゲットテーブルにプライマリキーが設定されていない場合、この方法は選択できません。<br /> Append - ターゲットテーブルにデータを挿入します。<br /> Custom - データ更新用のSQL文を記述します。[詳細設定] ボタンを押して詳細を設定します。</td>
 </tr>
 <tr>
 <td align="left">6</td>
@@ -1477,7 +1486,7 @@
 <tr>
 <td align="left">7</td>
 <td align="left">データ更新後処理</td>
-<td align="left">データ更新後に、SQLを実行することが可能です。設定する場合は、「Yes」を選択してから、[Detail] ボタンを押して詳細を設定します。</td>
+<td align="left">データ更新後に、SQLを実行することが可能です。設定する場合は、「Yes」を選択してから、[詳細設定] ボタンを押して詳細を設定します。</td>
 </tr>
 <tr>
 <td align="left">8</td>
@@ -1691,6 +1700,39 @@
 <td align="left">33</td>
 <td align="left">追加情報</td>
 <td align="left">メールタイトルおよび本文に最大3つの追加情報を設定できます。メールテンプレートのタイトルや本文に <code>{AddInformation1}</code>、<code>{AddInformation2}</code>、<code>{AddInformation3}</code> と設定された部分は、ここで入力された値に置き換えられます。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_12">ステージング テーブル　詳細設定</h3>
+<p><img src="../img/mapping_advancedsetting_stagingtable_detail.png" alt="" title="" ></p>
+<table>
+<thead>
+<tr>
+<th align="left">No</th>
+<th align="left">項目</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">34</td>
+<td align="left">一時テーブルとして作成</td>
+<td align="left">ステージングテーブルを一時表（TEMPORARY TABLE）として作成するかどうかを選択します。</td>
+</tr>
+<tr>
+<td align="left">35</td>
+<td align="left">既存データを保持</td>
+<td align="left">既存データを保持するかどうかを選択します。<br />ステージングテーブルがすでに存在する場合、デフォルトでは中のデータを削除してからデータをロードします。このチェックを入れることで、既存データをそのまま保持することができます。</td>
+</tr>
+<tr>
+<td align="left">36</td>
+<td align="left">データロード前にSQLを実行</td>
+<td align="left">データロードする前にSQLを実行するかどうかを選択します。</td>
+</tr>
+<tr>
+<td align="left">37</td>
+<td align="left">実行するSQL</td>
+<td align="left">ータロード前にSQLを実行する場合、実行するSQLの詳細を入力します。</td>
 </tr>
 </tbody>
 </table>
