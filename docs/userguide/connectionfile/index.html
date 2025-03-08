@@ -655,6 +655,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../connectionwebserviceapi/" class="md-nav__link">
+        WEB Service/API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -737,13 +751,6 @@
           <li class="md-nav__item">
   <a href="#oci-object-storage" class="md-nav__link">
     OCI Object Storage
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#web-service-api" class="md-nav__link">
-    Web Service / API
   </a>
   
 </li>
@@ -1436,13 +1443,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#web-service-api" class="md-nav__link">
-    Web Service / API
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1461,11 +1461,12 @@
               
                 
                 
-                <h1 id="csvexceljsonxml">CSV、Excel、JSON、XMLファイル設定</h1>
+                <!-- v2.1 -->
+<h1 id="csvexceljsonxml">CSV、Excel、JSON、XMLファイル設定</h1>
 <h2 id="_1">概要</h2>
 <p>CSV、Excel、JSON、XMLファイルの取り込み機能およびCSV、Excel、JSON、XMLファイルへの出力機能があります。<br />
 CSV、Excel、JSON、XMLファイルを使用する際は、まずファイルの保存場所を選択し、その後、データタイプとしてファイルフォーマットを選択して詳細設定を行います。<br />
-ファイルシステム、FTP/FTPS、SFTP、AWS S3（Amazon Simple Storage Service）、OCI Object Storage、Azure Blob Storage、WEBサービス/APIがサポートされています。  </p>
+ファイルシステム、FTP/FTPS、SFTP、AWS S3（Amazon Simple Storage Service）、OCI Object Storage、Azure Blob Storageがサポートされています。  </p>
 <div class="admonition note info">
 <p class="admonition-title">Azure Blob Storage接続に関する補足説明</p>
 <p>Azure Blob Storageにアクセスする場合は、ストレージアカウントのSFTPサポートを有効にし、SFTPを使用してBlob Storageエンドポイントに接続してください。</p>
@@ -1707,146 +1708,6 @@ key_file=C:\keys\oci\test_2.pem
 </tr>
 </tbody>
 </table>
-<h3 id="web-service-api">Web Service / API</h3>
-<p><img src="../img/connection_file_webserviceapi.png" alt="" title="" >  </p>
-<table>
-<thead>
-<tr>
-<th align="left">No</th>
-<th align="left">項目</th>
-<th align="left">説明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">1</td>
-<td align="left">Storage Type</td>
-<td align="left">WebService / API  を選択</td>
-</tr>
-<tr>
-<td align="left">2</td>
-<td align="left">Base URL</td>
-<td align="left">すべての相対 URL の基点となる URL を指定します。</td>
-</tr>
-<tr>
-<td align="left">3</td>
-<td align="left">Authentication</td>
-<td align="left">認証方法を選択</td>
-</tr>
-</tbody>
-</table>
-<h4 id="basic">Basic 認証</h4>
-<p><img src="../img/connection_file_webserviceapi_basic.png" alt="" title="" > </p>
-<table>
-<thead>
-<tr>
-<th align="left">No</th>
-<th align="left">項目</th>
-<th align="left">説明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">4</td>
-<td align="left">Username <br />(Basic Authentication）</td>
-<td align="left">Basic認証を選択した場合、ユーザー名を入力してください。</td>
-</tr>
-<tr>
-<td align="left">5</td>
-<td align="left">Password <br />(Basic Authentication)</td>
-<td align="left">Basic認証を選択した場合、パスワードを入力してください。</td>
-</tr>
-</tbody>
-</table>
-<h4 id="json-web-token">JSON Web Token 認証</h4>
-<p><img src="../img/connection_file_webserviceapi_jwt.png" alt="" title="" > </p>
-<table>
-<thead>
-<tr>
-<th align="left">No</th>
-<th align="left">項目</th>
-<th align="left">説明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">6</td>
-<td align="left">Grant type</td>
-<td align="left">アクセストークンを取得する方法を指定するパラメータです。</td>
-</tr>
-<tr>
-<td align="left">7</td>
-<td align="left">Token Endpoint</td>
-<td align="left">認証トークンを取得するためのサーバー側のAPIエンドポイントです。</td>
-</tr>
-<tr>
-<td align="left">8</td>
-<td align="left">Client ID</td>
-<td align="left">システムに登録されたお客様のアプリケーションを一意に識別するためのIDです。<br /> *Grant typeにPasswordを選択した場合、システムによっては省略可能です。</td>
-</tr>
-<tr>
-<td align="left">9</td>
-<td align="left">Client Secret</td>
-<td align="left">Client IDと共にクライアント（お客様のアプリケーション）を認証するための秘密鍵です。<br /> *Grant typeにPasswordを選択した場合、システムによっては省略可能です。</td>
-</tr>
-<tr>
-<td align="left">10</td>
-<td align="left">Username</td>
-<td align="left">システムを利用するユーザーを特定するための識別情報です。</td>
-</tr>
-<tr>
-<td align="left">11</td>
-<td align="left">Password</td>
-<td align="left">ユーザーが認証されるための秘密情報です。Usernameと組み合わせて使用され、正しい情報が提供されるとシステムはJWTを発行し、認証されたセッションが確立されます。</td>
-</tr>
-</tbody>
-</table>
-<h4 id="api-key">API Key 認証</h4>
-<p><img src="../img/connection_file_webserviceapi_apikey.png" alt="" title="" > </p>
-<table>
-<thead>
-<tr>
-<th align="left">No</th>
-<th align="left">項目</th>
-<th align="left">説明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">12</td>
-<td align="left">API Key Header Name</td>
-<td align="left">APIリクエストのヘッダー内でAPI Keyをどこに配置するかを決める名前です。<br />例えば、一般的なAPI Keyのヘッダー名は <code>x-api-key</code> がよく使用されますが、システムによっては別のカスタム名が指定される場合があります。</td>
-</tr>
-<tr>
-<td align="left">13</td>
-<td align="left">API Key</td>
-<td align="left">API Keyの値を入力してください。</td>
-</tr>
-</tbody>
-</table>
-<h4 id="digest">Digest 認証</h4>
-<p><img src="../img/connection_file_webserviceapi_digest.png" alt="" title="" > </p>
-<table>
-<thead>
-<tr>
-<th align="left">No</th>
-<th align="left">項目</th>
-<th align="left">説明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">14</td>
-<td align="left">Username <br />(Digest）</td>
-<td align="left">Digest認証を選択した場合、ユーザー名を入力してください。</td>
-</tr>
-<tr>
-<td align="left">15</td>
-<td align="left">Password <br />(Digest)</td>
-<td align="left">Digest認証を選択した場合、パスワードを入力してください。</td>
-</tr>
-</tbody>
-</table>
                 
               
               
@@ -1871,7 +1732,7 @@ key_file=C:\keys\oci\test_2.pem
     <nav class="md-footer__inner md-grid" aria-label="フッター">
       
         
-        <a href="../connectionodbc/" class="md-footer__link md-footer__link--prev" aria-label="前: ODBC コネクション" rel="prev">
+        <a href="../connectionwebserviceapi/" class="md-footer__link md-footer__link--prev" aria-label="前: WEB Service/API" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1880,7 +1741,7 @@ key_file=C:\keys\oci\test_2.pem
               <span class="md-footer__direction">
                 前
               </span>
-              ODBC コネクション
+              WEB Service/API
             </div>
           </div>
         </a>

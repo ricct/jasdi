@@ -655,6 +655,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../connectionwebserviceapi/" class="md-nav__link">
+        WEB Service/API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../connectionfile/" class="md-nav__link">
         ファイル
       </a>
@@ -782,8 +796,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#rdb" class="md-nav__link">
-    RDB
+  <a href="#_4" class="md-nav__link">
+    データベース
   </a>
   
 </li>
@@ -817,8 +831,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    ファイル詳細設定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#web-service-web-api" class="md-nav__link">
     Web Service/ Web API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    動的パラメータの設定について
   </a>
   
 </li>
@@ -1402,8 +1430,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#rdb" class="md-nav__link">
-    RDB
+  <a href="#_4" class="md-nav__link">
+    データベース
   </a>
   
 </li>
@@ -1437,8 +1465,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    ファイル詳細設定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#web-service-web-api" class="md-nav__link">
     Web Service/ Web API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    動的パラメータの設定について
   </a>
   
 </li>
@@ -1465,12 +1507,12 @@
 
 <h1 id="_1">マッピングソースデータ設定</h1>
 <h2 id="_2">概要</h2>
-<p>ソースデータは、RDB、CSV、Excel、JSON、XMLから選択できます。
+<p>ソースデータは、データベース、WEB Service/API、 CSV、Excel、JSON、XMLファイルから選択できます。<br />
 ※ソースデータへの接続設定は、事前にコネクション設定画面で行ってください。</p>
 <h2 id="_3">設定</h2>
 <p><img src="../img/mapping_source.png" alt="" title="" width="500" ></p>
-<h3 id="rdb">RDB</h3>
-<h4 id="_4">テーブル</h4>
+<h3 id="_4">データベース</h3>
+<h4 id="_5">テーブル</h4>
 <p><img src="../img/mapping_source_rdb.png" alt="" title="" width="500" ></p>
 <table>
 <thead>
@@ -1508,7 +1550,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="_5">クエリ</h4>
+<h4 id="_6">クエリ</h4>
 <p><img src="../img/mapping_source_rdb2.png" alt="" title="" width="500" ></p>
 <table>
 <thead>
@@ -1543,19 +1585,34 @@
 </thead>
 <tbody>
 <tr>
-<td align="left">8</td>
+<td align="left">11</td>
 <td align="left">CSVファイル名</td>
-<td align="left">コネクションでCSVフォルダーが選択された場合、フォルダー内のCSVファイル一覧が表示されます。リストから該当するファイルを選択してください。</td>
+<td align="left">取込するCSVファイル名を入力します。<br />ファイルパターンで設定したい場合は、「対象ファイル詳細」ボタンを押して詳細設定を行ってください。</td>
 </tr>
 <tr>
-<td align="left">9</td>
+<td align="left">12</td>
+<td align="left">対象ファイル詳細</td>
+<td align="left">複数のCSVファイルを取込対象にしたい場合は、「対象ファイル詳細」ボタンを押して、詳細設定画面で設定を行ってください。<br /><br />設定方法の詳細は、以下を参照してください。 <br /><a href=".#_7" ><i class="fa fa-book"></i> ファイル詳細設定</a></td>
+</tr>
+<tr>
+<td align="left">13</td>
 <td align="left">エンコーディング</td>
 <td align="left">CSVファイルのエンコーディングを指定してください。<br />例：UTF-8、Shift_JIS</td>
 </tr>
 <tr>
-<td align="left">10</td>
+<td align="left">14</td>
 <td align="left">ヘッダー行あり</td>
 <td align="left">ヘッダー行の有無を選択してください。</td>
+</tr>
+<tr>
+<td align="left">15</td>
+<td align="left">ファイルからカラム情報取得</td>
+<td align="left">ひな型CSVファイルを選択し、そのカラム情報を解析して一覧で表示します。</td>
+</tr>
+<tr>
+<td align="left">16</td>
+<td align="left">カラム</td>
+<td align="left">ひな型CSVファイルのカラムを一覧表示するリスト。</td>
 </tr>
 <tr>
 <td align="left">※</td>
@@ -1576,24 +1633,39 @@
 </thead>
 <tbody>
 <tr>
-<td align="left">11</td>
+<td align="left">21</td>
 <td align="left">Excelファイル名</td>
-<td align="left">コネクションでExcelフォルダーが選択された場合、フォルダー内のExcelファイル一覧が表示されます。リストから該当するファイルを選択してください。</td>
+<td align="left">取込するExcelファイル名を入力します。<br />ファイルパターンで設定したい場合は、「対象ファイル詳細」ボタンを押して詳細設定を行ってください。</td>
 </tr>
 <tr>
-<td align="left">12</td>
+<td align="left">22</td>
+<td align="left">対象ファイル詳細</td>
+<td align="left">複数のExcelファイルを取込対象にしたい場合は、「対象ファイル詳細」ボタンを押して、詳細設定画面で設定を行ってください。<br /><br />設定方法の詳細は、以下を参照してください。 <br /><a href=".#_7" ><i class="fa fa-book"></i> ファイル詳細設定</a></td>
+</tr>
+<tr>
+<td align="left">23</td>
 <td align="left">シート</td>
 <td align="left">取り込み対象のシート番号を選択してください。<br />※番号は1から始まります。</td>
 </tr>
 <tr>
-<td align="left">13</td>
+<td align="left">24</td>
 <td align="left">エンコーディング</td>
 <td align="left">Excelファイルのエンコーディングを指定してください。<br />例：UTF-8、Shift_JIS</td>
 </tr>
 <tr>
-<td align="left">14</td>
+<td align="left">25</td>
 <td align="left">ヘッダー行あり</td>
 <td align="left">ヘッダー行の有無を選択してください。</td>
+</tr>
+<tr>
+<td align="left">26</td>
+<td align="left">ファイルからカラム情報取得</td>
+<td align="left">ひな型Excelファイルを選択し、そのカラム情報を解析して一覧で表示します。</td>
+</tr>
+<tr>
+<td align="left">27</td>
+<td align="left">カラム</td>
+<td align="left">ひな型Excelファイルのカラムを一覧表示するリスト。</td>
 </tr>
 </tbody>
 </table>
@@ -1609,22 +1681,27 @@
 </thead>
 <tbody>
 <tr>
-<td align="left">15</td>
+<td align="left">31</td>
 <td align="left">JSONファイル名</td>
-<td align="left">コネクションでJSONフォルダーが選択されると、フォルダー内のJSONファイル一覧が表示されます。そのリストから、対象のファイルを選択してください。</td>
+<td align="left">取込するJSONファイル名を入力します。<br />ファイルパターンで設定したい場合は、「対象ファイル詳細」ボタンを押して詳細設定を行ってください。</td>
 </tr>
 <tr>
-<td align="left">16</td>
+<td align="left">32</td>
+<td align="left">対象ファイル詳細</td>
+<td align="left">複数のJSONファイルを取込対象にしたい場合は、「対象ファイル詳細」ボタンを押して、詳細設定画面で設定を行ってください。<br /><br />設定方法の詳細は、以下を参照してください。 <br /><a href=".#_7" ><i class="fa fa-book"></i> ファイル詳細設定</a></td>
+</tr>
+<tr>
+<td align="left">33</td>
 <td align="left">ファイルから構造取得</td>
-<td align="left">別のJSONファイルを選択し、その構造を解析してツリービュー形式で表示する。</td>
+<td align="left">ひな型のJSONファイルを選択し、その構造を解析してツリービュー形式で表示する。</td>
 </tr>
 <tr>
-<td align="left">17</td>
+<td align="left">34</td>
 <td align="left">対象オブジェクト</td>
 <td align="left">データが配列で構成されている場合、配列内の各要素（明細行）を1レコードとして取り込むことができます。取り込み対象となる配列のオブジェクトを選択してください。</td>
 </tr>
 <tr>
-<td align="left">18</td>
+<td align="left">35</td>
 <td align="left">親オブジェクトを表示</td>
 <td align="left">デフォルトでは、選択されたオブジェクトの下位レイヤのオブジェクトが表示されますが、親レイヤのオブジェクトも必要な場合は、このオプションをチェックしてください。</td>
 </tr>
@@ -1669,27 +1746,32 @@
 </thead>
 <tbody>
 <tr>
-<td align="left">19</td>
+<td align="left">41</td>
 <td align="left">XMLファイル名</td>
-<td align="left">コネクションでXMLフォルダーが選択されると、フォルダー内のXMLファイル一覧が表示されます。そのリストから、対象のファイルを選択してください。</td>
+<td align="left">取込するXMLファイル名を入力します。<br />ファイルパターンで設定したい場合は、「対象ファイル詳細」ボタンを押して詳細設定を行ってください。</td>
 </tr>
 <tr>
-<td align="left">20</td>
+<td align="left">42</td>
+<td align="left">対象ファイル詳細</td>
+<td align="left">複数のXMLファイルを取込対象にしたい場合は、「対象ファイル詳細」ボタンを押して、詳細設定画面で設定を行ってください。<br /><br />設定方法の詳細は、以下を参照してください。 <br /><a href=".#_7" ><i class="fa fa-book"></i> ファイル詳細設定</a></td>
+</tr>
+<tr>
+<td align="left">43</td>
 <td align="left">ファイルから構造取得</td>
-<td align="left">別のJSONファイルを選択し、その構造を解析してツリービュー形式で表示する。</td>
+<td align="left">ひな型のXMLファイルを選択し、その構造を解析してツリービュー形式で表示する。</td>
 </tr>
 <tr>
-<td align="left">21</td>
+<td align="left">44</td>
 <td align="left">対象要素</td>
 <td align="left">データが配列で構成されている場合、配列内の各要素（明細行）を1レコードとして取り込むことができます。取り込み対象となる配列の要素を選択してください。</td>
 </tr>
 <tr>
-<td align="left">22</td>
+<td align="left">45</td>
 <td align="left">親要素を表示</td>
 <td align="left">デフォルトでは、選択された要素の下位階層の要素が表示されますが、親階層の要素も必要な場合は、このオプションをチェックしてください。</td>
 </tr>
 <tr>
-<td align="left">23</td>
+<td align="left">46</td>
 <td align="left">属性を表示</td>
 <td align="left">デフォルトでは、XMLの属性が表示されません。属性データも必要な場合は、このオプションをチェックしてください。</td>
 </tr>
@@ -1719,6 +1801,49 @@
      &lt;/detail&gt;
  &lt;/data&gt;
 </code></pre></div>
+<h3 id="_7">ファイル詳細設定</h3>
+<p><img src="../img/mapping_file_detail.png" alt="" title="" width="500" ></p>
+<table>
+<thead>
+<tr>
+<th align="left">No</th>
+<th align="left">項目</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">51</td>
+<td align="left">データ取込対象</td>
+<td align="left">データ取込対象は、シングルファイルまたはファイル名パターンにマッチしたファイルリストとして設定できます。</td>
+</tr>
+<tr>
+<td align="left">52</td>
+<td align="left">ファイル名パターン</td>
+<td align="left">データ取込対象としてファイル名のパターンを選択した場合、パターンの設定はワイルドカードおよび正規表現で行うことができます。</td>
+</tr>
+<tr>
+<td align="left">53</td>
+<td align="left">ファイルマスク</td>
+<td align="left">ワイルドカードまたは正規表現のファイルマスクを入力してください。</td>
+</tr>
+<tr>
+<td align="left">54</td>
+<td align="left">ソート対象</td>
+<td align="left">複数のファイルを対象とする場合、ファイル取込の順番を設定します。</td>
+</tr>
+<tr>
+<td align="left">55</td>
+<td align="left">ソート順</td>
+<td align="left">ソート順を設定してください。</td>
+</tr>
+<tr>
+<td align="left">56</td>
+<td align="left">テスト</td>
+<td align="left">設定されたファイルマスクに基づき、現在の対象ファイル一覧を表示します。</td>
+</tr>
+</tbody>
+</table>
 <h3 id="web-service-web-api">Web Service/ Web API</h3>
 <p><img src="../img/mapping_source_webserviceapi.png" alt="" title="" width="500" ></p>
 <table>
@@ -1731,16 +1856,152 @@
 </thead>
 <tbody>
 <tr>
-<td align="left">24</td>
+<td align="left">61</td>
 <td align="left">エンドポイント</td>
-<td align="left">相対URLを入力してください。<br />時間に関する動的パラメータの設定が可能です。<br />現在日付を使用する場合の設定例：<br /><code>/api/v1/orders/{yyyyMMdd}</code><br />昨日の日付を使用する場合の複雑な設定例：<br /><code>/api/v1/orders/{DateTime.Now.AddDays(-1).ToString("yyyyMMdd")}</code></td>
+<td align="left">相対URLを入力してください。<br />時間に関する動的パラメータの設定が可能です。<br /><br />設定方法の詳細は、以下を参照してください。 <br /><a href=".#_8" ><i class="fa fa-book"></i> 動的パラメータの設定について</a></td>
 </tr>
 <tr>
-<td align="left">25</td>
+<td align="left">62</td>
+<td align="left">リクエスト詳細設定</td>
+<td align="left">リクエストの メソッド、ヘッダー、POSTボディ などの詳細情報を設定します。</td>
+</tr>
+<tr>
+<td align="left">63</td>
 <td align="left">更新</td>
 <td align="left">エンドポイントから最新情報を取得します。</td>
 </tr>
 </tbody>
+</table>
+<h4 id="web-service-web-api_1">Web Service/ Web APIリクエスト詳細設定</h4>
+<p><img src="../img/mapping_source_webserviceapi_detail.png" alt="" title=""  ></p>
+<table>
+<thead>
+<tr>
+<th align="left">No</th>
+<th align="left">項目</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">71</td>
+<td align="left">メソッド</td>
+<td align="left">リクエストのメソッドを選択します。GET と POST がサポートされています。</td>
+</tr>
+<tr>
+<td align="left">72</td>
+<td align="left">エンドポイント</td>
+<td align="left">相対URLを入力してください。<br />時間に関する動的パラメータの設定が可能です。<br /><br />設定方法の詳細は、以下を参照してください。 <br /><a href=".#_8" ><i class="fa fa-book"></i> 動的パラメータの設定について</a></td>
+</tr>
+<tr>
+<td align="left">73</td>
+<td align="left">テスト</td>
+<td align="left">Webサービス/Web API に対してアクセステストを実行します。</td>
+</tr>
+<tr>
+<td align="left">74</td>
+<td align="left">ヘッダ</td>
+<td align="left">リクエストヘッダーを設定してください。</td>
+</tr>
+<tr>
+<td align="left">75</td>
+<td align="left">ボディ</td>
+<td align="left">POSTの場合ボディを設定してください。</td>
+</tr>
+<tr>
+<td align="left">76</td>
+<td align="left">Content-Type設定ボタン</td>
+<td align="left">ヘッダーの Content-Type を text、JSON、XML、HTML に自動設定するボタンです。</td>
+</tr>
+<tr>
+<td align="left">77</td>
+<td align="left">レスポンス</td>
+<td align="left">テストを実行すると、レスポンスに関する情報を表示します。</td>
+</tr>
+</tbody>
+</table>
+<p><img src="../img/mapping_source_webserviceapi_detail_body1.png" alt="" title="" width="500" ></p>
+<table>
+<thead>
+<tr>
+<th align="left">No</th>
+<th align="left">項目</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">81</td>
+<td align="left">テキスト</td>
+<td align="left">ボディタイプが RAWテキスト の場合は、「テキスト」を選択してください。</td>
+</tr>
+<tr>
+<td align="left">82</td>
+<td align="left">ボディテキスト</td>
+<td align="left">ボディテキストを入力してください。<br />時間に関する動的パラメータの設定が可能です。<br /><br />設定方法の詳細は、以下を参照してください。 <br /><a href=".#_8" ><i class="fa fa-book"></i> 動的パラメータの設定について</a></td>
+</tr>
+</tbody>
+</table>
+<p><img src="../img/mapping_source_webserviceapi_detail_body2.png" alt="" title="" width="500" ></p>
+<table>
+<thead>
+<tr>
+<th align="left">No</th>
+<th align="left">項目</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">83</td>
+<td align="left">動的生成</td>
+<td align="left">ボディの内容が 動的生成 の場合は、「動的生成」を選択してください。<br />動的生成では、データベースから SELECT SQL に設定されたSQLの実行結果をボディとして POST します。</td>
+</tr>
+<tr>
+<td align="left">84</td>
+<td align="left">コネクション</td>
+<td align="left">対象となるデータベースを選択します。</td>
+</tr>
+<tr>
+<td align="left">85</td>
+<td align="left">SELECT SQL</td>
+<td align="left">実行するSQLを入力します。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_8">動的パラメータの設定について</h3>
+<p>設定方法は、<code>{}</code>で囲んだ式を評価し、計算した値を使用します。</p>
+<table>
+  <tr>
+    <th>例</th>
+    <th>設定方法</th>
+  </tr>
+  <tr>
+    <td rowspan="2">現在日付を使用する場合の設定例</td>
+    <td>/api/v1/orders/{yyyyMMdd} /api/v1/orders/<span style="color: #ff7f50;">{yyyyMMdd}</span></td>
+  </tr>
+  <tr>
+    <td>
+{<br />
+ "orderno": 1,<br />
+ "customercode": "A001", <br />
+ "updatedate": "<span style="color: #ff7f50;">{yyyy/MM/dd HH:mm:ss}</span>", <br />
+} <br />
+    </td>
+  </tr>  
+<tr>
+    <td rowspan="2">昨日の日付を使用する場合の設定例</td>
+    <td>/api/v1/orders/<span style="color: #ff7f50;">{DateTime.Now.AddDays(-1).ToString("yyyyMMdd")}</span></td>
+  </tr>
+  <tr>
+    <td>
+{ <br />
+ "orderno": 1, <br />
+ "customercode": "A001", <br />
+ "updatedate": "<span style="color: #ff7f50;">{DateTime.Now.AddDays(-1).ToString(\"yyyyMMdd\")}</span>"<br />
+} <br />
+    </td>
+  </tr>  
 </table>
                 
               
