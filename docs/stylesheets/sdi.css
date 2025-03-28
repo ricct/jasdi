@@ -1,4 +1,8 @@
 
+.md-ellipsis {
+  font-weight: normal !important;
+}
+
 h1 {
   position: relative;
   #border-bottom: solid 2px #c0d3ec;
