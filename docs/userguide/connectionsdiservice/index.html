@@ -26,7 +26,7 @@
     
     
       
-        <title>リモート(SDI Web service 経由) - Simple Data Integrator</title>
+        <title>リモートデータベース(SDI Gateway service 経由) - Simple Data Integrator</title>
       
     
     
@@ -126,7 +126,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              リモート(SDI Web service 経由)
+              リモートデータベース(SDI Gateway service 経由)
             
           </span>
         </div>
@@ -460,7 +460,7 @@
             
   
   <span class="md-ellipsis">
-    SDI Web Service
+    SDI Gateway Service
     
   </span>
   
@@ -471,7 +471,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
-            SDI Web Service
+            SDI Gateway Service
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -530,7 +530,7 @@
         
   
   <span class="md-ellipsis">
-    SDI Web serviceデプロイ 
+    SDI Gateway serviceデプロイ 
     
   </span>
   
@@ -552,7 +552,7 @@
         
   
   <span class="md-ellipsis">
-    SDI Web service設定 
+    SDI Gateway service設定 
     
   </span>
   
@@ -925,7 +925,7 @@
           
   
   <span class="md-ellipsis">
-    リモート(SDI Web service 経由)
+    リモートデータベース(SDI Gateway service 経由)
     
   </span>
   
@@ -937,7 +937,7 @@
         
   
   <span class="md-ellipsis">
-    リモート(SDI Web service 経由)
+    リモートデータベース(SDI Gateway service 経由)
     
   </span>
   
@@ -1917,9 +1917,11 @@
 
 <h1 id="_1">リモートデータベースへのコネクション設定</h1>
 <h2 id="_2">概要</h2>
-<p>SDIはSDI Web service 経由してリモートに設置されたデータベースへの接続は可能です。
-リモートに設置されたデータベースに接続の際、ロケーションをリモート接続を選択、接続先のデータタイプを選択してから詳細設定します。<br />
-※SDI Web service を先に設置、設定する必要があります。</p>
+<p>SDIはSDI Gateway Service 経由してリモートに設置されたデータベースへの接続は可能です。
+リモートに設置されたデータベースに接続の際、ロケーションをリモート接続を選択、接続先のデータタイプを選択してから詳細設定します。  </p>
+<div class="admonition note info">
+<p>SDI Gateway Service を先に設置、設定する必要があります。</p>
+</div>
 <h2 id="_3">設定</h2>
 <p><img src="../img/connection_sdiservice.png" alt="" title="" >  </p>
 <table>
@@ -1934,7 +1936,7 @@
 <tr>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">ロケーション</td>
-<td style="text-align: left;">リモート(SDI Web service 経由)を選択</td>
+<td style="text-align: left;">リモートデータベース(SDI Gateway Service 経由)を選択</td>
 </tr>
 <tr>
 <td style="text-align: left;">2</td>
@@ -1944,7 +1946,7 @@
 <tr>
 <td style="text-align: left;">3</td>
 <td style="text-align: left;">End Point Address</td>
-<td style="text-align: left;">SDI Web Service のEnd Point Addressを入力。</td>
+<td style="text-align: left;">SDI Gateway Service のEnd Point Addressを入力。</td>
 </tr>
 <tr>
 <td style="text-align: left;">4</td>
@@ -1959,17 +1961,17 @@
 <tr>
 <td style="text-align: left;">6</td>
 <td style="text-align: left;">ConnectionString</td>
-<td style="text-align: left;">SDI Web Service側設定されたConnectionStringの名前を入力してください</td>
+<td style="text-align: left;">SDI Gateway Service側設定されたConnectionStringの名前を入力してください</td>
 </tr>
 <tr>
 <td style="text-align: left;">7</td>
 <td style="text-align: left;">Network Data Encryption</td>
-<td style="text-align: left;">SDIがSDI Web Serviceとデータを通信する際、データを暗号化するかどうか。（この設定はEnd Point Addressがhttpの場合のみ有効です。End Point Addressがhttpsの場合、ssl暗号化通信するので、この設定を無視する）</td>
+<td style="text-align: left;">SDIがSDI Gateway Serviceとデータを通信する際、データを暗号化するかどうか。（この設定はEnd Point Addressがhttpの場合のみ有効です。End Point Addressがhttpsの場合、ssl暗号化通信するので、この設定を無視する）</td>
 </tr>
 <tr>
 <td style="text-align: left;">8</td>
 <td style="text-align: left;">Network Data Compression</td>
-<td style="text-align: left;">SDIがSDI Web Serviceとデータを通信する際、データを圧縮するかどうか。</td>
+<td style="text-align: left;">SDIがSDI Gateway Serviceとデータを通信する際、データを圧縮するかどうか。</td>
 </tr>
 <tr>
 <td style="text-align: left;">9</td>

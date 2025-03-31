@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sdi-web-service" class="md-skip">
+        <a href="#sdi-gateway-service" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -467,7 +467,7 @@
             
   
   <span class="md-ellipsis">
-    SDI Web Service
+    SDI Gateway Service
     
   </span>
   
@@ -478,7 +478,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
-            SDI Web Service
+            SDI Gateway Service
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -537,9 +537,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#step1-sdi-web-service" class="md-nav__link">
+  <a href="#step1-sdi-gateway-service" class="md-nav__link">
     <span class="md-ellipsis">
-      Step1: SDI Web Service をダウンロード
+      Step1: SDI Gateway Service をダウンロード
     </span>
   </a>
   
@@ -555,18 +555,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step3-sdi-web-service" class="md-nav__link">
+  <a href="#step3-sdi-gateway-service" class="md-nav__link">
     <span class="md-ellipsis">
-      Step3: SDI Web service デプロイ
+      Step3: SDI Gateway Service デプロイ
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step4-sdi-web-service" class="md-nav__link">
+  <a href="#step4-sdi-gateway-service" class="md-nav__link">
     <span class="md-ellipsis">
-      Step4: SDI Web Service 設定
+      Step4: SDI Gateway Service 設定
     </span>
   </a>
   
@@ -614,7 +614,7 @@
         
   
   <span class="md-ellipsis">
-    SDI Web serviceデプロイ 
+    SDI Gateway serviceデプロイ 
     
   </span>
   
@@ -636,7 +636,7 @@
         
   
   <span class="md-ellipsis">
-    SDI Web service設定 
+    SDI Gateway service設定 
     
   </span>
   
@@ -993,7 +993,7 @@
         
   
   <span class="md-ellipsis">
-    リモート(SDI Web service 経由)
+    リモートデータベース(SDI Gateway service 経由)
     
   </span>
   
@@ -1900,9 +1900,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#step1-sdi-web-service" class="md-nav__link">
+  <a href="#step1-sdi-gateway-service" class="md-nav__link">
     <span class="md-ellipsis">
-      Step1: SDI Web Service をダウンロード
+      Step1: SDI Gateway Service をダウンロード
     </span>
   </a>
   
@@ -1918,18 +1918,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step3-sdi-web-service" class="md-nav__link">
+  <a href="#step3-sdi-gateway-service" class="md-nav__link">
     <span class="md-ellipsis">
-      Step3: SDI Web service デプロイ
+      Step3: SDI Gateway Service デプロイ
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step4-sdi-web-service" class="md-nav__link">
+  <a href="#step4-sdi-gateway-service" class="md-nav__link">
     <span class="md-ellipsis">
-      Step4: SDI Web Service 設定
+      Step4: SDI Gateway Service 設定
     </span>
   </a>
   
@@ -1951,23 +1951,23 @@
 
 
 
-<h1 id="sdi-web-service">SDI Web Service セットアップ方法</h1>
+<h1 id="sdi-gateway-service">SDI Gateway Service セットアップ方法</h1>
 <div class="admonition note info">
-<p class="admonition-title">SDI Web Serviceのセットアップについて</p>
-<p>SDI Web Serviceを経由してデータ連携の場合のみ必要です、<mark>拠点内DB間、あるいはVPN経由データ連携の場合、SDI Web Serviceのセットアップ作業不要です。</mark></p>
+<p class="admonition-title">SDI Gateway Serviceのセットアップについて</p>
+<p>SDI Gateway Serviceを経由してデータ連携の場合のみ必要です、<mark>拠点内DB間、あるいはVPN経由データ連携の場合、SDI Gateway Serviceのセットアップ作業不要です。</mark></p>
 </div>
-<h3 id="step1-sdi-web-service">Step1: SDI Web Service をダウンロード</h3>
-<p><a href="../bin/SdiService_1_2_2205_8.zip" onclick="gtag('event', 'SdiServicedownload', {'event_category': 'zip', 'event_label': 'SdiService_1_2_2205_8.zip'})" target="_blank">:fa-download: SDI Web Service 1.2.2205.8 </a> </p>
+<h3 id="step1-sdi-gateway-service">Step1: SDI Gateway Service をダウンロード</h3>
+<p><a href="../bin/SdiService_1_2_2205_8.zip" onclick="gtag('event', 'SdiServicedownload', {'event_category': 'zip', 'event_label': 'SdiService_1_2_2205_8.zip'})" target="_blank"><i class="fas fa-download"></i> SDI Gateway Service 1.2.2205.8 </a> </p>
 <div class="admonition note">
 <p class="admonition-title">解凍パスワード:</p>
 <p><strong>WelcomeToSdi</strong></p>
 </div>
 <h3 id="step2-iis">Step2: IIS　インストール</h3>
-<p><a href="/start/installiis/" target="_blank">:fa-link: IIS　インストール</a> </p>
-<h3 id="step3-sdi-web-service">Step3: SDI Web service デプロイ</h3>
-<p><a href="/start/deployservice/" target="_blank">:fa-link: SDI Web service デプロイ</a> </p>
-<h3 id="step4-sdi-web-service">Step4: SDI Web Service 設定</h3>
-<p><a href="/start/configservice/" target="_blank">:fa-link: SDI Web Service 設定</a> </p>
+<p><a href="/start/installiis/" target="_blank"><i class="fas fa-link"></i> IIS　インストール</a> </p>
+<h3 id="step3-sdi-gateway-service">Step3: SDI Gateway Service デプロイ</h3>
+<p><a href="/start/deployservice/" target="_blank"><i class="fas fa-link"></i> SDI Gateway Service デプロイ</a> </p>
+<h3 id="step4-sdi-gateway-service">Step4: SDI Gateway Service 設定</h3>
+<p><a href="/start/configservice/" target="_blank"><i class="fas fa-link"></i> SDI Gateway Service 設定</a> </p>
 
 
 
