@@ -500,9 +500,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step3-simpledataintegratorworker" class="md-nav__link">
+  <a href="#step-3-simpledataintegratorworker" class="md-nav__link">
     <span class="md-ellipsis">
-      Step3: SimpleDataIntegratorWorker サービスをインストール
+      Step 3: SimpleDataIntegratorWorker サービスのインストール
     </span>
   </a>
   
@@ -2060,9 +2060,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step3-simpledataintegratorworker" class="md-nav__link">
+  <a href="#step-3-simpledataintegratorworker" class="md-nav__link">
     <span class="md-ellipsis">
-      Step3: SimpleDataIntegratorWorker サービスをインストール
+      Step 3: SimpleDataIntegratorWorker サービスのインストール
     </span>
   </a>
   
@@ -2121,7 +2121,7 @@
 <h2 id="_1">セットアップ手順</h2>
 <h3 id="step1-simple-data-integrator">Step1: Simple Data Integrator をダウンロード</h3>
 <p><button class="download-btn">
-  <a href="../bin/SimpleDataIntegratorSetup_ja_25_7_3.zip" onclick="gtag('event', 'sdidownload', {'event_category': 'zip', 'event_label': 'SimpleDataIntegratorSetup_ja_25_7_3.zip'})" target="_blank"><i class="fas fa-download"></i> Simple Data Integrator 25.7.3 (最新版)</a> 
+  <a href="../bin/SimpleDataIntegratorSetup_ja_25_7_6.zip" onclick="gtag('event', 'sdidownload', {'event_category': 'zip', 'event_label': 'SimpleDataIntegratorSetup_ja_25_7_6.zip'})" target="_blank"><i class="fas fa-download"></i> Simple Data Integrator 25.7.6 (最新版)</a> 
 </button></p>
 <!-- 
 
@@ -2133,11 +2133,17 @@
 <h3 id="step2-simpledataintegratorsetupmsi">Step2: SimpleDataIntegratorSetup.msiを対話式インストール</h3>
 <p>SimpleDataIntegratorSetup.msiを実行します。<br />
 画面の指示に従ってインストールを完了してください。</p>
-<h3 id="step3-simpledataintegratorworker">Step3: SimpleDataIntegratorWorker サービスをインストール</h3>
-<p>管理者権限でコマンドプロンプトを起動します。<br />
-下記のコマンドを実行。</p>
+<h3 id="step-3-simpledataintegratorworker">Step 3: SimpleDataIntegratorWorker サービスのインストール</h3>
+<p>3.1. 管理者権限でコマンドプロンプトを起動します。<br />
+3.2. 以下のコマンドを実行して、サービスをインストールします。  </p>
 <div class="highlight"><pre><span></span><code>sc create &quot;SimpleDataIntegratorWorker&quot; binPath=&quot;C:\Program Files\RiCCT\SimpleDataIntegrator\DataIntegratorService.exe&quot; DisplayName=&quot;SimpleDataIntegratorWorker&quot; start=delayed-auto
 </code></pre></div>
+<p>3.3. サービスを手動で起動したい場合は、以下のコマンドを実行します。  </p>
+<div class="highlight"><pre><span></span><code>sc start &quot;SimpleDataIntegratorWorker&quot;
+</code></pre></div>
+<blockquote>
+<p>※サービスは「自動（遅延開始）」に設定されているため、通常の運用では手動で起動する必要はありません。</p>
+</blockquote>
 <h2 id="db2">DB2 ライブラリインストール</h2>
 <p>DB2ご利用の場合、下記の手順に従って設定してください</p>
 <div class="admonition note info">

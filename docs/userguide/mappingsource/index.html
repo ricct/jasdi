@@ -1162,7 +1162,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       ファイル詳細設定
     </span>
@@ -1180,9 +1180,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#web-service-web-api_2" class="md-nav__link">
     <span class="md-ellipsis">
-      動的パラメータの設定について
+      Web Service/ Web APIリクエスト動的パラメータの設定について
     </span>
   </a>
   
@@ -2128,7 +2128,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       ファイル詳細設定
     </span>
@@ -2146,9 +2146,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#web-service-web-api_2" class="md-nav__link">
     <span class="md-ellipsis">
-      動的パラメータの設定について
+      Web Service/ Web APIリクエスト動的パラメータの設定について
     </span>
   </a>
   
@@ -2247,6 +2247,112 @@
 </tr>
 </tbody>
 </table>
+<h4 id="_7">バインド変数の設定</h4>
+<p>Simple Data Integrator では、あるマッピングの SELECT 結果を、別のマッピングの入力（バインド変数）として使用できます。これにより、マッピング間で柔軟かつ動的なデータ連携が可能になります。</p>
+<h5 id="_8">機能概要</h5>
+<p>前段マッピング（インプットマッピング）の SELECT 結果を、後段マッピングのバインド変数に設定することで、その値をもとに動的なデータ処理を実行できます。<br />
+また、複数のパラメーターや複数行のインプットにも対応しています。</p>
+<hr />
+<h5 id="_9">設定手順</h5>
+<p><strong>1. データ抽出の条件のフィルターまたはクエリ内容にバインド変数を記述します。</strong></p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>項目</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>フィルター</td>
+<td>データ抽出の条件がある場合は、WHERE 句にバインド変数を使用してください。<br>例：<br>WHERE UPDATE_TIME &gt;= <code>:latest_date</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td>クエリ内容</td>
+<td>データ抽出のための SQL に、適切な形式でバインド変数を記述してください。<br>例：<br><br>SELECT EMPID,<br>       EMPNAME,<br>       DEPT_CODE<br>FROM HR.EMP<br>WHERE DEPT_CODE = <code>:DEPT_CODE</code><br></td>
+</tr>
+</tbody>
+</table>
+<p>※ データベースの種類によってバインド変数の記述方法が異なります。以下の表を参照してください。</p>
+<hr />
+<h5 id="_10">データベース別 バインド変数の使用形式</h5>
+<table>
+<thead>
+<tr>
+<th>データベース</th>
+<th>バインド変数の形式</th>
+<th>例（備考）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Oracle</td>
+<td><code>:param</code></td>
+<td><code>SELECT * FROM users WHERE id = :id AND status = :status</code></td>
+</tr>
+<tr>
+<td>SQL Server</td>
+<td><code>@param</code></td>
+<td><code>SELECT * FROM users WHERE id = @id AND status = @status</code></td>
+</tr>
+<tr>
+<td>PostgreSQL</td>
+<td><code>@param</code></td>
+<td><code>SELECT * FROM users WHERE id = @id AND status = @status</code></td>
+</tr>
+<tr>
+<td>MySQL</td>
+<td><code>@param</code></td>
+<td><code>SELECT * FROM users WHERE id = @id AND status = @status</code></td>
+</tr>
+<tr>
+<td>DB2</td>
+<td><code>@param</code></td>
+<td><code>SELECT * FROM users WHERE id = @id AND status = @status</code></td>
+</tr>
+<tr>
+<td>ODBC</td>
+<td><code>?</code></td>
+<td><code>SELECT * FROM users WHERE id = ? AND status = ?</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>2. バインド変数の詳細設定を行います。</strong></p>
+<p><img src="../img/mapping_bindparameter_btn.png" alt="バインド変数設定画面" title="バインド変数設定画面"  width="500"><br />
+「バインド変数設定」ボタンをクリックすると、バインド変数の詳細設定画面が開きます。  </p>
+<p><img src="../img/mapping_bindparameter.png" alt="バインド変数設定画面" title="バインド変数設定画面"></p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>項目</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8</td>
+<td>入力元マッピング</td>
+<td>バインド変数の値を取得する入力元のマッピングを選択します。</td>
+</tr>
+<tr>
+<td>9</td>
+<td>入力カラム</td>
+<td>該当パラメータにバインドする値を持つカラムを指定します。</td>
+</tr>
+<tr>
+<td>10</td>
+<td>パラメータ型</td>
+<td>バインド変数のデータ型を設定します。</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>※グループフィルターを使用してマッピングを絞り込むことができます。グループフィルターの選択は必須ではありません。</p>
+</blockquote>
 <h3 id="csv">CSVファイル</h3>
 <p><img src="../img/mapping_source_csv.png" alt="" title="" width="500" ></p>
 <table>
@@ -2475,7 +2581,7 @@
      &lt;/detail&gt;
  &lt;/data&gt;
 </code></pre></div>
-<h3 id="_7">ファイル詳細設定</h3>
+<h3 id="_11">ファイル詳細設定</h3>
 <p><img src="../img/mapping_file_detail.png" alt="" title="" width="500" ></p>
 <table>
 <thead>
@@ -2643,7 +2749,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="_8">動的パラメータの設定について</h3>
+<h3 id="web-service-web-api_2">Web Service/ Web APIリクエスト動的パラメータの設定について</h3>
 <p>設定方法は、<code>{}</code>で囲んだ式を評価し、計算した値を使用します。</p>
 <table>
   <tr>
