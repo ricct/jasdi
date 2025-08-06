@@ -90,3 +90,33 @@ body {
   color: white;
   text-decoration: none;
 }
+
+
+.contact-section {
+text-align: center; margin: 1.5em 0;
+}
+
+.contact-btn {
+display: inline-block;
+background-color: #5c8eff;
+color: white;
+font-weight: bold;
+font-size: 1em;
+padding: 0.8em 2em;
+border-radius: 6px;
+text-decoration: none;
+box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.contact-btn:hover {
+  background-color: #2962ff;
+}
+
+.contact-btn a,
+.contact-btn a:visited,
+.contact-btn a:hover,
+.contact-btn a:focus,
+.contact-btn a:active  {
+  color: white;
+  text-decoration: none;
+}
