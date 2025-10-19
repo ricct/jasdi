@@ -79,18 +79,13 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="brown">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
-      
-        
-        <a href="#_1" class="md-skip">
-          コンテンツにスキップ
-        </a>
       
     </div>
     <div data-md-component="announce">
@@ -360,21 +355,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    ホーム
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="." class="md-nav__link md-nav__link--active">
         
@@ -387,52 +367,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      主要機能
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      特徴
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      ユースケース
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1971,7 +1905,7 @@
               
                 
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1980,43 +1914,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      主要機能
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      特徴
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      ユースケース
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -2034,82 +1931,133 @@
 
 
 
-<!-- v1.5 -->
+<div class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div>
+        <h1>Simple. Fast. Powerful.</h1>
 
-<h1 id="_1">概要</h1>
-<p>Simple Data Integrator (SDI) は、データベース間でデータを連携し、変換、抽出、ロード（ETL）を実行するためのソフトウェアです。SDIはデータの移動と変換プロセスを自動化し、異なるデータソース間でデータの一貫性を確保します。  </p>
-<h4 id="_2">同一拠点内でのデータ連携</h4>
-<p><img src="../img/sdi1.gif" alt="" title="" width="700" /></p>
-<h4 id="_3">複数の拠点間でのデータ連携</h4>
-<p><img src="../img/sdi2.gif" alt="" title="" width="700" /></p>
-<p>Simple Data Integrator（SDI）は、さまざまなリレーショナルデータベース（RDB）間のデータ連携をスムーズに実現するツールです。対応データベースには、Oracle、SQL Server、MySQL、PostgreSQL、DB2、Azure Synapse、BigQuery、Snowflake、ODBC接続可能な各種RDBが含まれます。</p>
-<p>CSV、Excel、JSON、XMLといったファイル形式からRDBへのデータインポートや、RDBからファイルへのデータエクスポートにも対応しており、柔軟なデータ連携を可能にします。</p>
-<p>インポート元・エクスポート先としては、ローカルファイルシステムのほか、FTP/FTPS、SFTP、AWS S3、OCI Object Storage、Azure Blob Storage など、各種クラウドストレージやリモートストレージに対応しています。</p>
-<p>また、WebサービスやWeb APIからのデータ取得・連携にも対応しており、システム間の統合を効率よく行うことができます。</p>
-<p>スケジューラー機能を活用すれば、指定した時間での自動連携や、ファイルの更新をトリガーとした処理の自動実行が可能です。</p>
-<p>さらに、SDI Gateway Service は Proxy 機能を備えており、遠隔地とのセキュアなデータ連携をインターネット経由で実現できます。VPNや専用線の構築は不要で、手軽かつ安全に接続環境を整えることができます。</p>
-<h2 id="_4">主要機能</h2>
-<h4 id="_5">データ連携 (マッピング)</h4>
-<ul>
-<li><img src="../img/fdb2db.png" alt="" title="" width="50" />　ソースDBのテーブル、ビュー、またはクエリからターゲットDBのテーブルへデータを転送する作業</li>
-<li><img src="../img/ffile2db.png" alt="" title="" width="50" />　CSV、Excel、JSON、XMLなどのフォーマットから、ターゲットDBのテーブルにデータをインポートする</li>
-<li><img src="../img/fdb2file.png" alt="" title="" width="50" />　ソースDBのテーブル、ビュー、またはクエリからCSV、Excel、JSON、XMLなどのフォーマットでデータをエクスポートする  </li>
-<li><img src="../img/fexesql.png" alt="" title="" width="50" />　SQLクエリやプロシージャの実行  </li>
-<li><img src="../img/webserviceapi.png" alt="" title="" width="50" />　Web Service や Web API との連携</li>
-<li><img src="../img/fworkflow.png" alt="" title="" width="50" />　ワークフロー機能</li>
-<li><img src="../img/fnotification.png" alt="" title="" width="50" />　実行結果のメール通知やイベント通知  </li>
-</ul>
-<h4 id="_6">マッピング機能活用</h4>
-<ul>
-<li><img src="../img/fdbmonitor.png" alt="" title="" width="50" />　データベースの可用性監視</li>
-<li><img src="../img/fdatacheck.png" alt="" title="" width="50" />　データの監視と検出（イレギュラーデータ、データの欠落、データの不整合などの検出）</li>
-</ul>
-<h4 id="_7">スケジューラー</h4>
-<ul>
-<li><img src="../img/fschedule.png" alt="" title="" width="50" />　毎時、特定の時刻毎日、週単位、月次、繰り返し実行のスケジューラー設定</li>
-<li><img src="../img/ffiletrigger.png" alt="" title="" width="50" />　 指定されたファイルが新規作成、更新、または削除されたときに実行</li>
-<li><img src="../img/sschedulerexecuteseq.png" alt="" title="" width="50" />　 複数タスクのパラレル実行またはシリアル実行  </li>
-<li><img src="../img/fretry.png" alt="" title="" width="50" />　リトライ機能  </li>
-</ul>
-<h2 id="_8">特徴</h2>
-<h4 id="1">1．シンプルな設計、直感的な操作、そして強力な機能</h4>
-<p>数クリックでインストール完了。
-わずか３ステップでデータ連携、スケジューラ設定完了。<br />
-シンプルなテーブルマッピングから複雑なクエリ、ワークフローまで対応できる。  </p>
-<p><img src="../img/features1.png" alt="" title=""  width="700" /></p>
-<h4 id="2">2.ハイパフォーマンス</h4>
-<p>ハイパフォーマンスを実現するために、パラレル処理、インメモリデータ処理、データ圧縮転送などのアーキテクチャを採用しています。これにより、高速なデータ連携が実現されます。 </p>
-<p><img src="../img/features2.png" alt="" title=""  width="700" /></p>
-<h4 id="3">3.様々な要件に簡単に対応し、柔軟にカスタマイズできる</h4>
-<p>オンプレミス、クラウド、およびハイブリッドクラウドなど、さまざまな構成と要件に対応可能です。クラウドと連携する際には、VPNを構築する必要はなく、SDI Gateway Serviceを介してセキュアな連携（SSL）が可能です。</p>
-<p><img src="../img/features3.png" alt="" title=""  width="700" /></p>
-<h4 id="4">4.柔軟な可用性向上策</h4>
-<p>コールドスタンバイや自動フェイルオーバー機能が実装され、システムの要件や重要性に応じて柔軟な対策が可能です。</p>
-<p><img src="../img/features4.png" alt="" title=""  width="700" /></p>
-<h2 id="_9">ユースケース</h2>
-<h4 id="_10">社内システム間のデータ連携</h4>
-<p>企業内のさまざまなシステム間で、異なるデータフォーマットのデータを連携・統合。</p>
-<p><img src="../img/case1.png" alt="" title=""  width="500" /></p>
-<h4 id="_11">複数の拠点でのデータを一元的に管理</h4>
-<p>複数拠点展開する企業のためのデータ一元管理とデータ活用。</p>
-<p><img src="../img/case2.png" alt="" title=""  width="700" /></p>
-<h4 id="_12">オンプレミス環境とクラウド、またはマルチクラウド環境間でのデータの双方向連携</h4>
-<p>拠点間および拠点とクラウド間の柔軟な接続設計により、双方向のデータ連携が可能となります。</p>
-<p>オンプレミスとクラウド<br />
-<img src="../img/case3_1.png" alt="" title=""  width="700" />  </p>
-<p>マルチクラウド間データ連携<br />
-<img src="../img/case3_2.png" alt="" title=""  width="700" />  </p>
-<h4 id="csvexceljsonxml">CSV、Excel、JSON、XMLファイルを定期的に自動的に作成し、自動的に取り込み</h4>
-<p>CSV、Excel、JSON、XMLファイルを定期的に自動的に作成し、自動的に取り込む機能 
-（ファイルシステム、FTP/FTPS/SFTP、AWS S3、OCI Object Storage、Azure Blob Storage、Web Service、Web APIなどに対応）</p>
-<p><img src="../img/case4_1.png" alt="" title=""  width="700" />  </p>
-<p><img src="../img/case4_2.png" alt="" title=""  width="700" />  </p>
-<p><img src="../img/case4_3.png" alt="" title=""  width="700" />  </p>
-<p><img src="../img/case4_4.png" alt="" title=""  width="700" />  </p>
-<h4 id="_13">データベースの可用性監視および不整合データの検知</h4>
-<p>データベースの可用性監視に加えて、イレギュラーデータ、データの欠落、不整合データなどを検知し、適切な通知を行います。<br />
-※SDI Gateway Serviceを介して、リモートデータベースの監視も行えます。  </p>
-<p><img src="../img/case5.png" alt="" title=""  width="700" />  </p>
+        <h2>シンプルにデータ連携、高速処理、高機能</h2>
+        <p>SDIは、Oracle／SQL Server／MySQL／PostgreSQL／DB2、BigQuery／SnowflakeなどのクラウドDWH、S3・OCI Object Storage・Azure Blob、Web APIとシームレスに連携するデータ連携ソフトです。スケジューラーとゲートウェイにより、社内外へ安全に自動化できます。</p>
+        <br >
+      </div>
+      <div class="screen"><img style="width:100%" src="../img/sdi2.gif"></img></div>
+    </section>
+    <section class="hero">
+       <div>
+          <a class="btn" href="/start/setupsdi/" >セットアップをはじめる</a>
+          <a class="btn" href="#features">主要機能</a>
+          <a class="btn" href="#whysdi">選ばれる理由</a>
+          <a class="btn ghost" href="/license/licensesdi/">ライセンス</a>
+        </div>
+    </section>
+
+    <!-- Key features -->
+    <section id="features" class="section">
+      <h2>主要機能</h2>
+      <div class="grid cards">
+        <article class="card">
+          <h3>データ連携</h3>
+          <p class="muted">
+            <img src="../img/fdb2db.png" alt="" title="" width="38" />　DB間データ連携<br />
+            <img src="../img/ffile2db.png" alt="" title="" width="38" />　DBとファイル間の連携<br />
+            <img src="../img/webserviceapi.png" alt="" title="" width="38" />　Webサービス／Web API連携<br />
+            <img src="../img/fexesql.png" alt="" title="" width="38" />　SQLクエリ・プロシージャ実行  
+          </P>
+        </article>
+        <article class="card">
+          <h3>スケジューラー & トリガー</h3>
+          <p class="muted">
+            <img src="../img/fschedule.png" alt="" title="" width="38" />　毎時・時刻指定・週次・月次で実行<br />
+            <img src="../img/fschedule.png" alt="" title="" width="38" />　一定間隔の繰り返し実行<br />
+            <img src="../img/fschedule.png" alt="" title="" width="38" />　ファイルの新規・更新・削除をトリガー<br />
+            <img src="../img/fretry.png" alt="" title="" width="38" />　リトライ機能  <br />
+          </P>
+        </article>
+        <article class="card">
+          <h3>ワークフロー & 通知</h3>
+          <p class="muted">
+            <img src="../img/fworkflow.png" alt="" title="" width="38" />　ワークフロー機能<br />
+            <img src="../img/fworkflow.png" alt="" title="" width="38" />　複数タスクの連携実行<br />
+            <img src="../img/fnotification.png" alt="" title="" width="38" />　実行結果のメール通知／イベント通知 <br />
+          </P>
+        </article>
+                <article class="card">
+          <h3>可観測性</h3>
+          <p class="muted">
+            <img src="../img/fdbmonitor.png" alt="" title="" width="38" />　実行履歴の可視化<br />
+            <img src="../img/fdbmonitor.png" alt="" title="" width="38" />　データベースの可用性監視<br />
+            <img src="../img/fdatacheck.png" alt="" title="" width="38" />　異常・欠損・不整合の自動検知<br />
+          </P>
+        </article>
+        <article class="card">
+          <h3>SDI Gateway Service</h3>
+          <p class="muted">
+            　拠点間・クラウド間をHTTPSプロキシで安全接続<br />
+            　ゼロトラストに親和<br />
+         </P>
+        </article>
+        <article class="card">
+          <h3>CLI</h3>
+          <p class="muted">
+            　バッチや外部ジョブから操作可能<br />
+            　自動化に組み込みやすい<br />
+         </P>
+        </article>
+      </div>
+    </section>
+
+    <!-- 選ばれる理由 -->
+    <section id="whysdi" class="section">
+      <h2>選ばれる理由</h2>
+      <div class="grid how">
+        <div class="card step">
+          <div class="num">1</div>
+          <h3>シンプル＆パワフル</h3>
+          <p class="muted">数クリックでセットアップ。最短3ステップで連携完了。シンプルなUIと拡張性を両立。</p>
+          <img style="width:95%" src="../img/features1.png"></img>
+        </div>
+        <div class="card step">
+          <div class="num">2</div>
+          <h3>高速アーキテクチャ</h3>
+          <p class="muted">並列・インメモリ・圧縮転送で大容量でも快適。ボトルネックを最小化。</p>
+          <img style="width:95%" src="../img/features2.png"></img>
+        </div>
+        <div class="card step">
+          <div class="num">3</div>
+          <h3>柔軟な運用</h3>
+          <p class="muted">オンプレ／クラウド／ハイブリッドに対応。コールドスタンバイや自動フェイルオーバーも可能。</p>
+          <img style="width:95%" src="../img/features3.png"></img>          
+        </div>
+      </div>
+    </section>
+
+        <!-- ユースケース -->
+    <section id="usecase" class="section">
+      <h2>ユースケース</h2>
+      <div class="grid how">
+        <div class="card step">
+          <div class="num">1</div>
+          <h3>社内システム統合</h3>
+          <p class="muted">異なるフォーマット／RDBのデータを統合・連携。マスタとトランザクションの同期・集計まで</p>
+          <img style="width:95%" src="../img/case1.png"></img>
+        </div>
+        <div class="card step">
+          <div class="num">2</div>
+          <h3>拠点/クラウド集約</h3>
+          <p class="muted">拠点間・オンプレ×クラウド・マルチクラウド間の双方向連携。</p>
+          <img style="width:95%" src="../img/case2.png"></img>
+        </div>
+        <div class="card step">
+          <div class="num">3</div>
+          <h3>定期ファイル自動化</h3>
+          <p class="muted">CSV/Excel/JSON/XMLの定期生成と自動取込。S3/Blob/Object Storage対応。</p>
+          <img style="width:95%" src="../img/case4_3.png"></img>          
+        </div>
+      </div>
+    </section>
+</div>
+
 <div class="admonition note info">
 <p class="admonition-title">本サイトコンテンツの引用・転載について</p>
 <p>本サイトに掲載・公開されている文章、画像、動画などの著作物について、コピー、利用、配布、変更、商用利用、有料販売など、どなたでも
