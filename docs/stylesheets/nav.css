@@ -84,10 +84,10 @@ header.md-header nav.md-tabs a.md-tabs__link[aria-selected="true"]::after{
 .md-typeset h2{ scroll-margin-top: 88px; }
 
 
-H2.heading-14 {
+H2.heading-17 {
     display: inline-block;
     position: relative;
-    padding: 5px 0px 5px 20px; 
+    padding: 5px 50px 5px 20px; 
     margin:0px 0px 0px 0px;      /* 上 | 右 | 下 | 左 */
     background-color: #b2d3ee;
     color: #000;
@@ -95,7 +95,7 @@ H2.heading-14 {
 }
 
 
-H2.heading-14::before {
+H2.heading-17::before {
     position: absolute;
     bottom: -1px;
     right: 9px;
@@ -107,3 +107,91 @@ H2.heading-14::before {
     content: "";
     filter: blur(4px);
 }
+
+
+
+/* main */
+
+    :root{
+      --bg:#ffffff;            /* 背景（ライト） */
+      --ink-2:#556376;         /* 補助文字 */
+      --muted:#556376;         /* 補助文字 */
+      --card:#ffffff;          /* カード背景（白） */
+      --stroke:#e5e7eb;        /* 枠線（薄いグレー） */
+
+    }
+    
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";color:var(--ink);background:var(--bg);line-height:1.6}
+    a{color:var(--blue);text-decoration:none}
+    .container{max-width:1120px;margin:0 auto;padding:24px}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+    .nav .brand{display:flex;gap:12px;align-items:center}
+    .hero{display:grid;gap:10px;grid-template-columns:1.3fr 1fr;align-items:center;padding:36px;background:linear-gradient(135deg, #E8F4FD 0%, #F6FAFF 100%);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero h1{font-size:clamp(28px, 4.2vw, 44px);margin:0 0 8px}
+    .hero p{color:var(--ink-2);margin:0}
+    .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .btn{padding:12px 16px;border-radius:12px;border:1px solid var(--ring);background:#fff;color:var(--ink);font-weight:600}
+    .btn.primary{border-color:color-mix(in srgb, #1434A4 40%, #e5e7eb);background:linear-gradient(180deg, color-mix(in srgb, #1434A4 22%, #ffffff00), #0000);box-shadow:0 0 0 2px color-mix(in srgb, #1434A4 20%, transparent) inset;color:white;background-color:#1434A4}
+    .btn.secondary{background:#fff}
+    .btn.ghost{background:transparent}
+    .pill{font-size:12px;padding:6px 10px;border-radius:999px;background:#EEF6FF;color:#0b4a7a;font-weight:700;display:inline-block;margin-bottom:10px}
+    .section{margin-top:48px}
+    .grid{display:grid;gap:18px}
+    .cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .card{background:var(--card);border:1px solid var(--ring);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 6px;font-size:18px;background:#EEF6FF}
+    .muted{color:var(--muted)}
+    .how{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .step{position:relative;padding-top:10px}
+    .step .num{position:absolute;top:-10px;left:-10px;background:var(--blue2);color:#fff;width:28px;height:28px;border-radius:999px;display:grid;place-items:center;font-weight:800}
+    .screen{height:260px;border-radius:14px;border:1px dashed var(--ring);background:
+      radial-gradient(180px 120px at 30% 20%, rgba(46,117,182,.08), transparent 70%),
+      radial-gradient(220px 140px at 70% 60%, rgba(2,136,209,.08), transparent 70%),
+      #fff;
+      display:grid;place-items:center;color:var(--muted);font-weight:600}
+      
+.logos{ display:grid; gap:12px; opacity:.9; }
+@media (min-width: 320px){  .logos{ grid-template-columns: repeat(2,1fr); } }
+@media (min-width: 560px){  .logos{ grid-template-columns: repeat(3,1fr); } }
+@media (min-width: 800px){  .logos{ grid-template-columns: repeat(4,1fr); } }
+@media (min-width: 1040px){ .logos{ grid-template-columns: repeat(6,1fr); } }
+  
+   .logo{
+    display: flex;
+    align-items: center;          /* 縦中央 */
+    justify-content: center;      /* ← 左右中央 */
+    gap: 18px;                    /* 画像と文字の間隔 */
+    height: 40px;
+
+    /* 枠まわり（任意） */
+    border:1px dashed var(--stroke);
+    border-radius:12px;
+    padding:12px;
+    font-size:12px;
+    color:var(--muted);
+  }
+  .logo img{
+    height: 28px;
+    object-fit: contain;
+    display: block;
+  }
+  .logo .brand{
+    /* line-height は不要。flex で縦中央になる */
+  }
+
+  /* もし .logo 自体をページ中央に置きたい場合はこれも追加 */
+  .logo.center-block{
+    margin: 0 auto;               /* コンテナ内でブロック自体を中央配置 */
+    width: max-content;           /* 中身に合わせた幅 */
+  }
+  
+    
+    .cta-strip{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;border:1px solid var(--stroke);border-radius:16px;padding:16px;background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01))}
+
+
+    .footer{margin-top:56px;padding:18px 0;color:var(--muted);font-size:14px}
+    @media (max-width:960px){.hero{grid-template-columns:1fr}}
+    @media (max-width:720px){.cards,.how{grid-template-columns:1fr}}
+
+
