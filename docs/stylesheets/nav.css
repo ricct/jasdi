@@ -91,7 +91,7 @@ H2.heading-14 {
     margin:0px 0px 0px 0px;      /* 上 | 右 | 下 | 左 */
     background-color: #b2d3ee;
     color: #000;
-    width:50%;
+    min-width:50%;
 }
 
 
