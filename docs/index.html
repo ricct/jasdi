@@ -56,6 +56,8 @@
     
       <link rel="stylesheet" href="stylesheets/nav.css">
     
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1947,21 +1949,22 @@
     </section>
     <section class="hero">
        <div>
-          <a class="btn" href="/start/setupsdi/" >セットアップをはじめる</a>
+          <a class="btn" href="/start/setupsdi/" >セットアップ開始</a>
           <a class="btn" href="https://forms.gle/ur43YJ5rQ4mbGFs88" target="_blank">お問い合わせ</a>
           <a class="btn" href="#whysdi">選ばれる理由</a>
           <a class="btn ghost" href="/license/licensesdi/">ライセンス</a>
         </div>
     </section>
 
-
-
     <!-- Key features -->
     <section id="features" class="section">
-      <h2 class="heading-17"><span><i class="fab fa-artstation" style="color:#EEE"></i></span> 主な機能</h2>
+      <h2 class="heading-17"><span><i class="fab fa-artstation icon-faint"></i></span> 主な機能</h2>
       <div class="grid cards">
         <article class="card">
-          <h3>データ連携</h3>
+          <h3>
+            データ連携
+            <i class="fas fa-sync-alt"></i>
+          </h3>  
           <p class="muted">
             <img src="../img/fdb2db.png" alt="" title="" width="38" />　DB間データ連携<br />
             <img src="../img/ffile2db.png" alt="" title="" width="38" />　DBとファイル間の連携<br />
@@ -1970,7 +1973,10 @@
           </P>
         </article>
         <article class="card">
-          <h3>スケジューラー & トリガー</h3>
+          <h3>
+            スケジューラー & トリガー
+            <i class="fas fa-calendar-alt"></i>
+          </h3>
           <p class="muted">
             <img src="../img/fschedule.png" alt="" title="" width="38" />　毎時・時刻指定・週次・月次で実行<br />
             <img src="../img/fschedule.png" alt="" title="" width="38" />　一定間隔の繰り返し実行<br />
@@ -1979,7 +1985,10 @@
           </P>
         </article>
         <article class="card">
-          <h3>ワークフロー & 通知</h3>
+          <h3>
+            ワークフロー & 通知
+            <i class="fas fa-project-diagram"></i>
+          </h3>
           <p class="muted">
             <img src="../img/fworkflow.png" alt="" title="" width="38" />　ワークフロー機能<br />
             <img src="../img/fworkflow.png" alt="" title="" width="38" />　複数タスクの連携実行<br />
@@ -1987,7 +1996,10 @@
           </P>
         </article>
                 <article class="card">
-          <h3>可観測性</h3>
+          <h3>
+            可観測性
+            <i class="fas fa-tachometer-alt"></i>
+          </h3>
           <p class="muted">
             <img src="../img/fdbmonitor.png" alt="" title="" width="38" />　実行履歴の可視化<br />
             <img src="../img/fdbmonitor.png" alt="" title="" width="38" />　データベースの可用性監視<br />
@@ -1995,23 +2007,41 @@
           </P>
         </article>
         <article class="card">
-          <h3>SDI Gateway Service</h3>
+          <h3>
+            SDI Gateway Service
+            <i class="fas fa-network-wired"></i>
+          </h3>
           <p class="muted">
-            　拠点間・クラウド間をHTTPSプロキシで安全接続<br />
-            　ゼロトラストに親和<br />
+            拠点間・クラウド間をHTTPSプロキシで安全接続<br />
+            ゼロトラストに親和<br />
          </P>
         </article>
         <article class="card">
-          <h3>CLI</h3>
+          <h3>
+            CLI
+            <i class="fas fa-terminal"></i>
+          </h3>
           <p class="muted">
-            　バッチや外部ジョブから操作可能<br />
-            　自動化に組み込みやすい<br />
+            バッチや外部ジョブから操作可能<br />
+            自動化に組み込みやすい<br />
          </P>
         </article>
       </div>
     </section>
 
-    <p class="muted" style="margin:18px 0 8px">主な接続先</p>
+    <p class="muted" style="margin:18px 0 8px">
+    <span class="caption-icon fa-stack" aria-hidden="true">
+      <!-- ベースのDB -->
+      <i class="fas fa-database fa-stack-1x" style="color:#b2d3ee;opacity:0.9"></i>
+      <!-- ずらした2個目のDB -->
+      <i class="fas fa-database fa-stack-1x" style="color:#b2d3ee;transform:translate(6px,-6px); opacity:0.6"></i>
+    </span>
+    &nbsp;主な接続先
+
+  </span>
+    </p>
+
+
         <div class="logos">
 
           <div class="logo">
@@ -2059,7 +2089,7 @@
 
     <!-- 選ばれる理由 -->
     <section id="whysdi" class="section">
-      <h2 class="heading-17"><span><i class="fas fa-check-double" style="color:#eee"></i>
+      <h2 class="heading-17"><span><i class="fas fa-check-double icon-faint"></i>
       </span> 選ばれる理由</h2>
 
       <div class="grid how">
@@ -2086,7 +2116,7 @@
 
         <!-- ユースケース -->
     <section id="usecase" class="section">
-      <h2 class="heading-17"><span><i class="fas fa-briefcase" style="color:#eee"></i>
+      <h2 class="heading-17"><span><i class="fas fa-briefcase icon-faint"></i>
       </span> ユースケース</h2>
       <div class="grid how">
         <div class="card step">

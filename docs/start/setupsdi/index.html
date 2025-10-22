@@ -58,6 +58,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/nav.css">
     
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -2138,16 +2140,15 @@
 <p>SimpleDataIntegratorSetup.msiを実行します。<br />
 画面の指示に従ってインストールを完了してください。</p>
 <h3 id="step-3-simpledataintegratorworker">Step 3: SimpleDataIntegratorWorker サービスのインストール</h3>
-<p>3.1. 管理者権限でコマンドプロンプトを起動します。<br />
-3.2. 以下のコマンドを実行して、サービスをインストールします。  </p>
+<h4 id="31">3.1. 管理者権限でコマンドプロンプトを起動します。</h4>
+<h4 id="32">3.2. 以下のコマンドを実行して、サービスをインストールします。</h4>
 <div class="highlight"><pre><span></span><code>sc create &quot;SimpleDataIntegratorWorker&quot; binPath=&quot;C:\Program Files\RiCCT\SimpleDataIntegrator\DataIntegratorService.exe&quot; DisplayName=&quot;SimpleDataIntegratorWorker&quot; start=delayed-auto
 </code></pre></div>
-<p>3.3. サービスを手動で起動したい場合は、以下のコマンドを実行します。  </p>
+<h4 id="33">3.3. サービスを手動で起動する（初回インストール直後の注意）</h4>
+<p>初回インストール直後はサービスが未起動のため、下記のコマンドで一度だけ起動してください。<br />
+2回目以降はスタートアップ時に「自動（遅延開始）」で起動するため、通常は手動操作は不要です。</p>
 <div class="highlight"><pre><span></span><code>sc start &quot;SimpleDataIntegratorWorker&quot;
 </code></pre></div>
-<blockquote>
-<p>※サービスは「自動（遅延開始）」に設定されているため、通常の運用では手動で起動する必要はありません。</p>
-</blockquote>
 <h2 id="db2">DB2 ライブラリインストール</h2>
 <p>DB2をご利用の場合は、以下の手順に従って設定してください。</p>
 <div class="admonition note info">

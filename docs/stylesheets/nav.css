@@ -57,7 +57,6 @@ header.md-header nav.md-tabs li.md-tabs__item--active > a.md-tabs__link{
   color:#fff !important;
   background:var(--active-bg) !important;
   border-color:var(--active-bd) !important;
-  font-weight:700 !important;
 }
 
 /* アクティブ中は下線を出さない（競合防止） */
@@ -108,6 +107,7 @@ H2.heading-17::before {
     filter: blur(4px);
 }
 
+.icon-faint { color: hsl(0 0% 100% / .48); } /* 白を72%不透明で */
 
 
 /* main */
@@ -122,16 +122,16 @@ H2.heading-17::before {
     }
     
     *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";color:var(--ink);background:var(--bg);line-height:1.6}
+    body{margin:0;font-family:Saira,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";color:var(--ink);background:var(--bg);line-height:1.6;}
     a{color:var(--blue);text-decoration:none}
-    .container{max-width:1120px;margin:0 auto;padding:24px}
+    .container{max-width:1120px;margin:0 auto;padding:8px}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
     .nav .brand{display:flex;gap:12px;align-items:center}
     .hero{display:grid;gap:10px;grid-template-columns:1.3fr 1fr;align-items:center;padding:36px;background:linear-gradient(135deg, #E8F4FD 0%, #F6FAFF 100%);border-radius:var(--radius);box-shadow:var(--shadow)}
     .hero h1{font-size:clamp(28px, 4.2vw, 44px);margin:0 0 8px}
-    .hero p{color:var(--ink-2);margin:0}
+    .hero p{ color:var(--ink-2);margin:0}
     .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-    .btn{padding:12px 16px;border-radius:12px;border:1px solid var(--ring);background:#fff;color:var(--ink);font-weight:600}
+    .btn{padding:12px 16px;border-radius:12px;border:1px solid var(--ring);background:#fff;color:var(--ink);font-weight:700}
     .btn.primary{border-color:color-mix(in srgb, #1434A4 40%, #e5e7eb);background:linear-gradient(180deg, color-mix(in srgb, #1434A4 22%, #ffffff00), #0000);box-shadow:0 0 0 2px color-mix(in srgb, #1434A4 20%, transparent) inset;color:white;background-color:#1434A4}
     .btn.secondary{background:#fff}
     .btn.ghost{background:transparent}
@@ -140,7 +140,15 @@ H2.heading-17::before {
     .grid{display:grid;gap:18px}
     .cards{grid-template-columns:repeat(3,minmax(0,1fr))}
     .card{background:var(--card);border:1px solid var(--ring);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
-    .card h3{margin:0 0 6px;font-size:18px;background:#EEF6FF}
+    .card h3{margin:0 0 6px;font-size:18px;background:#EEF6FF;
+    display:flex; align-items:center; justify-content:space-between;
+  gap:.5rem; position:relative;
+  }
+    .card i{
+  color: rgba(178,211,238,0.48);   /* 背景より少し薄く */
+  font-size:1.05em;               /* 見出しに対して少しだけ大きく */
+  line-height:1;
+}
     .muted{color:var(--muted)}
     .how{grid-template-columns:repeat(3,minmax(0,1fr))}
     .step{position:relative;padding-top:10px}
@@ -156,7 +164,13 @@ H2.heading-17::before {
 @media (min-width: 560px){  .logos{ grid-template-columns: repeat(3,1fr); } }
 @media (min-width: 800px){  .logos{ grid-template-columns: repeat(4,1fr); } }
 @media (min-width: 1040px){ .logos{ grid-template-columns: repeat(6,1fr); } }
-  
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
    .logo{
     display: flex;
     align-items: center;          /* 縦中央 */
@@ -194,4 +208,17 @@ H2.heading-17::before {
     @media (max-width:960px){.hero{grid-template-columns:1fr}}
     @media (max-width:720px){.cards,.how{grid-template-columns:1fr}}
 
+
+
+/* 先頭要素の食い込みを止める（安全策） */
+.md-content__inner { padding-top: 0px; }            /* 好みで 0〜16px */
+.md-content__inner > :first-child { margin-top: 0 !important; }
+
+/* 今回の構造に寄せて（先頭が .container の場合を確実に潰す） */
+.md-content__inner > .container:first-child { margin-top: 0 !important; }
+.md-content__inner > .container:first-child > .hero:first-child { margin-top: 0 !important; }
+
+/* 見出しのデフォルト上マージンを少しだけ控えめに（全体調整） */
+.md-typeset h1 { margin-top: .25rem; }
+.md-typeset h2 { margin-top: .6rem; }
 
