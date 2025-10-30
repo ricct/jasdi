@@ -4,14 +4,24 @@
 
 /* ブランド色（必要なら変更） */
 :root {
-  --active-bg: rgba(255, 255, 255, .12);
-  --active-bd: rgba(255, 255, 255, .22);
+  --active-bg: rgba(255, 255, 255, .68);
+  --active-bd: rgba(255, 255, 255, 1);
+  --head-bg: rgba(242, 248, 252, 1);
+}
+
+header, .header, .navbar, [role="banner"], [data-md-component="header"], .md-header {
+  background: var(--head-bg); 
+  /* 
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);*/
 }
 
 /* タブ列を少し上に持ち上げる（上マージンを詰める） */
 header.md-header nav.md-tabs {
   position: relative;
   top: -6px; /* -4〜-8pxで微調整可 */
+  background: var(--head-bg); 
+  border: 0px solid transparent; /* 高さ統一 */
 }
 
 /* すべてのトップタブの高さを固定（アクティブと揃える） */
@@ -26,7 +36,6 @@ header.md-header nav.md-tabs a.md-tabs__link {
   border: 0px solid transparent; /* 高さ統一 */
   border-radius: 8px;
   line-height: 1;
-  color: #fff;
   text-decoration: none;
   transition: opacity .18s ease;
 }
@@ -43,9 +52,9 @@ header.md-header nav.md-tabs a.md-tabs__link::after {
   height: 1px;
   background: linear-gradient(
     90deg,
-    rgba(79, 86, 229, 0.65) 0%,
-    rgba(255, 255, 255, 0.65) 50%,
-    rgba(79, 86, 229, 0.65) 100%
+    rgba(255, 255, 255, 0.35) 0%,
+    rgba(49, 5, 24, 0.65) 50%,
+    rgba(255, 255, 255, 0.35) 100%
   );
   transform: scaleX(0);
   transform-origin: center;
@@ -57,7 +66,6 @@ header.md-header nav.md-tabs a.md-tabs__link:hover::after { transform: scaleX(1)
 
 /* アクティブのみ色だけ付ける（高さは変えない） */
 header.md-header nav.md-tabs li.md-tabs__item--active > a.md-tabs__link {
-  color: #fff !important;
   background: var(--active-bg) !important;
   border-color: var(--active-bd) !important;
 }
@@ -157,11 +165,12 @@ a { color: var(--blue); text-decoration: none; }
 
 .btn {
   padding: 9px 16px;
-  border-radius: 12px;
+  border-radius: 8px;
   border: 1px solid var(--ring);
   background: #fff;
   color: var(--ink);
-  font-weight: 700;
+  font-size: 0.9em;
+  font-weight: 500;
 }
 
 .btn + .btn { margin-left: 10px; }

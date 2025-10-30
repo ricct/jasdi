@@ -85,7 +85,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -318,7 +318,7 @@
   
 </header>
     
-<div class="slogan-div"> <img src="/img/slogan_white.png" width="100%" alt="slogan"></div>
+<div class="slogan-div"> <img src="/img/slogan.png" width="100%" alt="slogan"></div>
 
     <div class="md-container" data-md-component="container">
       
@@ -2295,9 +2295,17 @@
 </tr>
 </tbody>
 </table>
+<p><a id="mailtemplate"></a></p>
 <h3 id="_8">メールテンプレート記述方法</h3>
-<p>メールテンプレートを作成する際に、情報を挿入するための変数が使用できます。<br />
-SDIでは、以下のシステム変数が定義されています。  </p>
+<p>SDI のメールテンプレートはテキストとHTMLの両方に対応します。<br />
+テンプレート本文に HTML の基本タグが含まれていれば HTML として送信、含まれていなければテキストとして送信されます。</p>
+<hr />
+<h4 id="1">1) 差し込み変数の基本</h4>
+<ul>
+<li>変数は <strong>波括弧 <code>{}</code></strong> で囲みます。  </li>
+<li>実行時に SDI が **値へ置換**します。  </li>
+<li>主なシステム変数（例）： </li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -2369,8 +2377,19 @@ SDIでは、以下のシステム変数が定義されています。  </p>
 </tr>
 </tbody>
 </table>
+<h4 id="2">2) 日付・期間の自動化（安全サブセット）</h4>
+<p><code>{ ... }</code> 内で日付のみを評価する安全サブセットが有効です（任意コードは不可）。</p>
+<p>代表的に使える表現：  </p>
+<ul>
+<li>ルート：<code>DateTime.Now</code> / <code>DateTime.UtcNow</code> / <code>DateTime.Today</code>  </li>
+<li>加算：<code>.AddYears(n)</code>, <code>.AddMonths(n)</code>, <code>.AddDays(n)</code>, <code>.AddHours(n)</code>, <code>.AddMinutes(n)</code> など  </li>
+<li>開始・終了：<code>.StartOfMonth()</code>, <code>.EndOfMonth()</code>, <code>.StartOfWeek()</code>（環境の実装に依存）  </li>
+<li>表示：<code>.ToString("format"[, "culture"])</code>  </li>
+</ul>
+<p>例（件名）：<br />
+<code>月間売上サマリー（{DateTime.Now.AddMonths(-1).ToString("yyyy年M月","ja-JP")}）</code></p>
 <h3 id="_9">サンプルメールテンプレート</h3>
-<h4 id="_10">エラーサンプルメールテンプレート</h4>
+<h4 id="1_1">サンプル1: エラーサンプルメールテンプレート</h4>
 <p>件名：</p>
 <div class="highlight"><pre><span></span><code>SDI Error {DateTime}
 </code></pre></div>
@@ -2386,7 +2405,7 @@ SDIでは、以下のシステム変数が定義されています。  </p>
 
 {DateTime}
 </code></pre></div>
-<h4 id="_11">マッピング成功時のサンプルメールテンプレート</h4>
+<h4 id="2_1">サンプル2: マッピング成功時のサンプルメールテンプレート</h4>
 <p>件名：</p>
 <div class="highlight"><pre><span></span><code>マッピング実行に成功しました。 (マッピング名: {MappingName})
 </code></pre></div>
@@ -2401,7 +2420,7 @@ SDIでは、以下のシステム変数が定義されています。  </p>
 
 {DateTime}
 </code></pre></div>
-<h4 id="_12">マッピング失敗時のサンプルメールテンプレート</h4>
+<h4 id="3">サンプル3: マッピング失敗時のサンプルメールテンプレート</h4>
 <p>件名：</p>
 <div class="highlight"><pre><span></span><code>マッピング実行に失敗しました。 (マッピング名: {MappingName})
 </code></pre></div>

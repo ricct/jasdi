@@ -7,7 +7,7 @@ h1 {
   position: relative;
   #border-bottom: solid 2px #c0d3ec;
   line-height: 1.4;
-  padding: 0.1em 0.2em;
+  padding: 0.1em 0em;
   margin: 2em 0 0.5em;
 }
 
@@ -37,6 +37,7 @@ body {
  position: relative;
  margin: 0;
  padding: 0;
+ background: rgba(253,253,253,.92)!important; 
 }
 
 .slogan-div {
