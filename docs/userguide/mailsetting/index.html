@@ -2377,8 +2377,8 @@
 </tr>
 </tbody>
 </table>
-<h4 id="2">2) 日付・期間の自動化（安全サブセット）</h4>
-<p><code>{ ... }</code> 内で日付のみを評価する安全サブセットが有効です（任意コードは不可）。</p>
+<h4 id="2">2) 日付・期間の自動化</h4>
+<p><code>{ ... }</code> では日付関連の式も評価されます。（日付以外のコードを記述しても実行されません。）</p>
 <p>代表的に使える表現：  </p>
 <ul>
 <li>ルート：<code>DateTime.Now</code> / <code>DateTime.UtcNow</code> / <code>DateTime.Today</code>  </li>
@@ -2386,8 +2386,12 @@
 <li>開始・終了：<code>.StartOfMonth()</code>, <code>.EndOfMonth()</code>, <code>.StartOfWeek()</code>（環境の実装に依存）  </li>
 <li>表示：<code>.ToString("format"[, "culture"])</code>  </li>
 </ul>
-<p>例（件名）：<br />
-<code>月間売上サマリー（{DateTime.Now.AddMonths(-1).ToString("yyyy年M月","ja-JP")}）</code></p>
+<p><strong>例（件名）</strong><br />
+<code>月間売上サマリー({DateTime.Now.AddMonths(-1).ToString("yyyy年M月")})</code></p>
+<p>上記の <code>{DateTime.Now.AddMonths(-1).ToString("yyyy年M月")}</code> 部分は、<strong>先月の年月</strong> に置き換わります。<br />
+<strong>例：</strong> 2022年10月に送信した場合、件名は<br />
+<code>月間売上サマリー(2022年9月)</code><br />
+となります。</p>
 <h3 id="_9">サンプルメールテンプレート</h3>
 <h4 id="1_1">サンプル1: エラーサンプルメールテンプレート</h4>
 <p>件名：</p>
