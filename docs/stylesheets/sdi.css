@@ -16,7 +16,7 @@ h1 {
 h3 {
   position: relative;
   padding: 0.4em 0.5em;
-  background: linear-gradient(to right, rgb(198,223,248), transparent);
+  background: linear-gradient(to right, rgb(238,246,255), transparent);
 }
 
 
@@ -24,13 +24,13 @@ h3 {
 h4 {
   position: relative;
   padding: 0.3em 0.6em;
-  background: linear-gradient(to right, rgb(198,223,248), transparent);
+  background: linear-gradient(to right, rgb(238,246,255), transparent);
 }
 
 h5 {
   position: relative;
   padding: 0.2em 0.8em;
-  background: linear-gradient(to right, rgb(198,223,248), transparent);
+  background: linear-gradient(to right, rgb(238,246,255), transparent);
 }
 
 body {
@@ -43,7 +43,7 @@ body {
 .slogan-div {
   position: fixed;
   right: 218px; /* Add margin on the right */
-  top: 62px; /* Add margin on the bottom */
+  top: 67px; /* Add margin on the bottom */
   width: 318px; /* Limit the width to 318px */
   height: auto; /* Adjust height automatically */
   background-size: cover; /* Or use 'auto' depending on your preference */

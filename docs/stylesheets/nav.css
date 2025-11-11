@@ -98,7 +98,9 @@ H2.heading-17 {
   position: relative;
   padding: 5px 50px 5px 20px;
   margin: 0px 0px 0px 0px; /* 上 | 右 | 下 | 左 */
-  background-color: #b2d3ee;
+  /*background-color: #b2d3ee;*/
+  background: #EEF6FF;
+
   color: #000;
   min-width: 50%;
 }
@@ -108,15 +110,15 @@ H2.heading-17::before {
   bottom: -1px;
   right: 9px;
   z-index: -1;
-  transform: rotate(5deg);
+  transform: rotate(4deg);
   width: 70%;
   height: 50%;
-  background-color: #d0d0d0;
+  background-color: #ededed;
   content: "";
   filter: blur(4px);
 }
 
-.icon-faint { color: hsl(0 0% 100% / .48); } /* 白を72%不透明で */
+.icon-faint { color: hsl(0 0% 100% / .88); } /* 白を?%不透明で */
 
 
 /* main */
@@ -268,7 +270,7 @@ a { color: var(--blue); text-decoration: none; }
 @media (min-width: 320px)  { .logos { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 560px)  { .logos { grid-template-columns: repeat(3, 1fr); } }
 @media (min-width: 800px)  { .logos { grid-template-columns: repeat(4, 1fr); } }
-@media (min-width: 1040px) { .logos { grid-template-columns: repeat(6, 1fr); } }
+@media (min-width: 1040px) { .logos { grid-template-columns: repeat(7, 1fr); } }
 
 @media (min-width: 1536px) {
   .container { max-width: 1280px; }
