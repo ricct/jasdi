@@ -269,7 +269,8 @@ a { color: var(--blue); text-decoration: none; }
   font-weight: 600;
 }
 
-.logos { display: grid; gap: 12px; opacity: .9; }
+.logos { display: grid; gap: 10px; opacity: 1;
+     }
 
 @media (min-width: 320px)  { .logos { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 560px)  { .logos { grid-template-columns: repeat(3, 1fr); } }
@@ -288,11 +289,13 @@ a { color: var(--blue); text-decoration: none; }
   height: 40px;
 
   /* 枠まわり（任意） */
-  border: 1px dashed var(--stroke);
+  border: 1px solid var(--stroke);
   border-radius: 12px;
   padding: 12px;
   font-size: 12px;
   color: var(--muted);
+  background: rgba(255, 255, 255, .8);
+
 }
 
 .logo img {
