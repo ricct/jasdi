@@ -1935,6 +1935,43 @@
 
 
 
+<script>
+  function initSdiLightbox() {
+    const heroImg  = document.getElementById('sdi-hero-image');
+    const lightbox = document.getElementById('sdi-lightbox');
+
+    if (!heroImg || !lightbox) return;
+
+    // 必ず初期状態は非表示にする
+    lightbox.style.display = 'none';
+
+    // すでにイベントを付けていれば二重登録しない
+    if (heroImg.dataset.sdiBound === 'true') return;
+
+    // 画像クリック → 拡大表示
+    heroImg.addEventListener('click', function () {
+      lightbox.style.display = 'flex';
+    });
+
+    // オーバーレイクリック → 元に戻す
+    lightbox.addEventListener('click', function () {
+      lightbox.style.display = 'none';
+    });
+
+    heroImg.dataset.sdiBound = 'true';
+  }
+
+  // 通常のページロード
+  document.addEventListener('DOMContentLoaded', initSdiLightbox);
+
+  // MkDocs Material などのインスタントロードに対応
+  if (window.document$) {
+    document$.subscribe(function () {
+      initSdiLightbox();
+    });
+  }
+</script>
+
 <div class="container">
     <!-- Hero -->
     <section class="hero">
@@ -1945,12 +1982,12 @@
         <p>SDIは、Oracle／SQL Server／MySQL／PostgreSQL／DB2、BigQuery／SnowflakeなどのクラウドDWH、S3・OCI Object Storage・Azure Blob、Web APIとシームレスに連携するデータ連携ソフトです。スケジューラーとゲートウェイにより、社内外へ安全に自動化できます。</p>
         <br >
       </div>
-      <div class="screen"><img style="width:100%" src="../img/sdi2.gif"></img>
+      <div class="screen"><img id="sdi-hero-image" style="width:98%" src="../img/sdi2.gif"></img>
       </div>
     </section>
     <section class="hero">
        <div>
-          <a class="btn" href="/start/setupsdi/" >セットアップ開始</a>
+          <a class="btn" href="/start/setupsdi/" >無料でお試し</a>
           <a class="btn" href="https://forms.gle/ur43YJ5rQ4mbGFs88" target="_blank">お問い合わせ</a>
           <!-- <a class="btn" href="#whysdi">選ばれる理由</a> -->
           <a class="btn" href="/license/licensesdi/">ライセンス</a>
@@ -2165,6 +2202,12 @@
         </div>
       </div>
     </section>
+</div>
+
+<div id="sdi-lightbox" class="sdi-lightbox">
+  <div class="sdi-lightbox-content">
+    <img src="../img/sdi2.gif" alt="SDI 構成図（拡大）">
+  </div>
 </div>
 
 <div class="admonition note info">

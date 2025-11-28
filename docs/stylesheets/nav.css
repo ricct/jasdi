@@ -384,3 +384,27 @@ a { color: var(--blue); text-decoration: none; }
   }
 }
 /*campaign  */
+
+
+.sdi-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+}
+
+.sdi-lightbox-content img {
+  max-width: 58vw;
+  max-height: 58vh;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  transform: scale(1.05);
+}
+
+#sdi-hero-image {
+  cursor: zoom-in;
+}
