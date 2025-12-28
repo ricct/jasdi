@@ -971,6 +971,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../connectionsalesforce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Salesforce
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1192,6 +1215,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#salesforce" class="md-nav__link">
+    <span class="md-ellipsis">
+      Salesforce
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1265,6 +1297,29 @@
   
   <span class="md-ellipsis">
     詳細設定
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mappingadvancedsettingssalesforce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Salesforce詳細設定
     
   </span>
   
@@ -2158,6 +2213,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#salesforce" class="md-nav__link">
+    <span class="md-ellipsis">
+      Salesforce
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2183,7 +2247,7 @@
 
 <h1 id="_1">マッピングソースデータ設定</h1>
 <h2 id="_2">概要</h2>
-<p>ソースデータは、データベース、WEB Service/API、 CSV、Excel、JSON、XMLファイルから選択できます。  </p>
+<p>ソースデータは、データベース、WEB Service/API、Salesforce、CSV、Excel、JSON、XMLファイルから選択できます。  </p>
 <div class="admonition note info">
 <p>ターゲットデータへの接続設定は、事前にコネクション設定画面で行ってください。</p>
 </div>
@@ -2219,12 +2283,17 @@
 <tr>
 <td style="text-align: left;">4</td>
 <td style="text-align: left;">フィルター</td>
-<td style="text-align: left;">データ抽出の条件がある場合、WHERE句を指定してください。<br /> 例：<code>WHERE UPDATE_TIME &gt;= SYSDATE - 1|</code></td>
+<td style="text-align: left;">データ抽出の条件がある場合、WHERE句を指定してください。<br /> 例：<code>WHERE UPDATE_TIME &gt;= SYSDATE - 1</code></td>
 </tr>
 <tr>
 <td style="text-align: left;">5</td>
 <td style="text-align: left;">データ参照</td>
 <td style="text-align: left;">既存のデータを参照する画面を開きます。</td>
+</tr>
+<tr>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">更新ボタン</td>
+<td style="text-align: left;">テーブル一覧の最新情報を取得します。</td>
 </tr>
 </tbody>
 </table>
@@ -2240,12 +2309,12 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">6</td>
+<td style="text-align: left;">7</td>
 <td style="text-align: left;">クエリ</td>
 <td style="text-align: left;">ソースデータの取得方法としてSQLを使用したい場合、クエリを選択してください。</td>
 </tr>
 <tr>
-<td style="text-align: left;">7</td>
+<td style="text-align: left;">8</td>
 <td style="text-align: left;">クエリ内容</td>
 <td style="text-align: left;">データ抽出のためのSQLを記述してください。<br / > 例： <br / >SELECT EMPID<br / >          ,  EMPNAME<br / >          ,   DEPT_CODE <br / >   FROM HR.EMP<br / > WHERE DEPT_CODE = '0003'</td>
 </tr>
@@ -2803,6 +2872,74 @@
 } <br />
     </td>
   </tr>  
+</table>
+
+<h3 id="salesforce">Salesforce</h3>
+<h4 id="_12">オブジェクト</h4>
+<p><img src="../img/mapping_source_salesforce.png" alt="" title="" width="500" ></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">No</th>
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">91</td>
+<td style="text-align: left;">コネクション</td>
+<td style="text-align: left;">コネクション設定画面で設定したコネクションを選択してください。</td>
+</tr>
+<tr>
+<td style="text-align: left;">92</td>
+<td style="text-align: left;">タイプ</td>
+<td style="text-align: left;">Salesforceコネクションを選択した場合、ソースタイプとしてオブジェクトまたはSOQLを選択できます。</td>
+</tr>
+<tr>
+<td style="text-align: left;">93</td>
+<td style="text-align: left;">オブジェクト</td>
+<td style="text-align: left;">タイプに「オブジェクト」を選択した場合Salesforceのオブジェクトの一覧が表示されます。リストから該当するオブジェクトを選択してください。</td>
+</tr>
+<tr>
+<td style="text-align: left;">94</td>
+<td style="text-align: left;">フィルター</td>
+<td style="text-align: left;">データ抽出の条件がある場合、WHERE句を指定してください。<br /> 例：<code>WHERE UPDATE_TIME &gt;= SYSDATE - 1</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">95</td>
+<td style="text-align: left;">データ参照</td>
+<td style="text-align: left;">既存のデータを参照する画面を開きます。</td>
+</tr>
+<tr>
+<td style="text-align: left;">96</td>
+<td style="text-align: left;">更新ボタン</td>
+<td style="text-align: left;">オブジェクト一覧の最新情報を取得します。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="soql">SOQL</h4>
+<p><img src="../img/mapping_source_salesforce2.png" alt="" title="" width="500" ></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">No</th>
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">97</td>
+<td style="text-align: left;">SOQL</td>
+<td style="text-align: left;">ソースデータの取得方法としてSOQLを使用したい場合、SOQLを選択してください。</td>
+</tr>
+<tr>
+<td style="text-align: left;">98</td>
+<td style="text-align: left;">SOQL内容</td>
+<td style="text-align: left;">データ抽出のためのSOQLを記述してください。<br / > 例： <br / >SELECT Id<br / >          ,  Description<br / >          ,   Name <br / >  from Product2<br / ></td>
+</tr>
+</tbody>
 </table>
 
 

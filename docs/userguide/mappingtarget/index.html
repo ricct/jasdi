@@ -971,6 +971,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../connectionsalesforce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Salesforce
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1188,6 +1211,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#salesforce" class="md-nav__link">
+    <span class="md-ellipsis">
+      Salesforce
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1238,6 +1270,29 @@
   
   <span class="md-ellipsis">
     詳細設定
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mappingadvancedsettingssalesforce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Salesforce詳細設定
     
   </span>
   
@@ -2104,6 +2159,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#salesforce" class="md-nav__link">
+    <span class="md-ellipsis">
+      Salesforce
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2129,7 +2193,7 @@
 
 <h1 id="_1">マッピングターゲットデータ設定</h1>
 <h2 id="_2">概要</h2>
-<p>ターゲットデータは、RDB、CSV、Excel、JSON、XMLから選択できます。  </p>
+<p>ターゲットデータは、RDB、Salesforce、CSV、Excel、JSON、XMLから選択できます。  </p>
 <div class="admonition note info">
 <p>ターゲットデータへの接続設定は、事前にコネクション設定画面で行ってください。</p>
 </div>
@@ -2337,6 +2401,49 @@
 <td style="text-align: left;">45</td>
 <td style="text-align: left;">ソースファイル名を使用</td>
 <td style="text-align: left;">ソースファイルの名前をそのまま使用します。ファイルタイプが異なる場合は、拡張子をファイルタイプに合わせて自動的に変換します。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="salesforce">Salesforce</h3>
+<p><img src="../img/mapping_target_salesforce.png" alt="" title="" width="500" ></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">No</th>
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">51</td>
+<td style="text-align: left;">コネクション</td>
+<td style="text-align: left;">コネクション設定画面で設定した Salesforce 接続（ターゲット） を選択してください。</td>
+</tr>
+<tr>
+<td style="text-align: left;">52</td>
+<td style="text-align: left;">オブジェクト</td>
+<td style="text-align: left;">ターゲット（Salesforce）側で更新対象となる オブジェクト を選択してください。</td>
+</tr>
+<tr>
+<td style="text-align: left;">53</td>
+<td style="text-align: left;">更新方法</td>
+<td style="text-align: left;">ターゲット（Salesforce）を更新する方式を選択します。<br><code>Salesforce IDで同期（更新／追加）</code>：入力データの Salesforce ID（Id）をキーに更新します（Id が空の場合は追加します）。<br><code>外部IDでUpsert</code>：指定した外部ID項目をキーに更新／追加します。</td>
+</tr>
+<tr>
+<td style="text-align: left;">54</td>
+<td style="text-align: left;">外部IDカラム名</td>
+<td style="text-align: left;">「外部IDでUpsert」を選択した場合に、キーとして使用する 外部ID項目（カラム） を選択してください。</td>
+</tr>
+<tr>
+<td style="text-align: left;">55</td>
+<td style="text-align: left;">更新アイコン</td>
+<td style="text-align: left;">オブジェクト／項目情報を 再取得（最新化） します。</td>
+</tr>
+<tr>
+<td style="text-align: left;">56</td>
+<td style="text-align: left;">データ参照</td>
+<td style="text-align: left;">選択したオブジェクトの 既存データを参照する画面 を開きます。</td>
 </tr>
 </tbody>
 </table>
