@@ -1238,16 +1238,16 @@
           <li class="md-nav__item">
   <a href="#salesforce_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Salesforce更新結果をファイル保存
+      Salesforce 詳細設定(ソースの場合)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#salesforce-id-dbid" class="md-nav__link">
+  <a href="#salesforce_3" class="md-nav__link">
     <span class="md-ellipsis">
-      Salesforce ID で元DBのID列を更新
+      Salesforce 詳細設定（ターゲットの場合）
     </span>
   </a>
   
@@ -2081,16 +2081,16 @@
           <li class="md-nav__item">
   <a href="#salesforce_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Salesforce更新結果をファイル保存
+      Salesforce 詳細設定(ソースの場合)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#salesforce-id-dbid" class="md-nav__link">
+  <a href="#salesforce_3" class="md-nav__link">
     <span class="md-ellipsis">
-      Salesforce ID で元DBのID列を更新
+      Salesforce 詳細設定（ターゲットの場合）
     </span>
   </a>
   
@@ -2121,10 +2121,29 @@
 
 <h1 id="salesforce">Salesforce 詳細設定</h1>
 <h2 id="_1">概要</h2>
-<p>本ページでは、Salesforce へのデータ更新（Upsert 等）実行後の 更新結果の保存 と Salesforce ID の元DBへの書き戻し を設定します。<br />
-更新結果ファイルを出力することで、成功／失敗やエラー内容、Salesforce ID などを記録でき、運用時の確認やトラブルシュートに活用できます。<br />
+<p>本ページでは、Salesforce からのデータ取得に関する詳細設定、および Salesforce へのデータ更新（Upsert 等）実行後の 更新結果の保存 と Salesforce ID の元DBへの書き戻し の設定について説明します。<br />
+更新結果ファイルを出力することで、成功／失敗、エラー内容、Salesforce ID などを記録でき、運用時の確認やトラブルシュートに活用できます。<br />
 また、Salesforce 側で採番・確定した Salesforce ID を元DBの指定列へ反映することで、以降の更新処理やデータ突合をスムーズに行えます。  </p>
 <h2 id="salesforce_1">Salesforce　詳細設定</h2>
+<h3 id="salesforce_2">Salesforce　詳細設定(ソースの場合)</h3>
+<p><img src="../img/mapping_advancedsetting_salesforce0.png" alt="" title="" > </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">No</th>
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">31</td>
+<td style="text-align: left;">Bulk API を使用</td>
+<td style="text-align: left;"><strong>Bulk API を使用（有効）</strong> <br>Salesforce Bulk API を利用してを取得します。<br>大量データ（数万件以上）を高速かつ効率的に抽出できるため、大規模オブジェクトや全件取得に適しています。<br><br> <strong>Bulk API を使用（無効）</strong> <br>Salesforce の通常 API（REST / SOAP）を使用してデータを取得します。<br>取得件数が少ない場合や、リアルタイム性を重視する場合、少量データの取得に適しています。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="salesforce_3">Salesforce　詳細設定（ターゲットの場合）</h3>
 <p><img src="../img/mapping_advancedsetting_salesforce1.png" alt="" title="" ></p>
 <table>
 <thead>
@@ -2147,7 +2166,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="salesforce_2">Salesforce更新結果をファイル保存</h3>
+<h4 id="salesforce_4">Salesforce更新結果をファイル保存</h4>
 <p><img src="../img/mapping_advancedsetting_salesforce2.png" alt="" title="" ></p>
 <table>
 <thead>
@@ -2190,7 +2209,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="salesforce-id-dbid">Salesforce ID で元DBのID列を更新</h3>
+<h4 id="salesforce-id-dbid">Salesforce ID で元DBのID列を更新</h4>
 <p><img src="../img/mapping_advancedsetting_salesforce3.png" alt="" title="" ></p>
 <table>
 <thead>
