@@ -2156,11 +2156,16 @@
 <tbody>
 <tr>
 <td style="text-align: left;">41</td>
+<td style="text-align: left;">データ更新方法（Upsert）</td>
+<td style="text-align: left;">Salesforce へのデータ更新方法は Upsert 方式です。指定したキー（Salesforce ID または外部ID）を基に、既存レコードは更新し、存在しない場合は新規登録を行います。<br>Upsert 実行時は常に Bulk API を使用して更新処理を行います。</td>
+</tr>
+<tr>
+<td style="text-align: left;">42</td>
 <td style="text-align: left;">更新結果をファイル保存</td>
 <td style="text-align: left;">Salesforce への更新（Upsert 等）を実行した結果（成功／失敗、エラー内容、Salesforce ID など）を 結果ファイルとして保存するかを選択します。<br> <code>保存しない</code>：結果ファイルを出力しません。<br><code>保存する</code>：更新結果をファイルに出力します。必要に応じて［詳細設定］で出力先・ファイル名・出力内容などを設定します。</td>
 </tr>
 <tr>
-<td style="text-align: left;">42</td>
+<td style="text-align: left;">43</td>
 <td style="text-align: left;">Salesforce ID で元DBのID列を更新</td>
 <td style="text-align: left;">Salesforce で採番／確定した Salesforce ID を元DB側の指定列に反映（更新）するかを選択します。<br />Upsert 実行後に、元DBへ Salesforce ID を書き戻したい場合に使用します。<br><code>更新しない</code>：元DBの ID 列は更新しません。<br><code>更新する</code>：更新結果から取得した Salesforce ID を元DBの指定列に更新します（設定は［詳細設定］で行います）。</td>
 </tr>
