@@ -914,7 +914,7 @@
   
   
   <span class="md-ellipsis">
-    WEB Service/API
+    WEB Service/API/OData
     
   </span>
   
@@ -1219,6 +1219,15 @@
   <a href="#salesforce" class="md-nav__link">
     <span class="md-ellipsis">
       Salesforce
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#odata" class="md-nav__link">
+    <span class="md-ellipsis">
+      OData
     </span>
   </a>
   
@@ -2222,6 +2231,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#odata" class="md-nav__link">
+    <span class="md-ellipsis">
+      OData
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2967,48 +2985,9 @@ UTC 表示がない場合は、接続先データベースの LOCAL 時間とし
 
 <h3 id="salesforce">Salesforce</h3>
 <h4 id="_14">オブジェクト</h4>
-<p><img src="../img/mapping_source_salesforce.png" alt="" title="" width="500" ></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">No</th>
-<th style="text-align: left;">項目</th>
-<th style="text-align: left;">説明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">91</td>
-<td style="text-align: left;">コネクション</td>
-<td style="text-align: left;">コネクション設定画面で設定したコネクションを選択してください。</td>
-</tr>
-<tr>
-<td style="text-align: left;">92</td>
-<td style="text-align: left;">タイプ</td>
-<td style="text-align: left;">Salesforceコネクションを選択した場合、ソースタイプとしてオブジェクトまたはSOQLを選択できます。</td>
-</tr>
-<tr>
-<td style="text-align: left;">93</td>
-<td style="text-align: left;">オブジェクト</td>
-<td style="text-align: left;">タイプに「オブジェクト」を選択した場合Salesforceのオブジェクトの一覧が表示されます。リストから該当するオブジェクトを選択してください。</td>
-</tr>
-<tr>
-<td style="text-align: left;">94</td>
-<td style="text-align: left;">フィルター</td>
-<td style="text-align: left;">データ抽出の条件がある場合、WHERE句を指定してください。<br /> 例：<code>WHERE UPDATE_TIME &gt;= SYSDATE - 1</code></td>
-</tr>
-<tr>
-<td style="text-align: left;">95</td>
-<td style="text-align: left;">データ参照</td>
-<td style="text-align: left;">既存のデータを参照する画面を開きます。</td>
-</tr>
-<tr>
-<td style="text-align: left;">96</td>
-<td style="text-align: left;">更新ボタン</td>
-<td style="text-align: left;">オブジェクト一覧の最新情報を取得します。</td>
-</tr>
-</tbody>
-</table>
+<p>オブジェクトはデータベースのテーブルと同様の概念です。<br />
+設定方法はテーブル設定と同じため、下記の資料をご参照ください。<br />
+<a href=".#_4" ><i class="fa fa-book" aria-hidden="true"></i> テーブル</a></p>
 <h4 id="soql">SOQL</h4>
 <p><img src="../img/mapping_source_salesforce2.png" alt="" title="" width="500" ></p>
 <table>
@@ -3032,6 +3011,29 @@ UTC 表示がない場合は、接続先データベースの LOCAL 時間とし
 </tr>
 </tbody>
 </table>
+<h3 id="odata">OData</h3>
+<h4 id="_15">エンティティセット</h4>
+<p>エンティティセットはデータベースのテーブルと同様の概念です。<br />
+設定方法はテーブル設定と同じため、下記の資料をご参照ください。<br />
+<a href=".#_4" ><i class="fa fa-book" aria-hidden="true"></i> テーブル</a></p>
+<h5 id="odata_1">OData 条件指定について</h5>
+<p>OData では、クエリオプションを指定することで取得データを制御できます。</p>
+<ul>
+<li>
+<p><strong>$filter</strong><br />
+  条件を指定してデータを絞り込みます（SQL の WHERE 句に相当）</p>
+</li>
+<li>
+<p><strong>$orderby</strong><br />
+  データの並び順を指定します</p>
+</li>
+<li>
+<p><strong>$top / $skip</strong><br />
+  取得件数や開始位置を指定します（ページング）</p>
+</li>
+</ul>
+<p>指定可能なクエリオプションや記法の詳細は、<br />
+<a href="https://www.odata.org/odata-services/" ></i><strong>OData 公式マニュアル</strong></a>をご参照ください。</p>
 
 
 

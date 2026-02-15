@@ -26,7 +26,7 @@
     
     
       
-        <title>WEB Service/API - Simple Data Integrator</title>
+        <title>WEB Service/API/OData - Simple Data Integrator</title>
       
     
     
@@ -94,7 +94,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#web-serviceapi" class="md-skip">
+        <a href="#web-serviceapiodata" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -130,7 +130,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              WEB Service/API
+              WEB Service/API/OData
             
           </span>
         </div>
@@ -925,7 +925,7 @@
   
   
   <span class="md-ellipsis">
-    WEB Service/API
+    WEB Service/API/OData
     
   </span>
   
@@ -938,7 +938,7 @@
   
   
   <span class="md-ellipsis">
-    WEB Service/API
+    WEB Service/API/OData
     
   </span>
   
@@ -2100,17 +2100,28 @@
 
 
 <!-- v2.1 -->
-<h1 id="web-serviceapi">WEB Service/API 設定</h1>
+<h1 id="web-serviceapiodata">WEB Service/API/OData 設定</h1>
 <h2 id="_1">概要</h2>
-<p>SDIはWeb Service/APIと連携可能です。
-サポートされているHTTPメソッドは GET および POST です。<br />
-また、以下の認証方式がサポートされています。 </p>
+<p>SDI は、外部の Web Service / Web API と連携してデータの取得・更新を行えます。<br />
+サポートしている通信方式は <strong>REST、SOAP（HTTP）</strong> および <strong>OData（OData v2 / v4）</strong> です。</p>
 <ul>
-<li>匿名認証</li>
-<li>Basic認証</li>
-<li>JSON Web Token（JWT）認証</li>
-<li>API Key認証</li>
-<li>Digest認証</li>
+<li>
+<p><strong>HTTP メソッド</strong><br />
+  GET / POST（※接続先 API の仕様により利用可否は異なります）</p>
+</li>
+<li>
+<p><strong>OData</strong><br />
+  OData エンドポイントに対し、<code>$filter</code> などのクエリオプションを利用したデータ取得に対応します。<br />
+  （対応可否や挙動は接続先システムの OData 実装に依存します）</p>
+</li>
+</ul>
+<p>また、以下の認証方式がサポートされています。</p>
+<ul>
+<li>匿名認証  </li>
+<li>Basic 認証  </li>
+<li>JSON Web Token（JWT）認証  </li>
+<li>API Key 認証  </li>
+<li>Digest 認証  </li>
 </ul>
 <h2 id="_2">設定</h2>
 <h3 id="web-service-api">Web Service / API</h3>
@@ -2130,7 +2141,7 @@
 <tr>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">データタイプ</td>
-<td style="text-align: left;">CSV、Excel、JSON、または XML のいずれかを選択します。</td>
+<td style="text-align: left;">CSV、Excel、JSON、XML、または OData のいずれかを選択します。</td>
 </tr>
 <tr>
 <td style="text-align: left;">2</td>
@@ -2185,26 +2196,31 @@
 </tr>
 <tr>
 <td style="text-align: left;">7</td>
+<td style="text-align: left;">Scope</td>
+<td style="text-align: left;">接続先 API が要求する scope を文字列で指定します。<br />Scope が不要な API の場合は <strong>空欄のままでも可</strong>（API 仕様に依存）</td>
+</tr>
+<tr>
+<td style="text-align: left;">8</td>
 <td style="text-align: left;">Token Endpoint</td>
 <td style="text-align: left;">認証トークンを取得するためのサーバー側のAPIエンドポイントです。</td>
 </tr>
 <tr>
-<td style="text-align: left;">8</td>
+<td style="text-align: left;">9</td>
 <td style="text-align: left;">Client ID</td>
 <td style="text-align: left;">システムに登録されたお客様のアプリケーションを一意に識別するためのIDです。<br /> *Grant typeにPasswordを選択した場合、システムによっては省略可能です。</td>
 </tr>
 <tr>
-<td style="text-align: left;">9</td>
+<td style="text-align: left;">10</td>
 <td style="text-align: left;">Client Secret</td>
 <td style="text-align: left;">Client IDと共にクライアント（お客様のアプリケーション）を認証するための秘密鍵です。<br /> *Grant typeにPasswordを選択した場合、システムによっては省略可能です。</td>
 </tr>
 <tr>
-<td style="text-align: left;">10</td>
+<td style="text-align: left;">11</td>
 <td style="text-align: left;">Username</td>
 <td style="text-align: left;">システムを利用するユーザーを特定するための識別情報です。</td>
 </tr>
 <tr>
-<td style="text-align: left;">11</td>
+<td style="text-align: left;">12</td>
 <td style="text-align: left;">Password</td>
 <td style="text-align: left;">ユーザーが認証されるための秘密情報です。Usernameと組み合わせて使用され、正しい情報が提供されるとシステムはJWTを発行し、認証されたセッションが確立されます。</td>
 </tr>
@@ -2222,12 +2238,12 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">12</td>
+<td style="text-align: left;">21</td>
 <td style="text-align: left;">API Key Header Name</td>
 <td style="text-align: left;">APIリクエストのヘッダー内でAPI Keyをどこに配置するかを決める名前です。<br />例えば、一般的なAPI Keyのヘッダー名は <code>x-api-key</code> がよく使用されますが、システムによっては別のカスタム名が指定される場合があります。</td>
 </tr>
 <tr>
-<td style="text-align: left;">13</td>
+<td style="text-align: left;">22</td>
 <td style="text-align: left;">API Key</td>
 <td style="text-align: left;">API Keyの値を入力してください。</td>
 </tr>
@@ -2245,12 +2261,12 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">14</td>
+<td style="text-align: left;">23</td>
 <td style="text-align: left;">Username <br />(Digest）</td>
 <td style="text-align: left;">Digest認証を選択した場合、ユーザー名を入力してください。</td>
 </tr>
 <tr>
-<td style="text-align: left;">15</td>
+<td style="text-align: left;">24</td>
 <td style="text-align: left;">Password <br />(Digest)</td>
 <td style="text-align: left;">Digest認証を選択した場合、パスワードを入力してください。</td>
 </tr>
