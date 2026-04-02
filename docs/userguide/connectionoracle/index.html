@@ -2198,6 +2198,11 @@
 <td style="text-align: left;">Login script</td>
 <td style="text-align: left;">接続が確立されるたびに 実行するSQL スクリプトを設定する。<br />複数行の場合<code>；</code>区切りで入力<br/>例：<br /><code>ALTER SESSION SET NLS_DATE_FORMAT='YYYY/MM/DD HH24:MI:SS';</code><br /><code>ALTER SESSION DISABLE PARALLEL DML;</code><br /></td>
 </tr>
+<tr>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">Enable Transactions</td>
+<td style="text-align: left;">トランザクション制御を有効にするかどうかを指定します。<br/>ONの場合、各接続単位でトランザクションが有効になり、処理は同一トランザクション内で実行されます。<br/>OFFの場合、各処理は自動的に確定（オートコミット）されます。</td>
+</tr>
 </tbody>
 </table>
 <h3 id="odp-connection-string">ODP Connection String</h3>

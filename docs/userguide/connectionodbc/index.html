@@ -2164,8 +2164,8 @@
 </tr>
 <tr>
 <td style="text-align: left;">6</td>
-<td style="text-align: left;">Transaction Supported</td>
-<td style="text-align: left;">トランザクションステートメントのサポート設定<br />※一部のデータベースはODBC接続時にトランザクションステートメントをサポートしていないことがあります。この場合、Transaction Supportedをオフに設定する必要があります。 <br/>例：Bigquery</td>
+<td style="text-align: left;">Enable Transactions</td>
+<td style="text-align: left;">トランザクション制御を有効にするかどうかを指定します。<br/>ONの場合、各接続単位でトランザクションが有効になり、処理は同一トランザクション内で実行されます。<br/>OFFの場合、各処理は自動的に確定（オートコミット）されます。</td>
 </tr>
 </tbody>
 </table>
