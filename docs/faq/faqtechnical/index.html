@@ -1931,7 +1931,16 @@
         <li class="md-nav__item">
   <a href="#q-sdilinux" class="md-nav__link">
     <span class="md-ellipsis">
-      Q: SDIはLinux環境動作しますか？
+      Q: SDIはLinux環境で動作しますか？
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q-sdi-worker-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q: SDI Worker Agentは冗長構成できますか？
     </span>
   </a>
   
@@ -1941,6 +1950,15 @@
   <a href="#q-sdi-gateway-service" class="md-nav__link">
     <span class="md-ellipsis">
       Q: SDI Gateway Serviceは冗長構成できますか？
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q:大量データでも安定稼働できますか？
     </span>
   </a>
   
@@ -2036,7 +2054,16 @@
         <li class="md-nav__item">
   <a href="#q-sdilinux" class="md-nav__link">
     <span class="md-ellipsis">
-      Q: SDIはLinux環境動作しますか？
+      Q: SDIはLinux環境で動作しますか？
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q-sdi-worker-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q: SDI Worker Agentは冗長構成できますか？
     </span>
   </a>
   
@@ -2046,6 +2073,15 @@
   <a href="#q-sdi-gateway-service" class="md-nav__link">
     <span class="md-ellipsis">
       Q: SDI Gateway Serviceは冗長構成できますか？
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q:大量データでも安定稼働できますか？
     </span>
   </a>
   
@@ -2068,33 +2104,17 @@
 
 
 <h1 id="faq">テクニカル関連 FAQ</h1>
-<h3 id="q-sdilinux">Q: SDIはLinux環境動作しますか？</h3>
-<p>SDIはLinux環境動作しません。<br />
-動作環境の詳細につきまして、下記のページをご参照ください。<br />
+<h3 id="q-sdilinux">Q: SDIはLinux環境で動作しますか？</h3>
+<p>いいえ、SDIはLinux環境では動作しません。
+動作環境の詳細については、以下のページをご参照ください。<br />
 <a href="../userguide/systemarchitecture/">システム構成・動作環境</a></p>
-<!-- 
-### Q: SDIとSDI Gateway Service の各バージョン間の対応状況を教えてください。
-
-SDIとSDI Gateway Service　のメジャー・バージョン番号、マイナー・バージョン一致する場合、動作保証します。
-一致しない場合、動作しない可能性があります。
-
-例：
-
-|SDIバージョン|SDI Gateway Service バージョン|対応|
-|----|----|----|
-|==1.0==.2201.1|==1.0==.2201.1|〇|
-|==1.0==.2201.1|==1.2==.2205.8|✖|
-|==1.2==.2203.2|==1.2==.2205.8|〇|
--->
-
+<h3 id="q-sdi-worker-agent">Q: SDI Worker Agentは冗長構成できますか？</h3>
+<p>はい、可能です。複数サーバーによるアクティブ／スタンバイ構成や自動フェイルオーバーにより、障害発生時の継続運用性を高め、可用性を向上させることができます。</p>
 <h3 id="q-sdi-gateway-service">Q: SDI Gateway Serviceは冗長構成できますか？</h3>
 <p>はい、ロードバランサーと複数SDI Gateway Serviceインスタンスによって冗長構成できます。</p>
-<!-- 
-### Q: ソースデータベースに存在する、ターゲットデータベースに存在しない型の対応方法を教えてください。。 
-要件に合わせる必要がありまが、下記の方法あります。
-例：
-DB2 の
--->
+<h3 id="q">Q:大量データでも安定稼働できますか？</h3>
+<p>はい。実際の導入事例では、1時間あたり数百万レコード規模のデータ連携や、高頻度（数千回／時間）のマッピング実行を継続的に行い、安定稼働しているケースもあります。  </p>
+<p>SDIはシンプルで分かりやすい操作性を保ちながら、一定規模のデータ連携にも十分対応可能です。</p>
 
 
 
