@@ -1047,6 +1047,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#gcp-cloud-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      GCP Cloud Storage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-blob-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Blob Storage
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2150,6 +2168,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#gcp-cloud-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      GCP Cloud Storage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-blob-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Blob Storage
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2176,11 +2212,7 @@
 <h2 id="_1">概要</h2>
 <p>CSV、Excel、JSON、XMLファイルの取り込み機能およびCSV、Excel、JSON、XMLファイルへの出力機能があります。<br />
 CSV、Excel、JSON、XMLファイルを使用する際は、まずファイルの保存場所を選択し、その後、データタイプとしてファイルフォーマットを選択して詳細設定を行います。<br />
-ファイルシステム、FTP/FTPS、SFTP、AWS S3（Amazon Simple Storage Service）、OCI Object Storage、Azure Blob Storageがサポートされています。  </p>
-<div class="admonition note info">
-<p class="admonition-title">Azure Blob Storage接続に関する補足説明</p>
-<p>Azure Blob Storageにアクセスする場合は、ストレージアカウントのSFTPサポートを有効にし、SFTPを使用してBlob Storageエンドポイントに接続してください。</p>
-</div>
+ファイルシステム、FTP/FTPS、SFTP、AWS S3（Amazon Simple Storage Service）、OCI Object Storage、GCP Cloud Storage、Azure Blob Storageがサポートされています。  </p>
 <h2 id="_2">設定</h2>
 <h3 id="_3">ファイルシステム</h3>
 <p><img src="../img/connection_file_filesystem.png" alt="" title="" >  </p>
@@ -2415,6 +2447,78 @@ key_file=C:\keys\oci\test_2.pem
 <td style="text-align: left;">6</td>
 <td style="text-align: left;">Folder</td>
 <td style="text-align: left;">使用するフォルダーを入力。　※ルートディレクトリを使う場合空白にしてください。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gcp-cloud-storage">GCP Cloud Storage</h3>
+<p><img src="../img/connection_file_gcpcs.png" alt="" title="" >  </p>
+<div class="admonition note info">
+<p class="admonition-title">GCP Configuration File作成の注意点</p>
+<p>通常の場合、ODI Studioを実行するOSユーザーとワーカーエージェントを実行するOSユーザーが異なります。<br />
+ サービスアカウントキー（JSONファイル）は、両方のOSユーザーからアクセス可能なフォルダーに保存してください。  </p>
+<p>また、サービスアカウントには対象バケットに対する適切な権限（例：Storage Object Viewer / Admin など）を付与してください。 </p>
+</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">No</th>
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Storage Type</td>
+<td style="text-align: left;">GCP Cloud Storage を選択</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Configuration File</td>
+<td style="text-align: left;">GCP認証用のサービスアカウントキー（JSONファイル）を指定 <br>例：<code>xxxxx.json</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">BucketName</td>
+<td style="text-align: left;">使用するGCP Cloud Storage のバケット名を入力</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Folder</td>
+<td style="text-align: left;">使用するフォルダ（プレフィックス）を入力 <br>※ルートディレクトリを使用する場合は空白</td>
+</tr>
+</tbody>
+</table>
+<h3 id="azure-blob-storage">Azure Blob Storage</h3>
+<p><img src="../img/connection_file_azurebs.png" alt="" title="" >  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">No</th>
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Storage Type</td>
+<td style="text-align: left;">Azure Blob Storage を選択</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Connection String</td>
+<td style="text-align: left;">Azure Storage アカウントの接続文字列を入力 <br>例：<code>DefaultEndpointsProtocol=https;AccountName=xxxx;AccountKey=xxxx;EndpointSuffix=core.windows.net</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Container Name</td>
+<td style="text-align: left;">使用するBlobコンテナ名を入力</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Folder</td>
+<td style="text-align: left;">使用するフォルダ（プレフィックス）を入力 <br>※ルートディレクトリを使用する場合は空白</td>
 </tr>
 </tbody>
 </table>
