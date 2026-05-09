@@ -1216,6 +1216,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#web-service-web-api_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web Service/ Web API ページングの設定について
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#salesforce" class="md-nav__link">
     <span class="md-ellipsis">
       Salesforce
@@ -2223,6 +2232,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#web-service-web-api_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web Service/ Web API ページングの設定について
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#salesforce" class="md-nav__link">
     <span class="md-ellipsis">
       Salesforce
@@ -2991,8 +3009,164 @@ UTC 表示がない場合は、接続先データベースの LOCAL 時間とし
   </tr>  
 </table>
 
+<h3 id="web-service-web-api_3">Web Service/ Web API ページングの設定について</h3>
+<p>Web Service / Web API のページング設定では、APIから複数ページに分割して提供されるデータを順番に取得するための設定を行います。<br />
+APIの仕様に応じて、ページ番号方式、オフセット／件数方式、Link方式、カーソル方式などのページング方法を選択できます。  </p>
+<p>ページング設定を行うことで、大量データを効率よく取得できるようになります。<br />
+なお、ページングを行わないAPIの場合は「なし」を選択してください。  </p>
+<h4 id="_14">ページング：なし</h4>
+<p>ページングを行わず、指定したURLから取得できるデータのみを取得する方式です。  </p>
+<p><img src="../img/mapping_source_webserviceapi_nopage.png" alt="" title="" width="500" ></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">No</th>
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">P11</td>
+<td style="text-align: left;">ページング方式</td>
+<td style="text-align: left;">利用するページング方式を選択します。<br>・なし：ページングを行わない</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_15">ページング：ページ番号方式</h4>
+<p>ページ番号を指定してデータを取得する方式です。ページ番号を変更しながら順番にデータを取得します。  </p>
+<p><img src="../img/mapping_source_webserviceapi_pagenumber.png" alt="" title="" width="500" ></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">No</th>
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">P21</td>
+<td style="text-align: left;">URL</td>
+<td style="text-align: left;">開始ページのURLを入力します。ページ番号を指定してください。指定しない場合は「1」から開始します。取得件数（<code>pageSize</code>）などを指定したい場合は、APIの仕様に合わせて入力してください。</td>
+</tr>
+<tr>
+<td style="text-align: left;">P22</td>
+<td style="text-align: left;">ページング方式</td>
+<td style="text-align: left;">利用するページング方式を選択します。<br>・ページ番号方式：ページ番号で取得する方式</td>
+</tr>
+<tr>
+<td style="text-align: left;">P23</td>
+<td style="text-align: left;">ページ番号パラメータ名</td>
+<td style="text-align: left;">ページ番号方式で利用するパラメータ名を設定します。例：<code>page</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_16">ページング：オフセット／件数方式</h4>
+<p>URL のパラメータに開始位置（オフセット）と取得件数を指定してデータを取得する方式です。<br />
+オフセット値を変更しながら順番にデータを取得します。 </p>
+<p><img src="../img/mapping_source_webserviceapi_offsetlimit.png" alt="" title="" width="500" ></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">No</th>
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">P31</td>
+<td style="text-align: left;">URL</td>
+<td style="text-align: left;">開始位置（オフセット）および取得件数を含むURLを入力します。オフセット値を指定しない場合は先頭から取得します。取得件数を指定したい場合は、APIの仕様に合わせて入力してください。</td>
+</tr>
+<tr>
+<td style="text-align: left;">P32</td>
+<td style="text-align: left;">ページング方式</td>
+<td style="text-align: left;">利用するページング方式を選択します。<br>・オフセット／件数方式：開始位置と取得件数を指定する方式</td>
+</tr>
+<tr>
+<td style="text-align: left;">P33</td>
+<td style="text-align: left;">オフセットパラメータ名</td>
+<td style="text-align: left;">オフセット／件数方式で利用する開始位置のパラメータ名を設定します。例：<code>offset</code> / <code>skip</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">P34</td>
+<td style="text-align: left;">取得件数パラメータ名</td>
+<td style="text-align: left;">オフセット／件数方式で利用する取得件数のパラメータ名を設定します。例：<code>limit</code> / <code>top</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="link">ページング：Link方式</h4>
+<p>レスポンスボディまたはHTTP Linkヘッダーに含まれる次ページURLを利用して、順番にデータを取得する方式です。  </p>
+<p><img src="../img/mapping_source_webserviceapi_link.png" alt="" title="" width="500" ></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">No</th>
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">P41</td>
+<td style="text-align: left;">URL</td>
+<td style="text-align: left;">初回アクセス時のURLを入力します。レスポンス内またはHTTPヘッダーに含まれる次ページURLを利用して、続きのデータを取得します。</td>
+</tr>
+<tr>
+<td style="text-align: left;">P42</td>
+<td style="text-align: left;">ページング方式</td>
+<td style="text-align: left;">利用するページング方式を選択します。<br>・Link方式：レスポンス内の次ページURLを利用する方式</td>
+</tr>
+<tr>
+<td style="text-align: left;">P43</td>
+<td style="text-align: left;">次ページ情報の取得場所</td>
+<td style="text-align: left;">次ページURLを取得する場所を選択します。<br>・レスポンスボディ：レスポンスデータ内のURLを利用する<br>・HTTP Linkヘッダー：HTTPレスポンスヘッダーの Link 情報を利用する</td>
+</tr>
+<tr>
+<td style="text-align: left;">P44</td>
+<td style="text-align: left;">次ページURLの取得ノード</td>
+<td style="text-align: left;">レスポンスボディ内で、次ページURLが格納されているノードを選択します。選択したノードの値を利用して次ページへアクセスします。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_17">ページング：カーソル方式</h4>
+<p>レスポンス内に含まれるカーソルトークンを利用して次ページを取得する方式です。レスポンスごとに返却されるトークンを使用して順番にデータを取得します。   </p>
+<p><img src="../img/mapping_source_webserviceapi_cursor.png" alt="" title="" width="500" ></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">No</th>
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">P51</td>
+<td style="text-align: left;">URL</td>
+<td style="text-align: left;">初回アクセス時のURLを入力します。レスポンス内に含まれるカーソルトークンを利用して、続きのデータを取得します。</td>
+</tr>
+<tr>
+<td style="text-align: left;">P52</td>
+<td style="text-align: left;">ページング方式</td>
+<td style="text-align: left;">利用するページング方式を選択します。<br>・カーソル方式：カーソルトークンを利用して次ページを取得する方式</td>
+</tr>
+<tr>
+<td style="text-align: left;">P53</td>
+<td style="text-align: left;">カーソルパラメータ名</td>
+<td style="text-align: left;">カーソル方式で利用するカーソルパラメータ名を設定します。例：<code>cursor</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">P54</td>
+<td style="text-align: left;">次カーソルトークン取得ノード</td>
+<td style="text-align: left;">レスポンスボディ内で、次ページ取得用のカーソルトークンが格納されているノードを選択します。選択したノードの値を利用して次ページへアクセスします。</td>
+</tr>
+</tbody>
+</table>
 <h3 id="salesforce">Salesforce</h3>
-<h4 id="_14">オブジェクト</h4>
+<h4 id="_18">オブジェクト</h4>
 <p>オブジェクトはデータベースのテーブルと同様の概念です。<br />
 設定方法はテーブル設定と同じため、下記の資料をご参照ください。<br />
 <a href=".#_4" ><i class="fa fa-book" aria-hidden="true"></i> テーブル</a></p>
@@ -3020,7 +3194,7 @@ UTC 表示がない場合は、接続先データベースの LOCAL 時間とし
 </tbody>
 </table>
 <h3 id="odata">OData</h3>
-<h4 id="_15">エンティティセット</h4>
+<h4 id="_19">エンティティセット</h4>
 <p>エンティティセットはデータベースのテーブルと同様の概念です。<br />
 設定方法はテーブル設定と同じため、下記の資料をご参照ください。<br />
 <a href=".#_4" ><i class="fa fa-book" aria-hidden="true"></i> テーブル</a></p>
