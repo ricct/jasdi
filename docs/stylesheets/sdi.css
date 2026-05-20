@@ -119,3 +119,440 @@ box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   text-decoration: none;
 }
 
+/* =========================
+   Pricing Section
+========================= */
+
+.pricing {
+  padding: 60px 20px;
+  background: #f9fbff;
+}
+
+.pricing-container {
+  max-width: 1600px;
+  margin: auto;
+}
+
+/* =========================
+   Header
+========================= */
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-header h2 {
+  color: #4154f1;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.section-header p {
+  font-size: 38px;
+  font-weight: 700;
+  color: #012970;
+}
+
+/* =========================
+   4 Columns
+========================= */
+
+.pricing-row {
+  display: flex;
+  gap: 24px;
+  flex-wrap: nowrap;
+}
+
+.pricing-col {
+  flex: 1;
+  min-width: 0;
+}
+
+/* =========================
+   Box
+========================= */
+
+.pricing-box {
+  position: relative;
+  background: #fff;
+  border-radius: 14px;
+  padding: 32px 20px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(1, 41, 112, 0.08);
+
+  transition: 0.3s;
+  overflow: hidden;
+
+  height: 100%;
+
+  box-sizing: border-box;
+}
+
+.pricing-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 40px rgba(1, 41, 112, 0.15);
+}
+
+/* =========================
+   Plan Title
+========================= */
+
+.pricing-box h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.plan-dev {
+  color: #07d5c0;
+}
+
+.plan-exp {
+  color: #ff901c;
+}
+
+.plan-std {
+  color: #ff0071;
+}
+
+.plan-ent {
+  color: #8b5cf6;
+}
+
+
+
+/* =========================
+   Pricing Section
+========================= */
+
+.pricing {
+  padding: 60px 20px;
+  background: #f9fbff;
+}
+
+.pricing-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* =========================
+   Header
+========================= */
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-header h2 {
+  color: #4154f1;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.section-header p {
+  font-size: 38px;
+  font-weight: 700;
+  color: #012970;
+}
+
+/* =========================
+   2 Columns Layout
+========================= */
+
+.pricing-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.pricing-col {
+  width: calc(50% - 12px);
+  box-sizing: border-box;
+}
+
+/* =========================
+   Box
+========================= */
+
+.pricing-box {
+  position: relative;
+  background: #fff;
+  border-radius: 14px;
+  padding: 32px 24px;
+  text-align: center;
+
+  box-shadow: 0 0 25px rgba(1, 41, 112, 0.08);
+
+  transition: 0.3s;
+  overflow: hidden;
+
+  height: 100%;
+}
+
+.pricing-box:hover {
+  transform: translateY(-6px);
+
+  box-shadow: 0 10px 40px rgba(1, 41, 112, 0.15);
+}
+
+
+
+/* =========================
+   Pricing Section
+========================= */
+
+.pricing {
+  padding: 60px 20px;
+  background: #f9fbff;
+}
+
+.pricing-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* =========================
+   Header
+========================= */
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-header h2 {
+  color: #4154f1;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.section-header p {
+  font-size: 38px;
+  font-weight: 700;
+  color: #012970;
+  margin-top: 10px;
+}
+
+/* =========================
+   2 x 2 Layout
+========================= */
+
+.pricing-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.pricing-col {
+  width: calc(50% - 12px);
+  box-sizing: border-box;
+}
+
+/* =========================
+   Box
+========================= */
+
+.pricing-box {
+  position: relative;
+  background: #fff;
+  border-radius: 14px;
+  padding: 32px 24px;
+  text-align: center;
+
+  box-shadow: 0 0 25px rgba(1, 41, 112, 0.08);
+
+  transition: 0.3s;
+  overflow: hidden;
+
+  height: 100%;
+}
+
+.pricing-box:hover {
+  transform: translateY(-6px);
+
+  box-shadow: 0 10px 40px rgba(1, 41, 112, 0.15);
+}
+
+/* =========================
+   Title
+========================= */
+
+.pricing-box h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.plan-dev {
+  color: #14c8c0;
+}
+
+.plan-exp {
+  color: #ff8a00;
+}
+
+.plan-std {
+  color: #d63384;
+}
+
+.plan-ent {
+  color: #7c5cff;
+}
+
+/* =========================
+   Price
+========================= */
+.price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 20px;
+}
+
+.currency {
+  font-size: 18px;
+  font-weight: 400;
+
+  color: #8a8a8a;
+
+  margin-bottom: 10px;
+}
+
+.price-tax {
+  color: #999;
+
+  font-size: 14px;
+}
+
+.price-sub {
+  font-size: 22px;
+  font-weight: 600;
+
+  color: #102a72;
+
+  line-height: 1.4;
+
+  text-align: center;
+
+  white-space: nowrap;
+}
+
+.free {
+  color: #16a34a;
+}
+
+/* =========================
+   Image
+========================= */
+
+.pricing-box img {
+  width: 140px;
+  margin: 20px auto;
+  display: block;
+}
+
+/* =========================
+   List
+========================= */
+
+.pricing-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pricing-box ul li {
+  padding: 10px 0;
+  font-size: 15px;
+  color: #444;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.pricing-box ul li:last-child {
+  border-bottom: none;
+}
+
+.pricing-box .na {
+  color: #bbb;
+  text-decoration: line-through;
+}
+
+/* =========================
+   Ribbon
+========================= */
+
+.featured {
+  position: absolute;
+  top: 18px;
+  right: -55px;
+
+  width: 180px;
+
+  background: #4154f1;
+  color: #fff;
+
+  transform: rotate(45deg);
+
+  font-size: 13px;
+  font-weight: 400;
+
+  padding: 6px 0;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 768px) {
+
+  .pricing-col {
+    width: 100%;
+  }
+
+  .section-header p {
+    font-size: 28px;
+  }
+
+}
+
+
+.quote-btn {
+  display: inline-block;
+
+  margin-top: 24px;
+
+  padding: 10px 24px;
+
+  border-radius: 999px;
+
+  background: #4154f1;
+
+  color: #ffffff !important;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+.quote-btn:hover {
+  background: #2f43f0;
+
+  color: #ffffff !important;
+
+  transform: translateY(-2px);
+}
