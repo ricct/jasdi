@@ -350,7 +350,7 @@ box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 .pricing-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 20px;
 }
 
 .pricing-col {
@@ -493,7 +493,7 @@ box-shadow: 0 2px 4px rgba(0,0,0,0.1);
    Ribbon
 ========================= */
 
-.featured {
+.featuredent {
   position: absolute;
   top: 18px;
   right: -55px;
@@ -501,6 +501,24 @@ box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   width: 180px;
 
   background: #4154f1;
+  color: #fff;
+
+  transform: rotate(45deg);
+
+  font-size: 13px;
+  font-weight: 400;
+
+  padding: 6px 0;
+}
+
+.featuredstd {
+  position: absolute;
+  top: 18px;
+  right: -55px;
+
+  width: 180px;
+
+  background: #60A5FA;
   color: #fff;
 
   transform: rotate(45deg);
