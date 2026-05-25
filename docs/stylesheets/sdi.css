@@ -99,12 +99,13 @@ display: inline-block;
 background-color: #5c8eff;
 color: white;
 font-weight: bold;
-font-size: 1.2em;
-padding: 0.8em 2em;
+padding: 8px 20px;
 border-radius: 6px;
 text-decoration: none;
+height:50px;
 box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
 
 .contact-btn:hover {
   background-color: #2962ff;
@@ -163,7 +164,7 @@ box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 
 .pricing-row {
   display: flex;
-  gap: 24px;
+  gap: 20px;
   flex-wrap: nowrap;
 }
 
@@ -310,7 +311,7 @@ box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 ========================= */
 
 .pricing {
-  padding: 60px 20px;
+  padding: 38px 17px;
   background: #f9fbff;
 }
 
@@ -398,11 +399,11 @@ box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .plan-exp {
-  color: #ff8a00;
+  color: #DFA12B;
 }
 
 .plan-std {
-  color: #d63384;
+  color: #4A90E2;
 }
 
 .plan-ent {
@@ -574,3 +575,187 @@ box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 
   transform: translateY(-2px);
 }
+
+
+
+/* =========================
+   License Note
+========================= */
+
+.license-note {
+
+  margin-top: 28px;
+
+  background: #ffffff;
+
+  border-radius: 14px;
+
+  padding: 22px 24px;
+
+  box-shadow: 0 0 25px rgba(1, 41, 112, 0.05);
+
+  border: 1px solid #eef2ff;
+}
+
+.license-note-title {
+
+
+  font-weight: 700;
+
+  color: #012970;
+
+  margin-bottom: 14px;
+}
+
+.license-note ul {
+
+  margin: 0;
+
+  padding-left: 20px;
+}
+
+.license-note li {
+
+  color: #4b5563;
+
+
+  line-height: 2;
+
+  margin-bottom: 6px;
+}
+
+.license-note li:last-child {
+
+  margin-bottom: 0;
+}
+
+
+
+
+/* =========================
+   SDI License Table Only
+========================= */
+
+.sdi-license-table {
+
+  border-collapse: separate !important;
+
+  border-spacing: 0;
+
+  width: 100%;
+
+  background: #ffffff;
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 8px 18px rgba(15, 23, 42, 0.05);
+
+  border: 1px solid #e8eef9;
+}
+
+/* =========================
+   Header
+========================= */
+
+.sdi-license-table th {
+
+  background:
+    linear-gradient(180deg, #f8fbff, #eef4ff) !important;
+
+  color: #012970;
+
+  font-weight: 600;
+
+  padding: 16px 14px;
+
+  border-bottom: 1px solid #dfe7f5;
+
+  line-height: 1.6;
+}
+
+/* =========================
+   Body
+========================= */
+
+.sdi-license-table td {
+
+  padding: 10px 10px;
+
+  border-bottom: 1px solid #eef2f8;
+
+  border-right: 1px solid #f4f6fb;
+
+  line-height: 1.8;
+
+  color: #334155;
+
+  background: #ffffff;
+}
+
+/* =========================
+   Last Column
+========================= */
+
+.sdi-license-table td:last-child,
+.sdi-license-table th:last-child {
+
+  border-right: none;
+}
+
+.sdi-license-table td.rowheader{
+
+  font-weight: 400;
+}
+
+.sdi-license-table td.check{
+
+  text-align: center;
+
+}
+
+.sdi-license-table th.colrowheader{
+
+  padding: 30px;
+}
+
+
+/* =========================
+   Section Header Rows
+========================= */
+
+.sdi-license-table tr[style*="#F1F1F1"] th,
+.sdi-license-table tr[style*="#f0f8ff"] th {
+
+  background:
+    linear-gradient(180deg, #f8fbff, #eef4ff) !important;
+
+  color: #012970;
+
+  font-size: 15px;
+
+  font-weight: 700;
+}
+
+/* =========================
+   Hover
+========================= */
+
+.sdi-license-table tr:hover td {
+
+  background: #fbfdff;
+}
+
+/* =========================
+   YES Icon
+========================= */
+
+.sdi-license-table img[src*="yes"] {
+
+  width: 22px;
+
+  opacity: 0.95;
+}
+

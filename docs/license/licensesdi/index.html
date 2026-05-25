@@ -2429,146 +2429,184 @@
 
   </div>
 
+  <div class="license-note">
+
+  <div class="license-note-title">  
+  <i class="fas fa-info-circle"></i>
+
+    ライセンスについて
+  </div>
+
+  <ul>
+    <li>
+      通常構成はインスタンス単位
+    </li>
+
+    <li>
+      HAクラスタ（Active-Standby / Active-Active）は<br>
+      &nbsp;&nbsp;1クラスタにつき1ライセンスで利用可能
+    </li>
+  </ul>
+
+</div>
+
 </section>
 
 <h2 id="licensedetail">ライセンス体系</h2>
-<table style="border-collapse:collapse; border-spacing:0px;" border="1">
-  <tr  style="background-color: #F1F1F1;">
-    <th>機能</th>
-    <th>Developer<br /> Edition</th>
-    <th>Express<br /> Edition</th>
-    <th>Standard<br /> Edition</th>
-    <th>Enterprise<br /> Edition</th>
+<table class="sdi-license-table">
+  <tr>
+    <th width="20%" class="colrowheader" >機能</th>
+    <th width="20%">Developer<br /> Edition</th>
+    <th width="20%">Express<br /> Edition</th>
+    <th width="20%">Standard<br /> Edition</th>
+    <th width="20%">Enterprise<br /> Edition</th>
   </tr>
   <tr>
-    <td>SDI Studio</td>
-    <td><img src="/img/yes.png" width="20"></td>
-    <td><img src="/img/yes.png" width="20"></td>
-    <td><img src="/img/yes.png" width="20"></td>
-    <td><img src="/img/yes.png" width="20"></td>
+    <td class="rowheader">SDI Studio</td>
+    <td class="check"><img src="/img/yes.png"></td>
+    <td class="check"><img src="/img/yes.png"></td>
+    <td class="check"><img src="/img/yes.png"></td>
+    <td class="check"><img src="/img/yes.png"></td>
   </tr>
   <tr>
-    <td>SDI Worker Agent</td>
-    <td><img src="/img/yes.png" width="20"></td>
-    <td><img src="/img/yes.png" width="20"></td>
-    <td><img src="/img/yes.png" width="20"></td>
-    <td><img src="/img/yes.png" width="20"></td>
+    <td class="rowheader">SDI Worker Agent</td>
+    <td class="check"><img src="/img/yes.png"></td>
+    <td class="check"><img src="/img/yes.png"></td>
+    <td class="check"><img src="/img/yes.png"></td>
+    <td class="check"><img src="/img/yes.png"></td>
   </tr>
   <tr>
-    <td>SDI Gateway Service</td>
-    <td><img src="/img/yes.png" width="20"></td>
-    <td><img src="/img/yes.png" width="20"></td>
-    <td><img src="/img/yes.png" width="20"></td>
-    <td><img src="/img/yes.png" width="20"></td>
+    <td class="rowheader">SDI Gateway Service<br />※3</td>
+    <td class="check"><img src="/img/yes.png"></td>
+    <td class="check"><img src="/img/yes.png"></td>
+    <td class="check"><img src="/img/yes.png"></td>
+    <td class="check"><img src="/img/yes.png"></td>
   </tr>  
   <tr>
-    <td>SDI CLI <br />コマンドライン・インタフェース</td>
-    <td><img src="/img/yes.png" width="20"></td>
-    <td><img src="/img/yes.png" width="20"></td>
-    <td><img src="/img/yes.png" width="20"></td>
-    <td><img src="/img/yes.png" width="20"></td>
+    <td class="rowheader">SDI CLI <br />コマンドライン・インタフェース</td>
+    <td class="check"><img src="/img/yes.png"></td>
+    <td class="check"><img src="/img/yes.png"></td>
+    <td class="check"><img src="/img/yes.png"></td>
+    <td class="check"><img src="/img/yes.png"></td>
   </tr>   
      <tr>
-    <td>HA構成<br /> コールドスタンバイ</td>
-    <td><img src="/img/yes.png" width="20"></td>
-    <td><img src="/img/yes.png" width="20"></td>
-    <td><img src="/img/yes.png" width="20"></td>
-    <td><img src="/img/yes.png" width="20"></td>
+    <td class="rowheader">HA構成<br /> コールドスタンバイ</td>
+    <td class="check"><img src="/img/yes.png"></td>
+    <td class="check"><img src="/img/yes.png"></td>
+    <td class="check"><img src="/img/yes.png"></td>
+    <td class="check"><img src="/img/yes.png"></td>
   </tr>  
    <tr>
-    <td>HA構成<br />ホットスタンバイ</td>
-    <td><img src="/img/yes.png" width="20"></td>
+    <td class="rowheader">HA構成<br />ホットスタンバイ</td>
+    <td class="check"><img src="/img/yes.png"></td>
     <td></td>
     <td></td>
-    <td><img src="/img/yes.png" width="20"></td>
+    <td class="check"><img src="/img/yes.png"></td>
   </tr> 
   <tr>
-    <td>コネクション数<br />上限<br />※1</td>
-    <td>5</td>
-    <td>2</td>
-    <td>5</td>
-    <td>20</td>
+    <td class="rowheader">コネクション数<br />上限<br />※1</td>
+    <td class="check">5</td>
+    <td class="check">2</td>
+    <td class="check">5</td>
+    <td class="check">20</td>
   </tr>     
   <tr>
-    <td>マッピング数<br />上限<br />※2</td>
-    <td>100</td>
-    <td>5</td>
-    <td>50</td>
-    <td>300</td>
+    <td class="rowheader">マッピング数<br />上限<br />※2</td>
+    <td class="check">100</td>
+    <td class="check">5</td>
+    <td class="check">50</td>
+    <td class="check">300</td>
   </tr>
     <tr>
     <td colspan="5">
     ※1 コネクション数：SDI に登録される接続先（データソース）設定の件数。 <br />
-    ※2 マッピング数：SDI に登録されるマッピング設定の件数です（通常はターゲットテーブル／ファイル等の件数に相当）。同一ターゲットに複数のマッピング設定がある場合は、その分もカウントされます。<br> <br />
-    上限を超えて利用する場合は、上位エディションの選択、または複数ライセンスの購入が必要です。
+    ※2 マッピング数：SDI に登録されるマッピング設定の件数です（通常はターゲットテーブル／ファイル等の件数に相当）。同一ターゲットに複数のマッピング設定がある場合は、その分もカウントされます。<br>
+    <strong>
+    コネクション数またはマッピング数の上限を超えて利用する場合は、
+    上位エディションへの変更、
+    または複数ライセンスの購入が必要です。
+    </strong><br />
+    ※3 SDI Gateway Service は追加費用なしで利用可能です。 <br />
     </td>
   </tr> 
 
    </tr>
-  <tr  style="background-color: #F1F1F1;">
-    <th>用途</th>
+  <tr>
+    <th class="colrowheader" >用途</th>
     <th>Developer<br /> Edition</th>
     <th>Express<br /> Edition</th>
     <th>Standard<br /> Edition</th>
     <th>Enterprise<br /> Edition</th>
   </tr>   
   <tr>
-    <td>開発、教育、デモ</td>
-    <td><img src="/img/yes.png" width="20"></td>
-    <td><img src="/img/yes.png" width="20"></td>
-    <td><img src="/img/yes.png" width="20"></td>
-    <td><img src="/img/yes.png" width="20"></td>
+    <td class="rowheader">開発、教育、デモ</td>
+    <td class="check"><img src="/img/yes.png"></td>
+    <td class="check"><img src="/img/yes.png"></td>
+    <td class="check"><img src="/img/yes.png"></td>
+    <td class="check"><img src="/img/yes.png"></td>
   </tr>  
     <tr>
-    <td>非商業利用</td>
-    <td><img src="/img/yes.png" width="20"></td>
-    <td><img src="/img/yes.png" width="20"></td>
-    <td><img src="/img/yes.png" width="20"></td>
-    <td><img src="/img/yes.png" width="20"></td>
+    <td class="rowheader">非商業利用</td>
+    <td class="check"><img src="/img/yes.png"></td>
+    <td class="check"><img src="/img/yes.png"></td>
+    <td class="check"><img src="/img/yes.png"></td>
+    <td class="check"><img src="/img/yes.png"></td>
   </tr> 
       <tr>
-    <td>商業利用<br />本番利用</td>
+    <td class="rowheader">商業利用<br />本番利用</td>
     <td></td>
-    <td><img src="/img/yes.png" width="20"></td>
-    <td><img src="/img/yes.png" width="20"></td>
-    <td><img src="/img/yes.png" width="20"></td>
+    <td class="check"><img src="/img/yes.png"></td>
+    <td class="check"><img src="/img/yes.png"></td>
+    <td class="check"><img src="/img/yes.png"></td>
   </tr>
-  <tr style="background-color: #f0f8ff;">
-    <th><a id="price"></a>ライセンス</th>
+
+  <tr>
+    <th  class="colrowheader" >ライセンス</th>
     <th>Developer<br /> Edition</th>
     <th>Express<br /> Edition</th>
     <th>Standard<br /> Edition</th>
     <th>Enterprise<br /> Edition</th>
   </tr>   
   <tr>
-    <td rowspan="3">料金</td>
-    <td colspan="2" rowspan="2">無償</td>
-    <td colspan="2">  ※インスタンスライセンス（サーバーOS／クライアントOS共通）</td>
-  </tr>  
-
-  <tr>
-    <td>7,500円/月<br />(税別)</td>
+    <td class="rowheader">料金</td>
+    <td>Free</td>
+    <td>Free</td>
+        <td>7,500円/月<br />(税別)</td>
     <td>15,000円/月<br />(税別)</td>
-  </tr>
+  </tr>  
   <tr>
-    <td colspan="4">
-    ※SDI Gateway Service は必須ではありません。必要に応じてご利用いただく場合でも、SDI でご契約いただいているライセンス数までは無償でご利用いただけます。<br>
-例：<br>
-SDI ライセンスを 2インスタンス分 お持ちの場合 → Gateway も 2インスタンスまで無償<br>
-3インスタンス以上 の Gateway が必要な場合 → 3台目から追加ライセンスが必要<br>
-追加ライセンス料は、接続元 SDI のエディションに関係なく一律 7,500円／月（税別） となります。<br>
-    </td>
-  </tr> 
-  <tr>
-    <td rowspan="2">ライセンス<br />取得方法</td>
+    <td rowspan="2" class="rowheader">ライセンス<br />取得方法</td>
     <td colspan="1">
     <!--
         <a href="/start/bin/developerlicense.zip" target="_blank"><img src="../img/developerdownload.png" title="開発用ライセンスファイルダウンロード"></a><a href="/start/bin/developerlicense.zip" target="_blank">開発用ライセンスファイルダウンロード</a><br />ライセンス番号は解凍されたファイル名を参照してください。<br />
         *1
      -->
-     インストール時に、6か月有効のDeveloper Editionライセンスが自動適用され、評価版として利用できます。    </td>
-    <td colspan="1"><a href="https://forms.gle/xa4nupUYHQoXH1Ft7" target="_blank"><img src="../img/expressapplication.png" title="SDI Expressライセンス申込"></a><a href="https://forms.gle/xa4nupUYHQoXH1Ft7" target="_blank">SDI Expressライセンス申込</a></td>
-    <td colspan="2" style="background-color: #fffacd;"><a href="https://forms.gle/LGCpsNAzfENA86zi7" target="_blank"><img src="../img/seapplication.png"  title="SDI Standard/Enterpriseライセンス見積依頼"></a><a href="https://forms.gle/LGCpsNAzfENA86zi7" target="_blank">SDI Standard/Enterpriseライセンス見積依頼</a>
+     Developer<br>
+     手続き不要
+     <!--
+            インストール時に、
+            6か月有効のDeveloper Editionライセンスが
+            自動適用され、
+            評価版として利用できます。
+-->
+  </td>
+    <td>
+                  Express
+              <a href="https://forms.gle/xa4nupUYHQoXH1Ft7" target="_blank" class="quote-btn">
+             申込
+          </a>
+    </td>
+    <td>
+                  Standard
+              <a href="https://forms.gle/LGCpsNAzfENA86zi7" target="_blank" class="quote-btn">
+             見積依頼
+          </a>
+    </td>
+    <td>
+    Enterprise
+              <a href="https://forms.gle/LGCpsNAzfENA86zi7" target="_blank" class="quote-btn">
+             見積依頼
+          </a>
     </td>
   </tr>
   <tr>
@@ -2581,7 +2619,10 @@ SDI ライセンスを 2インスタンス分 お持ちの場合 → Gateway も
     <button class="contact-btn">
       <a href="https://forms.gle/ur43YJ5rQ4mbGFs88" target="_blank">お問い合わせフォームへ</a>
     </button>
+
   </div>
+
+
 
   <div style="flex:1; text-align:center;">
       <img src="../img/toi.png" style="height:58px;">
@@ -2591,30 +2632,33 @@ SDI ライセンスを 2インスタンス分 お持ちの場合 → Gateway も
     </td>
   </tr>
   <tr>
-    <td>ライセンス<br />モデル</td>
-    <td colspan="4">サーバー ライセンス（インスタンスベース）<br />サーバーライセンスは、SDIを実行する特定の物理サーバー、 VM、コンテナに割り当てる必要があります。</td>
+    <td class="rowheader">ライセンス<br />モデル</td>
+    <td colspan="4">
+    通常構成はインスタンス単位（サーバーOS／クライアントOS共通）<br />
+    HA構成（Active-Standby / Active-Active）は、1クラスタ・1ライセンスとして利用可能。<br />
+    </td>
   </tr> 
-  <tr style="background-color: #f0f8ff;">
-    <th>サポート</th>
+  <tr>
+    <th class="colrowheader" >サポート</th>
     <th>Developer<br /> Edition</th>
     <th>Express<br /> Edition</th>
     <th>Standard<br /> Edition</th>
     <th>Enterprise<br /> Edition</th>
   </tr>  
   <tr>
-    <td>コミュニティーサポート<br / >(無償)</td>
+    <td class="rowheader">コミュニティー<br / >サポート<br / >(無償)</td>
     <td colspan="4">下記のURLからIssueを起票してください。コミュニティ有識者対応します。<br / >
     <a href="https://github.com/ricct/jasdi/issues" target="_blank">https://github.com/ricct/jasdi/issues</a>
     </td>
   </tr> 
     <tr>
-    <td>ベーシックサポート(ライセンス込み)</td>
+    <td class="rowheader">ベーシック<br / >サポート<br / >(ライセンス込み)</td>
     <td colspan="2"></td>
     <td colspan="2"><a href="/faq/faqsupport/#q-basic-support" target="_blank">Basic Support（ベーシックサポート）の内容</a>
     </td>
   </tr>
   <tr>
-    <td>プロフェッショナルサポート<br / >(有償)</td>
+    <td class="rowheader">プロフェッショナル<br / >サポート<br / >(有償)</td>
     <td colspan="2"></td>
     <td colspan="2"><a href="/faq/faqsupport/#q-professional-support" target="_blank">Professional Support（プロフェッショナルサポート）の内容</a>
     </td>
@@ -2626,6 +2670,8 @@ SDI ライセンスを 2インスタンス分 お持ちの場合 → Gateway も
   </tr>
 </table>
 
+<p><br>
+<br></p>
 <h2 id="_2">ライセンス規約</h2>
 <p>本規約は、お客様が電子的に本規約に同意し、注文を完了した時点で成立します。<br />
 なお、無償エディションについては、本ソフトウェアをインストールまたは使用した時点で本規約に同意したものとみなします。  </p>
