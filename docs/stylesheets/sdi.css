@@ -672,6 +672,7 @@ box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   padding: 16px 14px;
 
   border-bottom: 1px solid #dfe7f5;
+  border-right: 1px solid #dfe7f5;
 
   line-height: 1.6;
 }
@@ -707,7 +708,9 @@ box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 
 .sdi-license-table td.rowheader{
 
-  font-weight: 400;
+  background:
+    linear-gradient(180deg, #fdfdfd, #fcfcfc) !important;
+  font-weight: 480;
 }
 
 .sdi-license-table td.check{
@@ -754,8 +757,19 @@ box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 
 .sdi-license-table img[src*="yes"] {
 
-  width: 22px;
+  width: 24px;
 
   opacity: 0.95;
 }
 
+
+.sdi-note-number {
+
+  display: inline-block;
+
+  margin-top: 6px;
+
+  color: #64748b;
+
+  font-weight: 400;
+}
