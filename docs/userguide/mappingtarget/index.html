@@ -58,6 +58,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/nav.css">
     
+      <link rel="stylesheet" href="../../stylesheets/news.css">
+    
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -960,7 +962,7 @@
   
   
   <span class="md-ellipsis">
-    リモートデータベース(SDI Gateway service 経由)
+    リモートデータベース(Gateway service 経由)
     
   </span>
   
@@ -1505,6 +1507,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    クラスタ構成
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../operationhistory/" class="md-nav__link">
         
   
@@ -1539,10 +1564,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
         
           
-          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
             
   
   
@@ -1555,8 +1580,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_8">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
             <span class="md-nav__icon md-icon"></span>
             ツール
           </label>
@@ -1611,10 +1636,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10" >
         
           
-          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
             
   
   
@@ -1627,8 +1652,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_9">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_10">
             <span class="md-nav__icon md-icon"></span>
             プリファレンス
           </label>
@@ -1729,10 +1754,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_11" >
         
           
-          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
             
   
   
@@ -1745,8 +1770,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_10">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_11">
             <span class="md-nav__icon md-icon"></span>
             ヘルプ
           </label>
@@ -2229,6 +2254,47 @@
 <td style="text-align: left;">4</td>
 <td style="text-align: left;">データ参照</td>
 <td style="text-align: left;">既存データを参照する画面を開きます。</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">No</th>
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">コネクション</td>
+<td style="text-align: left;">コネクション設定画面で設定したコネクションを選択してください。</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">テーブル</td>
+<td style="text-align: left;">RDBのテーブル一覧から、対象のテーブルを選択してください。</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">更新方法</td>
+<td style="text-align: left;">ターゲットテーブルを更新する方法を選択します。<br>マージ - PK（プライマリキー）またはユーザーが設定したマッチングカラムに基づいてデータを突合し、既存データが存在すれば更新、存在しなければ挿入します。PKがない場合は、マージ判定に使用するカラムを別途設定する必要があります。<br>追加 - ターゲットテーブルにデータを挿入します。<br>カスタム - データ更新用のSQL文を記述します。（詳細設定画面で設定します）</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">更新（リフレッシュ）</td>
+<td style="text-align: left;">テーブル情報を再取得し、最新状態に更新します。</td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">データ参照</td>
+<td style="text-align: left;">既存データを参照する画面を開きます。</td>
+</tr>
+<tr>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">マージ詳細設定</td>
+<td style="text-align: left;">Merge処理時に使用するマッチング条件（キーとなるカラム）や更新対象カラムなどを設定します。PKの有無に関わらずカラム指定によるマージ条件を設定でき、PKがある場合でも任意のカラムをキーとして使用することが可能です。</td>
 </tr>
 </tbody>
 </table>

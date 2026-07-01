@@ -58,6 +58,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/nav.css">
     
+      <link rel="stylesheet" href="../../stylesheets/news.css">
+    
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -960,7 +962,7 @@
   
   
   <span class="md-ellipsis">
-    リモートデータベース(SDI Gateway service 経由)
+    リモートデータベース(Gateway service 経由)
     
   </span>
   
@@ -1487,6 +1489,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    クラスタ構成
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../operationhistory/" class="md-nav__link">
         
   
@@ -1521,10 +1546,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
         
           
-          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
             
   
   
@@ -1537,8 +1562,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_8">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
             <span class="md-nav__icon md-icon"></span>
             ツール
           </label>
@@ -1593,10 +1618,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10" >
         
           
-          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
             
   
   
@@ -1609,8 +1634,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_9">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_10">
             <span class="md-nav__icon md-icon"></span>
             プリファレンス
           </label>
@@ -1711,10 +1736,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_11" >
         
           
-          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
             
   
   
@@ -1727,8 +1752,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_10">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_11">
             <span class="md-nav__icon md-icon"></span>
             ヘルプ
           </label>
@@ -2175,27 +2200,27 @@
 <tbody>
 <tr>
 <td style="text-align: left;">1</td>
-<td style="text-align: left;">データ抽出前処理</td>
+<td style="text-align: left;">抽出前処理</td>
 <td style="text-align: left;">データ抽出前に、SQLを事前に実行することが可能です。設定する場合は、「Yes」を選択してから、[詳細設定] ボタンを押して詳細を設定します。</td>
 </tr>
 <tr>
 <td style="text-align: left;">2</td>
-<td style="text-align: left;">データ抽出後処理</td>
+<td style="text-align: left;">抽出後処理</td>
 <td style="text-align: left;">データ抽出後に、SQLを実行することが可能です。設定する場合は、「Yes」を選択してから、[詳細設定] ボタンを押して詳細を設定します。</td>
 </tr>
 <tr>
 <td style="text-align: left;">3</td>
-<td style="text-align: left;">Stagingテーブル</td>
+<td style="text-align: left;">Stagingテーブルへのロード</td>
 <td style="text-align: left;">データ更新前に、SDIは一旦対象データをStagingテーブルにロードします。Stagingテーブル名はシステムが自動生成しますが、設定することも可能です。設定する際は、直接テーブル名を入力してください。<br />ターゲットテーブルと異なるスキーマのテーブルを使用する場合は、「スキーマ名.テーブル名」の形式で入力してください。例：SCOTT.EMPTEMP <br /> [詳細設定] ボタンを押して詳細を設定できます。</td>
 </tr>
 <tr>
 <td style="text-align: left;">4</td>
-<td style="text-align: left;">データ更新前処理</td>
+<td style="text-align: left;">更新前処理</td>
 <td style="text-align: left;">データ更新前に、SQLを事前に実行することが可能です。設定する場合は、「Yes」を選択してから、[詳細設定] ボタンを押して詳細を設定します。</td>
 </tr>
 <tr>
 <td style="text-align: left;">5</td>
-<td style="text-align: left;">データ更新方法</td>
+<td style="text-align: left;">更新方法</td>
 <td style="text-align: left;">ターゲットテーブルの更新方法を選択します。<br /> Merge - ターゲットテーブルに同じプライマリキーのデータが存在する場合は更新、存在しない場合は挿入します。※ターゲットテーブルにプライマリキーが設定されていない場合、この方法は選択できません。<br /> Append - ターゲットテーブルにデータを挿入します。<br /> Custom - データ更新用のSQL文を記述します。[詳細設定] ボタンを押して詳細を設定します。</td>
 </tr>
 <tr>
@@ -2205,27 +2230,27 @@
 </tr>
 <tr>
 <td style="text-align: left;">7</td>
-<td style="text-align: left;">データ更新後処理</td>
+<td style="text-align: left;">更新後処理</td>
 <td style="text-align: left;">データ更新後に、SQLを実行することが可能です。設定する場合は、「Yes」を選択してから、[詳細設定] ボタンを押して詳細を設定します。</td>
 </tr>
 <tr>
 <td style="text-align: left;">8</td>
-<td style="text-align: left;">ステーショングテーブルを削除する</td>
+<td style="text-align: left;">ステーショングテーブル削除</td>
 <td style="text-align: left;">処理完了後に、Stagingテーブルを削除するかどうかを選択します。<br><br>「Yes」を選択した場合は、SDI がマッピング実行中に作成した Staging テーブルのみ削除されます。<br>もともと存在していたテーブルについては、一切削除されません。</td>
 </tr>
 <tr>
 <td style="text-align: left;">9</td>
-<td style="text-align: left;">正常終了時の処理</td>
+<td style="text-align: left;">成功時処理</td>
 <td style="text-align: left;">処理成功時のアクションを設定します。SQL実行、メール送信、ソースファイルの移動・削除・バックアップなどが可能です。</td>
 </tr>
 <tr>
 <td style="text-align: left;">10</td>
-<td style="text-align: left;">異常終了時の処理</td>
+<td style="text-align: left;">失敗時処理</td>
 <td style="text-align: left;">処理失敗時のアクションを設定します。SQL実行、メール送信、ソースファイルの移動・削除・バックアップなどが可能です。</td>
 </tr>
 <tr>
 <td style="text-align: left;">11</td>
-<td style="text-align: left;">対象データがない場合の処理</td>
+<td style="text-align: left;">対象データなし処理</td>
 <td style="text-align: left;">抽出データがない場合のアクションを設定します。SQL実行、メール送信、ソースファイルの移動・削除・バックアップなどが可能です。</td>
 </tr>
 </tbody>
