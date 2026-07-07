@@ -484,7 +484,7 @@
   
   
   <span class="md-ellipsis">
-    SDI Gateway Service
+    オプションサービス
     
   </span>
   
@@ -495,9 +495,73 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
-            SDI Gateway Service
+            オプションサービス
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_1" id="__nav_2_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Gateway Service
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Gateway Service
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start/aboutsdiwebservice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gateway Service概要
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -586,6 +650,109 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Webhook Bridge Service
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Webhook Bridge Service
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start/aboutsdiwebhookbridge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Webhook Bridge Service概要
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start/setupsdiwebhookbridge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    セットアップ手順
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1700,6 +1867,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../userguide/optionservices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    オプションサービス
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2013,15 +2203,19 @@
 
     <div class="news-year">2026 News</div>
 
-    <div class="news-month">6月</div>
+    <div class="news-month">7月</div>
 
     <div class="news-card">
-      <b>データ更新機能を改善</b>
+      <b>SDI Webhook Bridge Service をリリース</b>
       <ul>
-        <li>差分更新時に条件指定が可能になり、更新対象を柔軟に絞り込めるようになりました</li>
-        <li>データマージ時にキーカラムを指定できるようになりました（※一部データベースは非対応のため、その場合は指定なしでご利用ください）</li>
+        <li>外部システムからの Webhook / HTTP POST を受信し、Trigger File を生成して SDI のスケジューラー処理を起動できます</li>        <li>受信した JSON データをそのまま Trigger File に保存できます</li>
+        <li>Immediate（即時実行）と Debounce（遅延集約）の2つの実行モードに対応しました</li>
+        <li>APIキー認証、Payloadチェック、ファイル名テンプレート指定に対応しています</li>
       </ul>
     </div>
+
+
+    <div class="news-month">6月</div>
 
     <div class="news-card">
           <b>高可用性（HA）機能を強化</b>
@@ -2039,6 +2233,15 @@
         <li>従来のマッピングに加え、コネクションおよびスケジューラーにもGroup機能を追加</li>
         <li>関連する設定をグループ単位で管理可能</li>
         <li>マルチテナント環境や大規模運用環境における管理効率を向上</li>
+      </ul>
+    </div>
+
+
+    <div class="news-card">
+      <b>データ更新機能を改善</b>
+      <ul>
+        <li>差分更新時に条件指定が可能になり、更新対象を柔軟に絞り込めるようになりました</li>
+        <li>データマージ時にキーカラムを指定できるようになりました（※一部データベースは非対応のため、その場合は指定なしでご利用ください）</li>
       </ul>
     </div>
 

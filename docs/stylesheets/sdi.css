@@ -719,6 +719,14 @@ box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 
 }
 
+.sdi-license-table td.notcheck{
+
+    text-align:center;
+    background:#fDfDfD;
+    color:#cfcfcf;
+    font-size:0.8rem;
+}
+
 .sdi-license-table th.colrowheader{
 
   padding: 30px;
