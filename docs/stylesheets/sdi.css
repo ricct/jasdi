@@ -39,26 +39,6 @@ body {
  padding: 0;
  background: rgba(253,253,253,.92)!important; 
 }
-
-.slogan-div {
-  position: fixed;
-  right: 218px; /* Add margin on the right */
-  top: 67px; /* Add margin on the bottom */
-  width: 318px; /* Limit the width to 318px */
-  height: auto; /* Adjust height automatically */
-  background-size: cover; /* Or use 'auto' depending on your preference */
-  background-repeat: no-repeat;
-  z-index: 999; /* Ensure it's in front */
-            
-}
-
- @media (max-width: 1280px) {
-     .slogan-div {
-         display: none !important; 
-     }
- }
- 
- 
  
 .download-btn {
   /*background-color: #ffc107;*/ /* 黄色 */

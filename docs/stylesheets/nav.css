@@ -11,9 +11,36 @@
 
 header, .header, .navbar, [role="banner"], [data-md-component="header"], .md-header {
   background: var(--head-bg); 
+  position: relative;
   /* 
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);*/
+}
+
+.md-header::after {
+  content: "";
+  position: absolute;
+
+  top: 48px;
+  right: 218px;
+
+  width: 318px;
+  height: 80px; /* 実画像に合わせて調整 */
+
+  background-image: url("/img/slogan.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  pointer-events: none;
+
+  z-index: 10;
+}
+
+@media (max-width: 1280px) {
+  .md-header::after {
+    display: none !important;
+  }
 }
 
 /* タブ列を少し上に持ち上げる（上マージンを詰める） */
@@ -416,4 +443,29 @@ a { color: var(--blue); text-decoration: none; }
 
 #sdi-hero-image {
   cursor: zoom-in;
+}
+
+/*============================*/
+/* Language selector を最前面にする */
+.md-header__option {
+  position: relative !important;
+  z-index: 110000 !important;
+}
+
+.md-select {
+  position: relative !important;
+  z-index: 110001 !important;
+}
+
+.md-select__inner {
+  z-index: 110002 !important;
+  overflow: visible !important;
+}
+
+.md-header__inner {
+  overflow: visible !important;
+}
+
+.md-header {
+  overflow: visible !important;
 }
