@@ -1,0 +1,4581 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Simple Data Integrator（SDI）オフィシャルウェブサイトへようこそ。本サイトでは、ETL／データ連携ツール「SDI」に関する公式情報を提供しています。データ活用基盤の構築を支援し、ビジネス課題の解決と業務効率化をサポートします。">
+      
+      
+        <meta name="author" content="Research Institute of Cloud Computing Technology(RiCCT)">
+      
+      
+        <link rel="canonical" href="https://ja.sdi.ricct.com/userguide/mappingtransformations/">
+      
+      
+        <link rel="prev" href="../mappingcolumndetail/">
+      
+      
+        <link rel="next" href="../mappingadvancedsettings/">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>変換処理の使い方 - Simple Data Integrator</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Saira+Semi+Condensed:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Saira Semi Condensed";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/image-popup.css">
+    
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/sdi.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/nav.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/news.css">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-1E0JJH5DER"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-1E0JJH5DER",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-1E0JJH5DER",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="Simple Data Integrator" class="md-header__button md-logo" aria-label="Simple Data Integrator" data-md-component="logo">
+      
+  <img src="../../img/sdi-64.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Simple Data Integrator
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              変換処理の使い方
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="言語切り替え">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1c6.075 0 11 4.925 11 11s-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1m3.241 10.5zc-.1-2.708-.992-4.904-1.89-6.452a14 14 0 0 0-1.304-1.88L12 3.11l-.047.059c-.354.425-.828 1.06-1.304 1.88-.898 1.547-1.79 3.743-1.89 6.451Zm-12.728 0h4.745c.1-3.037 1.1-5.49 2.093-7.204.39-.672.78-1.233 1.119-1.673C6.11 3.329 2.746 7 2.513 11.5m18.974 0C21.254 7 17.89 3.329 13.53 2.623c.339.44.729 1.001 1.119 1.673.993 1.714 1.993 4.167 2.093 7.204ZM8.787 13c.182 2.478 1.02 4.5 1.862 5.953q.574.993 1.304 1.88l.047.057.047-.059c.354-.425.828-1.06 1.304-1.88.842-1.451 1.679-3.471 1.862-5.951Zm-1.504 0H2.552a9.505 9.505 0 0 0 7.918 8.377 16 16 0 0 1-1.119-1.673C8.413 18.085 7.47 15.807 7.283 13m9.434 0c-.186 2.807-1.13 5.085-2.068 6.704-.39.672-.78 1.233-1.118 1.673A9.506 9.506 0 0 0 21.447 13Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="https://sdi.ricct.com/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ホーム
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../start/setupsdi/" class="md-tabs__link">
+          
+  
+  
+  セットアップ
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../systemarchitecture/" class="md-tabs__link">
+          
+  
+  
+  ユーザーガイド
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../license/licensesdi/" class="md-tabs__link">
+          
+  
+  
+  ライセンス
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../resources/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  資料ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../faq/faqlicense/" class="md-tabs__link">
+          
+  
+  
+  FAQ
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Simple Data Integrator" class="md-nav__button md-logo" aria-label="Simple Data Integrator" data-md-component="logo">
+      
+  <img src="../../img/sdi-64.png" alt="logo">
+
+    </a>
+    Simple Data Integrator
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ホーム
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    セットアップ
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            セットアップ
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start/setupsdi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SDIセットアップ手順
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start/sdiupgrade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SDIバージョンアップ手順
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    オプションサービス
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            オプションサービス
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_1" id="__nav_2_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Gateway Service
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Gateway Service
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start/aboutsdiwebservice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gateway Service概要
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start/setupsdiwebservice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    セットアップ手順
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start/installiis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IISセットアップ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start/deployservice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SDI Gateway serviceデプロイ 
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start/configservice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SDI Gateway service設定 
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Webhook Bridge Service
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Webhook Bridge Service
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start/aboutsdiwebhookbridge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Webhook Bridge Service概要
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start/setupsdiwebhookbridge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    セットアップ手順
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    ユーザーガイド
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            ユーザーガイド
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systemarchitecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    システム構成・動作環境
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mainbasic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ホーム画面
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    コネクション設定
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            コネクション設定
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../connection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    基本設定
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../connectionoracle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Oracleコネクション
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../connectionsqlserver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SQL Serverコネクション
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../connectionmysql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MySQL コネクション
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../connectionpostgre/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PostgreSQL コネクション
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../connectiondb2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DB2 コネクション
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../connectionodbc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ODBC コネクション
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../connectionwebserviceapi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WEB Service/API/OData
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../connectionfile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ファイル
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../connectionsdiservice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    リモートデータベース(Gateway service 経由)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../connectionsalesforce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Salesforce
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    マッピング設定
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            マッピング設定
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    基本設定
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mappingsource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ソースデータ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mappingtarget/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ターゲットデータ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mappingcolumndetail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    カラムマッピング設定
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    変換処理の使い方
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    変換処理の使い方
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      操作と例の読み方
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="操作と例の読み方">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sample-input-notation" class="md-nav__link">
+    <span class="md-ellipsis">
+      サンプル入力の表記と実際の操作
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      処理一覧
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#value-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      空白・NULLの置換
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="空白・NULLの置換">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#null" class="md-nav__link">
+    <span class="md-ellipsis">
+      NULLだけを置換
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      空文字だけを置換
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      空白のみを置換
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trim" class="md-nav__link">
+    <span class="md-ellipsis">
+      空白除去
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upper" class="md-nav__link">
+    <span class="md-ellipsis">
+      大文字化
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lower" class="md-nav__link">
+    <span class="md-ellipsis">
+      小文字化
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pad-left" class="md-nav__link">
+    <span class="md-ellipsis">
+      左埋め
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pad-right" class="md-nav__link">
+    <span class="md-ellipsis">
+      右埋め
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replace" class="md-nav__link">
+    <span class="md-ellipsis">
+      文字列置換
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regex-replace" class="md-nav__link">
+    <span class="md-ellipsis">
+      正規表現置換
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#substring" class="md-nav__link">
+    <span class="md-ellipsis">
+      部分文字列
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regex-extract" class="md-nav__link">
+    <span class="md-ellipsis">
+      正規表現抽出
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concat" class="md-nav__link">
+    <span class="md-ellipsis">
+      文字列結合
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#split" class="md-nav__link">
+    <span class="md-ellipsis">
+      文字列分割
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convert-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      型変換
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datetime" class="md-nav__link">
+    <span class="md-ellipsis">
+      日時変換
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calculate" class="md-nav__link">
+    <span class="md-ellipsis">
+      四則演算
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#round" class="md-nav__link">
+    <span class="md-ellipsis">
+      丸め
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ceiling" class="md-nav__link">
+    <span class="md-ellipsis">
+      切上げ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#floor" class="md-nav__link">
+    <span class="md-ellipsis">
+      切捨て
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#condition" class="md-nav__link">
+    <span class="md-ellipsis">
+      条件による切替
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      コード変換
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coalesce" class="md-nav__link">
+    <span class="md-ellipsis">
+      最初のNULL以外の値
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#condition-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      条件判定
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mask" class="md-nav__link">
+    <span class="md-ellipsis">
+      マスキング
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="マスキング">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mask-short-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      残す文字数が入力の長さ以上の場合
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hash" class="md-nav__link">
+    <span class="md-ellipsis">
+      ハッシュ化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ハッシュ化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hash-algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      ハッシュ方式の選び方
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hash-unkeyed-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      鍵なしSHA-256を試す
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hash-output-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      出力の長さと保存先の列
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hash-multiple-servers" class="md-nav__link">
+    <span class="md-ellipsis">
+      複数Mapping・複数サーバーで同じ結果を使う
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hash-key-unavailable" class="md-nav__link">
+    <span class="md-ellipsis">
+      設定の保存と鍵を利用できない場合
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combine-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      複数の列を別々に変換して結合する
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mappingadvancedsettings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    詳細設定
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mappingadvancedsettingssalesforce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Salesforce詳細設定
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    スケジューラー設定
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            スケジューラー設定
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schedule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    基本情報
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schedulefrequency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    スケジュールに従う起動
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schedulefiletrigger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ファイルトリガーによる起動
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schedulesetting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    属性設定
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schedulemappinglist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    タスクリスト
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workeragent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ワーカーエージェント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    クラスタ構成
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operationhistory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    実行履歴
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ツール
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            ツール
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dataviewer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    データ参照
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    プリファレンス
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_10">
+            <span class="md-nav__icon md-icon"></span>
+            プリファレンス
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systemsetting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    システム設定
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mailsetting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    メール設定
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mappinggroupsetting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    グループ設定
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../studioauthentication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Studio起動時のパスワード認証
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ヘルプ
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_11">
+            <span class="md-nav__icon md-icon"></span>
+            ヘルプ
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ライセンス確認、登録
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sdicli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SDI CLI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../optionservices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    オプションサービス
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ライセンス
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            ライセンス
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/licensesdi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SDIライセンス
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/thirdparty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    サードパーティライセンス
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://forms.gle/LGCpsNAzfENA86zi7" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ライセンス見積依頼
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    資料ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            FAQ
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/faqlicense/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ライセンス関連
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/faqtechnical/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    テクニカル関連
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/faqsupport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    サポート関連
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      操作と例の読み方
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="操作と例の読み方">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sample-input-notation" class="md-nav__link">
+    <span class="md-ellipsis">
+      サンプル入力の表記と実際の操作
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      処理一覧
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#value-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      空白・NULLの置換
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="空白・NULLの置換">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#null" class="md-nav__link">
+    <span class="md-ellipsis">
+      NULLだけを置換
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      空文字だけを置換
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      空白のみを置換
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trim" class="md-nav__link">
+    <span class="md-ellipsis">
+      空白除去
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upper" class="md-nav__link">
+    <span class="md-ellipsis">
+      大文字化
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lower" class="md-nav__link">
+    <span class="md-ellipsis">
+      小文字化
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pad-left" class="md-nav__link">
+    <span class="md-ellipsis">
+      左埋め
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pad-right" class="md-nav__link">
+    <span class="md-ellipsis">
+      右埋め
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replace" class="md-nav__link">
+    <span class="md-ellipsis">
+      文字列置換
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regex-replace" class="md-nav__link">
+    <span class="md-ellipsis">
+      正規表現置換
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#substring" class="md-nav__link">
+    <span class="md-ellipsis">
+      部分文字列
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regex-extract" class="md-nav__link">
+    <span class="md-ellipsis">
+      正規表現抽出
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concat" class="md-nav__link">
+    <span class="md-ellipsis">
+      文字列結合
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#split" class="md-nav__link">
+    <span class="md-ellipsis">
+      文字列分割
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convert-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      型変換
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datetime" class="md-nav__link">
+    <span class="md-ellipsis">
+      日時変換
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calculate" class="md-nav__link">
+    <span class="md-ellipsis">
+      四則演算
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#round" class="md-nav__link">
+    <span class="md-ellipsis">
+      丸め
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ceiling" class="md-nav__link">
+    <span class="md-ellipsis">
+      切上げ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#floor" class="md-nav__link">
+    <span class="md-ellipsis">
+      切捨て
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#condition" class="md-nav__link">
+    <span class="md-ellipsis">
+      条件による切替
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      コード変換
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coalesce" class="md-nav__link">
+    <span class="md-ellipsis">
+      最初のNULL以外の値
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#condition-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      条件判定
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mask" class="md-nav__link">
+    <span class="md-ellipsis">
+      マスキング
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="マスキング">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mask-short-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      残す文字数が入力の長さ以上の場合
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hash" class="md-nav__link">
+    <span class="md-ellipsis">
+      ハッシュ化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ハッシュ化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hash-algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      ハッシュ方式の選び方
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hash-unkeyed-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      鍵なしSHA-256を試す
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hash-output-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      出力の長さと保存先の列
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hash-multiple-servers" class="md-nav__link">
+    <span class="md-ellipsis">
+      複数Mapping・複数サーバーで同じ結果を使う
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hash-key-unavailable" class="md-nav__link">
+    <span class="md-ellipsis">
+      設定の保存と鍵を利用できない場合
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combine-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      複数の列を別々に変換して結合する
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">変換処理の使い方</h1>
+<p><a href="../mappingcolumndetail/">カラムマッピング設定</a>の「変換手順」から選べる24種類の用途と設定例です。各画面はサンプルデータによる実際の設定・プレビューです。画像をクリックすると、このページ内で拡大表示します。画像・背景・右上の「×」をクリックするか、Escキーで閉じると、元の閲覧位置に戻ります。</p>
+<h2 id="_2">操作と例の読み方</h2>
+<ol>
+<li>「元の値」で対象のソースカラムを選びます。</li>
+<li>各画像の <strong>1</strong> の一覧から処理を選び、「追加」をクリックします。</li>
+<li>手順の行を選択し、<strong>2</strong> の「処理の設定」を下記の表に合わせます。「…」は値や条件の設定画面を開きます。</li>
+<li>「出力する値」で、この手順の結果を選びます。</li>
+<li>サンプル入力の型と値を表の例に合わせ、<strong>3</strong> の「変換を確認」をクリックします。</li>
+<li>「OK」でマッピング画面に反映し、マッピング画面の「保存」で保存します。</li>
+</ol>
+<p>表の <code>VALUE = "abc"</code> は、参照先がVALUEの行で「入力の型」を「文字列」、「サンプル入力」を <code>abc</code> にする意味です。<code>VALUE =</code> や引用符は入力しません。結果に付く引用符も画面の表示用です。</p>
+<h3 id="sample-input-notation">サンプル入力の表記と実際の操作</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">表記</th>
+<th style="text-align: left;">実際の操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>"abc"</code></td>
+<td style="text-align: left;">入力の型は「文字列」、サンプル入力は <code>abc</code> だけ。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>""</code></td>
+<td style="text-align: left;">入力の型は「文字列」、サンプル入力は空欄。引用符2個は入力しません。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>"   "</code></td>
+<td style="text-align: left;">入力の型は「文字列」、半角スペースを3個入力。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>NULL</code></td>
+<td style="text-align: left;">入力の型で「NULL」を選択。サンプル入力は空欄。文字列の <code>NULL</code> とは異なります。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>123</code></td>
+<td style="text-align: left;">数値として試す場合は入力の型を「数値」、値を <code>123</code> にします。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>入力欄によって、バックスラッシュの扱いが異なります。</strong> サンプル入力・固定値では、<code>\t</code> や <code>\n</code> を実際のタブ・改行へ変換しません。Tabキーはセル移動に使われます。改行を含む値の確認は、実際の改行を含む入力データを用意して行ってください。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">入力欄</th>
+<th style="text-align: left;">記述例と意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">サンプル入力・固定値</td>
+<td style="text-align: left;"><code>\t</code> はバックスラッシュとtの2文字、<code>\n</code> はバックスラッシュとnの2文字。</td>
+</tr>
+<tr>
+<td style="text-align: left;">正規表現置換・正規表現抽出の検索欄</td>
+<td style="text-align: left;"><code>\t</code> はタブ、<code>\n</code> は改行（LF）に一致。<code>\s+</code> は連続する空白文字に一致。</td>
+</tr>
+<tr>
+<td style="text-align: left;">正規表現置換の置換後の文字列</td>
+<td style="text-align: left;"><code>$1</code> は1番目の取得グループ。<code>\t</code>・<code>\n</code> はタブ・改行に変換しません。</td>
+</tr>
+</tbody>
+</table>
+<p>共通の「入力する値」「結果名」「有効」は<a href="../mappingcolumndetail/#steps">手順と出力の設定</a>で説明しています。各設定表は処理固有の項目を掲載します。「…」から固定値を指定するときは、取得方法を「固定値」、型を文字列・数値など、値を表の内容に設定します。</p>
+<h2 id="_3">処理一覧</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">処理</th>
+<th style="text-align: left;">用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="#value-default">空白・NULLの置換</a></td>
+<td style="text-align: left;">NULL、空文字、スペースやタブのみの値を、指定した値に置き換えます。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#trim">空白除去</a></td>
+<td style="text-align: left;">名称やコードの前後に付いた不要な空白を取り除きます。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#upper">大文字化</a></td>
+<td style="text-align: left;">英字コードの表記を大文字に統一します。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#lower">小文字化</a></td>
+<td style="text-align: left;">メールアドレスのドメインや英字識別子の表記を小文字にそろえます。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#pad-left">左埋め</a></td>
+<td style="text-align: left;">桁数の異なるコードの左側を0などで埋めます。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#pad-right">右埋め</a></td>
+<td style="text-align: left;">固定長の出力に向けて、文字列の右側を埋めます。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#replace">文字列置換</a></td>
+<td style="text-align: left;">電話番号のハイフンなど、決まった文字列を置き換えます。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#regex-replace">正規表現置換</a></td>
+<td style="text-align: left;">連続する空白や文字のパターンをまとめて置換します。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#substring">部分文字列</a></td>
+<td style="text-align: left;">コードの決まった位置から必要な文字数を取り出します。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#regex-extract">正規表現抽出</a></td>
+<td style="text-align: left;">接頭辞付きコードなどから、パターンに合う部分を取り出します。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#concat">文字列結合</a></td>
+<td style="text-align: left;">複数の列、固定値、変換した結果を一つの文字列にします。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#split">文字列分割</a></td>
+<td style="text-align: left;">区切られた文字列から、指定位置の項目を一つ取得します。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#convert-type">型変換</a></td>
+<td style="text-align: left;">文字列の数値を計算に使える数値などへ変換します。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#datetime">日時変換</a></td>
+<td style="text-align: left;">日付の書式、時差、日付の加算を設定します。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#calculate">四則演算</a></td>
+<td style="text-align: left;">単価×数量など、二つの値で計算します。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#round">丸め</a></td>
+<td style="text-align: left;">小数点以下の桁数をそろえて数値を丸めます。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#ceiling">切上げ</a></td>
+<td style="text-align: left;">数値以上で最も小さい整数にします。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#floor">切捨て</a></td>
+<td style="text-align: left;">数値以下で最も大きい整数にします。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#condition">条件による切替</a></td>
+<td style="text-align: left;">条件によって、出力する値を切り替えます。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#code-map">コード変換</a></td>
+<td style="text-align: left;">システム間で異なる区分コードを変換します。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#coalesce">最初のNULL以外の値</a></td>
+<td style="text-align: left;">複数の候補から、最初に見つかったNULLでない値を採用します。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#condition-result">条件判定</a></td>
+<td style="text-align: left;">条件の成立・不成立を真偽値として出力します。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#mask">マスキング</a></td>
+<td style="text-align: left;">名前・電話番号・コードなどの一部または全体を、指定した文字で隠します。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#hash">ハッシュ化</a></td>
+<td style="text-align: left;">入力を固定長のハッシュ文字列へ変換し、同じ値を照合するための識別子にします。</td>
+</tr>
+</tbody>
+</table>
+<p><a id="null-default"></a></p>
+<p><a id="empty-default"></a></p>
+<p><a id="whitespace-default"></a></p>
+<h2 id="value-default">空白・NULLの置換</h2>
+<p>NULL、空文字、スペースやタブなどの空白文字だけの値を、指定した値に置き換えます。対象は個別に選択できます。</p>
+<p><a class="sdi-image-popup" href="../img/transform-value-default.png"><img alt="空白・NULLの置換の設定と確認結果" src="../img/transform-value-default.png" /></a></p>
+<p><strong>設定方法</strong></p>
+<p>「置換する対象」でNULL・空文字・空白のみを複数選択します。新規追加時は3つとも選択されています。「置換後の値」の「…」で取得方法を「固定値」、型を「文字列」、値を「未設定」にします。ソース列・BIND変数・前の変換結果も指定できます。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">対象</th>
+<th style="text-align: left;">判定する値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">NULL</td>
+<td style="text-align: left;">値がない状態。文字列の "NULL" とは異なります。</td>
+</tr>
+<tr>
+<td style="text-align: left;">空文字</td>
+<td style="text-align: left;">文字数0の文字列 <code>""</code>。</td>
+</tr>
+<tr>
+<td style="text-align: left;">空白のみ</td>
+<td style="text-align: left;">1文字以上のスペース・タブ・改行などだけの文字列。空文字は含みません。</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">設定項目</th>
+<th style="text-align: left;">設定例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">置換後の値（列・変換結果も指定可）</td>
+<td style="text-align: left;"><code>固定値: 未設定</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>確認例</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">サンプル入力</th>
+<th style="text-align: left;">最終結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>VALUE</code> = <code>NULL</code></td>
+<td style="text-align: left;"><code>"未設定"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>VALUE</code> = 空文字（入力の型は「文字列」、入力欄は空欄）</td>
+<td style="text-align: left;"><code>"未設定"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>VALUE</code> = 半角スペース3個</td>
+<td style="text-align: left;"><code>"未設定"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>VALUE</code> = <code>"ABC"</code></td>
+<td style="text-align: left;"><code>"ABC"</code></td>
+</tr>
+</tbody>
+</table>
+<p><a class="sdi-image-popup" href="../img/transform-value-default-settings.png"><img alt="空白・NULLの置換の詳細設定" src="../img/transform-value-default-settings.png" /></a></p>
+<p>子画面の <strong>1</strong> で取得方法・参照先・固定値の型・値を設定し、<strong>2</strong> の「OK」で戻ります。ソースカラムとBIND変数は参照先の一覧から選択します。固定値では参照先を使いません。</p>
+<p><strong>注意点</strong></p>
+<p>選択した対象だけを置き換え、それ以外の値は変更しません。対象は1つ以上選択してください。選択した対象には同じ置換後の値を使用します。対象ごとに異なる値を使う場合は、対象を分けた複数の手順を追加します。</p>
+<details>
+<summary>対象を1つだけ選択する設定例</summary>
+<h3 id="null">NULLだけを置換</h3>
+<p>該当する対象だけをチェックします。</p>
+<p><a class="sdi-image-popup" href="../img/transform-null-default.png"><img alt="NULLだけを置換" src="../img/transform-null-default.png" /></a></p>
+<p><a class="sdi-image-popup" href="../img/transform-null-default-settings.png"><img alt="置換後の値の設定" src="../img/transform-null-default-settings.png" /></a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">入力</th>
+<th style="text-align: left;">結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>NULL</code></td>
+<td style="text-align: left;"><code>"未設定"</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">空文字だけを置換</h3>
+<p>該当する対象だけをチェックします。</p>
+<p><a class="sdi-image-popup" href="../img/transform-empty-default.png"><img alt="空文字だけを置換" src="../img/transform-empty-default.png" /></a></p>
+<p><a class="sdi-image-popup" href="../img/transform-empty-default-settings.png"><img alt="置換後の値の設定" src="../img/transform-empty-default-settings.png" /></a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">入力</th>
+<th style="text-align: left;">結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>""</code></td>
+<td style="text-align: left;"><code>"未入力"</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_5">空白のみを置換</h3>
+<p>該当する対象だけをチェックします。</p>
+<p><a class="sdi-image-popup" href="../img/transform-whitespace-default.png"><img alt="空白のみを置換" src="../img/transform-whitespace-default.png" /></a></p>
+<p><a class="sdi-image-popup" href="../img/transform-whitespace-default-settings.png"><img alt="置換後の値の設定" src="../img/transform-whitespace-default-settings.png" /></a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">入力</th>
+<th style="text-align: left;">結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>"   "</code></td>
+<td style="text-align: left;"><code>"未入力"</code></td>
+</tr>
+</tbody>
+</table>
+</details>
+<h2 id="trim">空白除去</h2>
+<p>名称やコードの前後に付いた不要な空白を取り除きます。</p>
+<p><a class="sdi-image-popup" href="../img/transform-trim.png"><img alt="空白除去の設定と確認結果" src="../img/transform-trim.png" /></a></p>
+<p><strong>設定方法</strong></p>
+<p>「空白除去の位置」で両端・先頭・末尾を選びます。例では「両端」にします。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">設定項目</th>
+<th style="text-align: left;">設定例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">空白除去の位置</td>
+<td style="text-align: left;"><code>両端</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>確認例</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">サンプル入力</th>
+<th style="text-align: left;">最終結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>VALUE</code> = <code>"  abc  "</code></td>
+<td style="text-align: left;"><code>"abc"</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意点</strong></p>
+<p>文字列の途中の空白は残します。先頭・末尾のタブや改行も空白除去の対象です。大文字化も必要なら、後の手順の入力にこの結果を指定します。</p>
+<h2 id="upper">大文字化</h2>
+<p>英字コードの表記を大文字に統一します。</p>
+<p><a class="sdi-image-popup" href="../img/transform-upper.png"><img alt="大文字化の設定と確認結果" src="../img/transform-upper.png" /></a></p>
+<p><strong>設定方法</strong></p>
+<p>「入力する値」に大文字化する列または変換結果を指定します。大文字化専用の追加オプションはありません。</p>
+<p>処理固有の設定項目はありません。入力する値と出力先の手順を確認してください。</p>
+<p><strong>確認例</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">サンプル入力</th>
+<th style="text-align: left;">最終結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>VALUE</code> = <code>"Abc-01"</code></td>
+<td style="text-align: left;"><code>"ABC-01"</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意点</strong></p>
+<p>数値や記号はそのままです。ロケールを指定する項目はなく、ロケールに依存しない大文字化を行います。NULLはNULLのままです。</p>
+<h2 id="lower">小文字化</h2>
+<p>メールアドレスのドメインや英字識別子の表記を小文字にそろえます。</p>
+<p><a class="sdi-image-popup" href="../img/transform-lower.png"><img alt="小文字化の設定と確認結果" src="../img/transform-lower.png" /></a></p>
+<p><strong>設定方法</strong></p>
+<p>「入力する値」に対象の列または変換結果を指定します。小文字化専用の追加オプションはありません。</p>
+<p>処理固有の設定項目はありません。入力する値と出力先の手順を確認してください。</p>
+<p><strong>確認例</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">サンプル入力</th>
+<th style="text-align: left;">最終結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>VALUE</code> = <code>"Abc-01"</code></td>
+<td style="text-align: left;"><code>"abc-01"</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意点</strong></p>
+<p>変換する範囲は入力値全体です。メールアドレスの一部だけを変換したい場合は、必要な部分の抽出・変換・結合を組み合わせます。NULLはNULLのままです。</p>
+<h2 id="pad-left">左埋め</h2>
+<p>桁数の異なるコードの左側を0などで埋めます。</p>
+<p><a class="sdi-image-popup" href="../img/transform-pad-left.png"><img alt="左埋めの設定と確認結果" src="../img/transform-pad-left.png" /></a></p>
+<p><strong>設定方法</strong></p>
+<p>「出力文字数」を5、「埋める文字（1文字）」を <code>0</code> にします。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">設定項目</th>
+<th style="text-align: left;">設定例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">出力文字数</td>
+<td style="text-align: left;"><code>5</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">埋める文字（1文字）</td>
+<td style="text-align: left;"><code>0</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>確認例</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">サンプル入力</th>
+<th style="text-align: left;">最終結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>VALUE</code> = <code>"7"</code></td>
+<td style="text-align: left;"><code>"00007"</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意点</strong></p>
+<p>出力文字数は追加する文字数ではなく、埋めた後の全体の長さです。埋める文字は1文字です。入力が指定長以上なら切り詰めません。先頭0を残す出力には文字列型を使用します。 入力欄は1文字に制限され、複数文字の貼り付けは受け付けません。未入力では確認・保存できません。半角スペース1文字も指定できます。</p>
+<h2 id="pad-right">右埋め</h2>
+<p>固定長の出力に向けて、文字列の右側を埋めます。</p>
+<p><a class="sdi-image-popup" href="../img/transform-pad-right.png"><img alt="右埋めの設定と確認結果" src="../img/transform-pad-right.png" /></a></p>
+<p><strong>設定方法</strong></p>
+<p>「出力文字数」を5、「埋める文字（1文字）」を <code>_</code> にします。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">設定項目</th>
+<th style="text-align: left;">設定例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">出力文字数</td>
+<td style="text-align: left;"><code>5</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">埋める文字（1文字）</td>
+<td style="text-align: left;"><code>_</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>確認例</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">サンプル入力</th>
+<th style="text-align: left;">最終結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>VALUE</code> = <code>"AB"</code></td>
+<td style="text-align: left;"><code>"AB___"</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意点</strong></p>
+<p>入力が指定長以上の場合はそのままです。空白で埋める場合は、埋める文字に実際のスペース1文字を入力します。文字数による指定で、バイト数による指定ではありません。 入力欄は1文字に制限され、複数文字の貼り付けは受け付けません。未入力では確認・保存できません。半角スペース1文字も指定できます。</p>
+<h2 id="replace">文字列置換</h2>
+<p>電話番号のハイフンなど、決まった文字列を置き換えます。</p>
+<p><a class="sdi-image-popup" href="../img/transform-replace.png"><img alt="文字列置換の設定と確認結果" src="../img/transform-replace.png" /></a></p>
+<p><strong>設定方法</strong></p>
+<p>「検索文字の値」を固定文字列 <code>-</code>、「置換後の値」を固定文字列の空欄にします。検索文字や置換後の値には列・前の変換結果も選べます。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">設定項目</th>
+<th style="text-align: left;">設定例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">検索文字の値</td>
+<td style="text-align: left;"><code>固定値: -</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">置換後の値</td>
+<td style="text-align: left;"><code>固定値:</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">大文字小文字を区別しない</td>
+<td style="text-align: left;"><code>False</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>確認例</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">サンプル入力</th>
+<th style="text-align: left;">最終結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>VALUE</code> = <code>"090-1234-5678"</code></td>
+<td style="text-align: left;"><code>"09012345678"</code></td>
+</tr>
+</tbody>
+</table>
+<p><a class="sdi-image-popup" href="../img/transform-replace-settings.png"><img alt="文字列置換の詳細設定" src="../img/transform-replace-settings.png" /></a></p>
+<p>子画面の <strong>1</strong> で取得方法・参照先・固定値の型・値を設定し、<strong>2</strong> の「OK」で戻ります。ソースカラムとBIND変数は参照先の一覧から選択します。固定値では参照先を使いません。</p>
+<p><strong>注意点</strong></p>
+<p>該当するすべての箇所を置換します。検索文字は正規表現として解釈しません。「大文字小文字を区別しない」で照合方法を切り替えます。検索文字を空文字にすることはできません。</p>
+<h2 id="regex-replace">正規表現置換</h2>
+<p>連続する空白や文字のパターンをまとめて置換します。</p>
+<p><a class="sdi-image-popup" href="../img/transform-regex-replace.png"><img alt="正規表現置換の設定と確認結果" src="../img/transform-regex-replace.png" /></a></p>
+<p><strong>設定方法</strong></p>
+<p>「検索文字・正規表現」に <code>\s+</code>、「置換後の文字列」に <code>-</code> を入力します。画面にはバックスラッシュを1文字入力します。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">設定項目</th>
+<th style="text-align: left;">設定例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">検索文字・正規表現</td>
+<td style="text-align: left;"><code>\s+</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">置換後の文字列</td>
+<td style="text-align: left;"><code>-</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">大文字小文字を区別しない</td>
+<td style="text-align: left;"><code>False</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>確認例</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">サンプル入力</th>
+<th style="text-align: left;">最終結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>VALUE</code> = <code>"AB  12   CD"</code></td>
+<td style="text-align: left;"><code>"AB-12-CD"</code></td>
+</tr>
+</tbody>
+</table>
+<p>下記をコピーし、参照先VALUEの「サンプル入力」に貼り付けてください。「入力の型」は「文字列」にします。この例は半角スペースだけを使用し、タブは含みません。</p>
+<div class="highlight"><pre><span></span><code>AB  12   CD
+</code></pre></div>
+<p>ABと12の間は半角スペース2個、12とCDの間は3個です。「検索文字・正規表現」には <code>\s+</code> をそのまま入力します。バックスラッシュは1個です。「置換後の文字列」に <code>-</code> を入力して「変換を確認」を押すと、<code>AB-12-CD</code> になります。</p>
+<p>掲載画面でバックスラッシュが円記号のように見える箇所も、実際の文字は半角バックスラッシュ（U+005C）です。このページの <code>\s+</code> をコピーして使用してください。全角の円記号とは異なります。</p>
+<p><strong>注意点</strong></p>
+<p>例では連続する半角スペースを、それぞれハイフン1文字にします。<code>\s+</code> は実際のタブや改行などの空白文字にも一致します。サンプル入力に <code>\t</code> や <code>\n</code> の2文字を入力しても、タブや改行にはなりません。.NETの正規表現です。置換文字列では <code>$1</code> などで取得グループを参照できます。無効なパターンや処理時間の超過は変換エラーになります。</p>
+<h2 id="substring">部分文字列</h2>
+<p>コードの決まった位置から必要な文字数を取り出します。</p>
+<p><a class="sdi-image-popup" href="../img/transform-substring.png"><img alt="部分文字列の設定と確認結果" src="../img/transform-substring.png" /></a></p>
+<p><strong>設定方法</strong></p>
+<p>「開始位置の値」を固定数値5、「文字数の値」を固定数値5にします。それぞれ列・前の変換結果から指定することもできます。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">設定項目</th>
+<th style="text-align: left;">設定例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">開始位置の値</td>
+<td style="text-align: left;"><code>固定値: 5</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">文字数の値</td>
+<td style="text-align: left;"><code>固定値: 5</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">取得範囲が文字数を超えた場合</td>
+<td style="text-align: left;"><code>エラーにする</code>（初期値）／<code>NULLを返す</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>確認例</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">サンプル入力</th>
+<th style="text-align: left;">最終結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>VALUE</code> = <code>"ABC-12345"</code></td>
+<td style="text-align: left;"><code>"12345"</code></td>
+</tr>
+</tbody>
+</table>
+<p><a class="sdi-image-popup" href="../img/transform-substring-settings.png"><img alt="部分文字列の詳細設定" src="../img/transform-substring-settings.png" /></a></p>
+<p>子画面の <strong>1</strong> で取得方法・参照先・固定値の型・値を設定し、<strong>2</strong> の「OK」で戻ります。ソースカラムとBIND変数は参照先の一覧から選択します。固定値では参照先を使いません。</p>
+<p><strong>注意点</strong></p>
+<p>開始位置は1から数えます。有効な開始位置で文字数0を指定すると空文字を返します。指定範囲が入力文字数を超える場合は、「取得範囲が文字数を超えた場合」の設定に従います。末尾までの自動短縮はしません。</p>
+<p>例えば、<code>ABC</code> に開始位置1・文字数5を指定すると、初期値の「エラーにする」では変換エラー、「NULLを返す」ではNULLになります。NULLは後続の「空白・NULLの置換」で任意の値に置き換えられます。</p>
+<p>この選択は範囲不足だけに適用します。開始位置が0以下、文字数が負数などの設定不備はエラーです。画面の「変換失敗時」は、ここで「エラーにする」を選んだ場合のエラーや、ほかの変換エラーに適用されます。</p>
+<h2 id="regex-extract">正規表現抽出</h2>
+<p>接頭辞付きコードなどから、パターンに合う部分を取り出します。</p>
+<p><a class="sdi-image-popup" href="../img/transform-regex-extract.png"><img alt="正規表現抽出の設定と確認結果" src="../img/transform-regex-extract.png" /></a></p>
+<p><strong>設定方法</strong></p>
+<p>検索に <code>ORDER-(\d+)</code>、取得グループに1を設定します。括弧内の数字部分を取り出します。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">設定項目</th>
+<th style="text-align: left;">設定例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">検索文字・正規表現</td>
+<td style="text-align: left;"><code>ORDER-(\d+)</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">大文字小文字を区別しない</td>
+<td style="text-align: left;"><code>False</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">取得グループ（0は全体）</td>
+<td style="text-align: left;"><code>1</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>確認例</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">サンプル入力</th>
+<th style="text-align: left;">最終結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>VALUE</code> = <code>"ORDER-12345"</code></td>
+<td style="text-align: left;"><code>"12345"</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意点</strong></p>
+<p>最初の一致を使用します。グループ0は一致全体、1以降は括弧で取得したグループです。一致しない場合、指定グループがない場合、そのグループが一致しない場合はエラーです。</p>
+<h2 id="concat">文字列結合</h2>
+<p>複数の列、固定値、変換した結果を一つの文字列にします。</p>
+<p><a class="sdi-image-popup" href="../img/transform-concat.png"><img alt="文字列結合の設定と確認結果" src="../img/transform-concat.png" /></a></p>
+<p><strong>設定方法</strong></p>
+<p>「結合する値」の「…」を開き、VALUE、GIVEN_NAMEの順にソースカラムを指定します。「区切り文字」には実際の半角スペース1文字を入力します。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">設定項目</th>
+<th style="text-align: left;">設定例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">結合する値</td>
+<td style="text-align: left;"><code>2 設定</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">区切り文字</td>
+<td style="text-align: left;"><code></code></td>
+</tr>
+<tr>
+<td style="text-align: left;">NULLの要素を除外する</td>
+<td style="text-align: left;"><code>True</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>確認例</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">サンプル入力</th>
+<th style="text-align: left;">最終結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>VALUE</code> = <code>"Sato"</code><br><code>GIVEN_NAME</code> = <code>"Hanako"</code></td>
+<td style="text-align: left;"><code>"Sato Hanako"</code></td>
+</tr>
+</tbody>
+</table>
+<p><a class="sdi-image-popup" href="../img/transform-concat-settings.png"><img alt="文字列結合の詳細設定" src="../img/transform-concat-settings.png" /></a></p>
+<p>子画面の <strong>1</strong> で取得方法・参照先・固定値の型・値を設定し、<strong>2</strong> の「OK」で戻ります。ソースカラムとBIND変数は参照先の一覧から選択します。固定値では参照先を使いません。</p>
+<p><strong>注意点</strong></p>
+<p>値の一覧の上から順に結合します。区切り文字を空欄にすると文字を挿入せず連結します。「NULLの要素を除外する」がTrueならNULLだけを除外し、空文字は残します。FalseでNULLが一つでもある場合は結果がNULLです。</p>
+<h2 id="split">文字列分割</h2>
+<p>区切られた文字列から、指定位置の項目を一つ取得します。</p>
+<p><a class="sdi-image-popup" href="../img/transform-split.png"><img alt="文字列分割の設定と確認結果" src="../img/transform-split.png" /></a></p>
+<p><strong>設定方法</strong></p>
+<p>「区切り文字」を <code>,</code>、「取得位置」を2にします。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">設定項目</th>
+<th style="text-align: left;">設定例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">区切り文字</td>
+<td style="text-align: left;"><code>,</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">取得位置（1から）</td>
+<td style="text-align: left;"><code>2</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">指定位置の項目がない場合</td>
+<td style="text-align: left;"><code>エラーにする</code>（初期値）／<code>NULLを返す</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>確認例</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">サンプル入力</th>
+<th style="text-align: left;">最終結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>VALUE</code> = <code>"A,B,C"</code></td>
+<td style="text-align: left;"><code>"B"</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意点</strong></p>
+<p>取得位置は1から数えます。空の項目も位置に含めます。<code>A,,C</code> の2番目は空文字です。区切り文字は正規表現ではなく文字列です。行や列を増やす処理ではありません。</p>
+<p>例えば、<code>aaa_bbb</code> を <code>_</code> で区切って3番目を取得すると、「指定位置の項目がない場合」が「エラーにする」では変換エラー、「NULLを返す」ではNULLになります。NULLは後続の「空白・NULLの置換」で任意の値に置き換えられます。存在する空の項目は、この選択にかかわらず空文字のままです。</p>
+<p>取得位置が0以下、区切り文字が空などの設定不備はエラーです。画面の「変換失敗時」は、ここで「エラーにする」を選んだ場合のエラーや、ほかの変換エラーに適用されます。</p>
+<h2 id="convert-type">型変換</h2>
+<p>文字列の数値を計算に使える数値などへ変換します。</p>
+<p><a class="sdi-image-popup" href="../img/transform-convert-type.png"><img alt="型変換の設定と確認結果" src="../img/transform-convert-type.png" /></a></p>
+<p><strong>設定方法</strong></p>
+<p>「変換先の型」を「数値」、ロケールを <code>en-US</code>、桁区切りを許可する設定をTrueにします。サンプルの入力の型は「文字列」です。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">設定項目</th>
+<th style="text-align: left;">設定例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">変換先の型</td>
+<td style="text-align: left;"><code>数値</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">ロケール（空欄は標準）</td>
+<td style="text-align: left;"><code>en-US</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">数値の桁区切りを許可</td>
+<td style="text-align: left;"><code>True</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>確認例</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">サンプル入力</th>
+<th style="text-align: left;">最終結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>VALUE</code> = <code>"1,234.50"</code></td>
+<td style="text-align: left;"><code>1234.50</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意点</strong></p>
+<p>文字列・数値・真偽値・日時・NULLを選べます。ロケール空欄は標準形式です。真偽値には <code>true</code>、<code>false</code>、<code>1</code>、<code>0</code> を使えます。日時型を選ぶと入力書式やタイムゾーンの項目が表示されます。日時を指定書式の文字列にする場合は「日時変換」を使います。</p>
+<h2 id="datetime">日時変換</h2>
+<p>日付の書式、時差、日付の加算を設定します。</p>
+<p><a class="sdi-image-popup" href="../img/transform-datetime.png"><img alt="日時変換の設定と確認結果" src="../img/transform-datetime.png" /></a></p>
+<p><strong>設定方法</strong></p>
+<p>入力書式の種類を「書式指定」、入力書式を <code>yyyyMMdd</code>、日付のみをTrueにします。出力方法は「文字列」、出力書式は <code>yyyy-MM-dd</code> にします。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">設定項目</th>
+<th style="text-align: left;">設定例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ロケール（空欄は標準）</td>
+<td style="text-align: left;"><code>空欄</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">入力書式の種類</td>
+<td style="text-align: left;"><code>書式指定</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">入力書式</td>
+<td style="text-align: left;"><code>yyyyMMdd</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">日付のみ</td>
+<td style="text-align: left;"><code>True</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">入力タイムゾーン</td>
+<td style="text-align: left;"><code>UTC</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">出力タイムゾーン</td>
+<td style="text-align: left;"><code>Keep</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">出力方法</td>
+<td style="text-align: left;"><code>文字列</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">出力書式</td>
+<td style="text-align: left;"><code>yyyy-MM-dd</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">加算する年数</td>
+<td style="text-align: left;"><code>0</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">加算する月数</td>
+<td style="text-align: left;"><code>0</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">加算する日数</td>
+<td style="text-align: left;"><code>0</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">加算する時間</td>
+<td style="text-align: left;"><code>0</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">加算する分数</td>
+<td style="text-align: left;"><code>0</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">加算する秒数</td>
+<td style="text-align: left;"><code>0</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>確認例</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">サンプル入力</th>
+<th style="text-align: left;">最終結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>VALUE</code> = <code>"20240401"</code></td>
+<td style="text-align: left;"><code>"2024-04-01"</code></td>
+</tr>
+</tbody>
+</table>
+<p><a class="sdi-image-popup" href="../img/transform-datetime-output.png"><img alt="出力書式の設定" src="../img/transform-datetime-output.png" /></a></p>
+<p>入力と出力の設定は同じ「処理の設定」内にあります。右側をスクロールして出力方法・出力書式を設定します。</p>
+<p><a class="sdi-image-popup" href="../img/transform-datetime-add.png"><img alt="日時の加算項目" src="../img/transform-datetime-add.png" /></a></p>
+<p>年・月・日・時・分・秒の順で加算し、その後に出力タイムゾーンへ変換します。減算は負数を指定します。例：加算する日数を <code>1</code> にすると翌日です。</p>
+<p><a class="sdi-image-popup" href="../img/transform-datetime-zone.png"><img alt="UTCから日本時間への変換" src="../img/transform-datetime-zone.png" /></a></p>
+<p>時差変換の例：入力 <code>2024-04-01T00:00:00Z</code>、出力タイムゾーン <code>Tokyo Standard Time</code>、出力書式 <code>yyyy-MM-dd HH:mm:sszzz</code> で <code>2024-04-01 09:00:00+09:00</code> になります。入力にZや時差がある場合はその情報を優先し、ない場合に入力タイムゾーンを使用します。Keepは入力の時差を維持します。Zを末尾に付ける出力にはUTCを指定してください。夏時間で存在しない時刻や二通りに解釈できる時刻はエラーです。</p>
+<p><strong>注意点</strong></p>
+<p>書式の <code>MM</code> は月、<code>mm</code> は分、<code>HH</code> は24時間です。候補以外の書式も入力できます。「日時型」で出力する場合は出力書式を使いません。日付のみでは出力タイムゾーンをKeepにし、時・分・秒の加算は0にします。</p>
+<h2 id="calculate">四則演算</h2>
+<p>単価×数量など、二つの値で計算します。</p>
+<p><a class="sdi-image-popup" href="../img/transform-calculate.png"><img alt="四則演算の設定と確認結果" src="../img/transform-calculate.png" /></a></p>
+<p><strong>設定方法</strong></p>
+<p>元の値VALUEを単価とし、「演算」を「乗算」にします。「相手の値」の「…」で取得方法「ソースカラム」、参照先QUANTITYを選択します。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">設定項目</th>
+<th style="text-align: left;">設定例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">演算</td>
+<td style="text-align: left;"><code>乗算</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">相手の値</td>
+<td style="text-align: left;"><code>QUANTITY</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>確認例</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">サンプル入力</th>
+<th style="text-align: left;">最終結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>VALUE</code> = <code>1200</code><br><code>QUANTITY</code> = <code>3</code></td>
+<td style="text-align: left;"><code>3600</code></td>
+</tr>
+</tbody>
+</table>
+<p><a class="sdi-image-popup" href="../img/transform-calculate-settings.png"><img alt="四則演算の詳細設定" src="../img/transform-calculate-settings.png" /></a></p>
+<p>子画面の <strong>1</strong> で取得方法・参照先・固定値の型・値を設定し、<strong>2</strong> の「OK」で戻ります。ソースカラムとBIND変数は参照先の一覧から選択します。固定値では参照先を使いません。</p>
+<p><strong>注意点</strong></p>
+<p>加算・減算・乗算・除算・剰余を選べます。引き算・割り算は「入力する値 − 相手の値」「入力する値 ÷ 相手の値」の順です。NULLを含む計算はNULLです。ゼロによる除算・剰余や数値範囲の超過はエラーになります。</p>
+<h2 id="round">丸め</h2>
+<p>小数点以下の桁数をそろえて数値を丸めます。</p>
+<p><a class="sdi-image-popup" href="../img/transform-round.png"><img alt="丸めの設定と確認結果" src="../img/transform-round.png" /></a></p>
+<p><strong>設定方法</strong></p>
+<p>「小数桁数の値」を固定数値2、「丸め方式」を「四捨五入」にします。桁数には列や前の変換結果も使えます。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">設定項目</th>
+<th style="text-align: left;">設定例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">小数桁数の値</td>
+<td style="text-align: left;"><code>固定値: 2</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">丸め方式</td>
+<td style="text-align: left;"><code>四捨五入</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>確認例</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">サンプル入力</th>
+<th style="text-align: left;">最終結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>VALUE</code> = <code>123.455</code></td>
+<td style="text-align: left;"><code>123.46</code></td>
+</tr>
+</tbody>
+</table>
+<p><a class="sdi-image-popup" href="../img/transform-round-settings.png"><img alt="丸めの詳細設定" src="../img/transform-round-settings.png" /></a></p>
+<p>子画面の <strong>1</strong> で取得方法・参照先・固定値の型・値を設定し、<strong>2</strong> の「OK」で戻ります。ソースカラムとBIND変数は参照先の一覧から選択します。固定値では参照先を使いません。</p>
+<p><strong>注意点</strong></p>
+<p>小数桁数は0〜28です。四捨五入は中間値をゼロから遠ざかる方向へ丸めます。偶数丸めは中間値の末尾を偶数にします。例：123.445を2桁にすると、四捨五入は123.45、偶数丸めは123.44です。</p>
+<h2 id="ceiling">切上げ</h2>
+<p>数値以上で最も小さい整数にします。</p>
+<p><a class="sdi-image-popup" href="../img/transform-ceiling.png"><img alt="切上げの設定と確認結果" src="../img/transform-ceiling.png" /></a></p>
+<p><strong>設定方法</strong></p>
+<p>「入力する値」に数値列または計算結果を指定します。切上げ専用の追加オプションはありません。</p>
+<p>処理固有の設定項目はありません。入力する値と出力先の手順を確認してください。</p>
+<p><strong>確認例</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">サンプル入力</th>
+<th style="text-align: left;">最終結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>VALUE</code> = <code>12.3</code></td>
+<td style="text-align: left;"><code>13</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意点</strong></p>
+<p>小数第何位かを指定する処理ではなく、整数への切上げです。負数の <code>-12.3</code> は <code>-12</code> です。常に正の無限大方向へ丸めます。</p>
+<h2 id="floor">切捨て</h2>
+<p>数値以下で最も大きい整数にします。</p>
+<p><a class="sdi-image-popup" href="../img/transform-floor.png"><img alt="切捨ての設定と確認結果" src="../img/transform-floor.png" /></a></p>
+<p><strong>設定方法</strong></p>
+<p>「入力する値」に数値列または計算結果を指定します。切捨て専用の追加オプションはありません。</p>
+<p>処理固有の設定項目はありません。入力する値と出力先の手順を確認してください。</p>
+<p><strong>確認例</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">サンプル入力</th>
+<th style="text-align: left;">最終結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>VALUE</code> = <code>12.9</code></td>
+<td style="text-align: left;"><code>12</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意点</strong></p>
+<p>小数部分を単に取り除く処理とは異なり、常に負の無限大方向へ丸めます。負数の <code>-12.3</code> は <code>-13</code> です。小数桁数を指定した丸めには「丸め」を使います。</p>
+<h2 id="condition">条件による切替</h2>
+<p>条件によって、出力する値を切り替えます。</p>
+<p><a class="sdi-image-popup" href="../img/transform-condition.png"><img alt="条件による切替の設定と確認結果" src="../img/transform-condition.png" /></a></p>
+<p><strong>設定方法</strong></p>
+<p>「条件設定」の「…」で左の値を「元の値」、比較方法を「より大きい」、右の値を固定数値0にします。成立時は固定文字列「在庫あり」、不成立時は「在庫なし」にします。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">設定項目</th>
+<th style="text-align: left;">設定例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">条件設定</td>
+<td style="text-align: left;"><code>比較条件</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">成立時の値</td>
+<td style="text-align: left;"><code>固定値: 在庫あり</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">不成立時の値</td>
+<td style="text-align: left;"><code>固定値: 在庫なし</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>確認例</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">サンプル入力</th>
+<th style="text-align: left;">最終結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>VALUE</code> = <code>3</code></td>
+<td style="text-align: left;"><code>"在庫あり"</code></td>
+</tr>
+</tbody>
+</table>
+<p><a class="sdi-image-popup" href="../img/transform-condition-settings.png"><img alt="条件による切替の詳細設定" src="../img/transform-condition-settings.png" /></a></p>
+<p>子画面の <strong>1</strong> は条件ツリーです。条件を選び、<strong>2</strong> 側で条件の種類・左右の値・比較方法・NOTを設定します。グループは「すべて成立（AND）」「いずれか成立（OR）」を選び、子条件を追加します。設定後は「OK」で戻ります。</p>
+<p><a class="sdi-image-popup" href="../img/transform-condition-true.png"><img alt="成立時の値の設定" src="../img/transform-condition-true.png" /></a></p>
+<p>「成立時の値」の「…」で、取得方法「固定値」、型「文字列」、値「在庫あり」を設定します。「不成立時の値」も同じ画面で設定できます。</p>
+<p><strong>注意点</strong></p>
+<p>成立時・不成立時には固定値、ソース列、BIND変数、元の値、前の変換結果を選べます。実行時は選ばれた側の値だけを評価します。数値として比較する場合、両側の型を数値にしてください。</p>
+<h2 id="code-map">コード変換</h2>
+<p>システム間で異なる区分コードを変換します。</p>
+<p><a class="sdi-image-popup" href="../img/transform-code-map.png"><img alt="コード変換の設定と確認結果" src="../img/transform-code-map.png" /></a></p>
+<p><strong>設定方法</strong></p>
+<p>「コード対応表」の「…」で、変換前コード1に文字列「在籍」、0に文字列「退職」を割り当てます。「未一致時の動作」で表にない値の扱いを選びます。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">設定項目</th>
+<th style="text-align: left;">設定例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">大文字小文字を区別しない</td>
+<td style="text-align: left;"><code>False</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">コード対応表</td>
+<td style="text-align: left;"><code>2 設定</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">未一致時の動作</td>
+<td style="text-align: left;"><code>エラーにする</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>確認例</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">サンプル入力</th>
+<th style="text-align: left;">最終結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>VALUE</code> = <code>"1"</code></td>
+<td style="text-align: left;"><code>"在籍"</code></td>
+</tr>
+</tbody>
+</table>
+<p><a class="sdi-image-popup" href="../img/transform-code-map-settings.png"><img alt="コード変換の詳細設定" src="../img/transform-code-map-settings.png" /></a></p>
+<p>子画面の <strong>1</strong> で変換前のコードと変換後の型・値を設定し、<strong>2</strong> の「OK」で戻ります。行の右端のゴミ箱で対応を削除できます。</p>
+<p><strong>注意点</strong></p>
+<p>未一致時はエラー・元の値を維持・NULL・既定値から選択します。既定値を選ぶと置換後の値を指定できます。変換前コードは重複できません。先頭0が意味を持つコードは入力・対応表とも文字列で扱います。</p>
+<h2 id="coalesce">最初のNULL以外の値</h2>
+<p>複数の候補から、最初に見つかったNULLでない値を採用します。</p>
+<p><a class="sdi-image-popup" href="../img/transform-coalesce.png"><img alt="最初のNULL以外の値の設定と確認結果" src="../img/transform-coalesce.png" /></a></p>
+<p><strong>設定方法</strong></p>
+<p>「結合する値」の「…」に、VALUE、BACKUP_EMAIL、固定文字列 <code>unknown@example.com</code> の順で候補を並べます。この処理の「結合する値」は候補一覧で、文字列を連結する設定ではありません。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">設定項目</th>
+<th style="text-align: left;">設定例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">結合する値</td>
+<td style="text-align: left;"><code>3 設定</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>確認例</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">サンプル入力</th>
+<th style="text-align: left;">最終結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>VALUE</code> = <code>NULL</code><br><code>BACKUP_EMAIL</code> = <code>"backup@example.com"</code></td>
+<td style="text-align: left;"><code>"backup@example.com"</code></td>
+</tr>
+</tbody>
+</table>
+<p><a class="sdi-image-popup" href="../img/transform-coalesce-settings.png"><img alt="最初のNULL以外の値の詳細設定" src="../img/transform-coalesce-settings.png" /></a></p>
+<p>子画面の <strong>1</strong> で取得方法・参照先・固定値の型・値を設定し、<strong>2</strong> の「OK」で戻ります。ソースカラムとBIND変数は参照先の一覧から選択します。固定値では参照先を使いません。</p>
+<p><strong>注意点</strong></p>
+<p>上から順に評価し、最初のNULL以外の値を返します。空文字や空白は有効な候補です。全候補がNULLなら結果もNULLです。文字列だけでなく、数値や前の変換結果も候補にできます。</p>
+<h2 id="condition-result">条件判定</h2>
+<p>条件の成立・不成立を真偽値として出力します。</p>
+<p><a class="sdi-image-popup" href="../img/transform-condition-result.png"><img alt="条件判定の設定と確認結果" src="../img/transform-condition-result.png" /></a></p>
+<p><strong>設定方法</strong></p>
+<p>「条件設定」の「…」で「すべて成立（AND）」を選び、元の値が100以上、かつ200未満になる二つの比較条件を設定します。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">設定項目</th>
+<th style="text-align: left;">設定例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">条件設定</td>
+<td style="text-align: left;"><code>すべて成立（AND）</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>確認例</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">サンプル入力</th>
+<th style="text-align: left;">最終結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>VALUE</code> = <code>120</code></td>
+<td style="text-align: left;"><code>True</code></td>
+</tr>
+</tbody>
+</table>
+<p><a class="sdi-image-popup" href="../img/transform-condition-result-settings.png"><img alt="条件判定の詳細設定" src="../img/transform-condition-result-settings.png" /></a></p>
+<p>子画面の <strong>1</strong> は条件ツリーです。条件を選び、<strong>2</strong> 側で条件の種類・左右の値・比較方法・NOTを設定します。グループは「すべて成立（AND）」「いずれか成立（OR）」を選び、子条件を追加します。設定後は「OK」で戻ります。</p>
+<p><strong>注意点</strong></p>
+<p>結果は文字列ではなく真偽値です。「条件による切替」のような成立時・不成立時の値は設定しません。条件グループのAND・OR、結果の反転NOTも使えます。後の手順でこの真偽値を参照することもできます。</p>
+<h2 id="mask">マスキング</h2>
+<p>名前・電話番号・コードなどの一部または全体を、指定した文字で隠します。</p>
+<p><a class="sdi-image-popup" href="../img/transform-mask.png"><img alt="マスキングの設定と確認結果" src="../img/transform-mask.png" /></a></p>
+<p><strong>設定方法</strong></p>
+<p>「マスキング方式」を「末尾を残す」、「残す末尾文字数」を4、「マスク文字（1文字）」を <code>*</code> にします。先頭を残す場合は「先頭を残す」、両端を残す場合は「先頭と末尾を残す」を選びます。必要な文字数欄だけが表示されます。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">設定項目</th>
+<th style="text-align: left;">設定例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">マスキング方式</td>
+<td style="text-align: left;"><code>末尾を残す</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">残す末尾文字数</td>
+<td style="text-align: left;"><code>4</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">マスク文字（1文字）</td>
+<td style="text-align: left;"><code>*</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>確認例</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">サンプル入力</th>
+<th style="text-align: left;">最終結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>VALUE</code> = <code>"09012345678"</code></td>
+<td style="text-align: left;"><code>"*******5678"</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意点</strong></p>
+<p>初期値は「全体を隠す」と <code>*</code> です。残す文字数は0以上です。残す文字数の合計が入力文字数以上なら全体を隠します。NULLと空文字はそのままです。文字数はUnicodeコードポイント単位で、サロゲートペアは分断しません。結合文字は別コードポイントとして数えます。マスク文字は左埋め・右埋めと同じ1文字制限で、サロゲートペアは指定できません。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">方式</th>
+<th style="text-align: left;">入力</th>
+<th style="text-align: left;">出力</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">全体を隠す</td>
+<td style="text-align: left;"><code>山田太郎</code></td>
+<td style="text-align: left;"><code>****</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">先頭2文字を残す</td>
+<td style="text-align: left;"><code>AB123456</code></td>
+<td style="text-align: left;"><code>AB******</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">末尾4文字を残す</td>
+<td style="text-align: left;"><code>09012345678</code></td>
+<td style="text-align: left;"><code>*******5678</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">先頭1文字・末尾2文字を残す</td>
+<td style="text-align: left;"><code>abcdef</code></td>
+<td style="text-align: left;"><code>a***ef</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">短い入力：末尾4文字を残す設定</td>
+<td style="text-align: left;"><code>123</code></td>
+<td style="text-align: left;"><code>***</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="mask-short-input">残す文字数が入力の長さ以上の場合</h3>
+<p><strong>エラーにせず、入力全体をマスクします。入力文字数と同じ場合も全体が対象です。</strong>「変換失敗時」の処理には進みません。例えば入力が <code>12345</code>、マスク文字が <code>*</code> の場合は次の結果になります。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">設定</th>
+<th style="text-align: left;">出力</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">先頭2文字を残す</td>
+<td style="text-align: left;"><code>12***</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">先頭4文字を残す</td>
+<td style="text-align: left;"><code>1234*</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">先頭5文字を残す（同じ長さ）</td>
+<td style="text-align: left;"><code>*****</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">先頭56文字を残す（入力長を超える）</td>
+<td style="text-align: left;"><code>*****</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">先頭1文字・末尾4文字を残す（合計5文字）</td>
+<td style="text-align: left;"><code>*****</code></td>
+</tr>
+</tbody>
+</table>
+<p><a class="sdi-image-popup" href="../img/transform-mask-short.png"><img alt="残す文字数が入力長を超えた場合のマスキング" src="../img/transform-mask-short.png" /></a></p>
+<p>「先頭と末尾を残す」では、両方の文字数の合計で判定します。短いデータでも元の値が全体表示されないようにするための動作です。</p>
+<h2 id="hash">ハッシュ化</h2>
+<p>入力を固定長のハッシュ文字列へ変換し、同じ値を照合するための識別子にします。</p>
+<p><a class="sdi-image-popup" href="../img/transform-hash.png"><img alt="ハッシュ化の設定と確認結果" src="../img/transform-hash.png" /></a></p>
+<p><strong>設定方法</strong></p>
+<p>「ハッシュ方式」を「HMAC-SHA256（SDI管理鍵）」にします。「使用する鍵」は「SDI管理鍵」で固定され、鍵の追加登録や入力は不要です。鍵なしの計算には「SHA-256（鍵なし）」を選びます。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">設定項目</th>
+<th style="text-align: left;">設定例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ハッシュ方式</td>
+<td style="text-align: left;"><code>HMAC-SHA256（SDI管理鍵）</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">使用する鍵</td>
+<td style="text-align: left;"><code>SDI管理鍵</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>確認例</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">サンプル入力</th>
+<th style="text-align: left;">最終結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>VALUE</code> = <code>"employee001"</code></td>
+<td style="text-align: left;"><code>"9c93a8ee3b2e26ba914428bf142fe552f383d8c01e7fdd362b0c58c906602c16"</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意点</strong></p>
+<p>UTF-8で計算し、小文字の16進数64文字を返します。NULLはNULL、空文字は空文字のハッシュになります。入力の空白や大文字小文字は変更しません。必要なら前の手順で整形してください。保存先は64文字以上の文字列列にします。HMACの結果は利用するSDI設定に依存し、掲載画像はサンプル環境の結果です。単純なSHA-256では候補値から結果を照合できます。</p>
+<h3 id="hash-algorithms">ハッシュ方式の選び方</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">方式</th>
+<th style="text-align: left;">計算に使うもの</th>
+<th style="text-align: left;">同じ入力の結果</th>
+<th style="text-align: left;">主な用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">HMAC-SHA256（SDI管理鍵）</td>
+<td style="text-align: left;">入力値とSDI内部から導出した鍵</td>
+<td style="text-align: left;">同じSDI設定なら同じ</td>
+<td style="text-align: left;">社員番号などの秘匿・照合</td>
+</tr>
+<tr>
+<td style="text-align: left;">SHA-256（鍵なし）</td>
+<td style="text-align: left;">入力値だけ</td>
+<td style="text-align: left;">SDI環境が違っても同じ</td>
+<td style="text-align: left;">他システムと共通のハッシュ値による照合</td>
+</tr>
+</tbody>
+</table>
+<p><strong>どちらの方式も、ハッシュ用の鍵を追加登録する操作は不要です。</strong> HMAC-SHA256は既存のSDI管理鍵の仕組みを利用します。社員番号や電話番号などを秘匿する場合は、初期値のHMAC-SHA256を選びます。SHA-256では、候補となる元の値をハッシュ化して結果を照合できます。</p>
+<h3 id="hash-unkeyed-example">鍵なしSHA-256を試す</h3>
+<p>「ハッシュ方式」を「SHA-256（鍵なし）」に変更します。「使用する鍵」は表示されなくなります。サンプル入力の型を「文字列」、値を <code>abc</code> にし、「変換を確認」をクリックします。</p>
+<p><a class="sdi-image-popup" href="../img/transform-hash-sha256.png"><img alt="鍵なしSHA-256の設定と確認結果" src="../img/transform-hash-sha256.png" /></a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">サンプル入力</th>
+<th style="text-align: left;">結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>abc</code></td>
+<td style="text-align: left;"><code>ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad</code></td>
+</tr>
+</tbody>
+</table>
+<p>同じ文字列を同じUTF-8で計算する場合、この結果はどのSDI環境でも同じです。</p>
+<h3 id="hash-output-length">出力の長さと保存先の列</h3>
+<p><strong>両方式とも、入力の長さに関係なく小文字の16進数64文字を出力します。</strong> 短い入力は長くなり、64文字より長い入力は短くなります。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">入力</th>
+<th style="text-align: left;">ハッシュ出力の長さ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">社員番号 <code>E001</code>：4文字</td>
+<td style="text-align: left;">64文字</td>
+</tr>
+<tr>
+<td style="text-align: left;">電話番号：11文字</td>
+<td style="text-align: left;">64文字</td>
+</tr>
+<tr>
+<td style="text-align: left;">説明文：1000文字</td>
+<td style="text-align: left;">64文字</td>
+</tr>
+</tbody>
+</table>
+<p>保存先には64文字以上を保存できる文字列列を用意します。Oracleなら <code>VARCHAR2(64 CHAR)</code> が一例です。SDIはハッシュを列長に合わせて切り詰めません。NULLはNULLのまま、空文字は64文字のハッシュ値になります。</p>
+<h3 id="hash-multiple-servers">複数Mapping・複数サーバーで同じ結果を使う</h3>
+<p>同一のSDI設定を共有し、同じ入力・同じ変換設定を使用する場合は、別Mappingや別サーバーでも同じ結果になります。各サーバーでは、共有するSDI設定に対して既存の管理鍵登録を行います。SDI設定を新しく作り直した場合は、ハッシュ結果が変わることがあります。</p>
+<p>同じ管理鍵を入力しただけでは、別々に新規作成したSDI環境の結果が一致するとは限りません。照合に使う場合は、同じSDI設定を共有または移行して利用してください。画面のHMAC出力例はサンプル環境の結果のため、ご利用環境の結果とは異なる場合があります。</p>
+<h3 id="hash-key-unavailable">設定の保存と鍵を利用できない場合</h3>
+<p>Mappingには方式・鍵の参照元・導出バージョンだけを保存し、鍵本体は保存しません。HMACで鍵を利用できない場合は実行開始前にエラーにし、「変換失敗時」のNULL・既定値へは切り替えません。ハッシュから元の値へ戻す機能や、一意性の保証はありません。</p>
+<h2 id="combine-results">複数の列を別々に変換して結合する</h2>
+<p><a class="sdi-image-popup" href="../img/transform-workflow.png"><img alt="複数の変換結果を結合する設定" src="../img/transform-workflow.png" /></a></p>
+<p>次の4手順を作ります。手順1〜3の「入力する値」をそれぞれソース列にするため、途中の結果を上書きせず個別に作成できます。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">手順</th>
+<th style="text-align: left;">入力する値</th>
+<th style="text-align: left;">処理</th>
+<th style="text-align: left;">結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">VALUE = <code>"  ab  "</code></td>
+<td style="text-align: left;">空白除去</td>
+<td style="text-align: left;"><code>"ab"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">CODE = <code>"xy"</code></td>
+<td style="text-align: left;">大文字化</td>
+<td style="text-align: left;"><code>"XY"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">DATE = <code>"20240401"</code></td>
+<td style="text-align: left;">日時変換</td>
+<td style="text-align: left;"><code>"2024-04-01"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">手順1・2・3の結果</td>
+<td style="text-align: left;">文字列結合、区切り文字 <code>&#124;</code></td>
+<td style="text-align: left;"><code>&quot;ab&#124;XY&#124;2024-04-01&quot;</code></td>
+</tr>
+</tbody>
+</table>
+<p><a class="sdi-image-popup" href="../img/transform-workflow-settings.png"><img alt="結合する変換結果の選択" src="../img/transform-workflow-settings.png" /></a></p>
+<p>手順4の「結合する値」で、取得方法を「変換結果」にし、参照先に手順1・2・3を順に選びます。「出力する値」を手順4にして「変換を確認」を実行します。</p>
+<p>参照できるのは、その手順より前にある有効な手順です。出力や他の手順から使われていない結果は「未使用」と表示されます。必要な結果と参照先だけが計算されます。別のターゲット列の変換結果は参照しません。</p>
+<p><a href="../mappingcolumndetail/">カラムマッピング設定へ戻る</a></p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  ページトップへ戻る
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; <a href="https://www.ricct.com"> Research Institute of Cloud Computing Technology(RiCCT)</a>. All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/ricct/jasdi" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/InstituteCloud" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.top"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../javascripts/image-popup.js"></script>
+      
+    
+  </body>
+</html>

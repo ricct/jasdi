@@ -52,6 +52,8 @@
       
     
     
+      <link rel="stylesheet" href="../../stylesheets/image-popup.css">
+    
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     
       <link rel="stylesheet" href="../../stylesheets/sdi.css">
@@ -1404,7 +1406,7 @@
           <li class="md-nav__item">
   <a href="#web-service-web-api" class="md-nav__link">
     <span class="md-ellipsis">
-      Web Service/ Web API
+      Web Service / Web API
     </span>
   </a>
   
@@ -1496,6 +1498,29 @@
   
   <span class="md-ellipsis">
     カラムマッピング設定
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mappingtransformations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    変換処理の使い方
     
   </span>
   
@@ -1964,7 +1989,30 @@
   
   
   <span class="md-ellipsis">
-    マッピンググループ設定
+    グループ設定
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../studioauthentication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Studio起動時のパスワード認証
     
   </span>
   
@@ -2484,7 +2532,7 @@
           <li class="md-nav__item">
   <a href="#web-service-web-api" class="md-nav__link">
     <span class="md-ellipsis">
-      Web Service/ Web API
+      Web Service / Web API
     </span>
   </a>
   
@@ -2551,7 +2599,7 @@
 <h2 id="_2">概要</h2>
 <p>ソースデータは、データベース、WEB Service/API、Salesforce、CSV、Excel、JSON、XMLファイルから選択できます。  </p>
 <div class="admonition note info">
-<p>ターゲットデータへの接続設定は、事前にコネクション設定画面で行ってください。</p>
+<p>ソースデータへの接続設定は、事前にコネクション設定画面で行ってください。</p>
 </div>
 <h2 id="_3">設定</h2>
 <p><img src="../img/mapping_source.png" alt="" title="" width="500" ></p>
@@ -2733,6 +2781,11 @@ UTC 表示がない場合は、接続先データベースの LOCAL 時間とし
 <h5 id="_9">機能概要</h5>
 <p>前段マッピング（インプットマッピング）の SELECT 結果を、後段マッピングのバインド変数に設定することで、その値をもとに動的なデータ処理を実行できます。<br />
 また、複数のパラメーターや複数行のインプットにも対応しています。</p>
+<h5 id="input-mapping-execution">入力マッピングの実行</h5>
+<ul>
+<li>入力元マッピングAが後続マッピングBの入力として呼ばれた場合、Aの通常のTarget出力はスキップします。</li>
+<li>スケジューラには後続マッピングBだけを登録します。AはBから自動的に呼び出されます。</li>
+</ul>
 <hr />
 <h5 id="_10">設定手順</h5>
 <p><strong>1. データ抽出の条件のフィルターまたはクエリ内容にバインド変数を記述します。</strong></p>
@@ -3022,6 +3075,11 @@ UTC 表示がない場合は、接続先データベースの LOCAL 時間とし
       ]
 } 
 </code></pre></div>
+<h4 id="recordobjectpath">対象オブジェクトの識別（JSON・XML共通）</h4>
+<p>対象オブジェクトは、ルートからのパスで識別して保存します。別の親に同名の配列があっても、ツリーで選択した位置の配列だけから列を生成し、その配列の全要素を取得します。保存後に開き直した場合も同じ位置を選択します。</p>
+<p>例えば <code>data.humanResourceRequirements.data.optionalList</code> と <code>data.skillRequirements.data.optionalList</code> は、別の対象です。スキル側を選ぶと、<code>skillCategory</code>・<code>skillItem</code>・<code>requiredLevel</code> がソースカラムの候補になります。</p>
+<p>構造を取得した後、ツリーから取り込み対象の配列を選択し、「カラム一覧取得」を押してください。配列内の各要素が1レコードになり、その要素の項目がソースカラムの候補になります。対象オブジェクトに関するエラーが表示された場合は、読み込んだ構造と選択位置を確認してください。</p>
+<p>JSON APIのページ番号方式・オフセット方式では、選択したパスの配列件数でページングの終了を判断します。空配列は0件です。対象が存在しない場合や値が <code>null</code> の場合は別の配列へ読み替えずエラーにし、差分位置を進めません。</p>
 <h3 id="xml">XMLファイル</h3>
 <p><img src="../img/mapping_source_xml.png" alt="" title="" width="500" ></p>
 <table>
@@ -3132,8 +3190,8 @@ UTC 表示がない場合は、接続先データベースの LOCAL 時間とし
 </tr>
 </tbody>
 </table>
-<h3 id="web-service-web-api">Web Service/ Web API</h3>
-<p><a href="../img/webapi_source_current.svg"><img alt="Web APIソース設定：番号付き画面" src="../img/webapi_source_current.svg" /></a></p>
+<h3 id="web-service-web-api">Web Service / Web API</h3>
+<p><a href="../img/guide-mapping-01.svg"><img alt="APIソース設定とカラムマッピング" src="../img/guide-mapping-01.svg" /></a></p>
 <table>
 <thead>
 <tr>
@@ -3144,27 +3202,165 @@ UTC 表示がない場合は、接続先データベースの LOCAL 時間とし
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">61</td>
+<td style="text-align: left;">1</td>
 <td style="text-align: left;">エンドポイント</td>
-<td style="text-align: left;">相対URLを入力してください。<br />時間に関する動的パラメータの設定が可能です。<br /><br />設定方法の詳細は、以下を参照してください。 <br /><a href=".#webapiparameter" ><i class="fa fa-book" aria-hidden="true"></i> 動的パラメータの設定について</a></td>
+<td style="text-align: left;">相対URLを入力します。パスのBIND変数と日時式を使用できます。</td>
 </tr>
 <tr>
-<td style="text-align: left;">62</td>
-<td style="text-align: left;">リクエスト詳細設定</td>
-<td style="text-align: left;">リクエストの メソッド、ヘッダー、POSTボディ などの詳細情報を設定します。</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">バインド変数設定</td>
+<td style="text-align: left;"><code>{bind:変数名}</code> がある場合、入力マッピングと列を設定できます。</td>
 </tr>
 <tr>
-<td style="text-align: left;">63</td>
-<td style="text-align: left;">更新</td>
-<td style="text-align: left;">エンドポイントから最新情報を取得します。</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">対象オブジェクト</td>
+<td style="text-align: left;">読み込んだ構造から取得対象の配列・オブジェクトを選びます。</td>
 </tr>
 <tr>
-<td style="text-align: left;">64</td>
-<td style="text-align: left;">差分位置設定</td>
-<td style="text-align: left;">Watermark設定画面を開き、差分取得の開始日時を設定します。対象変数を使用する場合に表示されます。</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">ファイルから構造取得</td>
+<td style="text-align: left;">JSON/XMLのサンプルファイルから構造を取得します。</td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">カラム一覧取得</td>
+<td style="text-align: left;">読込み済みの構造からカラムを展開します。ソースAPIは呼び出しません。</td>
+</tr>
+<tr>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">値・変換</td>
+<td style="text-align: left;">対象列の値や変換を設定します。<a href="../mappingcolumndetail/">カラムマッピング設定</a>を参照してください。</td>
 </tr>
 </tbody>
 </table>
+<p>エンドポイント右側の「リクエスト詳細設定」でメソッド・ヘッダー・POST本文を設定し、更新アイコンでAPIから構造を取得します。ウォーターマーク式を使用すると「差分位置設定」も表示されます。</p>
+<h4 id="webapibind">APIパスに入力Mappingの値を渡す</h4>
+<p>JSON/XML応答のWeb APIでは、エンドポイントのパスにSDI独自の <code>{bind:変数名}</code> を記述して、入力マッピングの抽出結果を渡せます。渡す値は抽出したソース値であり、入力マッピングのターゲット用変換結果ではありません。</p>
+<p>入力元マッピングをA、APIパスにその値を設定して実行する後続マッピングをBとすると、次のように動作します。</p>
+<ul>
+<li>AがBの入力として呼ばれた場合、Aの通常のTarget出力はスキップします。</li>
+<li>スケジューラには後続マッピングBだけを登録します。AはBから自動的に呼び出されます。</li>
+</ul>
+<div class="highlight"><pre><span></span><code>/v1/orders/{bind:id}
+</code></pre></div>
+<p>変数を記述すると「バインド変数設定」ボタンが表示されます。入力Mapping、変数に渡すソース列、処理方式を指定してください。変数名と入力列名は一致する必要はありません。</p>
+<ol>
+<li>ID一覧を取得する入力マッピングを用意します。以下の例では <code>Get IDs</code> です。</li>
+<li>明細APIのエンドポイントに <code>{bind:id}</code> を記述します。</li>
+<li>「バインド変数設定」で入力マッピングの <code>ID</code> 列を変数 <code>id</code> に割り当てます。</li>
+<li>出力方法を選び、レスポンスの対象オブジェクトを選択します。</li>
+<li>カラム一覧を展開して出力先との対応を設定し、保存・実行します。</li>
+</ol>
+<p><a href="../img/guide-bind-02.svg"><img alt="APIの入力マッピングと出力方法（画面上部）" src="../img/guide-bind-02.svg" /></a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">No</th>
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">設定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">入力マッピング</td>
+<td style="text-align: left;">値の取得元を選びます。グループフィルタで候補を絞り込めます。</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">出力方法</td>
+<td style="text-align: left;">全取得結果をまとめて出力するか、入力1行ごとに取得・出力するかを選びます。</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">入力列 → API変数名</td>
+<td style="text-align: left;">例では <code>ID</code> を <code>id</code> に割り当てます。</td>
+</tr>
+</tbody>
+</table>
+<p>どちらの出力方法でも入力1行ごとにAPIを呼び出します。BIND変数を使用するAPIでは入力マッピングが必要です。</p>
+<table>
+<thead>
+<tr>
+<th>処理方式</th>
+<th>動作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>全取得結果をまとめて出力する</td>
+<td>入力行ごとにAPIを呼び出し、全取得結果をまとめて出力します。取得途中で失敗した場合は出力に進みません。</td>
+</tr>
+<tr>
+<td>入力1行ごとに取得・出力する</td>
+<td>入力行ごとにAPI取得から出力まで実行します。ある行が失敗しても次の行へ進み、全体の結果はエラーになります。</td>
+</tr>
+</tbody>
+</table>
+<p>「入力1行ごとに取得・出力する」では、前後処理・事前削除・ファイル保存も入力行ごとに実行されます。同名ファイルの上書きや、事前削除による前の行の結果の削除に注意してください。全IDの結果をまとめて保存する場合は「全取得結果をまとめて出力する」を選択します。入力マッピングが0件の場合は、後段のAPIと出力を実行しません。ページング状態は入力行ごとに初期化します。</p>
+<p>変数名は半角英字または <code>_</code> で始め、以降は半角英数字と <code>_</code> が使用できます。大文字と小文字は区別します。同名変数が複数箇所にある場合、同じ値を使用します。NULL・空文字・空白のみの値、パス区切りの <code>/</code>・<code>\</code>、パス要素が <code>.</code>・<code>..</code> となる値は送信前にエラーになります。値はエンコード前の状態で渡し、SDIが変数部分をURLエンコードします。</p>
+<p>BIND変数を指定できるのはURLのパス部分です。クエリ・ヘッダー・BodyへのBIND変数の指定と、BIND変数を使用したAPI応答のRawファイル出力には対応していません。パスのBIND変数は、日付や差分取得の開始日時を指定する式と組み合わせて使用できます。</p>
+<div class="highlight"><pre><span></span><code>/order/{bind:id}?date={yyyyMMdd}&amp;since={LastWatermarkUTCTime.ToString(&quot;yyyy-MM-ddTHH:mm:ssZ&quot;)}
+</code></pre></div>
+<p><code>{bind:LastWatermarkUTCTime}</code> は入力マッピングから値を渡す変数、<code>{LastWatermarkUTCTime}</code> は保存された差分取得の開始日時を参照する式です。入力値は式として再評価されません。BIND変数を使うMappingの差分位置は全入力行で共有し、全処理が成功した場合だけ更新します。</p>
+<h5 id="bind">BIND値をソースカラムに使用する</h5>
+<p>APIパスに <code>{bind:id}</code> を指定すると、ソースカラムの選択肢に <code>BIND:id</code> が追加されます。レスポンスにIDが含まれない場合も、API呼び出しに使用した入力値をターゲットのID列などへ出力できます。複数の変数がある場合は、それぞれ選択できます。変数名の大文字・小文字は区別します。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ソースカラム</th>
+<th style="text-align: left;">ターゲットの例</th>
+<th style="text-align: left;">値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>BIND:id</code></td>
+<td style="text-align: left;"><code>ORDERID</code></td>
+<td style="text-align: left;">API呼び出しに使用した入力値</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>items.code</code></td>
+<td style="text-align: left;"><code>CODE</code></td>
+<td style="text-align: left;">レスポンスの明細項目</td>
+</tr>
+</tbody>
+</table>
+<p>BIND値はURLエンコード前の文字列です。各入力行の呼び出しで取得した全明細・全ページに同じ値を設定します。どちらの出力方法でも利用でき、同じ変数を複数のターゲット列へ割り当てることもできます。BIND列だけを選択した場合もレスポンスの明細件数を維持し、明細が0件の場合はBIND値だけの行を作りません。構造取得用のサンプル値は実行時に使用しません。</p>
+<p>候補の追加にAPIへの通信は必要ありません。ファイルから取得した構造でも利用できます。<code>unit=1</code> のような固定のクエリ値はBIND列にはなりません。</p>
+<p>エンドポイントの変数名を削除・変更すると、その変数を参照しているソースカラムは「未定義」と表示されます。使用する変数を選択し直してから保存・実行してください。</p>
+<h5 id="_12">サンプル値による構造取得</h5>
+<p><a href="../img/guide-sample-03.svg"><img alt="構造取得・リクエストテスト用の一時サンプル値" src="../img/guide-sample-03.svg" /></a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">No</th>
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">サンプル値</td>
+<td style="text-align: left;">変数ごとに取得可能な値を入力します。</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">置換後のエンドポイント</td>
+<td style="text-align: left;">入力した値で置換されたパスを確認します。</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">構造取得</td>
+<td style="text-align: left;">現在のリクエスト設定・認証でAPIを呼び出します。</td>
+</tr>
+</tbody>
+</table>
+<p>「カラム一覧取得」は、取得済みの構造と選択した対象オブジェクトから列を展開する操作です。ソースAPIへ通信せず、サンプル値も要求しません。APIから取得した構造・ファイルから取得した構造のどちらも利用できます。構造がない場合は、先に明示的に構造を取得して対象オブジェクトを選択してください。ターゲットがRDBの場合、ターゲット列の確認は別途RDBへ接続します。</p>
+<p>BIND変数がある状態でAPIから構造を取得すると、「バインド変数のサンプル値」画面が開きます。「Webリクエスト詳細設定」の「テスト」ボタンも同じ画面を使用します。変数ごとの値を入力して「構造取得」を押してください。実際のリクエスト設定・認証で初回レスポンスを取得し、次ページは取得しません。POSTの場合も実際にPOSTを送信します。</p>
+<p>入力Mappingが未設定でも構造取得できます。APIエラー時は値を修正して再試行できます。空配列などで明細構造を取得できない場合は、別の値または「ファイルから構造取得」を使用してください。</p>
+<p>サンプル値は編集画面を開いている間だけ保持し、設定ファイルに保存しません。接続変更時・画面終了時に破棄します。本番実行では入力Mappingの値を使います。構造取得では入力Mapping・ターゲット出力を実行せず、ウォーターマークも更新しません。</p>
 <h4 id="webapiincremental">Web APIの差分取得</h4>
 <p>エンドポイント、またはPOSTの固定テキスト本文に、<code>LastWatermarkLocalTime</code>／<code>LastWatermarkUTCTime</code>を含む式を記述すると、保存済みの差分位置を利用できます。式は <code>{}</code> で囲みます。変数名の大文字・小文字をそのまま記述してください。</p>
 <table>
@@ -3198,7 +3394,7 @@ UTC 表示がない場合は、接続先データベースの LOCAL 時間とし
 </code></pre></div>
 <p>URLでは書式の引用符をそのまま入力し、JSON文字列内では <code>\"</code> としてエスケープします。<code>Z</code>を付ける例はUTC変数で使用してください。日付だけの書式は時刻を省略するため、取得範囲はAPIの比較条件にも依存します。</p>
 <p>差分取得を有効にする場所は、ソースのエンドポイントまたはPOSTの固定テキスト本文です。ヘッダー、動的生成するSQL本文、ODataにこの機能を適用するものではありません。API側に日時による絞り込み機能が必要です。</p>
-<h5 id="_12">差分位置設定</h5>
+<h5 id="_13">差分位置設定</h5>
 <p>対象変数を使用すると、ソースデータ画面に「差分位置設定」ボタンが表示されます。実行中のマッピングの差分位置は変更できません。</p>
 <p><a href="../img/webapi_watermark_current.svg"><img alt="Web API差分位置設定：番号付き画面" src="../img/webapi_watermark_current.svg" /></a></p>
 <table>
@@ -3252,7 +3448,7 @@ UTC 表示がない場合は、接続先データベースの LOCAL 時間とし
 </tr>
 </tbody>
 </table>
-<h5 id="_13">保存タイミングと再取得</h5>
+<h5 id="_14">保存タイミングと再取得</h5>
 <p>未設定・クリア時は既定日時を使用します。DB用Watermarkのクリアとは異なり、APIで全件取得になるとは限りません。取得範囲は指定した日時条件とAPIの仕様で決まります。</p>
 <p>1回の実行では前回のWatermarkを固定して、すべてのページに使用します。新しい保存候補は、最初のAPI呼び出し直前のUTC日時です。全ページ取得と後続処理が正常終了した場合に保存し、失敗・警告・中断時は進めません。別マッピングへの入力として使用する場合も、後続マッピングの成功後に保存します。画面のプレビューやアクセステストでは実行用Watermarkを進めません。</p>
 <p>遅れて反映されるデータを重ねて取得する場合は、例の <code>.AddMinutes(-5)</code> のように取得基準を戻します。重複取得されるため、ターゲット側のキーや更新方法も確認してください。</p>
@@ -3402,10 +3598,10 @@ UTC 表示がない場合は、接続先データベースの LOCAL 時間とし
 APIの仕様に応じて、ページ番号方式、オフセット／件数方式、Link方式、カーソル方式などのページング方法を選択できます。  </p>
 <p>ページング設定を行うことで、大量データを効率よく取得できるようになります。<br />
 なお、ページングを行わないAPIの場合は「なし」を選択してください。  </p>
-<h4 id="_14">ページングと通信の注意</h4>
+<h4 id="_15">ページングと通信の注意</h4>
 <p>ページ番号・オフセット方式のJSON件数は、マッピングで選択したレコード要素を基準に数えます。<code>data.items</code>のような入れ子の配列も対象です。空配列は0件ですが、選択した要素が欠落した場合や形式が不正な場合はエラーになります。差分実行では、このエラーでWatermarkは進みません。</p>
 <p>Web APIおよびODataの次ページURL・リダイレクト先は、最初のリクエストと同じスキーム・ホスト・ポートである必要があります。異なる接続先を返すAPIでは処理が停止するため、API側のURL構成を確認してください。</p>
-<h4 id="_15">ページング：なし</h4>
+<h4 id="_16">ページング：なし</h4>
 <p>ページングを行わず、指定したURLから取得できるデータのみを取得する方式です。  </p>
 <p><img src="../img/mapping_source_webserviceapi_nopage.png" alt="" title="" width="500" ></p>
 <table>
@@ -3424,7 +3620,7 @@ APIの仕様に応じて、ページ番号方式、オフセット／件数方�
 </tr>
 </tbody>
 </table>
-<h4 id="_16">ページング：ページ番号方式</h4>
+<h4 id="_17">ページング：ページ番号方式</h4>
 <p>ページ番号を指定してデータを取得する方式です。ページ番号を変更しながら順番にデータを取得します。  </p>
 <p><img src="../img/mapping_source_webserviceapi_pagenumber.png" alt="" title="" width="500" ></p>
 <table>
@@ -3453,7 +3649,7 @@ APIの仕様に応じて、ページ番号方式、オフセット／件数方�
 </tr>
 </tbody>
 </table>
-<h4 id="_17">ページング：オフセット／件数方式</h4>
+<h4 id="_18">ページング：オフセット／件数方式</h4>
 <p>URL のパラメータに開始位置（オフセット）と取得件数を指定してデータを取得する方式です。<br />
 オフセット値を変更しながら順番にデータを取得します。 </p>
 <p><img src="../img/mapping_source_webserviceapi_offsetlimit.png" alt="" title="" width="500" ></p>
@@ -3522,7 +3718,7 @@ APIの仕様に応じて、ページ番号方式、オフセット／件数方�
 </tr>
 </tbody>
 </table>
-<h4 id="_18">ページング：カーソル方式</h4>
+<h4 id="_19">ページング：カーソル方式</h4>
 <p>レスポンス内に含まれるカーソルトークンを利用して次ページを取得する方式です。レスポンスごとに返却されるトークンを使用して順番にデータを取得します。   </p>
 <p><img src="../img/mapping_source_webserviceapi_cursor.png" alt="" title="" width="500" ></p>
 <table>
@@ -3557,7 +3753,7 @@ APIの仕様に応じて、ページ番号方式、オフセット／件数方�
 </tbody>
 </table>
 <h3 id="salesforce">Salesforce</h3>
-<h4 id="_19">オブジェクト</h4>
+<h4 id="_20">オブジェクト</h4>
 <p>オブジェクトはデータベースのテーブルと同様の概念です。<br />
 設定方法はテーブル設定と同じため、下記の資料をご参照ください。<br />
 <a href=".#table" ><i class="fa fa-book" aria-hidden="true"></i> テーブル</a></p>
@@ -3585,7 +3781,7 @@ APIの仕様に応じて、ページ番号方式、オフセット／件数方�
 </tbody>
 </table>
 <h3 id="odata">OData</h3>
-<h4 id="_20">エンティティセット</h4>
+<h4 id="_21">エンティティセット</h4>
 <p>エンティティセットはデータベースのテーブルと同様の概念です。<br />
 設定方法はテーブル設定と同じため、下記の資料をご参照ください。<br />
 <a href=".#table" ><i class="fa fa-book" aria-hidden="true"></i> テーブル</a></p>
@@ -3697,6 +3893,8 @@ APIの仕様に応じて、ページ番号方式、オフセット／件数方�
     
     
       <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../javascripts/image-popup.js"></script>
       
     
   </body>

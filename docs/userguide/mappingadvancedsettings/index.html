@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://ja.sdi.ricct.com/userguide/mappingadvancedsettings/">
       
       
-        <link rel="prev" href="../mappingcolumndetail/">
+        <link rel="prev" href="../mappingtransformations/">
       
       
         <link rel="next" href="../mappingadvancedsettingssalesforce/">
@@ -51,6 +51,8 @@
         <style>:root{--md-text-font:"Saira Semi Condensed";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../stylesheets/image-popup.css">
     
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     
@@ -1327,6 +1329,29 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../mappingtransformations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    変換処理の使い方
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1426,9 +1451,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#stagingtable" class="md-nav__link">
     <span class="md-ellipsis">
-      ステージング テーブル 詳細設定
+      ステージングテーブルの詳細設定
     </span>
   </a>
   
@@ -1440,9 +1465,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#mail-password-visibility" class="md-nav__link">
     <span class="md-ellipsis">
-      メール処理のパスワード表示
+      メール処理のZIPパスワード表示
     </span>
   </a>
   
@@ -1892,7 +1917,30 @@
   
   
   <span class="md-ellipsis">
-    マッピンググループ設定
+    グループ設定
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../studioauthentication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Studio起動時のパスワード認証
     
   </span>
   
@@ -2365,9 +2413,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#stagingtable" class="md-nav__link">
     <span class="md-ellipsis">
-      ステージング テーブル 詳細設定
+      ステージングテーブルの詳細設定
     </span>
   </a>
   
@@ -2379,9 +2427,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#mail-password-visibility" class="md-nav__link">
     <span class="md-ellipsis">
-      メール処理のパスワード表示
+      メール処理のZIPパスワード表示
     </span>
   </a>
   
@@ -2446,7 +2494,7 @@
 <tr>
 <td style="text-align: left;">5</td>
 <td style="text-align: left;">更新方法</td>
-<td style="text-align: left;">ターゲットテーブルの更新方法を選択します。<br /> Merge - ターゲットテーブルに同じプライマリキーのデータが存在する場合は更新、存在しない場合は挿入します。※ターゲットテーブルにプライマリキーが設定されていない場合、この方法は選択できません。<br /> Append - ターゲットテーブルにデータを挿入します。<br /> Custom - データ更新用のSQL文を記述します。[詳細設定] ボタンを押して詳細を設定します。</td>
+<td style="text-align: left;">ターゲットテーブルの更新方法を選択します。<br /> Merge - ターゲットテーブルに同じプライマリキーのデータが存在する場合は更新、存在しない場合は挿入します。PKがない場合は、マージ詳細設定で一致判定に使用するカラムを指定してください。<br /> Append - ターゲットテーブルにデータを挿入します。<br /> Custom - データ更新用のSQL文を記述します。[詳細設定] ボタンを押して詳細を設定します。</td>
 </tr>
 <tr>
 <td style="text-align: left;">6</td>
@@ -2460,7 +2508,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">8</td>
-<td style="text-align: left;">ステーショングテーブル削除</td>
+<td style="text-align: left;">ステージングテーブル削除</td>
 <td style="text-align: left;">処理完了後に、Stagingテーブルを削除するかどうかを選択します。<br><br>「Yes」を選択した場合は、SDI がマッピング実行中に作成した Staging テーブルのみ削除されます。<br>もともと存在していたテーブルについては、一切削除されません。</td>
 </tr>
 <tr>
@@ -2659,7 +2707,7 @@
 <tr>
 <td style="text-align: left;">31</td>
 <td style="text-align: left;">メール情報</td>
-<td style="text-align: left;">送信先、CC、メールタイトル、メール本文などを設定します。<br /> ※1メールテンプレートを使用する場合、このフィールドは読み取り専用（Readonly）になります。<br /> ※2メールタイトルおよび本文の設定手順の詳細につきましては、下記資料をご参照ください。<br><a href="/userguide/mailsetting/#mailtemplate">メールテンプレート記述方法</a></td>
+<td style="text-align: left;">送信先、CC、メールタイトル、メール本文などを設定します。<br /> ※1メールテンプレートを使用する場合、このフィールドは読み取り専用（Readonly）になります。<br /> ※2メールタイトルおよび本文の設定手順の詳細につきましては、下記資料をご参照ください。<br><a href="../mailsetting/#mailtemplate">メールテンプレート記述方法</a></td>
 </tr>
 <tr>
 <td style="text-align: left;">32</td>
@@ -2673,8 +2721,9 @@
 </tr>
 </tbody>
 </table>
-<h3 id="_12">ステージング テーブル　詳細設定</h3>
-<p><img src="../img/mapping_advancedsetting_stagingtable_detail.png" alt="" title="" ></p>
+<h3 id="stagingtable">ステージングテーブルの詳細設定</h3>
+<p>RDBターゲットの「マッピング詳細設定」から、「ステージングテーブルへロード」の「詳細設定」を開きます。ステージングテーブルは、ターゲット更新前にデータを一時的に格納する作業用テーブルです。</p>
+<p><a href="../img/guide-staging-oracle-08.svg"><img alt="Oracleのステージングテーブル設定（画面上部）" src="../img/guide-staging-oracle-08.svg" /></a></p>
 <table>
 <thead>
 <tr>
@@ -2685,29 +2734,70 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">34</td>
-<td style="text-align: left;">「一時テーブルとして作成」 チェックボックス</td>
-<td style="text-align: left;">ステージングテーブルを一時表（TEMPORARY TABLE）として作成するかどうかを選択します。<br>チェックを入れると一時表として作成され、チェックを外すと通常のテーブルとして作成されます。</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">テーブル種別</td>
+<td style="text-align: left;">Oracleでは通常テーブル／一時テーブル（PRIVATE）／一時テーブル（GLOBAL）を選びます。</td>
 </tr>
 <tr>
-<td style="text-align: left;">35</td>
-<td style="text-align: left;">「既存データを保持」 チェックボックス</td>
-<td style="text-align: left;">既存データを保持するかどうかを選択します。<br />ステージングテーブルがすでに存在する場合、デフォルトでは中のデータを削除してからデータをロードします。このチェックを入れることで、既存データをそのまま保持することができます。</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">説明</td>
+<td style="text-align: left;">選択した種類の有効範囲と制約を表示します。</td>
 </tr>
 <tr>
-<td style="text-align: left;">36</td>
-<td style="text-align: left;">「データロード前にSQLを実行」 チェックボックス</td>
-<td style="text-align: left;">データロードする前にSQLを実行するかどうかを選択します。</td>
-</tr>
-<tr>
-<td style="text-align: left;">37</td>
-<td style="text-align: left;">実行するSQL</td>
-<td style="text-align: left;">データロード前にSQLを実行する場合、実行するSQLの詳細を入力します。</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">データロード前にSQLを実行</td>
+<td style="text-align: left;">ロード前に実行するSQLを設定します。一時テーブルを参照する場合は、作成した接続内で実行するこの処理または更新前・更新後処理を使用してください。</td>
 </tr>
 </tbody>
 </table>
-<h2 id="_13">メール処理のパスワード表示</h2>
-<p>メール処理詳細画面の「パスワード等を表示する」で、資格情報の表示を切り替えられます。初期状態は非表示で、表示状態は保存しません。</p>
+<h4 id="_12">テーブル種別の選び方</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">接続先</th>
+<th style="text-align: left;">選択肢</th>
+<th style="text-align: left;">使い分け</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Oracle（直接接続）</td>
+<td style="text-align: left;">通常／PRIVATE／GLOBAL</td>
+<td style="text-align: left;">通常は永続する作業表。PRIVATEは今回の実行用の定義とデータ。GLOBALは共有する定義と接続ごとのデータです。</td>
+</tr>
+<tr>
+<td style="text-align: left;">SQL Server・PostgreSQL・MySQL（直接接続）</td>
+<td style="text-align: left;">通常／一時</td>
+<td style="text-align: left;">一時テーブルは作成した接続内だけで使用します。OracleのPRIVATE/GLOBALの区分は表示しません。</td>
+</tr>
+<tr>
+<td style="text-align: left;">BigQuery・Snowflake</td>
+<td style="text-align: left;">対応する接続で通常／一時</td>
+<td style="text-align: left;">各DB製品の一時テーブルを使用します。利用できる種類は接続方式によって異なります。</td>
+</tr>
+<tr>
+<td style="text-align: left;">その他のDB・接続方式</td>
+<td style="text-align: left;">表示される設定に従う</td>
+<td style="text-align: left;">DB2や任意のODBC接続すべてに、一時テーブル作成を提供するものではありません。</td>
+</tr>
+</tbody>
+</table>
+<p><a href="../img/guide-staging-other-09.svg"><img alt="Oracle以外の設定例（PostgreSQL、画面上部）" src="../img/guide-staging-other-09.svg" /></a></p>
+<p>Oracle以外の例も、1がテーブル種別、2が説明、3がロード前SQLです。一時テーブルを選択する場合は、接続をまたいだデータの保持や別マッピングからの参照を前提にしないでください。PostgreSQLの一時テーブル名は、スキーマ名を付けずに指定します。</p>
+<h4 id="oracle-private">Oracle PRIVATE</h4>
+<p>Oracle 18c以降が必要です。SDIは <code>ON COMMIT PRESERVE DEFINITION</code> を使用するため、処理中のコミットでは定義を削除せず、同じ接続でロードと更新を行います。マッピング終了時に削除し、接続プールを使用する場合も次回へ残さないようにします。</p>
+<p>PRIVATEでは、出力対象に選択した <code>CLOB</code>／<code>NCLOB</code>／<code>BLOB</code> 列を扱えません。該当する列を出力する場合はGLOBALまたは通常テーブルを選択してください。ターゲットにLOB列があっても、対象外であれば使用できます。</p>
+<p>物理名にはOracleのPRIVATE用プレフィックス（通常 <code>ORA$PTT_</code>）を使用し、スキーマ名を付けません。SDIは取得可能であればDBの設定値を使用します。カスタムプレフィックスを使用し、その値を読み取れない接続では、DBの規則に合う <code>ORA$...</code> の完全なテーブル名を指定してください。物理名は128バイト以内にします。</p>
+<p>PRIVATEは実行をまたいで保持できません。「既存データを保持」は表示せず、親画面の「ステージングテーブル削除」は表示したまま無効にし、自動削除として扱います。終了後の別接続や「成功時処理」からの参照には使用しないでください。</p>
+<h4 id="oracle-global">Oracle GLOBAL</h4>
+<p>SDIは <code>ON COMMIT PRESERVE ROWS</code> で作成します。定義は共有されますが、データはロードしたDBセッションに属します。保持しない新規作成テーブルは、更新を確定またはロールバックした後、ロード元と同じセッションでデータをクリアして接続を閉じ、その後で定義を削除します。</p>
+<p>そのため「成功時処理」の時点では、保持しないGLOBALのデータはすでにクリアされています。ステージングの行を使用するSQLは「更新後処理」に設定してください。他セッションが同じGLOBALを使用中の場合、OracleがDROPを拒否することがあります。SDIは他セッションを強制終了せず、削除失敗を警告として残します。並行実行ではステージング名の競合を避けてください。</p>
+<h4 id="_13">通常テーブルと保持設定</h4>
+<p>通常テーブルで「既存データを保持」をチェックしない場合、既存の行を削除してからロードします。チェックした場合は既存の行を残してロードします。この設定と、親画面の「ステージングテーブル削除」は別の設定です。</p>
+<p>「ステージングテーブル削除」を有効にしても、削除対象はSDIがその処理で作成したテーブルです。実行前から存在したテーブルをこの終了処理で削除することはありません。</p>
+<h2 id="mail-password-visibility">メール処理のZIPパスワード表示</h2>
+<p>メール処理詳細画面では、添付ZIPファイルのパスワード横にある「表示」で、入力内容の表示・非表示を切り替えます。初期状態は非表示で、画面を閉じると非表示に戻ります。</p>
+<p><a href="../studioauthentication/">Studio認証</a>が有効な場合は、表示するたびにStudio認証用パスワードを入力します。確認画面でキャンセルした場合は、ZIPパスワードを非表示のままにします。</p>
 
 
 
@@ -2798,6 +2888,8 @@
     
     
       <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../javascripts/image-popup.js"></script>
       
     
   </body>

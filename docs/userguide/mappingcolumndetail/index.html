@@ -18,7 +18,7 @@
         <link rel="prev" href="../mappingtarget/">
       
       
-        <link rel="next" href="../mappingadvancedsettings/">
+        <link rel="next" href="../mappingtransformations/">
       
       
       <link rel="icon" href="../../img/favicon.ico">
@@ -51,6 +51,8 @@
         <style>:root{--md-text-font:"Saira Semi Condensed";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../stylesheets/image-popup.css">
     
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     
@@ -1359,7 +1361,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      概要
+      詳細設定を開く
     </span>
   </a>
   
@@ -1368,17 +1370,17 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      設定
+      値と変換の設定
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="設定">
+    <nav class="md-nav" aria-label="値と変換の設定">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      マッピング設定
+      元の値
     </span>
   </a>
   
@@ -1389,10 +1391,93 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      手順と出力の設定
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="手順と出力の設定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      並べ替え・無効化・削除
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      サンプルで確認する
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      変換失敗時
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      反映・保存・解除
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      実行時の注意
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mappingtransformations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    変換処理の使い方
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1856,7 +1941,30 @@
   
   
   <span class="md-ellipsis">
-    マッピンググループ設定
+    グループ設定
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../studioauthentication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Studio起動時のパスワード認証
     
   </span>
   
@@ -2285,7 +2393,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      概要
+      詳細設定を開く
     </span>
   </a>
   
@@ -2294,17 +2402,17 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      設定
+      値と変換の設定
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="設定">
+    <nav class="md-nav" aria-label="値と変換の設定">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      マッピング設定
+      元の値
     </span>
   </a>
   
@@ -2312,6 +2420,66 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      手順と出力の設定
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="手順と出力の設定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      並べ替え・無効化・削除
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      サンプルで確認する
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      変換失敗時
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      反映・保存・解除
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      実行時の注意
+    </span>
+  </a>
   
 </li>
       
@@ -2332,43 +2500,158 @@
 
 
 <h1 id="_1">カラムマッピング設定</h1>
-<h2 id="_2">概要</h2>
-<p>ソースとターゲットのカラム一覧の定義を取得してから、各ターゲットのカラムに対して、マップイングの対象かどうか、ソースカラムを設定できます。</p>
-<h2 id="_3">設定</h2>
-<p><img src="../img/mapping_columndetail.png" alt="" title="" width="500" ></p>
-<h3 id="_4">マッピング設定</h3>
-<p><img src="../img/mapping_columndetail_set1.png" alt="" title="" ></p>
+<h2 id="_2">詳細設定を開く</h2>
+<p>各ターゲット列について、出力する値と変換手順を設定します。「対象」にチェックを入れ、「値・変換」列のアイコンをクリックすると詳細設定画面が開きます。</p>
+<p><img alt="「対象」と「値・変換」列" src="../img/guide-column-actions.png" /></p>
+<p>設定済みのアイコンにはチェックマークが付きます。「対象」を外した列は詳細設定を保持しますが、編集・実行の対象から外れます。</p>
+<h2 id="_3">値と変換の設定</h2>
+<p><a href="../img/transform-workflow.png"><img alt="列の値・変換設定と独立した結果の結合" src="../img/transform-workflow.png" /></a></p>
+<p>画像の <strong>1</strong> で処理を選んで追加し、手順の行を選択して <strong>2</strong> の項目を設定します。サンプルを入力し、<strong>3</strong> の「変換を確認」で結果を確認します。画像をクリックすると原寸で表示できます。</p>
+<p><strong>各変換の用途・全24種類の設定例・詳細画面は、<a href="../mappingtransformations/">変換処理の使い方</a>をご覧ください。</strong></p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">No</th>
-<th style="text-align: left;">項目</th>
-<th style="text-align: left;">説明</th>
+<th style="text-align: left;">目的</th>
+<th style="text-align: left;">使用する変換</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">カラム一覧取得</td>
-<td style="text-align: left;">ソース、ターゲットのカラム一覧の定義情報を取得します。取得された明細に対してマップイングのルールを設定します。</td>
+<td style="text-align: left;">電話番号などの一部を残して隠す</td>
+<td style="text-align: left;"><a href="../mappingtransformations/#mask">マスキング</a>。残す文字数が入力長以上なら全体をマスクします。</td>
 </tr>
 <tr>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">ソースカラム</td>
-<td style="text-align: left;">ターゲットのカラム対応するソースカラム選択します。</td>
-</tr>
-<tr>
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">マッピング対象</td>
-<td style="text-align: left;">ターゲットのカラムはデータ更新の対象かどうかを設定します。</td>
-</tr>
-<tr>
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">ターゲットカラム</td>
-<td style="text-align: left;">更新先となるターゲット側のカラムを表示します。<br />RDB、SaaS を使用する場合、ターゲットカラム名は編集できません。<br />ファイル(CSV, Excel , JSON, XML)を使用する場合は、カラム名を編集できます。</td>
+<td style="text-align: left;">元の値を隠しながら、同じ値を照合する</td>
+<td style="text-align: left;"><a href="../mappingtransformations/#hash">ハッシュ化</a>。通常はHMAC-SHA256（SDI管理鍵）を選び、64文字以上の文字列列へ保存します。</td>
 </tr>
 </tbody>
 </table>
+<p>ハッシュ方式ごとの違いは<a href="../mappingtransformations/#hash-algorithms">ハッシュ方式の選び方</a>、複数サーバーでの利用条件は<a href="../mappingtransformations/#hash-multiple-servers">同じ結果を使うための設定</a>を参照してください。</p>
+<h3 id="_4">元の値</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">種類</th>
+<th style="text-align: left;">設定方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ソースカラム</td>
+<td style="text-align: left;">通常のソース列、またはAPIバインド変数の <code>BIND:id</code> などを選びます。</td>
+</tr>
+<tr>
+<td style="text-align: left;">固定値</td>
+<td style="text-align: left;">型と値を指定します。文字列・数値・真偽値・日時・NULLを選べます。</td>
+</tr>
+<tr>
+<td style="text-align: left;">システム値</td>
+<td style="text-align: left;">実行開始時刻、行単位のUUID、実行単位のUUIDを選びます。</td>
+</tr>
+</tbody>
+</table>
+<p>固定文字列は引用符を付けずに入力します。先頭0を残す <code>001</code> は文字列型にします。空文字とNULLは別の値です。NULL型を選んだ場合、値の入力欄は使用しません。</p>
+<p>選択した種類に必要な欄だけが表示されます。切替前の入力内容は画面内で保持しますが、保存・実行に使うのは選択中の種類の設定です。実行開始時刻と実行単位のUUIDは、入力行ごとの処理でも同じマッピング実行内で共通です。</p>
+<p>固定値やシステム値を設定した列は、マッピング一覧のソース欄に設定内容が表示されます。変更は「値・変換」のアイコンから行います。</p>
+<h2 id="steps">手順と出力の設定</h2>
+<ol>
+<li>処理の一覧から変換を選び、「追加」をクリックします。</li>
+<li>手順を選び、「入力する値」「結果名」と処理固有の項目を設定します。</li>
+<li>「出力する値」で、ターゲット列に書き込む値を選びます。</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">入力する値・取得方法</th>
+<th style="text-align: left;">意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">元の値</td>
+<td style="text-align: left;">上の「元の値」で設定した値。ソース列、固定値、システム値のいずれかです。</td>
+</tr>
+<tr>
+<td style="text-align: left;">ソースカラム</td>
+<td style="text-align: left;">変換前のソース列の値。参照先から列名を選びます。</td>
+</tr>
+<tr>
+<td style="text-align: left;">BIND変数</td>
+<td style="text-align: left;">API呼び出しに渡したバインド変数。参照先から変数名を選びます。</td>
+</tr>
+<tr>
+<td style="text-align: left;">固定値</td>
+<td style="text-align: left;">型と値を直接指定します。</td>
+</tr>
+<tr>
+<td style="text-align: left;">変換結果</td>
+<td style="text-align: left;">この手順より前にある有効な手順の結果。参照先から手順名を選びます。</td>
+</tr>
+</tbody>
+</table>
+<p>「入力する値」や処理のパラメーターにある「…」から取得方法を設定します。ソース列・BIND変数・変換結果では参照先を選び、固定値では型と値を入力します。元の値では参照先や固定値を指定しません。</p>
+<p><strong>文字列結合と最初のNULL以外の値は、「結合する値」に並べた各値を入力に使用します。</strong> 元の値も使う場合は、その一覧に「元の値」を追加してください。条件処理も、条件や成立時・不成立時に指定した値を参照します。</p>
+<p>各手順の結果はその行の処理中に保持されます。複数のソース列を別々に変換し、後の手順から個別に参照できます。詳しくは<a href="../mappingtransformations/#combine-results">別々に変換して結合する例</a>を参照してください。元のソース値や、別のターゲット列の設定は書き換えません。</p>
+<p>「出力する値」は元の値、または有効な手順の結果から選びます。出力に必要な結果と、その参照先だけを計算します。プレビューで「未使用」と表示される手順は、選択した出力では必要とされていません。</p>
+<h3 id="_5">並べ替え・無効化・削除</h3>
+<p>「上へ」「下へ」は選択中の手順を移動します。「有効」を外すとその手順を停止します。行の右端のゴミ箱は、その行の手順を削除します。削除の確認で「いいえ」を選ぶと、手順と出力先を保持します。</p>
+<p>最後の行が出力先になっている場合、その行を削除すると、出力先は直前の有効な手順に移ります。有効な手順が残らなければ「元の値」に戻ります。確認メッセージには変更先も表示します。出力先が別の値なら変更しません。</p>
+<p>他の手順から使われている結果の削除・無効化や、参照する手順より前への移動はできません。中間行が出力先になっている場合も、先に出力先を変更してください。</p>
+<h4 id="_6">途中の手順を削除する例</h4>
+<p>手順1「文字列結合」→手順2「大文字化」→手順3「空白・NULLの置換」の順に結果を参照している場合、手順2を削除するには、先に手順3の参照先を変更します。</p>
+<ol>
+<li>手順3「空白・NULLの置換」を選び、「処理の設定」の「入力する値」の「…」をクリックします。</li>
+<li>取得方法を「変換結果」にし、参照先を「手順2：大文字化」から「手順1：文字列結合」に変更して「OK」をクリックします。</li>
+<li>手順2「大文字化」の行の右端にあるゴミ箱をクリックし、確認メッセージで「はい」を選びます。</li>
+<li>「変換を確認」で、削除後の結果を確認します。</li>
+</ol>
+<p>この例では、大文字化を省略して結合結果を手順3へ渡します。目的に応じて「元の値」やソースカラムなど、別の入力に変更することもできます。</p>
+<p>削除する手順が複数箇所から参照されている場合は、**すべての参照を変更してから削除**します。「入力する値」だけでなく、「結合する値」、条件、置換後の値などの設定内にある参照も対象です。「出力する値」に削除対象の途中の手順を選んでいる場合は、そこも変更してください。参照先は自動で一つ前の手順に置き換わりません。</p>
+<h2 id="_7">サンプルで確認する</h2>
+<p>サンプル入力で、参照先ごとに「入力の型」と「サンプル入力」を設定し、「変換を確認」をクリックします。元の値、各手順の結果、最終結果を表示します。</p>
+<p>文字列の結果には引用符が付き、空文字・空白・数値・NULLを区別できます。サンプルのNULLは型をNULLにして指定します。文字列として <code>NULL</code> と入力した値とは異なります。</p>
+<p>説明表の <code>VALUE = "abc"</code> は、VALUEの行の「入力の型」を「文字列」にし、「サンプル入力」に <code>abc</code> だけを入力する意味です。<code>VALUE =</code> や引用符は入力しません。サンプル入力に <code>\t</code> や <code>\n</code> と入力しても、実際のタブや改行には変換されません。Tabキーは次のセルへの移動に使われます。</p>
+<p>空欄・空白・NULLの入力方法と、正規表現の入力欄との違いは、<a href="../mappingtransformations/#sample-input-notation">サンプル入力の表記と実際の操作</a>を参照してください。</p>
+<p>この確認ではAPI通信・DB更新・設定ファイル保存を行いません。サンプル値とプレビュー結果はマッピングの保存対象ではありません。</p>
+<h2 id="_8">変換失敗時</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">選択肢</th>
+<th style="text-align: left;">動作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">エラーにする</td>
+<td style="text-align: left;">変換エラーを通知し、通常のマッピングのエラー処理へ進みます。</td>
+</tr>
+<tr>
+<td style="text-align: left;">NULLにする</td>
+<td style="text-align: left;">その列の結果をNULLにします。</td>
+</tr>
+<tr>
+<td style="text-align: left;">既定値にする</td>
+<td style="text-align: left;">指定した型・値を、その列の結果として使用します。</td>
+</tr>
+</tbody>
+</table>
+<p>既定値の型と値は「既定値にする」の場合だけ表示します。既定値がNULL型の場合、値の入力欄は使用しません。NULL禁止のターゲット列にはNULL固定値やNULLへのフォールバックを設定できません。</p>
+<p>書式に合わない日付、範囲外の部分文字列、コードの未一致などが失敗の例です。処理ごとの注意点は<a href="../mappingtransformations/">変換処理の使い方</a>で確認してください。</p>
+<h2 id="_9">反映・保存・解除</h2>
+<p>「OK」は詳細設定をマッピング画面に反映します。ファイルへの保存は、マッピング画面の「保存」で行います。</p>
+<p>「キャンセル」、画面の×、Escで閉じる際、変更があれば他の設定画面と同じ保存確認を表示します。「はい」は検証してマッピング画面へ反映、「いいえ」は破棄、「キャンセル」は編集を継続します。変更がない場合やサンプルだけの変更では確認しません。</p>
+<p>「詳細設定を解除」は確認後に列の値・変換設定を取り除き、元のソースマッピングに戻します。マッピング画面で保存するまでは設定ファイルを変更しません。</p>
+<p>同じターゲットの列一覧を再取得した場合、同名のターゲット列の設定を保持します。別のコネクションやRDBテーブルには自動で引き継ぎません。</p>
+<h2 id="_10">実行時の注意</h2>
+<ul>
+<li>値・変換を設定しない列は、選択したソースカラムの値を出力します。</li>
+<li>元データが0行なら、固定値を設定していても出力行は生成しません。</li>
+<li>ソース読込で空白除去や空文字の正規化を設定している場合、その処理後の値を変換します。</li>
+<li>入力マッピングとして後続へ渡す値は、抽出したソース値です。別のターゲット列の変換結果を渡す設定ではありません。</li>
+<li>Rawファイル出力では列の値・変換設定を使用できません。</li>
+<li>入力1行ごとに取得・出力する方式では、途中で失敗するまでに処理した入力行の更新が完了していることがあります。</li>
+</ul>
 
 
 
@@ -2459,6 +2742,8 @@
     
     
       <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../javascripts/image-popup.js"></script>
       
     
   </body>

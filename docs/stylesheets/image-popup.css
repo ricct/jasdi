@@ -1,0 +1,54 @@
+a.sdi-image-popup {
+  cursor: zoom-in;
+}
+
+.sdi-image-popup-dialog {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100vh - 32px);
+  overflow: visible;
+  cursor: zoom-out;
+}
+
+.sdi-image-popup-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.sdi-image-popup-dialog > img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: calc(100vw - 48px);
+  max-height: calc(100vh - 72px);
+  max-height: calc(100dvh - 72px);
+  object-fit: contain;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.sdi-image-popup-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #64748b;
+  border-radius: 50%;
+  background: white;
+  color: #172b4d;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.sdi-image-popup-close:focus-visible {
+  outline: 3px solid #0f6cbd;
+  outline-offset: 2px;
+}
+
+html.sdi-image-popup-open {
+  overflow: hidden;
+}
